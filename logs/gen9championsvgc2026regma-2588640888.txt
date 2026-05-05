@@ -1,0 +1,214 @@
+|j|☆ChampionsmatchVGC
+|j|☆emu2567
+|t:|1776652867
+|gametype|doubles
+|player|p1|ChampionsmatchVGC|265|1672
+|player|p2|emu2567|swimmerf-gen4|1696
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Garchomp, L50, F|
+|poke|p1|Floette-Eternal, L50, F|
+|poke|p1|Kingambit, L50, F|
+|poke|p1|Rotom-Wash, L50|
+|poke|p1|Corviknight, L50, M|
+|poke|p1|Delphox, L50, F|
+|poke|p2|Farigiraf, L50, M|
+|poke|p2|Torkoal, L50, F|
+|poke|p2|Floette-Eternal, L50, F|
+|poke|p2|Sinistcha, L50|
+|poke|p2|Basculegion, L50, M|
+|poke|p2|Incineroar, L50, M|
+|teampreview|4
+|
+|t:|1776652915
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Rotom|Rotom-Wash, L50|100/100
+|switch|p1b: Floette|Floette-Eternal, L50, F|100/100
+|switch|p2a: Farigiraf|Farigiraf, L50, M|100/100
+|switch|p2b: Incineroar|Incineroar, L50, M|100/100
+|turn|1
+|j| Zilluhh
+|
+|t:|1776652936
+|detailschange|p1b: Floette|Floette-Mega, L50, F
+|-mega|p1b: Floette|Floette|Floettite
+|-ability|p1b: Floette|Fairy Aura
+|move|p1b: Floette|Calm Mind|p1b: Floette
+|-boost|p1b: Floette|spa|1
+|-boost|p1b: Floette|spd|1
+|move|p1a: Rotom|Hydro Pump|p2b: Incineroar
+|-supereffective|p2b: Incineroar|1
+|-damage|p2b: Incineroar|16/100
+|move|p2b: Incineroar|Parting Shot|p1b: Floette
+|-unboost|p1b: Floette|atk|1
+|-unboost|p1b: Floette|spa|1
+|
+|t:|1776652966
+|switch|p2b: Floette|Floette-Eternal, L50, F|100/100|[from] Parting Shot
+|move|p2a: Farigiraf|Trick Room|p2a: Farigiraf
+|-fieldstart|move: Trick Room|[of] p2a: Farigiraf
+|
+|upkeep
+|turn|2
+|
+|t:|1776652978
+|switch|p2a: Torkoal|Torkoal, L50, F|100/100
+|-weather|SunnyDay|[from] ability: Drought|[of] p2a: Torkoal
+|detailschange|p2b: Floette|Floette-Mega, L50, F
+|-mega|p2b: Floette|Floette|Floettite
+|-ability|p2b: Floette|Fairy Aura
+|move|p2b: Floette|Calm Mind|p2b: Floette
+|-boost|p2b: Floette|spa|1
+|-boost|p2b: Floette|spd|1
+|move|p1a: Rotom|Thunder Wave|p2b: Floette
+|-status|p2b: Floette|par
+|move|p1b: Floette|Dazzling Gleam|p2a: Torkoal|[spread] p2a,p2b
+|-resisted|p2a: Torkoal|1
+|-damage|p2a: Torkoal|69/100
+|-damage|p2b: Floette|79/100 par
+|
+|-weather|SunnyDay|[upkeep]
+|upkeep
+|turn|3
+|
+|t:|1776653001
+|move|p1b: Floette|Protect|p1b: Floette
+|-singleturn|p1b: Floette|Protect
+|move|p2a: Torkoal|Eruption|p1a: Rotom|[spread] p1a
+|-activate|p1b: Floette|move: Protect
+|-resisted|p1a: Rotom|1
+|-damage|p1a: Rotom|69/100
+|move|p2b: Floette|Dazzling Gleam|p1a: Rotom|[spread] p1a
+|-activate|p1b: Floette|move: Protect
+|-damage|p1a: Rotom|0 fnt
+|faint|p1a: Rotom
+|
+|-weather|SunnyDay|[upkeep]
+|upkeep
+|
+|t:|1776653017
+|switch|p1a: Delphox|Delphox, L50, F|100/100
+|turn|4
+|l| Zilluhh
+|
+|t:|1776653038
+|move|p2a: Torkoal|Eruption|p1b: Floette|[spread] p1a,p1b
+|-resisted|p1a: Delphox|1
+|-damage|p1a: Delphox|68/100
+|-damage|p1b: Floette|70/100
+|cant|p2b: Floette|par
+|move|p1b: Floette|Calm Mind|p1b: Floette
+|-boost|p1b: Floette|spa|1
+|-boost|p1b: Floette|spd|1
+|move|p1a: Delphox|Heat Wave|p2b: Floette|[spread] p2b
+|-miss|p1a: Delphox|p2a: Torkoal
+|-damage|p2b: Floette|57/100 par
+|
+|-weather|SunnyDay|[upkeep]
+|upkeep
+|turn|5
+|j| ExistentialDredge
+|
+|t:|1776653081
+|switch|p2a: Farigiraf|Farigiraf, L50, M|100/100
+|move|p1a: Delphox|Protect|p1a: Delphox
+|-singleturn|p1a: Delphox|Protect
+|move|p2b: Floette|Substitute|p2b: Floette
+|-start|p2b: Floette|Substitute
+|-damage|p2b: Floette|33/100 par
+|move|p1b: Floette|Draining Kiss|p2b: Floette
+|-end|p2b: Floette|Substitute
+|-heal|p1b: Floette|92/100|[from] drain|[of] p2b: Floette
+|
+|-weather|SunnyDay|[upkeep]
+|-fieldend|move: Trick Room
+|upkeep
+|turn|6
+|
+|t:|1776653104
+|move|p2b: Floette|Protect|p2b: Floette
+|-singleturn|p2b: Floette|Protect
+|move|p1a: Delphox|Substitute|p1a: Delphox
+|-start|p1a: Delphox|Substitute
+|-damage|p1a: Delphox|44/100
+|move|p1b: Floette|Dazzling Gleam|p2a: Farigiraf|[spread] p2a
+|-activate|p2b: Floette|move: Protect
+|-damage|p2a: Farigiraf|49/100
+|move|p2a: Farigiraf|Trick Room|p2a: Farigiraf
+|-fieldstart|move: Trick Room|[of] p2a: Farigiraf
+|
+|-weather|none
+|upkeep
+|turn|7
+|
+|t:|1776653122
+|move|p1a: Delphox|Protect|p1a: Delphox
+|-singleturn|p1a: Delphox|Protect
+|move|p2b: Floette|Dazzling Gleam|p1b: Floette|[spread] p1b
+|-activate|p1a: Delphox|move: Protect
+|-damage|p1b: Floette|62/100
+|move|p2a: Farigiraf|Psyshock|p1b: Floette
+|-damage|p1b: Floette|17/100
+|move|p1b: Floette|Calm Mind|p1b: Floette
+|-boost|p1b: Floette|spa|1
+|-boost|p1b: Floette|spd|1
+|
+|upkeep
+|turn|8
+|
+|t:|1776653144
+|move|p1b: Floette|Protect|p1b: Floette
+|-singleturn|p1b: Floette|Protect
+|move|p2b: Floette|Dazzling Gleam|p1a: Delphox|[spread] p1a
+|-activate|p1b: Floette|move: Protect
+|-resisted|p1a: Delphox|1
+|-end|p1a: Delphox|Substitute
+|move|p2a: Farigiraf|Psyshock|p1a: Delphox
+|-resisted|p1a: Delphox|1
+|-damage|p1a: Delphox|20/100
+|move|p1a: Delphox|Heat Wave|p2a: Farigiraf|[spread] p2a,p2b
+|-damage|p2a: Farigiraf|12/100
+|-damage|p2b: Floette|9/100 par
+|
+|upkeep
+|turn|9
+|
+|t:|1776653160
+|move|p2b: Floette|Dazzling Gleam|p1b: Floette|[spread] p1a,p1b
+|-resisted|p1a: Delphox|1
+|-damage|p1a: Delphox|0 fnt
+|-damage|p1b: Floette|0 fnt
+|faint|p1a: Delphox
+|faint|p1b: Floette
+|move|p2a: Farigiraf|Psyshock|p1: Delphox|[notarget]
+|-fail|p2a: Farigiraf
+|
+|upkeep
+|
+|t:|1776653163
+|switch|p1b: Garchomp|Garchomp, L50, F|100/100
+|turn|10
+|
+|t:|1776653174
+|switch|p2a: Incineroar|Incineroar, L50, M|16/100
+|move|p2b: Floette|Dazzling Gleam|p1b: Garchomp
+|-supereffective|p1b: Garchomp|1
+|-enditem|p1b: Garchomp|Roseli Berry|[eat]
+|-enditem|p1b: Garchomp|Roseli Berry|[weaken]
+|-damage|p1b: Garchomp|0 fnt
+|faint|p1b: Garchomp
+|
+|win|emu2567
+|raw|ChampionsmatchVGC's rating: 1672 &rarr; <strong>1653</strong><br />(-19 for losing)
+|raw|emu2567's rating: 1696 &rarr; <strong>1715</strong><br />(+19 for winning)
+|l|☆ChampionsmatchVGC
+|player|p1|
+|l| ExistentialDredge
+|l|☆emu2567
+|player|p2|

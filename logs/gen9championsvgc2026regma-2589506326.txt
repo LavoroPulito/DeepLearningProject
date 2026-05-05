@@ -1,0 +1,150 @@
+|raw|<div class="broadcast-blue"><strong>This battle is required to be public due to a player having a name starting with 'sdlt'.</div>
+|j|☆hellowcs
+|j|☆SDLT 2KRL SWM
+|t:|1776729161
+|gametype|doubles
+|player|p1|hellowcs|170|1771
+|player|p2|SDLT 2KRL SWM|ryuki|1677
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Kangaskhan, L50, F|
+|poke|p1|Aerodactyl, L50, F|
+|poke|p1|Garchomp, L50, F|
+|poke|p1|Floette-Eternal, L50, F|
+|poke|p1|Farigiraf, L50, F|
+|poke|p1|Torkoal, L50, F|
+|poke|p2|Talonflame, L50, M|
+|poke|p2|Floette-Eternal, L50, F|
+|poke|p2|Basculegion, L50, M|
+|poke|p2|Garchomp, L50, M|
+|poke|p2|Kingambit, L50, M|
+|poke|p2|Maushold-Four, L50|
+|teampreview|4
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by hellowcs)
+|
+|t:|1776729184
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Kangaskhan|Kangaskhan, L50, F|100/100
+|switch|p1b: Farigiraf|Farigiraf, L50, F|100/100
+|switch|p2a: Maushold|Maushold-Four, L50|100/100
+|switch|p2b: Floette|Floette-Eternal, L50, F|100/100
+|turn|1
+|j| not world
+|
+|t:|1776729199
+|detailschange|p2b: Floette|Floette-Mega, L50, F
+|-mega|p2b: Floette|Floette|Floettite
+|-ability|p2b: Floette|Fairy Aura
+|move|p1a: Kangaskhan|Fake Out|p2a: Maushold
+|-damage|p2a: Maushold|77/100
+|cant|p2a: Maushold|flinch
+|move|p2b: Floette|Calm Mind|p2b: Floette
+|-boost|p2b: Floette|spa|1
+|-boost|p2b: Floette|spd|1
+|move|p1b: Farigiraf|Trick Room|p1b: Farigiraf
+|-fieldstart|move: Trick Room|[of] p1b: Farigiraf
+|
+|upkeep
+|turn|2
+|
+|t:|1776729206
+|move|p1b: Farigiraf|Helping Hand|p1a: Kangaskhan
+|-singleturn|p1a: Kangaskhan|Helping Hand|[of] p1b: Farigiraf
+|move|p2b: Floette|Protect|p2b: Floette
+|-singleturn|p2b: Floette|Protect
+|move|p2a: Maushold|Protect|p2a: Maushold
+|-singleturn|p2a: Maushold|Protect
+|move|p1a: Kangaskhan|Last Resort|p2b: Floette
+|-activate|p2b: Floette|move: Protect
+|
+|upkeep
+|turn|3
+|
+|t:|1776729227
+|move|p1b: Farigiraf|Helping Hand|p1a: Kangaskhan
+|-singleturn|p1a: Kangaskhan|Helping Hand|[of] p1b: Farigiraf
+|move|p2a: Maushold|Follow Me|p2a: Maushold
+|-singleturn|p2a: Maushold|move: Follow Me
+|move|p1a: Kangaskhan|Last Resort|p2a: Maushold
+|-damage|p2a: Maushold|0 fnt
+|faint|p2a: Maushold
+|move|p2b: Floette|Dazzling Gleam|p1b: Farigiraf|[spread] p1a,p1b
+|-damage|p1a: Kangaskhan|33/100
+|-damage|p1b: Farigiraf|43/100
+|-enditem|p1b: Farigiraf|Sitrus Berry|[eat]
+|-heal|p1b: Farigiraf|68/100|[from] item: Sitrus Berry
+|
+|upkeep
+|j| Destructosaurio
+|
+|t:|1776729236
+|switch|p2a: Kingambit|Kingambit, L50, M|100/100
+|turn|4
+|inactive|hellowcs has 30 seconds left.
+|
+|t:|1776729264
+|move|p1b: Farigiraf|Helping Hand|p1a: Kangaskhan
+|-singleturn|p1a: Kangaskhan|Helping Hand|[of] p1b: Farigiraf
+|move|p2a: Kingambit|Kowtow Cleave|p1a: Kangaskhan
+|-damage|p1a: Kangaskhan|0 fnt
+|faint|p1a: Kangaskhan
+|move|p2b: Floette|Moonblast|p1b: Farigiraf
+|-damage|p1b: Farigiraf|0 fnt
+|faint|p1b: Farigiraf
+|
+|upkeep
+|
+|t:|1776729266
+|switch|p1b: Floette|Floette-Eternal, L50, F|100/100
+|switch|p1a: Torkoal|Torkoal, L50, F|100/100
+|-weather|SunnyDay|[from] ability: Drought|[of] p1a: Torkoal
+|turn|5
+|
+|t:|1776729273
+|detailschange|p1b: Floette|Floette-Mega, L50, F
+|-mega|p1b: Floette|Floette|Floettite
+|-ability|p1b: Floette|Fairy Aura
+|move|p2a: Kingambit|Protect|p2a: Kingambit
+|-singleturn|p2a: Kingambit|Protect
+|move|p2b: Floette|Protect|p2b: Floette
+|-singleturn|p2b: Floette|Protect
+|move|p1a: Torkoal|Eruption|p2a: Kingambit|[spread] 
+|-activate|p2a: Kingambit|move: Protect
+|-activate|p2b: Floette|move: Protect
+|move|p1b: Floette|Calm Mind|p1b: Floette
+|-boost|p1b: Floette|spa|1
+|-boost|p1b: Floette|spd|1
+|
+|-weather|SunnyDay|[upkeep]
+|-fieldend|move: Trick Room
+|upkeep
+|turn|6
+|
+|t:|1776729294
+|move|p1b: Floette|Protect|p1b: Floette
+|-singleturn|p1b: Floette|Protect
+|move|p2a: Kingambit|Sucker Punch|p1a: Torkoal
+|-crit|p1a: Torkoal
+|-damage|p1a: Torkoal|46/100
+|move|p2b: Floette|Moonblast|p1a: Torkoal
+|-resisted|p1a: Torkoal|1
+|-damage|p1a: Torkoal|0 fnt
+|faint|p1a: Torkoal
+|
+|-weather|SunnyDay|[upkeep]
+|upkeep
+|turn|7
+|-message|hellowcs forfeited.
+|
+|win|SDLT 2KRL SWM
+|raw|hellowcs's rating: 1771 &rarr; <strong>1746</strong><br />(-25 for losing)
+|raw|SDLT 2KRL SWM's rating: 1677 &rarr; <strong>1702</strong><br />(+25 for winning)
+|l|☆hellowcs
+|player|p1|
+|l| not world

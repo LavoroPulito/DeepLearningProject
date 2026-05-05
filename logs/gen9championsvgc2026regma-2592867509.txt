@@ -1,0 +1,124 @@
+|j|☆KIM ZTMY
+|j|☆Dr. Papus
+|t:|1777036595
+|gametype|doubles
+|player|p1|KIM ZTMY|169|1654
+|player|p2|Dr. Papus|1|1788
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Sylveon, L50, F|
+|poke|p1|Kingambit, L50, F|
+|poke|p1|Banette, L50, F|
+|poke|p1|Basculegion, L50, M|
+|poke|p1|Sneasler, L50, M|
+|poke|p1|Aerodactyl, L50, F|
+|poke|p2|Aerodactyl, L50, M|
+|poke|p2|Charizard, L50, F|
+|poke|p2|Garchomp, L50, F|
+|poke|p2|Sneasler, L50, M|
+|poke|p2|Kingambit, L50, M|
+|poke|p2|Basculegion, L50, M|
+|teampreview|4
+|
+|t:|1777036621
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Aerodactyl|Aerodactyl, L50, F|100/100
+|switch|p1b: Sneasler|Sneasler, L50, M|100/100
+|switch|p2a: Aerodactyl|Aerodactyl, L50, M|100/100
+|switch|p2b: Kingambit|Kingambit, L50, M|100/100
+|-ability|p2a: Aerodactyl|Unnerve
+|-ability|p1a: Aerodactyl|Unnerve
+|turn|1
+|j| pokemontaiketsu
+|
+|t:|1777036655
+|detailschange|p1a: Aerodactyl|Aerodactyl-Mega, L50, F
+|-mega|p1a: Aerodactyl|Aerodactyl|Aerodactylite
+|move|p1b: Sneasler|Feint|p2a: Aerodactyl
+|-resisted|p2a: Aerodactyl|1
+|-damage|p2a: Aerodactyl|91/100
+|move|p1a: Aerodactyl|Rock Slide|p2b: Kingambit|[spread] p2a,p2b
+|-supereffective|p2a: Aerodactyl|1
+|-resisted|p2b: Kingambit|1
+|-damage|p2a: Aerodactyl|1/100
+|-damage|p2b: Kingambit|88/100
+|move|p2a: Aerodactyl|Dual Wingbeat|p1b: Sneasler
+|-supereffective|p1b: Sneasler|1
+|-damage|p1b: Sneasler|38/100
+|-supereffective|p1b: Sneasler|1
+|-crit|p1b: Sneasler
+|-damage|p1b: Sneasler|0 fnt
+|faint|p1b: Sneasler
+|-hitcount|p1: Sneasler|2
+|move|p2b: Kingambit|Iron Head|p1a: Aerodactyl
+|-supereffective|p1a: Aerodactyl|1
+|-damage|p1a: Aerodactyl|0 fnt
+|faint|p1a: Aerodactyl
+|
+|upkeep
+|
+|t:|1777036667
+|switch|p1a: Basculegion|Basculegion, L50, M|100/100
+|switch|p1b: Kingambit|Kingambit, L50, F|100/100
+|turn|2
+|
+|t:|1777036688
+|move|p2b: Kingambit|Sucker Punch|p1a: Basculegion
+|-supereffective|p1a: Basculegion|1
+|-crit|p1a: Basculegion
+|-damage|p1a: Basculegion|0 fnt
+|faint|p1a: Basculegion
+|move|p1b: Kingambit|Sucker Punch||[still]
+|-fail|p1b: Kingambit
+|move|p2a: Aerodactyl|Tailwind|p2a: Aerodactyl
+|-sidestart|p2: Dr. Papus|move: Tailwind
+|
+|upkeep
+|turn|3
+|
+|t:|1777036698
+|switch|p2a: Garchomp|Garchomp, L50, F|100/100
+|switch|p2b: Charizard|Charizard, L50, F|100/100
+|move|p1b: Kingambit|Kowtow Cleave|p2b: Charizard
+|-damage|p2b: Charizard|23/100
+|
+|upkeep
+|turn|4
+|
+|t:|1777036706
+|detailschange|p2b: Charizard|Charizard-Mega-Y, L50, F
+|-mega|p2b: Charizard|Charizard|Charizardite Y
+|-weather|SunnyDay|[from] ability: Drought|[of] p2b: Charizard
+|move|p2b: Charizard|Protect|p2b: Charizard
+|-singleturn|p2b: Charizard|Protect
+|move|p2a: Garchomp|Earthquake|p1b: Kingambit|[spread] p1b
+|-activate|p2b: Charizard|move: Protect
+|-supereffective|p1b: Kingambit|1
+|-damage|p1b: Kingambit|33/100
+|move|p1b: Kingambit|Kowtow Cleave|p2b: Charizard
+|-activate|p2b: Charizard|move: Protect
+|
+|-weather|SunnyDay|[upkeep]
+|upkeep
+|turn|5
+|
+|t:|1777036714
+|move|p2a: Garchomp|Earthquake|p1b: Kingambit|[spread] p1b
+|-immune|p2b: Charizard
+|-supereffective|p1b: Kingambit|1
+|-damage|p1b: Kingambit|0 fnt
+|faint|p1b: Kingambit
+|
+|win|Dr. Papus
+|raw|KIM ZTMY's rating: 1654 &rarr; <strong>1641</strong><br />(-13 for losing)
+|raw|Dr. Papus's rating: 1788 &rarr; <strong>1801</strong><br />(+13 for winning)
+|l|☆KIM ZTMY
+|player|p1|
+|l|☆Dr. Papus
+|player|p2|

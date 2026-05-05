@@ -1,0 +1,145 @@
+|j|☆ScribbleScribble
+|j|☆TheNewMeliolizard
+|t:|1776748096
+|gametype|doubles
+|player|p1|ScribbleScribble|mina-lgpe|1663
+|player|p2|TheNewMeliolizard|larry|1630
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Meganium, L50, M|
+|poke|p1|Sneasler, L50, F|
+|poke|p1|Aerodactyl, L50, M|
+|poke|p1|Kingambit, L50, F|
+|poke|p1|Basculegion, L50, M|
+|poke|p1|Farigiraf, L50, F|
+|poke|p2|Gengar, L50, F, shiny|
+|poke|p2|Garchomp, L50, M, shiny|
+|poke|p2|Sneasler, L50, F, shiny|
+|poke|p2|Aerodactyl, L50, M, shiny|
+|poke|p2|Kingambit, L50, F, shiny|
+|poke|p2|Sableye, L50, M, shiny|
+|teampreview|4
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by ScribbleScribble)
+|inactive|TheNewMeliolizard has 60 seconds left.
+|j| humungulous
+|j| Pyrophoric
+|inactive|TheNewMeliolizard has 30 seconds left.
+|
+|t:|1776748166
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Aerodactyl|Aerodactyl, L50, M|100/100
+|switch|p1b: Kingambit|Kingambit, L50, F|100/100
+|switch|p2a: Gengar|Gengar, L50, F, shiny|100/100
+|switch|p2b: Sableye|Sableye, L50, M, shiny|100/100
+|-ability|p1a: Aerodactyl|Unnerve
+|turn|1
+|inactive|ScribbleScribble has 30 seconds left.
+|inactive|TheNewMeliolizard has 30 seconds left.
+|inactive|TheNewMeliolizard has 20 seconds left.
+|
+|t:|1776748207
+|switch|p1a: Farigiraf|Farigiraf, L50, F|100/100
+|detailschange|p2a: Gengar|Gengar-Mega, L50, F, shiny
+|-mega|p2a: Gengar|Gengar|Gengarite
+|move|p2b: Sableye|Gravity|p2b: Sableye
+|-fieldstart|move: Gravity
+|move|p2a: Gengar|Hypnosis|p1a: Farigiraf
+|-status|p1a: Farigiraf|slp|[from] move: Hypnosis
+|move|p1b: Kingambit|Kowtow Cleave|p2b: Sableye
+|-damage|p2b: Sableye|39/100
+|-enditem|p2b: Sableye|Sitrus Berry|[eat]
+|-heal|p2b: Sableye|64/100|[from] item: Sitrus Berry
+|
+|upkeep
+|turn|2
+|
+|t:|1776748221
+|switch|p2b: Kingambit|Kingambit, L50, F, shiny|100/100
+|move|p2a: Gengar|Hypnosis|p1b: Kingambit
+|-status|p1b: Kingambit|slp|[from] move: Hypnosis
+|cant|p1b: Kingambit|slp
+|cant|p1a: Farigiraf|slp
+|
+|upkeep
+|turn|3
+|
+|t:|1776748229
+|move|p2a: Gengar|Focus Blast|p1b: Kingambit
+|-supereffective|p1b: Kingambit|2
+|-damage|p1b: Kingambit|0 fnt
+|faint|p1b: Kingambit
+|move|p2b: Kingambit|Kowtow Cleave|p1a: Farigiraf
+|-supereffective|p1a: Farigiraf|1
+|-enditem|p1a: Farigiraf|Colbur Berry|[eat]
+|-enditem|p1a: Farigiraf|Colbur Berry|[weaken]
+|-damage|p1a: Farigiraf|47/100 slp
+|-curestatus|p1a: Farigiraf|slp|[msg]
+|move|p1a: Farigiraf|Trick Room|p1a: Farigiraf
+|-fieldstart|move: Trick Room|[of] p1a: Farigiraf
+|
+|upkeep
+|
+|t:|1776748234
+|switch|p1b: Meganium|Meganium, L50, M|100/100
+|turn|4
+|inactive|TheNewMeliolizard has 30 seconds left.
+|
+|t:|1776748262
+|detailschange|p1b: Meganium|Meganium-Mega, L50, M
+|-mega|p1b: Meganium|Meganium|Meganiumite
+|move|p2b: Kingambit|Kowtow Cleave|p1a: Farigiraf
+|-supereffective|p1a: Farigiraf|1
+|-damage|p1a: Farigiraf|0 fnt
+|faint|p1a: Farigiraf
+|move|p1b: Meganium|Weather Ball|p2b: Kingambit
+|-supereffective|p2b: Kingambit|1
+|-crit|p2b: Kingambit
+|-damage|p2b: Kingambit|0 fnt
+|faint|p2b: Kingambit
+|move|p2a: Gengar|Hypnosis|p1b: Meganium
+|-status|p1b: Meganium|slp|[from] move: Hypnosis
+|
+|upkeep
+|inactive|TheNewMeliolizard has 30 seconds left.
+|
+|t:|1776748289
+|switch|p2b: Sneasler|Sneasler, L50, F, shiny|100/100
+|switch|p1a: Aerodactyl|Aerodactyl, L50, M|100/100
+|-ability|p1a: Aerodactyl|Unnerve
+|turn|5
+|
+|t:|1776748319
+|cant|p1b: Meganium|slp
+|move|p2b: Sneasler|Dire Claw|p1b: Meganium
+|-supereffective|p1b: Meganium|2
+|-damage|p1b: Meganium|0 fnt
+|faint|p1b: Meganium
+|move|p2a: Gengar|Hypnosis|p1a: Aerodactyl
+|-status|p1a: Aerodactyl|slp|[from] move: Hypnosis
+|cant|p1a: Aerodactyl|slp
+|
+|-fieldend|move: Gravity
+|upkeep
+|turn|6
+|
+|t:|1776748331
+|move|p2b: Sneasler|Close Combat|p1a: Aerodactyl
+|-damage|p1a: Aerodactyl|7/100 slp
+|-unboost|p2b: Sneasler|def|1
+|-unboost|p2b: Sneasler|spd|1
+|-enditem|p2b: Sneasler|White Herb
+|-clearnegativeboost|p2b: Sneasler|[silent]
+|cant|p1a: Aerodactyl|slp
+|move|p2a: Gengar|Shadow Ball|p1a: Aerodactyl
+|-damage|p1a: Aerodactyl|0 fnt
+|faint|p1a: Aerodactyl
+|
+|win|TheNewMeliolizard
+|raw|ScribbleScribble's rating: 1663 &rarr; <strong>1641</strong><br />(-22 for losing)
+|raw|TheNewMeliolizard's rating: 1630 &rarr; <strong>1652</strong><br />(+22 for winning)

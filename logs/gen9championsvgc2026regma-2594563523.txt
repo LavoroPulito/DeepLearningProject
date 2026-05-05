@@ -1,0 +1,165 @@
+|j|☆charliemander2030
+|j|☆ScribbleScribble
+|t:|1777213543
+|gametype|doubles
+|player|p1|charliemander2030|266|1663
+|player|p2|ScribbleScribble|mina-lgpe|1727
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Ceruledge, L50, M|
+|poke|p1|Kingambit, L50, M|
+|poke|p1|Maushold-Four, L50|
+|poke|p1|Froslass, L50, F|
+|poke|p1|Rotom-Frost, L50|
+|poke|p1|Sableye, L50, F|
+|poke|p2|Lopunny, L50, F, shiny|
+|poke|p2|Farigiraf, L50, M|
+|poke|p2|Rotom-Wash, L50, shiny|
+|poke|p2|Sneasler, L50, F, shiny|
+|poke|p2|Ninetales-Alola, L50, M|
+|poke|p2|Talonflame, L50, F|
+|teampreview|4
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by ScribbleScribble)
+|inactive|charliemander2030 has 60 seconds left.
+|inactive|ScribbleScribble has 60 seconds left.
+|
+|t:|1777213594
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Ceruledge|Ceruledge, L50, M|100/100
+|switch|p1b: Froslass|Froslass, L50, F|100/100
+|switch|p2a: Lopunny|Lopunny, L50, F, shiny|100/100
+|switch|p2b: Talonflame|Talonflame, L50, F|100/100
+|turn|1
+|
+|t:|1777213619
+|detailschange|p1b: Froslass|Froslass-Mega, L50, F
+|-mega|p1b: Froslass|Froslass|Froslassite
+|-weather|Snowscape|[from] ability: Snow Warning|[of] p1b: Froslass
+|detailschange|p2a: Lopunny|Lopunny-Mega, L50, F, shiny
+|-mega|p2a: Lopunny|Lopunny|Lopunnite
+|move|p2b: Talonflame|Tailwind|p2b: Talonflame
+|-sidestart|p2: ScribbleScribble|move: Tailwind
+|move|p2a: Lopunny|Close Combat|p1b: Froslass
+|-supereffective|p1b: Froslass|1
+|-damage|p1b: Froslass|0 fnt
+|-unboost|p2a: Lopunny|def|1
+|-unboost|p2a: Lopunny|spd|1
+|faint|p1b: Froslass
+|move|p1a: Ceruledge|Bulk Up|p1a: Ceruledge
+|-boost|p1a: Ceruledge|atk|1
+|-boost|p1a: Ceruledge|def|1
+|
+|-weather|Snowscape|[upkeep]
+|upkeep
+|
+|t:|1777213633
+|switch|p1b: Maushold|Maushold-Four, L50|100/100
+|turn|2
+|
+|t:|1777213653
+|move|p2b: Talonflame|Brave Bird|p1a: Ceruledge
+|-damage|p1a: Ceruledge|63/100
+|-damage|p2b: Talonflame|86/100|[from] Recoil
+|move|p2a: Lopunny|Close Combat|p1b: Maushold
+|-supereffective|p1b: Maushold|1
+|-enditem|p1b: Maushold|Focus Sash
+|-damage|p1b: Maushold|1/100
+|-unboost|p2a: Lopunny|def|1
+|-unboost|p2a: Lopunny|spd|1
+|move|p1b: Maushold|Super Fang|p2b: Talonflame
+|-damage|p2b: Talonflame|43/100
+|move|p1a: Ceruledge|Bitter Blade|p2a: Lopunny
+|-damage|p2a: Lopunny|0 fnt
+|-heal|p1a: Ceruledge|100/100|[from] drain|[of] p2a: Lopunny
+|faint|p2a: Lopunny
+|
+|-weather|Snowscape|[upkeep]
+|upkeep
+|
+|t:|1777213658
+|switch|p2a: Rotom|Rotom-Wash, L50, shiny|100/100
+|turn|3
+|
+|t:|1777213678
+|switch|p2b: Farigiraf|Farigiraf, L50, M|100/100
+|move|p1b: Maushold|Follow Me|p1b: Maushold
+|-singleturn|p1b: Maushold|move: Follow Me
+|move|p1a: Ceruledge|Shadow Sneak||[still]
+|cant|p2b: Farigiraf|ability: Armor Tail|Shadow Sneak|[of] p1a: Ceruledge
+|move|p2a: Rotom|Hydro Pump|p1b: Maushold|[miss]
+|-miss|p2a: Rotom|p1b: Maushold
+|
+|-weather|Snowscape|[upkeep]
+|upkeep
+|turn|4
+|
+|t:|1777213698
+|switch|p2a: Talonflame|Talonflame, L50, F|43/100
+|move|p1b: Maushold|Super Fang|p2a: Talonflame
+|-damage|p2a: Talonflame|21/100
+|move|p2b: Farigiraf|Hyper Voice|p1b: Maushold|[spread] p1b
+|-immune|p1a: Ceruledge
+|-damage|p1b: Maushold|0 fnt
+|faint|p1b: Maushold
+|move|p1a: Ceruledge|Bitter Blade|p2b: Farigiraf
+|-crit|p2b: Farigiraf
+|-damage|p2b: Farigiraf|3/100
+|-enditem|p2b: Farigiraf|Sitrus Berry|[eat]
+|-heal|p2b: Farigiraf|28/100|[from] item: Sitrus Berry
+|
+|-weather|Snowscape|[upkeep]
+|-sideend|p2: ScribbleScribble|move: Tailwind
+|upkeep
+|
+|t:|1777213701
+|switch|p1b: Kingambit|Kingambit, L50, M|100/100
+|turn|5
+|
+|t:|1777213715
+|move|p1b: Kingambit|Protect|p1b: Kingambit
+|-singleturn|p1b: Kingambit|Protect
+|move|p2a: Talonflame|Flare Blitz|p1b: Kingambit
+|-activate|p1b: Kingambit|move: Protect
+|move|p1a: Ceruledge|Bitter Blade|p2a: Talonflame
+|-resisted|p2a: Talonflame|1
+|-damage|p2a: Talonflame|0 fnt
+|faint|p2a: Talonflame
+|move|p2b: Farigiraf|Psychic|p1a: Ceruledge
+|-damage|p1a: Ceruledge|70/100
+|
+|-weather|none
+|upkeep
+|j|+Mengy
+|
+|t:|1777213718
+|switch|p2a: Rotom|Rotom-Wash, L50, shiny|100/100
+|turn|6
+|j| mantyclap
+|
+|t:|1777213731
+|move|p2a: Rotom|Hydro Pump|p1a: Ceruledge|[miss]
+|-miss|p2a: Rotom|p1a: Ceruledge
+|move|p1a: Ceruledge|Bitter Blade|p2b: Farigiraf
+|-damage|p2b: Farigiraf|0 fnt
+|-heal|p1a: Ceruledge|87/100|[from] drain|[of] p2b: Farigiraf
+|faint|p2b: Farigiraf
+|move|p1b: Kingambit|Kowtow Cleave|p2a: Rotom
+|-damage|p2a: Rotom|29/100
+|
+|upkeep
+|turn|7
+|j| Namcan
+|-message|ScribbleScribble forfeited.
+|
+|win|charliemander2030
+|raw|charliemander2030's rating: 1663 &rarr; <strong>1687</strong><br />(+24 for winning)
+|raw|ScribbleScribble's rating: 1727 &rarr; <strong>1703</strong><br />(-24 for losing)
+|l|☆ScribbleScribble
+|player|p2|
+|l|+Mengy

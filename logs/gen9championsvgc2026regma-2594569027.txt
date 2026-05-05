@@ -1,0 +1,183 @@
+|j|☆ScribbleScribble
+|j|☆Daniarceus
+|t:|1777214087
+|gametype|doubles
+|player|p1|ScribbleScribble|mina-lgpe|1689
+|player|p2|Daniarceus|2|1710
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Lopunny, L50, F, shiny|
+|poke|p1|Farigiraf, L50, F|
+|poke|p1|Rotom-Wash, L50, shiny|
+|poke|p1|Sneasler, L50, F, shiny|
+|poke|p1|Ninetales-Alola, L50, M|
+|poke|p1|Talonflame, L50, F|
+|poke|p2|Maushold, L50|
+|poke|p2|Talonflame, L50, F|
+|poke|p2|Gardevoir, L50, M|
+|poke|p2|Garchomp, L50, F|
+|poke|p2|Kingambit, L50, M|
+|poke|p2|Basculegion, L50, M|
+|teampreview|4
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by ScribbleScribble)
+|j| mantyclap
+|inactive|ScribbleScribble has 60 seconds left.
+|inactive|Daniarceus has 60 seconds left.
+|
+|t:|1777214146
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Sneasler|Sneasler, L50, F, shiny|100/100
+|switch|p1b: Ninetales|Ninetales-Alola, L50, M|100/100
+|switch|p2a: Maushold|Maushold, L50|100/100
+|switch|p2b: Gardevoir|Gardevoir, L50, M|100/100
+|-weather|Snowscape|[from] ability: Snow Warning|[of] p1b: Ninetales
+|turn|1
+|inactive|ScribbleScribble has 30 seconds left.
+|inactive|ScribbleScribble has 20 seconds left.
+|j| Namcan
+|j| Darrox123
+|inactive|Daniarceus has 30 seconds left.
+|
+|t:|1777214189
+|detailschange|p2b: Gardevoir|Gardevoir-Mega, L50, M
+|-mega|p2b: Gardevoir|Gardevoir|Gardevoirite
+|move|p1a: Sneasler|Fake Out|p2b: Gardevoir
+|-damage|p2b: Gardevoir|85/100
+|move|p2a: Maushold|Encore|p1a: Sneasler
+|-start|p1a: Sneasler|Encore
+|move|p1b: Ninetales|Blizzard|p2a: Maushold|[spread] p2a,p2b
+|-damage|p2a: Maushold|58/100
+|-damage|p2b: Gardevoir|68/100
+|cant|p2b: Gardevoir|flinch
+|
+|-weather|Snowscape|[upkeep]
+|upkeep
+|turn|2
+|inactive|ScribbleScribble has 30 seconds left.
+|inactive|ScribbleScribble has 20 seconds left.
+|
+|t:|1777214229
+|switch|p1a: Rotom|Rotom-Wash, L50, shiny|100/100
+|move|p2a: Maushold|Super Fang|p1a: Rotom
+|-damage|p1a: Rotom|50/100g
+|move|p1b: Ninetales|Encore|p2a: Maushold
+|-start|p2a: Maushold|Encore
+|move|p2b: Gardevoir|Hyper Voice|p1b: Ninetales|[spread] p1a,p1b
+|-damage|p1a: Rotom|0 fnt
+|-damage|p1b: Ninetales|37/100
+|faint|p1a: Rotom
+|
+|-weather|Snowscape|[upkeep]
+|upkeep
+|
+|t:|1777214233
+|switch|p1a: Sneasler|Sneasler, L50, F, shiny|100/100
+|turn|3
+|
+|t:|1777214248
+|move|p2b: Gardevoir|Protect|p2b: Gardevoir
+|-singleturn|p2b: Gardevoir|Protect
+|move|p2a: Maushold|Super Fang|p1a: Sneasler
+|-damage|p1a: Sneasler|50/100g
+|move|p1b: Ninetales|Blizzard|p2b: Gardevoir|[spread] p2a
+|-activate|p2b: Gardevoir|move: Protect
+|-damage|p2a: Maushold|18/100
+|move|p1a: Sneasler|Close Combat|p2a: Maushold
+|-supereffective|p2a: Maushold|1
+|-damage|p2a: Maushold|0 fnt
+|-unboost|p1a: Sneasler|def|1
+|-unboost|p1a: Sneasler|spd|1
+|faint|p2a: Maushold
+|-enditem|p1a: Sneasler|White Herb
+|-clearnegativeboost|p1a: Sneasler|[silent]
+|
+|-weather|Snowscape|[upkeep]
+|upkeep
+|
+|t:|1777214258
+|switch|p2a: Basculegion|Basculegion, L50, M|100/100
+|turn|4
+|
+|t:|1777214275
+|move|p1a: Sneasler|Dire Claw|p2b: Gardevoir
+|-supereffective|p2b: Gardevoir|1
+|-damage|p2b: Gardevoir|0 fnt
+|faint|p2b: Gardevoir
+|move|p1b: Ninetales|Freeze-Dry|p2a: Basculegion
+|-supereffective|p2a: Basculegion|1
+|-damage|p2a: Basculegion|47/100
+|-enditem|p2a: Basculegion|Sitrus Berry|[eat]
+|-heal|p2a: Basculegion|71/100|[from] item: Sitrus Berry
+|move|p2a: Basculegion|Last Respects|p1b: Ninetales
+|-damage|p1b: Ninetales|0 fnt
+|faint|p1b: Ninetales
+|
+|-weather|Snowscape|[upkeep]
+|upkeep
+|j| RottenPond
+|
+|t:|1777214281
+|switch|p1b: Lopunny|Lopunny, L50, F, shiny|100/100
+|switch|p2b: Garchomp|Garchomp, L50, F|100/100
+|turn|5
+|inactive|Daniarceus has 30 seconds left.
+|inactive|ScribbleScribble has 30 seconds left.
+|
+|t:|1777214313
+|detailschange|p1b: Lopunny|Lopunny-Mega, L50, F, shiny
+|-mega|p1b: Lopunny|Lopunny|Lopunnite
+|move|p2b: Garchomp|Protect|p2b: Garchomp
+|-singleturn|p2b: Garchomp|Protect
+|move|p1a: Sneasler|Dire Claw|p2a: Basculegion
+|-resisted|p2a: Basculegion|1
+|-damage|p2a: Basculegion|47/100
+|move|p1b: Lopunny|Triple Axel|p2b: Garchomp
+|-activate|p2b: Garchomp|move: Protect
+|move|p2a: Basculegion|Last Respects|p1a: Sneasler
+|-damage|p1a: Sneasler|0 fnt
+|faint|p1a: Sneasler
+|
+|-weather|none
+|upkeep
+|turn|6
+|
+|t:|1777214330
+|move|p1b: Lopunny|Close Combat|p2a: Basculegion
+|-damage|p2a: Basculegion|0 fnt
+|-unboost|p1b: Lopunny|def|1
+|-unboost|p1b: Lopunny|spd|1
+|faint|p2a: Basculegion
+|move|p2b: Garchomp|Dragon Claw|p1b: Lopunny
+|-damage|p1b: Lopunny|15/100
+|
+|upkeep
+|turn|7
+|
+|t:|1777214340
+|move|p1b: Lopunny|Triple Axel|p2b: Garchomp
+|-supereffective|p2b: Garchomp|2
+|-damage|p2b: Garchomp|72/100
+|-damage|p1b: Lopunny|3/100|[from] ability: Rough Skin|[of] p2b: Garchomp
+|-supereffective|p2b: Garchomp|2
+|-crit|p2b: Garchomp
+|-damage|p2b: Garchomp|0 fnt
+|-damage|p1b: Lopunny|0 fnt|[from] ability: Rough Skin|[of] p2b: Garchomp
+|faint|p2b: Garchomp
+|faint|p1b: Lopunny
+|
+|win|ScribbleScribble
+|-hitcount|p2: Garchomp|2
+|raw|ScribbleScribble's rating: 1666 &rarr; <strong>1689</strong><br />(+23 for winning)
+|raw|Daniarceus's rating: 1710 &rarr; <strong>1687</strong><br />(-23 for losing)
+|l|☆ScribbleScribble
+|player|p1|
+|l| Darrox123
+|l|☆Daniarceus
+|player|p2|
+|l| RottenPond

@@ -1,0 +1,175 @@
+|j|☆skymin<3
+|j|☆sjysjy
+|t:|1776785027
+|gametype|doubles
+|player|p1|skymin<3|#skymin3|1714
+|player|p2|sjysjy|102|1631
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Delphox, L50, F, shiny|
+|poke|p1|Kingambit, L50, F|
+|poke|p1|Basculegion, L50, M|
+|poke|p1|Sneasler, L50, F|
+|poke|p1|Dragonite, L50, M, shiny|
+|poke|p1|Whimsicott, L50, M, shiny|
+|poke|p2|Blastoise, L50, F|
+|poke|p2|Sinistcha-Masterpiece, L50|
+|poke|p2|Sableye, L50, F|
+|poke|p2|Orthworm, L50, M|
+|poke|p2|Farigiraf, L50, M|
+|poke|p2|Maushold, L50|
+|teampreview|4
+|j| Reign1997
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by sjysjy)
+|j| GoogleDad
+|
+|t:|1776785102
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Eclipsa|Delphox, L50, F, shiny|100/100
+|switch|p1b: Unova's Whimsy|Whimsicott, L50, M, shiny|100/100
+|switch|p2a: Sableye|Sableye, L50, F|100/100
+|switch|p2b: Orthworm|Orthworm, L50, M|100/100
+|turn|1
+|
+|t:|1776785117
+|detailschange|p1a: Eclipsa|Delphox-Mega, L50, F, shiny
+|-mega|p1a: Eclipsa|Delphox|Delphoxite
+|move|p2a: Sableye|Fake Out|p1a: Eclipsa
+|-damage|p1a: Eclipsa|89/100
+|move|p1b: Unova's Whimsy|Sunny Day|p1b: Unova's Whimsy
+|-weather|SunnyDay
+|cant|p1a: Eclipsa|flinch
+|move|p2b: Orthworm|Heavy Slam|p1b: Unova's Whimsy
+|-supereffective|p1b: Unova's Whimsy|1
+|-enditem|p1b: Unova's Whimsy|Focus Sash
+|-damage|p1b: Unova's Whimsy|1/100
+|
+|-weather|SunnyDay|[upkeep]
+|upkeep
+|turn|2
+|j| ChinaDragonVGC
+|inactive|sjysjy has 30 seconds left.
+|
+|t:|1776785143
+|move|p2b: Orthworm|Protect|p2b: Orthworm
+|-singleturn|p2b: Orthworm|Protect
+|move|p2a: Sableye|Encore|p1b: Unova's Whimsy
+|-start|p1b: Unova's Whimsy|Encore
+|move|p1b: Unova's Whimsy|Sunny Day||[still]
+|-fail|p1b: Unova's Whimsy
+|move|p1a: Eclipsa|Heat Wave|p2a: Sableye|[spread] p2a
+|-activate|p2b: Orthworm|move: Protect
+|-damage|p2a: Sableye|3/100
+|
+|-weather|SunnyDay|[upkeep]
+|upkeep
+|turn|3
+|
+|t:|1776785167
+|switch|p1b: Meruem|Kingambit, L50, F|100/100
+|move|p2a: Sableye|Disable|p1a: Eclipsa
+|-start|p1a: Eclipsa|Disable|Heat Wave
+|cant|p1a: Eclipsa|Disable|Heat Wave
+|move|p2b: Orthworm|Shed Tail|p2b: Orthworm
+|-start|p2b: Orthworm|Substitute|[from] move: Shed Tail
+|-damage|p2b: Orthworm|50/100
+|-enditem|p2b: Orthworm|Sitrus Berry|[eat]
+|-heal|p2b: Orthworm|75/100|[from] item: Sitrus Berry
+|l| ChinaDragonVGC
+|j| ChinaDragonVGC
+|
+|t:|1776785177
+|switch|p2b: Blastoise|Blastoise, L50, F|100/100|[from] Shed Tail
+|
+|-weather|SunnyDay|[upkeep]
+|upkeep
+|turn|4
+|inactive|skymin<3 has 30 seconds left.
+|inactive|skymin<3 has 20 seconds left.
+|inactive|skymin<3 has 15 seconds left.
+|inactive|skymin<3 has 10 seconds left.
+|
+|t:|1776785227
+|move|p2a: Sableye|Rain Dance|p2a: Sableye
+|-weather|RainDance
+|move|p1a: Eclipsa|Psychic|p2b: Blastoise
+|-end|p2b: Blastoise|Substitute
+|move|p2b: Blastoise|Shell Smash|p2b: Blastoise
+|-unboost|p2b: Blastoise|def|1
+|-unboost|p2b: Blastoise|spd|1
+|-boost|p2b: Blastoise|atk|2
+|-boost|p2b: Blastoise|spa|2
+|-boost|p2b: Blastoise|spe|2
+|move|p1b: Meruem|Kowtow Cleave|p2a: Sableye
+|-damage|p2a: Sableye|0 fnt
+|faint|p2a: Sableye
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|
+|t:|1776785238
+|switch|p2a: Sinistcha|Sinistcha-Masterpiece, L50|100/100
+|turn|5
+|inactive|skymin<3 has 30 seconds left.
+|inactive|skymin<3 has 20 seconds left.
+|inactive|skymin<3 has 15 seconds left.
+|inactive|skymin<3 has 10 seconds left.
+|
+|t:|1776785287
+|detailschange|p2b: Blastoise|Blastoise-Mega, L50, F
+|-mega|p2b: Blastoise|Blastoise|Blastoisinite
+|move|p1a: Eclipsa|Protect|p1a: Eclipsa
+|-singleturn|p1a: Eclipsa|Protect
+|move|p2a: Sinistcha|Rage Powder|p2a: Sinistcha
+|-singleturn|p2a: Sinistcha|move: Rage Powder
+|move|p2b: Blastoise|Water Spout|p1b: Meruem|[spread] p1b
+|-activate|p1a: Eclipsa|move: Protect
+|-damage|p1b: Meruem|0 fnt
+|faint|p1b: Meruem
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|
+|t:|1776785289
+|switch|p1b: Unova's Whimsy|Whimsicott, L50, M, shiny|1/100
+|turn|6
+|c|☆skymin<3|cts moment
+|c|☆skymin<3|alrighty
+|inactive|skymin<3 has 30 seconds left.
+|inactive|skymin<3 has 20 seconds left.
+|inactive|skymin<3 has 15 seconds left.
+|c| ChinaDragonVGC|；；
+|inactive|skymin<3 has 10 seconds left.
+|inactive|skymin<3 has 5 seconds left.
+|
+|t:|1776785343
+|move|p2a: Sinistcha|Rage Powder|p2a: Sinistcha
+|-singleturn|p2a: Sinistcha|move: Rage Powder
+|move|p1b: Unova's Whimsy|Sunny Day|p1b: Unova's Whimsy
+|-weather|SunnyDay
+|move|p2b: Blastoise|Water Spout|p1b: Unova's Whimsy|[spread] p1a,p1b
+|-supereffective|p1a: Eclipsa|1
+|-resisted|p1b: Unova's Whimsy|1
+|-damage|p1a: Eclipsa|0 fnt
+|-damage|p1b: Unova's Whimsy|0 fnt
+|faint|p1a: Eclipsa
+|faint|p1b: Unova's Whimsy
+|
+|-weather|SunnyDay|[upkeep]
+|upkeep
+|-message|skymin<3 forfeited.
+|
+|win|sjysjy
+|raw|skymin&lt;3's rating: 1714 &rarr; <strong>1689</strong><br />(-25 for losing)
+|raw|sjysjy's rating: 1631 &rarr; <strong>1656</strong><br />(+25 for winning)
+|c|☆skymin<3|got their 1 win lol
+|l|☆skymin<3
+|player|p1|
+|l|☆sjysjy
+|player|p2|

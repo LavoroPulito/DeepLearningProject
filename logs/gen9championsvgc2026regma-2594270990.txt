@@ -1,0 +1,170 @@
+|raw|<div class="broadcast-blue"><strong>This battle is required to be public due to a player having a name starting with 'sdlt'.</div>
+|j|☆sdlt 2krl thacrow
+|j|☆Dr. Papus
+|t:|1777173937
+|gametype|doubles
+|player|p1|sdlt 2krl thacrow|#thacrow|1623
+|player|p2|Dr. Papus|morty|1717
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Sneasler, L50, F|
+|poke|p1|Basculegion, L50, M|
+|poke|p1|Excadrill, L50, M|
+|poke|p1|Charizard, L50, M|
+|poke|p1|Kingambit, L50, M|
+|poke|p1|Aerodactyl, L50, M|
+|poke|p2|Tyranitar, L50, M|
+|poke|p2|Excadrill, L50, F|
+|poke|p2|Corviknight, L50, M|
+|poke|p2|Sinistcha-Masterpiece, L50|
+|poke|p2|Milotic, L50, F|
+|poke|p2|Volcarona, L50, F|
+|teampreview|4
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by Dr. Papus)
+|j| lebronsmask
+|inactive|Dr. Papus has 60 seconds left.
+|
+|t:|1777173973
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Aerodactyl|Aerodactyl, L50, M|100/100
+|switch|p1b: Excadrill|Excadrill, L50, M|100/100
+|switch|p2a: Sinistcha|Sinistcha-Masterpiece, L50|100/100
+|switch|p2b: Tyranitar|Tyranitar, L50, M|100/100
+|-ability|p1a: Aerodactyl|Unnerve
+|-ability|p1b: Excadrill|Mold Breaker
+|-weather|Sandstorm|[from] ability: Sand Stream|[of] p2b: Tyranitar
+|turn|1
+|j| swampizzoCARTI
+|
+|t:|1777173989
+|detailschange|p1a: Aerodactyl|Aerodactyl-Mega, L50, M
+|-mega|p1a: Aerodactyl|Aerodactyl|Aerodactylite
+|detailschange|p2b: Tyranitar|Tyranitar-Mega, L50, M
+|-mega|p2b: Tyranitar|Tyranitar|Tyranitarite
+|move|p1a: Aerodactyl|Dual Wingbeat|p2a: Sinistcha
+|-supereffective|p2a: Sinistcha|1
+|-damage|p2a: Sinistcha|56/100
+|-supereffective|p2a: Sinistcha|1
+|-damage|p2a: Sinistcha|4/100
+|-enditem|p2a: Sinistcha|Sitrus Berry|[eat]
+|-heal|p2a: Sinistcha|29/100|[from] item: Sitrus Berry
+|-hitcount|p2a: Sinistcha|2
+|move|p1b: Excadrill|Iron Head|p2a: Sinistcha
+|-damage|p2a: Sinistcha|0 fnt
+|faint|p2a: Sinistcha
+|move|p2b: Tyranitar|Rock Slide|p1a: Aerodactyl|[spread] p1b
+|-miss|p2b: Tyranitar|p1a: Aerodactyl
+|-resisted|p1b: Excadrill|2
+|-damage|p1b: Excadrill|88/100
+|
+|-weather|Sandstorm|[upkeep]
+|upkeep
+|
+|t:|1777174010
+|switch|p2a: Corviknight|Corviknight, L50, M|100/100
+|turn|2
+|
+|t:|1777174017
+|move|p1a: Aerodactyl|Rock Slide|p2a: Corviknight|[spread] p2a,p2b
+|-damage|p2a: Corviknight|74/100
+|-damage|p2b: Tyranitar|81/100
+|move|p1b: Excadrill|High Horsepower|p2b: Tyranitar
+|-supereffective|p2b: Tyranitar|1
+|-damage|p2b: Tyranitar|13/100
+|move|p2b: Tyranitar|Rock Slide|p1b: Excadrill|[spread] p1b
+|-miss|p2b: Tyranitar|p1a: Aerodactyl
+|-resisted|p1b: Excadrill|2
+|-damage|p1b: Excadrill|74/100
+|move|p2a: Corviknight|Tailwind|p2a: Corviknight
+|-sidestart|p2: Dr. Papus|move: Tailwind
+|
+|-weather|Sandstorm|[upkeep]
+|upkeep
+|turn|3
+|c|☆Dr. Papus|huh
+|inactive|Dr. Papus has 30 seconds left.
+|c|☆sdlt 2krl thacrow|I fed my bird he dodges those
+|
+|t:|1777174051
+|move|p1a: Aerodactyl|Tailwind|p1a: Aerodactyl
+|-sidestart|p1: sdlt 2krl thacrow|move: Tailwind
+|move|p1b: Excadrill|Iron Head|p2b: Tyranitar
+|-supereffective|p2b: Tyranitar|1
+|-damage|p2b: Tyranitar|0 fnt
+|faint|p2b: Tyranitar
+|move|p2a: Corviknight|Bulk Up|p2a: Corviknight
+|-boost|p2a: Corviknight|atk|1
+|-boost|p2a: Corviknight|def|1
+|
+|-weather|Sandstorm|[upkeep]
+|upkeep
+|
+|t:|1777174054
+|switch|p2b: Excadrill|Excadrill, L50, F|100/100
+|turn|4
+|
+|t:|1777174059
+|move|p2b: Excadrill|Iron Head|p1a: Aerodactyl
+|-supereffective|p1a: Aerodactyl|1
+|-damage|p1a: Aerodactyl|0 fnt
+|faint|p1a: Aerodactyl
+|move|p1b: Excadrill|Earthquake|p2a: Corviknight|[spread] p2b
+|-immune|p2a: Corviknight
+|-supereffective|p2b: Excadrill|1
+|-enditem|p2b: Excadrill|Focus Sash
+|-damage|p2b: Excadrill|1/100
+|move|p2a: Corviknight|Bulk Up|p2a: Corviknight
+|-boost|p2a: Corviknight|atk|1
+|-boost|p2a: Corviknight|def|1
+|
+|-weather|Sandstorm|[upkeep]
+|upkeep
+|
+|t:|1777174062
+|switch|p1a: Basculegion|Basculegion, L50, M|100/100
+|turn|5
+|
+|t:|1777174070
+|move|p1a: Basculegion|Aqua Jet|p2b: Excadrill
+|-supereffective|p2b: Excadrill|1
+|-damage|p2b: Excadrill|0 fnt
+|faint|p2b: Excadrill
+|move|p1b: Excadrill|Iron Head|p2a: Corviknight
+|-resisted|p2a: Corviknight|1
+|-damage|p2a: Corviknight|65/100
+|cant|p2a: Corviknight|flinch
+|
+|-weather|none
+|-sideend|p2: Dr. Papus|move: Tailwind
+|upkeep
+|turn|6
+|
+|t:|1777174080
+|move|p1b: Excadrill|Iron Head|p2a: Corviknight
+|-resisted|p2a: Corviknight|1
+|-damage|p2a: Corviknight|56/100
+|move|p1a: Basculegion|Last Respects|p2a: Corviknight
+|-damage|p2a: Corviknight|26/100
+|cant|p2a: Corviknight|flinch
+|
+|-sideend|p1: sdlt 2krl thacrow|move: Tailwind
+|upkeep
+|turn|7
+|c|☆Dr. Papus|bro
+|
+|t:|1777174087
+|move|p1b: Excadrill|Iron Head|p2a: Corviknight
+|-resisted|p2a: Corviknight|1
+|-crit|p2a: Corviknight
+|-damage|p2a: Corviknight|0 fnt
+|faint|p2a: Corviknight
+|
+|win|sdlt 2krl thacrow
+|raw|sdlt 2krl thacrow's rating: 1623 &rarr; <strong>1648</strong><br />(+25 for winning)
+|raw|Dr. Papus's rating: 1717 &rarr; <strong>1692</strong><br />(-25 for losing)

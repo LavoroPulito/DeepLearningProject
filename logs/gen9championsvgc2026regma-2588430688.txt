@@ -1,0 +1,142 @@
+|j|☆SilverVT
+|j|☆cabrino
+|t:|1776632892
+|gametype|doubles
+|player|p1|SilverVT|silver|1663
+|player|p2|cabrino|depotagent|1625
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Whimsicott, L50, M|
+|poke|p1|Gardevoir, L50, F|
+|poke|p1|Garchomp, L50, M|
+|poke|p1|Incineroar, L50, F|
+|poke|p1|Sneasler, L50, M|
+|poke|p1|Farigiraf, L50, M|
+|poke|p2|Aerodactyl, L50, F, shiny|
+|poke|p2|Sneasler, L50, M, shiny|
+|poke|p2|Kingambit, L50, M, shiny|
+|poke|p2|Garchomp, L50, M|
+|poke|p2|Basculegion, L50, M|
+|poke|p2|Charizard, L50, M, shiny|
+|teampreview|4
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by SilverVT)
+|inactive|SilverVT has 60 seconds left.
+|inactive|cabrino has 60 seconds left.
+|j| Xheadhonchkrow
+|
+|t:|1776632951
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Whimsicott|Whimsicott, L50, M|100/100
+|switch|p1b: Gardevoir|Gardevoir, L50, F|100/100
+|switch|p2a: AeroNarfi|Aerodactyl, L50, F, shiny|100/100
+|switch|p2b: Pugsy Hunter|Sneasler, L50, M, shiny|100/100
+|-ability|p2a: AeroNarfi|Unnerve
+|-ability|p1b: Gardevoir|Unnerve|Trace|[from] ability: Trace|[of] p2a: AeroNarfi
+|-ability|p1b: Gardevoir|Unnerve
+|turn|1
+|
+|t:|1776632964
+|switch|p1b: Garchomp|Garchomp, L50, M|100/100
+|move|p1a: Whimsicott|Protect|p1a: Whimsicott
+|-singleturn|p1a: Whimsicott|Protect
+|move|p2a: AeroNarfi|Tailwind|p2a: AeroNarfi
+|-sidestart|p2: cabrino|move: Tailwind
+|move|p2b: Pugsy Hunter|Dire Claw|p1b: Garchomp
+|-resisted|p1b: Garchomp|1
+|-damage|p1b: Garchomp|83/100
+|-damage|p2b: Pugsy Hunter|88/100|[from] ability: Rough Skin|[of] p1b: Garchomp
+|
+|upkeep
+|turn|2
+|
+|t:|1776632980
+|switch|p2a: Garchalipe|Garchomp, L50, M|100/100
+|move|p1a: Whimsicott|Encore||[still]
+|-fail|p1a: Whimsicott
+|move|p2b: Pugsy Hunter|Dire Claw|p1a: Whimsicott
+|-supereffective|p1a: Whimsicott|2
+|-enditem|p1a: Whimsicott|Focus Sash
+|-damage|p1a: Whimsicott|1/100
+|-status|p1a: Whimsicott|par
+|move|p1b: Garchomp|Stomping Tantrum|p2b: Pugsy Hunter
+|-supereffective|p2b: Pugsy Hunter|1
+|-damage|p2b: Pugsy Hunter|0 fnt
+|faint|p2b: Pugsy Hunter
+|
+|upkeep
+|
+|t:|1776632997
+|switch|p2b: AeroNarfi|Aerodactyl, L50, F, shiny|100/100
+|-ability|p2b: AeroNarfi|Unnerve
+|turn|3
+|
+|t:|1776633006
+|cant|p1a: Whimsicott|par
+|move|p2b: AeroNarfi|Rock Slide|p1a: Whimsicott|[spread] p1a,p1b
+|-resisted|p1b: Garchomp|1
+|-damage|p1a: Whimsicott|0 fnt
+|-damage|p1b: Garchomp|70/100
+|faint|p1a: Whimsicott
+|move|p2a: Garchalipe|Dragon Claw|p1b: Garchomp
+|-supereffective|p1b: Garchomp|1
+|-damage|p1b: Garchomp|0 fnt
+|-damage|p2a: Garchalipe|88/100|[from] ability: Rough Skin|[of] p1b: Garchomp
+|faint|p1b: Garchomp
+|
+|upkeep
+|j| narrow guard
+|
+|t:|1776633018
+|switch|p1a: Gardevoir|Gardevoir, L50, F|100/100
+|switch|p1b: Sneasler|Sneasler, L50, M|100/100
+|-ability|p1a: Gardevoir|Unnerve|Trace|[from] ability: Trace|[of] p2b: AeroNarfi
+|-ability|p1a: Gardevoir|Unnerve
+|turn|4
+|
+|t:|1776633041
+|detailschange|p1a: Gardevoir|Gardevoir-Mega, L50, F
+|-mega|p1a: Gardevoir|Gardevoir|Gardevoirite
+|move|p1b: Sneasler|Fake Out|p2b: AeroNarfi
+|-resisted|p2b: AeroNarfi|1
+|-damage|p2b: AeroNarfi|87/100
+|cant|p2b: AeroNarfi|flinch
+|move|p2a: Garchalipe|Earthquake|p1a: Gardevoir|[spread] p1a,p1b
+|-immune|p2b: AeroNarfi
+|-supereffective|p1b: Sneasler|1
+|-damage|p1a: Gardevoir|39/100
+|-damage|p1b: Sneasler|0 fnt
+|faint|p1b: Sneasler
+|move|p1a: Gardevoir|Hyper Voice|p2a: Garchalipe|[spread] p2a,p2b
+|-supereffective|p2a: Garchalipe|1
+|-damage|p2a: Garchalipe|0 fnt
+|-damage|p2b: AeroNarfi|13/100
+|faint|p2a: Garchalipe
+|
+|-sideend|p2: cabrino|move: Tailwind
+|upkeep
+|
+|t:|1776633054
+|switch|p2a: Cabrizard|Charizard, L50, M, shiny|100/100
+|turn|5
+|
+|t:|1776633058
+|detailschange|p2a: Cabrizard|Charizard-Mega-Y, L50, M, shiny
+|-mega|p2a: Cabrizard|Charizard|Charizardite Y
+|-weather|SunnyDay|[from] ability: Drought|[of] p2a: Cabrizard
+|move|p2b: AeroNarfi|Tailwind|p2b: AeroNarfi
+|-sidestart|p2: cabrino|move: Tailwind
+|move|p2a: Cabrizard|Weather Ball|p1a: Gardevoir
+|-damage|p1a: Gardevoir|0 fnt
+|faint|p1a: Gardevoir
+|
+|win|cabrino
+|raw|SilverVT's rating: 1663 &rarr; <strong>1641</strong><br />(-22 for losing)
+|raw|cabrino's rating: 1625 &rarr; <strong>1647</strong><br />(+22 for winning)
+|l|☆SilverVT
+|player|p1|

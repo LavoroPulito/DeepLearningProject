@@ -1,0 +1,160 @@
+|j|☆swirlingroses
+|j|☆Daniarceus
+|t:|1777213500
+|gametype|doubles
+|player|p1|swirlingroses|lisia|1667
+|player|p2|Daniarceus|2|1743
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Floette-Eternal, L50, F|
+|poke|p1|Incineroar, L50, M|
+|poke|p1|Sneasler, L50, F|
+|poke|p1|Garchomp, L50, F|
+|poke|p1|Sinistcha, L50|
+|poke|p1|Basculegion, L50, M|
+|poke|p2|Sneasler, L50, M|
+|poke|p2|Aerodactyl, L50, M|
+|poke|p2|Kingambit, L50, F|
+|poke|p2|Garchomp, L50, F|
+|poke|p2|Froslass, L50, F|
+|poke|p2|Basculegion, L50, M|
+|teampreview|4
+|j| Provola_
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by Daniarceus)
+|l| Provola_
+|j| Namcan
+|j|+Mengy
+|
+|t:|1777213535
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Basculegion|Basculegion, L50, M|100/100
+|switch|p1b: Sneasler|Sneasler, L50, F|100/100
+|switch|p2a: Froslass|Froslass, L50, F|100/100
+|switch|p2b: Kingambit|Kingambit, L50, F|100/100
+|turn|1
+|inactive|swirlingroses has 30 seconds left.
+|
+|t:|1777213560
+|switch|p1a: Incineroar|Incineroar, L50, M|100/100
+|-ability|p1a: Incineroar|Intimidate|boost
+|-unboost|p2a: Froslass|atk|1
+|-unboost|p2b: Kingambit|atk|1
+|-ability|p2b: Kingambit|Defiant|boost
+|-boost|p2b: Kingambit|atk|2
+|move|p2a: Froslass|Protect|p2a: Froslass
+|-singleturn|p2a: Froslass|Protect
+|move|p2b: Kingambit|Protect|p2b: Kingambit
+|-singleturn|p2b: Kingambit|Protect
+|move|p1b: Sneasler|Dire Claw|p2a: Froslass
+|-activate|p2a: Froslass|move: Protect
+|
+|upkeep
+|turn|2
+|
+|t:|1777213576
+|detailschange|p2a: Froslass|Froslass-Mega, L50, F
+|-mega|p2a: Froslass|Froslass|Froslassite
+|-weather|Snowscape|[from] ability: Snow Warning|[of] p2a: Froslass
+|move|p1b: Sneasler|Protect|p1b: Sneasler
+|-singleturn|p1b: Sneasler|Protect
+|move|p2a: Froslass|Aurora Veil|p2a: Froslass
+|-sidestart|p2: Daniarceus|move: Aurora Veil
+|move|p1a: Incineroar|Flare Blitz|p2b: Kingambit
+|-supereffective|p2b: Kingambit|1
+|-damage|p2b: Kingambit|43/100
+|-damage|p1a: Incineroar|81/100|[from] Recoil
+|move|p2b: Kingambit|Low Kick|p1a: Incineroar
+|-supereffective|p1a: Incineroar|1
+|-enditem|p1a: Incineroar|Chople Berry|[eat]
+|-enditem|p1a: Incineroar|Chople Berry|[weaken]
+|-damage|p1a: Incineroar|34/100
+|
+|-weather|Snowscape|[upkeep]
+|upkeep
+|turn|3
+|inactive|Daniarceus has 30 seconds left.
+|
+|t:|1777213605
+|move|p2b: Kingambit|Sucker Punch|p1b: Sneasler
+|-resisted|p1b: Sneasler|1
+|-damage|p1b: Sneasler|52/100
+|move|p2a: Froslass|Blizzard|p1b: Sneasler|[spread] p1a,p1b
+|-resisted|p1a: Incineroar|1
+|-damage|p1a: Incineroar|13/100
+|-damage|p1b: Sneasler|0 fnt
+|faint|p1b: Sneasler
+|move|p1a: Incineroar|Flare Blitz|p2a: Froslass
+|-supereffective|p2a: Froslass|1
+|-damage|p2a: Froslass|10/100
+|-damage|p1a: Incineroar|0 fnt|[from] Recoil
+|faint|p1a: Incineroar
+|
+|-weather|Snowscape|[upkeep]
+|upkeep
+|
+|t:|1777213612
+|switch|p1b: Floette|Floette-Eternal, L50, F|100/100
+|switch|p1a: Basculegion|Basculegion, L50, M|100/100
+|turn|4
+|j| mantyclap
+|inactive|Daniarceus has 30 seconds left.
+|
+|t:|1777213645
+|detailschange|p1b: Floette|Floette-Mega, L50, F
+|-mega|p1b: Floette|Floette|Floettite
+|-ability|p1b: Floette|Fairy Aura
+|move|p1a: Basculegion|Aqua Jet|p2a: Froslass
+|-damage|p2a: Froslass|0 fnt
+|faint|p2a: Froslass
+|move|p2b: Kingambit|Sucker Punch||[still]
+|-fail|p2b: Kingambit
+|move|p1b: Floette|Moonblast|p2b: Kingambit
+|-damage|p2b: Kingambit|0 fnt
+|faint|p2b: Kingambit
+|
+|-weather|Snowscape|[upkeep]
+|upkeep
+|
+|t:|1777213653
+|switch|p2a: Sneasler|Sneasler, L50, M|100/100
+|switch|p2b: Basculegion|Basculegion, L50, M|100/100
+|turn|5
+|
+|t:|1777213662
+|move|p1b: Floette|Protect|p1b: Floette
+|-singleturn|p1b: Floette|Protect
+|move|p1a: Basculegion|Aqua Jet|p2b: Basculegion
+|-resisted|p2b: Basculegion|1
+|-damage|p2b: Basculegion|88/100
+|move|p2a: Sneasler|Dire Claw|p1b: Floette
+|-activate|p1b: Floette|move: Protect
+|move|p2b: Basculegion|Last Respects|p1a: Basculegion
+|-supereffective|p1a: Basculegion|1
+|-damage|p1a: Basculegion|0 fnt
+|faint|p1a: Basculegion
+|
+|-weather|Snowscape|[upkeep]
+|upkeep
+|turn|6
+|
+|t:|1777213669
+|move|p2a: Sneasler|Dire Claw|p1b: Floette
+|-supereffective|p1b: Floette|1
+|-damage|p1b: Floette|7/100
+|move|p2b: Basculegion|Last Respects|p1b: Floette
+|-damage|p1b: Floette|0 fnt
+|faint|p1b: Floette
+|
+|win|Daniarceus
+|raw|swirlingroses's rating: 1667 &rarr; <strong>1651</strong><br />(-16 for losing)
+|raw|Daniarceus's rating: 1743 &rarr; <strong>1759</strong><br />(+16 for winning)
+|l|☆swirlingroses
+|player|p1|
+|l|☆Daniarceus
+|player|p2|

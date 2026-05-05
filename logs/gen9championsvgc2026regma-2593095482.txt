@@ -1,0 +1,118 @@
+|j|☆perferw
+|j|☆Chococroc
+|t:|1777052543
+|gametype|doubles
+|player|p1|perferw|102|1709
+|player|p2|Chococroc|pokemaniac|1715
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Floette-Eternal, L50, F|
+|poke|p1|Garchomp, L50, F|
+|poke|p1|Kingambit, L50, M|
+|poke|p1|Basculegion, L50, M|
+|poke|p1|Sneasler, L50, F|
+|poke|p1|Delphox, L50, F|
+|poke|p2|Gengar, L50, F|
+|poke|p2|Politoed, L50, M|
+|poke|p2|Archaludon, L50, M|
+|poke|p2|Snorlax, L50, M|
+|poke|p2|Whimsicott, L50, F|
+|poke|p2|Garchomp, L50, M|
+|teampreview|4
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by perferw)
+|l|☆Chococroc
+|inactive|Chococroc disconnected and has a minute to reconnect!
+|player|p2|
+|j| SUmmBoom
+|j| jolamp
+|j| scotchisgud1
+|j|☆Chococroc
+|inactive|Chococroc reconnected and has 75 seconds left.
+|player|p2|Chococroc|pokemaniac|
+|inactive|perferw has 60 seconds left.
+|
+|t:|1777052574
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Kingambit|Kingambit, L50, M|100/100
+|switch|p1b: Floette|Floette-Eternal, L50, F|100/100
+|switch|p2a: Politoed|Politoed, L50, M|100/100
+|switch|p2b: Archaludon|Archaludon, L50, M|100/100
+|-weather|RainDance|[from] ability: Drizzle|[of] p2a: Politoed
+|turn|1
+|j| Charlie Kirkegaard
+|
+|t:|1777052584
+|detailschange|p1b: Floette|Floette-Mega, L50, F
+|-mega|p1b: Floette|Floette|Floettite
+|-ability|p1b: Floette|Fairy Aura
+|move|p1b: Floette|Light of Ruin|p2b: Archaludon
+|-damage|p2b: Archaludon|0 fnt
+|faint|p2b: Archaludon
+|-damage|p1b: Floette|43/100|[from] Recoil
+|move|p2a: Politoed|Weather Ball|p1a: Kingambit
+|-damage|p1a: Kingambit|44/100
+|move|p1a: Kingambit|Kowtow Cleave|p2a: Politoed
+|-damage|p2a: Politoed|57/100
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|
+|t:|1777052596
+|switch|p2b: Whimsicott|Whimsicott, L50, F|100/100
+|turn|2
+|
+|t:|1777052602
+|move|p2b: Whimsicott|Tailwind|p2b: Whimsicott
+|-sidestart|p2: Chococroc|move: Tailwind
+|move|p1a: Kingambit|Sucker Punch|p2a: Politoed
+|-damage|p2a: Politoed|18/100
+|-enditem|p2a: Politoed|Sitrus Berry|[eat]
+|-heal|p2a: Politoed|43/100|[from] item: Sitrus Berry
+|move|p2a: Politoed|Weather Ball|p1b: Floette
+|-damage|p1b: Floette|2/100
+|move|p1b: Floette|Dazzling Gleam|p2b: Whimsicott|[spread] p2a,p2b
+|-damage|p2a: Politoed|0 fnt
+|-damage|p2b: Whimsicott|21/100
+|faint|p2a: Politoed
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|j| HonchkrowLover27
+|
+|t:|1777052611
+|switch|p2a: Gengar|Gengar, L50, F|100/100
+|turn|3
+|
+|t:|1777052629
+|detailschange|p2a: Gengar|Gengar-Mega, L50, F
+|-mega|p2a: Gengar|Gengar|Gengarite
+|move|p1a: Kingambit|Sucker Punch|p2b: Whimsicott
+|-resisted|p2b: Whimsicott|1
+|-damage|p2b: Whimsicott|0 fnt
+|faint|p2b: Whimsicott
+|move|p2a: Gengar|Disable|p1a: Kingambit
+|-start|p1a: Kingambit|Disable|Sucker Punch
+|move|p1b: Floette|Light of Ruin|p2a: Gengar
+|-resisted|p2a: Gengar|1
+|-damage|p2a: Gengar|25/100
+|-damage|p1b: Floette|0 fnt|[from] Recoil
+|faint|p1b: Floette
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|-message|Chococroc forfeited.
+|
+|win|perferw
+|raw|perferw's rating: 1709 &rarr; <strong>1729</strong><br />(+20 for winning)
+|raw|Chococroc's rating: 1715 &rarr; <strong>1695</strong><br />(-20 for losing)
+|l|☆Chococroc
+|player|p2|
+|l|☆perferw
+|player|p1|
+|l| Charlie Kirkegaard

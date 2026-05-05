@@ -1,0 +1,176 @@
+|raw|<div class="broadcast-blue"><strong>This battle is required to be public due to a player having a name starting with 'sdlt'.</div>
+|j|‽SDLT 2KRL YRN
+|j|☆alakazzzz
+|t:|1777111767
+|gametype|doubles
+|player|p1|SDLT 2KRL YRN|steven|1607
+|player|p2|alakazzzz|1|1702
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Aerodactyl, L50, F|
+|poke|p1|Sneasler, L50, F|
+|poke|p1|Charizard, L50, F|
+|poke|p1|Garchomp, L50, M|
+|poke|p1|Kingambit, L50, F|
+|poke|p1|Floette-Eternal, L50, F|
+|poke|p2|Hydreigon, L50, F|
+|poke|p2|Gardevoir, L50, F|
+|poke|p2|Basculegion, L50, M|
+|poke|p2|Sneasler, L50, M|
+|poke|p2|Maushold, L50|
+|poke|p2|Rotom-Heat, L50|
+|teampreview|4
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by SDLT 2KRL YRN)
+SDLT 2KRL YRN rejected open team sheets.
+|inactive|alakazzzz has 60 seconds left.
+|inactive|alakazzzz has 30 seconds left.
+|
+|t:|1777111835
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Aerodactyl|Aerodactyl, L50, F|100/100
+|switch|p1b: Floette|Floette-Eternal, L50, F|100/100
+|switch|p2a: Gardevoir|Gardevoir, L50, F|100/100
+|switch|p2b: Maushold|Maushold, L50|100/100
+|-ability|p1a: Aerodactyl|Unnerve
+|-ability|p2a: Gardevoir|Symbiosis|Trace|[from] ability: Trace|[of] p1b: Floette
+|turn|1
+|inactive|alakazzzz has 30 seconds left.
+|
+|t:|1777111861
+|detailschange|p1b: Floette|Floette-Mega, L50, F
+|-mega|p1b: Floette|Floette|Floettite
+|-ability|p1b: Floette|Fairy Aura
+|detailschange|p2a: Gardevoir|Gardevoir-Mega, L50, F
+|-mega|p2a: Gardevoir|Gardevoir|Gardevoirite
+|move|p1a: Aerodactyl|Rock Slide|p2a: Gardevoir|[spread] p2a
+|-miss|p1a: Aerodactyl|p2b: Maushold
+|-damage|p2a: Gardevoir|76/100
+|move|p1b: Floette|Dazzling Gleam|p2a: Gardevoir|[spread] p2a,p2b
+|-damage|p2a: Gardevoir|46/100
+|-damage|p2b: Maushold|52/100
+|move|p2b: Maushold|Super Fang|p1b: Floette|[miss]
+|-miss|p2b: Maushold|p1b: Floette
+|move|p2a: Gardevoir|Trick Room|p2a: Gardevoir
+|-fieldstart|move: Trick Room|[of] p2a: Gardevoir
+|
+|upkeep
+|turn|2
+|inactive|SDLT 2KRL YRN has 30 seconds left.
+|
+|t:|1777111888
+|move|p2b: Maushold|Helping Hand|p2a: Gardevoir
+|-singleturn|p2a: Gardevoir|Helping Hand|[of] p2b: Maushold
+|move|p1b: Floette|Protect|p1b: Floette
+|-singleturn|p1b: Floette|Protect
+|move|p1a: Aerodactyl|Protect|p1a: Aerodactyl
+|-singleturn|p1a: Aerodactyl|Protect
+|move|p2a: Gardevoir|Hyper Voice|p1b: Floette|[spread] 
+|-activate|p1a: Aerodactyl|move: Protect
+|-activate|p1b: Floette|move: Protect
+|
+|upkeep
+|turn|3
+|
+|t:|1777111908
+|move|p2b: Maushold|Helping Hand|p2a: Gardevoir
+|-singleturn|p2a: Gardevoir|Helping Hand|[of] p2b: Maushold
+|move|p2a: Gardevoir|Hyper Voice|p1b: Floette|[spread] p1a,p1b
+|-crit|p1a: Aerodactyl
+|-enditem|p1a: Aerodactyl|Focus Sash
+|-damage|p1a: Aerodactyl|1/100
+|-damage|p1b: Floette|16/100
+|move|p1b: Floette|Moonblast|p2a: Gardevoir
+|-damage|p2a: Gardevoir|0 fnt
+|faint|p2a: Gardevoir
+|move|p1a: Aerodactyl|Rock Slide|p2b: Maushold
+|-damage|p2b: Maushold|18/100
+|
+|upkeep
+|
+|t:|1777111921
+|switch|p2a: Basculegion|Basculegion, L50, M|100/100
+|turn|4
+|
+|t:|1777111932
+|move|p1b: Floette|Protect|p1b: Floette
+|-singleturn|p1b: Floette|Protect
+|move|p1a: Aerodactyl|Protect|p1a: Aerodactyl
+|-singleturn|p1a: Aerodactyl|Protect
+|move|p2a: Basculegion|Last Respects|p1b: Floette
+|-activate|p1b: Floette|move: Protect
+|move|p2b: Maushold|Super Fang|p1a: Aerodactyl
+|-activate|p1a: Aerodactyl|move: Protect
+|
+|upkeep
+|turn|5
+|
+|t:|1777111947
+|switch|p1b: Kingambit|Kingambit, L50, F|100/100
+|switch|p1a: Garchomp|Garchomp, L50, M|100/100
+|move|p2a: Basculegion|Last Respects|p1b: Kingambit
+|-resisted|p1b: Kingambit|1
+|-damage|p1b: Kingambit|86/100
+|move|p2b: Maushold|Super Fang|p1a: Garchomp
+|-damage|p1a: Garchomp|51/100
+|-damage|p2b: Maushold|6/100|[from] ability: Rough Skin|[of] p1a: Garchomp
+|
+|-fieldend|move: Trick Room
+|upkeep
+|turn|6
+|inactive|alakazzzz has 30 seconds left.
+|
+|t:|1777111973
+|move|p2a: Basculegion|Protect|p2a: Basculegion
+|-singleturn|p2a: Basculegion|Protect
+|move|p1b: Kingambit|Protect|p1b: Kingambit
+|-singleturn|p1b: Kingambit|Protect
+|move|p1a: Garchomp|Earthquake|p2a: Basculegion|[spread] p2b
+|-activate|p1b: Kingambit|move: Protect
+|-activate|p2a: Basculegion|move: Protect
+|-damage|p2b: Maushold|0 fnt
+|faint|p2b: Maushold
+|
+|upkeep
+|
+|t:|1777111980
+|switch|p2b: Rotom|Rotom-Heat, L50|100/100
+|turn|7
+|
+|t:|1777111991
+|move|p1b: Kingambit|Sucker Punch|p2a: Basculegion
+|-supereffective|p2a: Basculegion|1
+|-damage|p2a: Basculegion|16/100
+|-enditem|p2a: Basculegion|Sitrus Berry|[eat]
+|-heal|p2a: Basculegion|41/100|[from] item: Sitrus Berry
+|move|p1a: Garchomp|Rock Slide|p2b: Rotom|[spread] p2a,p2b
+|-supereffective|p2b: Rotom|1
+|-damage|p2a: Basculegion|19/100
+|-damage|p2b: Rotom|58/100
+|cant|p2b: Rotom|flinch
+|move|p2a: Basculegion|Wave Crash|p1a: Garchomp
+|-damage|p1a: Garchomp|0 fnt
+|-damage|p2a: Basculegion|6/100|[from] ability: Rough Skin|[of] p1a: Garchomp
+|faint|p1a: Garchomp
+|-damage|p2a: Basculegion|0 fnt|[from] Recoil
+|faint|p2a: Basculegion
+|
+|-heal|p2b: Rotom|64/100|[from] item: Leftovers
+|upkeep
+|
+|t:|1777111999
+|switch|p1a: Aerodactyl|Aerodactyl, L50, F|1/100
+|-ability|p1a: Aerodactyl|Unnerve
+|turn|8
+|-message|alakazzzz forfeited.
+|
+|win|SDLT 2KRL YRN
+|raw|SDLT 2KRL YRN's rating: 1607 &rarr; <strong>1632</strong><br />(+25 for winning)
+|raw|alakazzzz's rating: 1702 &rarr; <strong>1677</strong><br />(-25 for losing)
+|l|☆alakazzzz
+|player|p2|

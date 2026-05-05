@@ -1,0 +1,215 @@
+|j|☆suibiandajiba
+|j|☆Chococroc
+|t:|1776695274
+|gametype|doubles
+|player|p1|suibiandajiba|hilbert|1609
+|player|p2|Chococroc|pokemaniac|1674
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Gardevoir, L50, F, shiny|
+|poke|p1|Incineroar, L50, F|
+|poke|p1|Rotom-Wash, L50|
+|poke|p1|Garchomp, L50, F|
+|poke|p1|Corviknight, L50, F|
+|poke|p1|Sinistcha, L50|
+|poke|p2|Gengar, L50, M|
+|poke|p2|Snorlax, L50, M|
+|poke|p2|Politoed, L50, F|
+|poke|p2|Archaludon, L50, F|
+|poke|p2|Whimsicott, L50, M|
+|poke|p2|Sneasler, L50, F|
+|teampreview|4
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by Chococroc)
+|
+|t:|1776695322
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Garchomp|Garchomp, L50, F|100/100
+|switch|p1b: Rotom|Rotom-Wash, L50|100/100
+|switch|p2a: Gengar|Gengar, L50, M|100/100
+|switch|p2b: Snorlax|Snorlax, L50, M|100/100
+|turn|1
+|
+|t:|1776695331
+|detailschange|p2a: Gengar|Gengar-Mega, L50, M
+|-mega|p2a: Gengar|Gengar|Gengarite
+|move|p2a: Gengar|Protect|p2a: Gengar
+|-singleturn|p2a: Gengar|Protect
+|move|p1b: Rotom|Trick|p2b: Snorlax
+|-activate|p1b: Rotom|move: Trick|[of] p2b: Snorlax
+|-item|p2b: Snorlax|Choice Scarf|[from] move: Trick
+|-item|p1b: Rotom|Leftovers|[from] move: Trick
+|move|p1a: Garchomp|Earthquake|p2a: Gengar|[spread] p2b
+|-activate|p2a: Gengar|move: Protect
+|-immune|p1b: Rotom|[from] ability: Levitate
+|-damage|p2b: Snorlax|77/100
+|move|p2b: Snorlax|Yawn|p1a: Garchomp
+|-start|p1a: Garchomp|move: Yawn|[of] p2b: Snorlax
+|
+|upkeep
+|turn|2
+|
+|t:|1776695349
+|switch|p2a: Politoed|Politoed, L50, F|100/100
+|-weather|RainDance|[from] ability: Drizzle|[of] p2a: Politoed
+|move|p1a: Garchomp|Earthquake|p2b: Snorlax|[spread] p2a,p2b
+|-immune|p1b: Rotom|[from] ability: Levitate
+|-damage|p2a: Politoed|65/100
+|-damage|p2b: Snorlax|54/100
+|move|p1b: Rotom|Eerie Impulse|p2a: Politoed
+|-unboost|p2a: Politoed|spa|2
+|move|p2b: Snorlax|Yawn|p1b: Rotom
+|-start|p1b: Rotom|move: Yawn|[of] p2b: Snorlax
+|
+|-weather|RainDance|[upkeep]
+|-end|p1a: Garchomp|move: Yawn|[silent]
+|-status|p1a: Garchomp|slp
+|-enditem|p1a: Garchomp|Lum Berry|[eat]
+|-curestatus|p1a: Garchomp|slp|[msg]
+|upkeep
+|turn|3
+|
+|t:|1776695371
+|move|p1a: Garchomp|Earthquake|p2b: Snorlax|[spread] p2a,p2b
+|-immune|p1b: Rotom|[from] ability: Levitate
+|-damage|p2a: Politoed|31/100
+|-damage|p2b: Snorlax|28/100
+|-enditem|p2a: Politoed|Sitrus Berry|[eat]
+|-heal|p2a: Politoed|56/100|[from] item: Sitrus Berry
+|move|p1b: Rotom|Hydro Pump|p2b: Snorlax
+|-damage|p2b: Snorlax|0 fnt
+|faint|p2b: Snorlax
+|move|p2a: Politoed|Icy Wind|p1a: Garchomp|[spread] p1a,p1b
+|-supereffective|p1a: Garchomp|2
+|-resisted|p1b: Rotom|1
+|-damage|p1a: Garchomp|75/100
+|-damage|p1b: Rotom|97/100
+|-unboost|p1a: Garchomp|spe|1
+|-unboost|p1b: Rotom|spe|1
+|
+|-weather|RainDance|[upkeep]
+|-heal|p1b: Rotom|100/100|[from] item: Leftovers
+|-end|p1b: Rotom|move: Yawn|[silent]
+|-status|p1b: Rotom|slp
+|upkeep
+|
+|t:|1776695389
+|switch|p2b: Archaludon|Archaludon, L50, F|100/100
+|turn|4
+|j| oneeshota
+|
+|t:|1776695410
+|move|p2b: Archaludon|Protect|p2b: Archaludon
+|-singleturn|p2b: Archaludon|Protect
+|move|p1a: Garchomp|Earthquake|p2a: Politoed|[spread] p2a
+|-activate|p2b: Archaludon|move: Protect
+|-immune|p1b: Rotom|[from] ability: Levitate
+|-damage|p2a: Politoed|20/100
+|cant|p1b: Rotom|slp
+|move|p2a: Politoed|Icy Wind|p1b: Rotom|[spread] p1a,p1b
+|-supereffective|p1a: Garchomp|2
+|-resisted|p1b: Rotom|1
+|-damage|p1a: Garchomp|51/100
+|-damage|p1b: Rotom|97/100 slp
+|-unboost|p1a: Garchomp|spe|1
+|-unboost|p1b: Rotom|spe|1
+|
+|-weather|RainDance|[upkeep]
+|-heal|p1b: Rotom|100/100 slp|[from] item: Leftovers
+|upkeep
+|turn|5
+|
+|t:|1776695426
+|move|p2b: Archaludon|Flash Cannon|p1a: Garchomp
+|-damage|p1a: Garchomp|0 fnt
+|faint|p1a: Garchomp
+|move|p2a: Politoed|Weather Ball|p1b: Rotom
+|-resisted|p1b: Rotom|1
+|-damage|p1b: Rotom|84/100 slp
+|cant|p1b: Rotom|slp
+|
+|-weather|RainDance|[upkeep]
+|-heal|p1b: Rotom|89/100 slp|[from] item: Leftovers
+|upkeep
+|
+|t:|1776695450
+|switch|p1a: Forever Queen|Gardevoir, L50, F, shiny|100/100
+|-ability|p1a: Forever Queen|Stamina|Trace|[from] ability: Trace|[of] p2b: Archaludon
+|turn|6
+|
+|t:|1776695472
+|switch|p2a: Gengar|Gengar-Mega, L50, M|100/100
+|detailschange|p1a: Forever Queen|Gardevoir-Mega, L50, F, shiny
+|-mega|p1a: Forever Queen|Gardevoir|Gardevoirite
+|move|p1a: Forever Queen|Calm Mind|p1a: Forever Queen
+|-boost|p1a: Forever Queen|spa|1
+|-boost|p1a: Forever Queen|spd|1
+|move|p2b: Archaludon|Electro Shot||[still]
+|-prepare|p2b: Archaludon|Electro Shot
+|-boost|p2b: Archaludon|spa|1
+|-anim|p2b: Archaludon|Electro Shot|p1b: Rotom
+|-damage|p1b: Rotom|0 fnt
+|faint|p1b: Rotom
+|
+|-weather|none
+|upkeep
+|
+|t:|1776695483
+|switch|p1b: Sinistcha|Sinistcha, L50|100/100
+|turn|7
+|
+|t:|1776695490
+|move|p1b: Sinistcha|Rage Powder|p1b: Sinistcha
+|-singleturn|p1b: Sinistcha|move: Rage Powder
+|move|p2a: Gengar|Shadow Ball|p1b: Sinistcha
+|-supereffective|p1b: Sinistcha|1
+|-enditem|p1b: Sinistcha|Kasib Berry|[eat]
+|-enditem|p1b: Sinistcha|Kasib Berry|[weaken]
+|-damage|p1b: Sinistcha|44/100
+|-unboost|p1b: Sinistcha|spd|1
+|move|p1a: Forever Queen|Psyshock|p2a: Gengar
+|-supereffective|p2a: Gengar|1
+|-damage|p2a: Gengar|0 fnt
+|faint|p2a: Gengar
+|move|p2b: Archaludon|Flash Cannon|p1b: Sinistcha
+|-damage|p1b: Sinistcha|0 fnt
+|faint|p1b: Sinistcha
+|
+|upkeep
+|
+|t:|1776695500
+|switch|p2a: Politoed|Politoed, L50, F|20/100
+|-weather|RainDance|[from] ability: Drizzle|[of] p2a: Politoed
+|turn|8
+|
+|t:|1776695506
+|move|p1a: Forever Queen|Protect|p1a: Forever Queen
+|-singleturn|p1a: Forever Queen|Protect
+|move|p2b: Archaludon|Flash Cannon|p1a: Forever Queen
+|-activate|p1a: Forever Queen|move: Protect
+|move|p2a: Politoed|Icy Wind|p1a: Forever Queen
+|-activate|p1a: Forever Queen|move: Protect
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|turn|9
+|
+|t:|1776695513
+|move|p1a: Forever Queen|Hyper Voice|p2a: Politoed|[spread] p2a,p2b
+|-damage|p2a: Politoed|0 fnt
+|-damage|p2b: Archaludon|0 fnt
+|faint|p2a: Politoed
+|faint|p2b: Archaludon
+|
+|win|suibiandajiba
+|raw|suibiandajiba's rating: 1609 &rarr; <strong>1633</strong><br />(+24 for winning)
+|raw|Chococroc's rating: 1674 &rarr; <strong>1650</strong><br />(-24 for losing)
+|l|☆Chococroc
+|player|p2|
+|l|☆suibiandajiba
+|player|p1|

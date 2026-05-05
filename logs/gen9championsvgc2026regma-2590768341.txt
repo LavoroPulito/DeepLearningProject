@@ -1,0 +1,190 @@
+|j|☆RodWaveChitlinMeal
+|j|☆ScribbleScribble
+|t:|1776845168
+|gametype|doubles
+|player|p1|RodWaveChitlinMeal|boarder|1660
+|player|p2|ScribbleScribble|mina-lgpe|1627
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Floette-Eternal, L50, F|
+|poke|p1|Charizard, L50, F|
+|poke|p1|Kingambit, L50, F|
+|poke|p1|Garchomp, L50, F|
+|poke|p1|Basculegion, L50, M|
+|poke|p1|Aerodactyl, L50, F|
+|poke|p2|Meganium, L50, M|
+|poke|p2|Sneasler, L50, F|
+|poke|p2|Aerodactyl, L50, M|
+|poke|p2|Kingambit, L50, M|
+|poke|p2|Basculegion, L50, M|
+|poke|p2|Farigiraf, L50, F|
+|teampreview|4
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by ScribbleScribble)
+|j| Helpinghansivg
+|inactive|RodWaveChitlinMeal has 60 seconds left.
+|inactive|ScribbleScribble has 60 seconds left.
+|
+|t:|1776845216
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Aerodactyl|Aerodactyl, L50, F|100/100
+|switch|p1b: Basculegion|Basculegion, L50, M|100/100
+|switch|p2a: Aerodactyl|Aerodactyl, L50, M|100/100
+|switch|p2b: Kingambit|Kingambit, L50, M|100/100
+|-ability|p2a: Aerodactyl|Unnerve
+|-ability|p1a: Aerodactyl|Unnerve
+|turn|1
+|inactive|ScribbleScribble has 30 seconds left.
+|
+|t:|1776845241
+|switch|p1b: Kingambit|Kingambit, L50, F|100/100
+|move|p2a: Aerodactyl|Tailwind|p2a: Aerodactyl
+|-sidestart|p2: ScribbleScribble|move: Tailwind
+|move|p1a: Aerodactyl|Tailwind|p1a: Aerodactyl
+|-sidestart|p1: RodWaveChitlinMeal|move: Tailwind
+|move|p2b: Kingambit|Kowtow Cleave|p1b: Kingambit
+|-resisted|p1b: Kingambit|1
+|-damage|p1b: Kingambit|77/100
+|
+|upkeep
+|turn|2
+|
+|t:|1776845261
+|switch|p2b: Sneasler|Sneasler, L50, F|100/100
+|move|p2a: Aerodactyl|Rock Slide|p1b: Kingambit|[spread] p1a,p1b
+|-supereffective|p1a: Aerodactyl|1
+|-resisted|p1b: Kingambit|1
+|-damage|p1a: Aerodactyl|27/100
+|-damage|p1b: Kingambit|67/100
+|cant|p1a: Aerodactyl|flinch
+|move|p1b: Kingambit|Low Kick|p2b: Sneasler
+|-resisted|p2b: Sneasler|1
+|-damage|p2b: Sneasler|80/100
+|
+|upkeep
+|turn|3
+|inactive|ScribbleScribble has 30 seconds left.
+|inactive|ScribbleScribble has 20 seconds left.
+|
+|t:|1776845298
+|switch|p1b: Basculegion|Basculegion, L50, M|100/100
+|move|p1a: Aerodactyl|Protect|p1a: Aerodactyl
+|-singleturn|p1a: Aerodactyl|Protect
+|move|p2a: Aerodactyl|Rock Slide|p1b: Basculegion|[spread] p1b
+|-activate|p1a: Aerodactyl|move: Protect
+|-damage|p1b: Basculegion|70/100
+|move|p2b: Sneasler|Close Combat|p1b: Basculegion
+|-immune|p1b: Basculegion
+|
+|upkeep
+|turn|4
+|
+|t:|1776845304
+|switch|p2b: Kingambit|Kingambit, L50, M|100/100
+|move|p1b: Basculegion|Flip Turn|p2a: Aerodactyl
+|-supereffective|p2a: Aerodactyl|1
+|-enditem|p2a: Aerodactyl|Focus Sash
+|-damage|p2a: Aerodactyl|1/100
+|
+|t:|1776845309
+|switch|p1b: Kingambit|Kingambit, L50, F|67/100|[from] Flip Turn
+|move|p1a: Aerodactyl|Dual Wingbeat|p2b: Kingambit
+|-resisted|p2b: Kingambit|1
+|-damage|p2b: Kingambit|93/100
+|-resisted|p2b: Kingambit|1
+|-damage|p2b: Kingambit|86/100
+|-hitcount|p2b: Kingambit|2
+|move|p2a: Aerodactyl|Rock Slide|p1a: Aerodactyl|[spread] p1a,p1b
+|-supereffective|p1a: Aerodactyl|1
+|-resisted|p1b: Kingambit|1
+|-damage|p1a: Aerodactyl|0 fnt
+|-damage|p1b: Kingambit|59/100
+|faint|p1a: Aerodactyl
+|
+|-sideend|p1: RodWaveChitlinMeal|move: Tailwind
+|-sideend|p2: ScribbleScribble|move: Tailwind
+|upkeep
+|
+|t:|1776845316
+|switch|p1a: Charizard|Charizard, L50, F|100/100
+|turn|5
+|inactive|ScribbleScribble has 30 seconds left.
+|
+|t:|1776845345
+|detailschange|p1a: Charizard|Charizard-Mega-Y, L50, F
+|-mega|p1a: Charizard|Charizard|Charizardite Y
+|-weather|SunnyDay|[from] ability: Drought|[of] p1a: Charizard
+|move|p1b: Kingambit|Sucker Punch||[still]
+|-fail|p1b: Kingambit
+|move|p2b: Kingambit|Sucker Punch|p1a: Charizard
+|-damage|p1a: Charizard|31/100
+|move|p2a: Aerodactyl|Tailwind|p2a: Aerodactyl
+|-sidestart|p2: ScribbleScribble|move: Tailwind
+|move|p1a: Charizard|Heat Wave|p2a: Aerodactyl|[spread] p2a,p2b
+|-resisted|p2a: Aerodactyl|1
+|-supereffective|p2b: Kingambit|1
+|-damage|p2a: Aerodactyl|0 fnt
+|-damage|p2b: Kingambit|0 fnt
+|faint|p2a: Aerodactyl
+|faint|p2b: Kingambit
+|
+|-weather|SunnyDay|[upkeep]
+|upkeep
+|
+|t:|1776845347
+|switch|p2a: Meganium|Meganium, L50, M|100/100
+|switch|p2b: Sneasler|Sneasler, L50, F|80/100
+|turn|6
+|
+|t:|1776845357
+|detailschange|p2a: Meganium|Meganium-Mega, L50, M
+|-mega|p2a: Meganium|Meganium|Meganiumite
+|move|p1a: Charizard|Protect|p1a: Charizard
+|-singleturn|p1a: Charizard|Protect
+|move|p1b: Kingambit|Sucker Punch|p2b: Sneasler
+|-resisted|p2b: Sneasler|1
+|-damage|p2b: Sneasler|44/100
+|move|p2b: Sneasler|Dire Claw|p1a: Charizard
+|-activate|p1a: Charizard|move: Protect
+|move|p2a: Meganium|Weather Ball|p1b: Kingambit
+|-supereffective|p1b: Kingambit|1
+|-damage|p1b: Kingambit|0 fnt
+|faint|p1b: Kingambit
+|
+|-weather|SunnyDay|[upkeep]
+|upkeep
+|
+|t:|1776845360
+|switch|p1b: Basculegion|Basculegion, L50, M|70/100
+|turn|7
+|inactive|ScribbleScribble has 30 seconds left.
+|inactive|ScribbleScribble has 20 seconds left.
+|inactive|ScribbleScribble has 15 seconds left.
+|
+|t:|1776845402
+|move|p1a: Charizard|Protect|p1a: Charizard
+|-singleturn|p1a: Charizard|Protect
+|move|p2b: Sneasler|Dire Claw|p1a: Charizard
+|-activate|p1a: Charizard|move: Protect
+|move|p2a: Meganium|Solar Beam||[still]
+|-prepare|p2a: Meganium|Solar Beam
+|-anim|p2a: Meganium|Solar Beam|p1b: Basculegion
+|-supereffective|p1b: Basculegion|1
+|-damage|p1b: Basculegion|0 fnt
+|faint|p1b: Basculegion
+|
+|-weather|SunnyDay|[upkeep]
+|upkeep
+|turn|8
+|-message|RodWaveChitlinMeal forfeited.
+|
+|win|ScribbleScribble
+|raw|RodWaveChitlinMeal's rating: 1660 &rarr; <strong>1637</strong><br />(-23 for losing)
+|raw|ScribbleScribble's rating: 1608 &rarr; <strong>1631</strong><br />(+23 for winning)
+|l|☆RodWaveChitlinMeal
+|player|p1|

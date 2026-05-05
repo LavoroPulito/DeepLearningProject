@@ -1,0 +1,115 @@
+|j|☆steven he vgc
+|j|☆Hoshinaaa
+|t:|1776662891
+|gametype|doubles
+|player|p1|steven he vgc|101|1685
+|player|p2|Hoshinaaa|rosa|1781
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Floette-Eternal, L50, F|
+|poke|p1|Sneasler, L50, M|
+|poke|p1|Incineroar, L50, M|
+|poke|p1|Kingambit, L50, M|
+|poke|p1|Palafin, L50, M|
+|poke|p1|Rotom-Heat, L50|
+|poke|p2|Starmie, L50|
+|poke|p2|Incineroar, L50, F|
+|poke|p2|Sinistcha-Masterpiece, L50|
+|poke|p2|Kingambit, L50, M|
+|poke|p2|Glimmora, L50, M|
+|poke|p2|Corviknight, L50, F|
+|teampreview|4
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by Hoshinaaa)
+|
+|t:|1776662920
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Floette|Floette-Eternal, L50, F|100/100
+|switch|p1b: Sneasler|Sneasler, L50, M|100/100
+|switch|p2a: Starmie|Starmie, L50|100/100
+|switch|p2b: Glimmora|Glimmora, L50, M|100/100
+|turn|1
+|
+|t:|1776662934
+|detailschange|p2a: Starmie|Starmie-Mega, L50
+|-mega|p2a: Starmie|Starmie|Starminite
+|detailschange|p1a: Floette|Floette-Mega, L50, F
+|-mega|p1a: Floette|Floette|Floettite
+|-ability|p1a: Floette|Fairy Aura
+|move|p1b: Sneasler|Fake Out|p2a: Starmie
+|-damage|p2a: Starmie|84/100
+|cant|p2a: Starmie|flinch
+|move|p2b: Glimmora|Sludge Bomb|p1a: Floette
+|-supereffective|p1a: Floette|1
+|-damage|p1a: Floette|23/100
+|move|p1a: Floette|Calm Mind|p1a: Floette
+|-boost|p1a: Floette|spa|1
+|-boost|p1a: Floette|spd|1
+|
+|upkeep
+|turn|2
+|j| Crvstal_K!tty
+|
+|t:|1776662954
+|move|p2a: Starmie|Protect|p2a: Starmie
+|-singleturn|p2a: Starmie|Protect
+|move|p1a: Floette|Protect|p1a: Floette
+|-singleturn|p1a: Floette|Protect
+|move|p1b: Sneasler|Close Combat|p2b: Glimmora
+|-damage|p2b: Glimmora|29/100
+|-unboost|p1b: Sneasler|def|1
+|-unboost|p1b: Sneasler|spd|1
+|-activate|p2b: Glimmora|ability: Toxic Debris
+|-sidestart|p1: steven he vgc|move: Toxic Spikes
+|move|p2b: Glimmora|Earth Power|p1b: Sneasler
+|-supereffective|p1b: Sneasler|1
+|-enditem|p1b: Sneasler|Focus Sash
+|-damage|p1b: Sneasler|1/100
+|
+|upkeep
+|turn|3
+|
+|t:|1776662974
+|switch|p2b: Sinistcha|Sinistcha-Masterpiece, L50|100/100
+|move|p2a: Starmie|Aqua Jet|p1a: Floette
+|-damage|p1a: Floette|0 fnt
+|faint|p1a: Floette
+|move|p1b: Sneasler|Dire Claw|p2a: Starmie
+|-damage|p2a: Starmie|31/100
+|
+|upkeep
+|
+|t:|1776662980
+|switch|p1a: Rotom|Rotom-Heat, L50|100/100
+|turn|4
+|
+|t:|1776662994
+|move|p2b: Sinistcha|Rage Powder|p2b: Sinistcha
+|-singleturn|p2b: Sinistcha|move: Rage Powder
+|move|p1a: Rotom|Overheat|p2b: Sinistcha|[miss]
+|-miss|p1a: Rotom|p2b: Sinistcha
+|move|p1b: Sneasler|Dire Claw|p2b: Sinistcha
+|-damage|p2b: Sinistcha|65/100
+|-status|p2b: Sinistcha|psn|[from] ability: Poison Touch|[of] p1b: Sneasler
+|move|p2a: Starmie|Liquidation|p1a: Rotom
+|-supereffective|p1a: Rotom|1
+|-damage|p1a: Rotom|0 fnt
+|faint|p1a: Rotom
+|
+|-damage|p2b: Sinistcha|53/100 psn|[from] psn
+|upkeep
+|-message|steven he vgc forfeited.
+|
+|win|Hoshinaaa
+|raw|steven he vgc's rating: 1685 &rarr; <strong>1670</strong><br />(-15 for losing)
+|raw|Hoshinaaa's rating: 1781 &rarr; <strong>1796</strong><br />(+15 for winning)
+|l|☆steven he vgc
+|player|p1|
+|l|☆Hoshinaaa
+|player|p2|
+|l| Crvstal_K!tty

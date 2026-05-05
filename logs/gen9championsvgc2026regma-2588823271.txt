@@ -1,0 +1,137 @@
+|j|☆dkapflzksh
+|j|☆Hoshinaaa
+|t:|1776675209
+|gametype|doubles
+|player|p1|dkapflzksh|scientist-gen4dp|1622
+|player|p2|Hoshinaaa|rosa|1721
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Basculegion, L50, M, shiny|
+|poke|p1|Dragonite, L50, F, shiny|
+|poke|p1|Archaludon, L50, F, shiny|
+|poke|p1|Pelipper, L50, M, shiny|
+|poke|p1|Floette-Eternal, L50, F|
+|poke|p1|Kingambit, L50, M, shiny|
+|poke|p2|Starmie, L50|
+|poke|p2|Incineroar, L50, F|
+|poke|p2|Sinistcha-Masterpiece, L50|
+|poke|p2|Kingambit, L50, M|
+|poke|p2|Glimmora, L50, F|
+|poke|p2|Corviknight, L50, F|
+|teampreview|4
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by Hoshinaaa)
+|inactive|dkapflzksh has 60 seconds left.
+|
+|t:|1776675244
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Pelipper|Pelipper, L50, M, shiny|100/100
+|switch|p1b: Basculegion|Basculegion, L50, M, shiny|100/100
+|switch|p2a: Glimmora|Glimmora, L50, F|100/100
+|switch|p2b: Starmie|Starmie, L50|100/100
+|-weather|RainDance|[from] ability: Drizzle|[of] p1a: Pelipper
+|turn|1
+|
+|t:|1776675261
+|detailschange|p2b: Starmie|Starmie-Mega, L50
+|-mega|p2b: Starmie|Starmie|Starminite
+|move|p1b: Basculegion|Flip Turn|p2a: Glimmora
+|-supereffective|p2a: Glimmora|1
+|-enditem|p2a: Glimmora|Focus Sash
+|-damage|p2a: Glimmora|1/100
+|-activate|p2a: Glimmora|ability: Toxic Debris
+|-sidestart|p1: dkapflzksh|move: Toxic Spikes
+|
+|t:|1776675269
+|switch|p1b: Archaludon|Archaludon, L50, F, shiny|100/100|[from] Flip Turn
+|move|p2b: Starmie|Liquidation|p1a: Pelipper
+|-resisted|p1a: Pelipper|1
+|-damage|p1a: Pelipper|33/100
+|move|p2a: Glimmora|Power Gem|p1a: Pelipper
+|-supereffective|p1a: Pelipper|1
+|-damage|p1a: Pelipper|0 fnt
+|faint|p1a: Pelipper
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|
+|t:|1776675282
+|switch|p1a: Kingambit|Kingambit, L50, M, shiny|100/100
+|turn|2
+|j| trisew
+|
+|t:|1776675298
+|switch|p2b: Sinistcha|Sinistcha-Masterpiece, L50|100/100
+|move|p2a: Glimmora|Spiky Shield|p2a: Glimmora
+|-singleturn|p2a: Glimmora|move: Protect
+|move|p1a: Kingambit|Sucker Punch||[still]
+|-fail|p1a: Kingambit
+|move|p1b: Archaludon|Electro Shot||[still]
+|-prepare|p1b: Archaludon|Electro Shot
+|-boost|p1b: Archaludon|spa|1
+|-anim|p1b: Archaludon|Electro Shot|p2b: Sinistcha
+|-resisted|p2b: Sinistcha|1
+|-damage|p2b: Sinistcha|70/100
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|turn|3
+|j| CEEEESZ
+|
+|t:|1776675321
+|move|p2b: Sinistcha|Rage Powder|p2b: Sinistcha
+|-singleturn|p2b: Sinistcha|move: Rage Powder
+|move|p2a: Glimmora|Earth Power|p1b: Archaludon
+|-supereffective|p1b: Archaludon|1
+|-damage|p1b: Archaludon|30/100
+|-ability|p1b: Archaludon|Stamina|boost
+|-boost|p1b: Archaludon|def|1
+|move|p1b: Archaludon|Electro Shot||[still]
+|-prepare|p1b: Archaludon|Electro Shot
+|-boost|p1b: Archaludon|spa|1
+|-anim|p1b: Archaludon|Electro Shot|p2b: Sinistcha
+|-resisted|p2b: Sinistcha|1
+|-damage|p2b: Sinistcha|29/100
+|move|p1a: Kingambit|Kowtow Cleave|p2b: Sinistcha
+|-supereffective|p2b: Sinistcha|1
+|-enditem|p2b: Sinistcha|Colbur Berry|[eat]
+|-enditem|p2b: Sinistcha|Colbur Berry|[weaken]
+|-damage|p2b: Sinistcha|0 fnt
+|faint|p2b: Sinistcha
+|
+|-weather|RainDance|[upkeep]
+|-heal|p1b: Archaludon|36/100|[from] item: Leftovers
+|upkeep
+|
+|t:|1776675342
+|switch|p2b: Starmie|Starmie-Mega, L50|100/100
+|turn|4
+|
+|t:|1776675357
+|move|p1b: Archaludon|Protect|p1b: Archaludon
+|-singleturn|p1b: Archaludon|Protect
+|move|p1a: Kingambit|Sucker Punch|p2a: Glimmora
+|-damage|p2a: Glimmora|0 fnt
+|-activate|p2a: Glimmora|ability: Toxic Debris
+|-sidestart|p1: dkapflzksh|move: Toxic Spikes
+|faint|p2a: Glimmora
+|move|p2b: Starmie|Liquidation|p1b: Archaludon
+|-activate|p1b: Archaludon|move: Protect
+|
+|-weather|RainDance|[upkeep]
+|-heal|p1b: Archaludon|42/100|[from] item: Leftovers
+|upkeep
+|
+|t:|1776675370
+|switch|p2a: Corviknight|Corviknight, L50, F|100/100
+|turn|5
+|-message|Hoshinaaa forfeited.
+|
+|win|dkapflzksh
+|raw|dkapflzksh's rating: 1622 &rarr; <strong>1648</strong><br />(+26 for winning)
+|raw|Hoshinaaa's rating: 1721 &rarr; <strong>1695</strong><br />(-26 for losing)

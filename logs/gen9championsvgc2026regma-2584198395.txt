@@ -1,0 +1,171 @@
+|j|☆ScribbleScribble
+|j|☆ChampionsmatchVGC
+|t:|1776237192
+|gametype|doubles
+|player|p1|ScribbleScribble|mina-lgpe|1659
+|player|p2|ChampionsmatchVGC|gardenia|1670
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Floette-Eternal, L50, F|
+|poke|p1|Sneasler, L50, F|
+|poke|p1|Aerodactyl, L50, F|
+|poke|p1|Kingambit, L50, F|
+|poke|p1|Basculegion, L50, M|
+|poke|p1|Farigiraf, L50, M|
+|poke|p2|Garchomp, L50, F|
+|poke|p2|Delphox, L50, M|
+|poke|p2|Floette-Eternal, L50, F|
+|poke|p2|Kingambit, L50, F|
+|poke|p2|Basculegion, L50, M|
+|poke|p2|Talonflame, L50, F|
+|teampreview|4
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by ScribbleScribble)
+|inactive|ScribbleScribble has 60 seconds left.
+|inactive|ChampionsmatchVGC has 60 seconds left.
+|
+|t:|1776237252
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Aerodactyl|Aerodactyl, L50, F|100/100
+|switch|p1b: Basculegion|Basculegion, L50, M|100/100
+|switch|p2a: Garchomp|Garchomp, L50, F|100/100
+|switch|p2b: Talonflame|Talonflame, L50, F|100/100
+|-ability|p1a: Aerodactyl|Unnerve
+|turn|1
+|
+|t:|1776237262
+|move|p2b: Talonflame|Tailwind|p2b: Talonflame
+|-sidestart|p2: ChampionsmatchVGC|move: Tailwind
+|move|p2a: Garchomp|Rock Slide|p1a: Aerodactyl|[spread] p1a,p1b
+|-supereffective|p1a: Aerodactyl|1
+|-damage|p1a: Aerodactyl|28/100
+|-damage|p1b: Basculegion|76/100
+|move|p1b: Basculegion|Wave Crash|p2b: Talonflame
+|-supereffective|p2b: Talonflame|1
+|-damage|p2b: Talonflame|0 fnt
+|faint|p2b: Talonflame
+|-damage|p1b: Basculegion|50/100|[from] Recoil
+|move|p1a: Aerodactyl|Tailwind|p1a: Aerodactyl
+|-sidestart|p1: ScribbleScribble|move: Tailwind
+|
+|upkeep
+|
+|t:|1776237285
+|switch|p2b: Floette|Floette-Eternal, L50, F|100/100
+|turn|2
+|j| grapplebeam
+|
+|t:|1776237309
+|detailschange|p2b: Floette|Floette-Mega, L50, F
+|-mega|p2b: Floette|Floette|Floettite
+|-ability|p2b: Floette|Fairy Aura
+|move|p2b: Floette|Protect|p2b: Floette
+|-singleturn|p2b: Floette|Protect
+|move|p1b: Basculegion|Wave Crash|p2b: Floette
+|-activate|p2b: Floette|move: Protect
+|move|p1a: Aerodactyl|Rock Slide|p2a: Garchomp|[spread] p2a
+|-activate|p2b: Floette|move: Protect
+|-resisted|p2a: Garchomp|1
+|-damage|p2a: Garchomp|90/100
+|move|p2a: Garchomp|Rock Slide|p1a: Aerodactyl|[spread] p1a,p1b
+|-supereffective|p1a: Aerodactyl|1
+|-damage|p1a: Aerodactyl|0 fnt
+|-damage|p1b: Basculegion|22/100
+|faint|p1a: Aerodactyl
+|
+|upkeep
+|
+|t:|1776237322
+|switch|p1a: Farigiraf|Farigiraf, L50, M|100/100
+|turn|3
+|
+|t:|1776237334
+|switch|p2b: Basculegion|Basculegion, L50, M|100/100
+|move|p1b: Basculegion|Wave Crash|p2b: Basculegion
+|-resisted|p2b: Basculegion|1
+|-damage|p2b: Basculegion|51/100
+|-damage|p1b: Basculegion|6/100|[from] Recoil
+|move|p2a: Garchomp|Stomping Tantrum|p1b: Basculegion
+|-damage|p1b: Basculegion|0 fnt
+|faint|p1b: Basculegion
+|move|p1a: Farigiraf|Hyper Voice|p2b: Basculegion|[spread] p2a
+|-immune|p2b: Basculegion
+|-damage|p2a: Garchomp|67/100
+|
+|upkeep
+|j| luckycrane
+|
+|t:|1776237338
+|switch|p1b: Kingambit|Kingambit, L50, F|100/100
+|turn|4
+|
+|t:|1776237351
+|move|p1b: Kingambit|Sucker Punch|p2b: Basculegion
+|-supereffective|p2b: Basculegion|1
+|-damage|p2b: Basculegion|0 fnt
+|faint|p2b: Basculegion
+|move|p2a: Garchomp|Earthquake|p1a: Farigiraf|[spread] p1a,p1b
+|-supereffective|p1b: Kingambit|1
+|-damage|p1a: Farigiraf|65/100
+|-damage|p1b: Kingambit|34/100
+|move|p1a: Farigiraf|Trick Room|p1a: Farigiraf
+|-fieldstart|move: Trick Room|[of] p1a: Farigiraf
+|
+|-sideend|p2: ChampionsmatchVGC|move: Tailwind
+|-sideend|p1: ScribbleScribble|move: Tailwind
+|upkeep
+|
+|t:|1776237354
+|switch|p2b: Floette|Floette-Mega, L50, F|100/100
+|-ability|p2b: Floette|Fairy Aura
+|turn|5
+|
+|t:|1776237376
+|move|p2a: Garchomp|Protect|p2a: Garchomp
+|-singleturn|p2a: Garchomp|Protect
+|move|p2b: Floette|Protect|p2b: Floette
+|-singleturn|p2b: Floette|Protect
+|move|p1b: Kingambit|Kowtow Cleave|p2a: Garchomp
+|-activate|p2a: Garchomp|move: Protect
+|move|p1a: Farigiraf|Hyper Voice|p2b: Floette|[spread] 
+|-activate|p2a: Garchomp|move: Protect
+|-activate|p2b: Floette|move: Protect
+|
+|upkeep
+|turn|6
+|
+|t:|1776237391
+|move|p1b: Kingambit|Kowtow Cleave|p2a: Garchomp
+|-damage|p2a: Garchomp|13/100
+|-damage|p1b: Kingambit|21/100|[from] ability: Rough Skin|[of] p2a: Garchomp
+|-enditem|p2a: Garchomp|Sitrus Berry|[eat]
+|-heal|p2a: Garchomp|38/100|[from] item: Sitrus Berry
+|move|p1a: Farigiraf|Hyper Voice|p2a: Garchomp|[spread] p2a,p2b
+|-damage|p2a: Garchomp|9/100
+|-damage|p2b: Floette|75/100
+|move|p2a: Garchomp|Stomping Tantrum|p1b: Kingambit
+|-supereffective|p1b: Kingambit|1
+|-damage|p1b: Kingambit|0 fnt
+|faint|p1b: Kingambit
+|move|p2b: Floette|Dazzling Gleam|p1a: Farigiraf
+|-damage|p1a: Farigiraf|5/100
+|-enditem|p1a: Farigiraf|Sitrus Berry|[eat]
+|-heal|p1a: Farigiraf|30/100|[from] item: Sitrus Berry
+|
+|upkeep
+|turn|7
+|-message|ScribbleScribble forfeited.
+|
+|win|ChampionsmatchVGC
+|raw|ScribbleScribble's rating: 1659 &rarr; <strong>1640</strong><br />(-19 for losing)
+|raw|ChampionsmatchVGC's rating: 1670 &rarr; <strong>1689</strong><br />(+19 for winning)
+|l|☆ScribbleScribble
+|player|p1|
+|l| luckycrane
+|l|☆ChampionsmatchVGC
+|player|p2|

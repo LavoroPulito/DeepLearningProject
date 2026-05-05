@@ -1,0 +1,99 @@
+|j|☆somethingdiff
+|j|☆ok132
+|t:|1776968980
+|gametype|doubles
+|player|p1|somethingdiff|102|1719
+|player|p2|ok132|ninjaboy|1822
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Scovillain, L50, F|
+|poke|p1|Kingambit, L50, M, shiny|
+|poke|p1|Quaquaval, L50, F, shiny|
+|poke|p1|Gengar, L50, M, shiny|
+|poke|p1|Sneasler, L50, F|
+|poke|p1|Sableye, L50, M|
+|poke|p2|Ceruledge, L50, M|
+|poke|p2|Lopunny, L50, M|
+|poke|p2|Farigiraf, L50, M|
+|poke|p2|Rotom-Wash, L50|
+|poke|p2|Kommo-o, L50, F|
+|poke|p2|Empoleon, L50, M|
+|teampreview|4
+|j| nelsoNJ
+|j| knochum
+|c|☆somethingdiff|GL HF
+|c|☆ok132|u2
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by ok132)
+|j| giftedyew
+|
+|t:|1776969045
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Sneasler|Sneasler, L50, F|100/100
+|switch|p1b: Scovillain|Scovillain, L50, F|100/100
+|switch|p2a: Ceruledge|Ceruledge, L50, M|100/100
+|switch|p2b: Lopunny|Lopunny, L50, M|100/100
+|turn|1
+|inactive|somethingdiff has 30 seconds left.
+|
+|t:|1776969073
+|switch|p1b: Quaquaval|Quaquaval, L50, F, shiny|100/100
+|detailschange|p2b: Lopunny|Lopunny-Mega, L50, M
+|-mega|p2b: Lopunny|Lopunny|Lopunnite
+|move|p2b: Lopunny|Fake Out|p1a: Sneasler
+|-damage|p1a: Sneasler|62/100
+|cant|p1a: Sneasler|flinch
+|move|p2a: Ceruledge|Swords Dance|p2a: Ceruledge
+|-boost|p2a: Ceruledge|atk|2
+|
+|upkeep
+|turn|2
+|
+|t:|1776969091
+|move|p1b: Quaquaval|Protect|p1b: Quaquaval
+|-singleturn|p1b: Quaquaval|Protect
+|move|p2b: Lopunny|Triple Axel|p1a: Sneasler
+|-damage|p1a: Sneasler|49/100
+|-damage|p1a: Sneasler|26/100
+|-damage|p1a: Sneasler|0 fnt
+|faint|p1a: Sneasler
+|-hitcount|p1: Sneasler|3
+|move|p2a: Ceruledge|Poltergeist|p1b: Quaquaval
+|-activate|p1b: Quaquaval|move: Protect
+|
+|upkeep
+|
+|t:|1776969101
+|switch|p1a: Gengar|Gengar, L50, M, shiny|100/100
+|turn|3
+|
+|t:|1776969120
+|detailschange|p1a: Gengar|Gengar-Mega, L50, M, shiny
+|-mega|p1a: Gengar|Gengar|Gengarite
+|move|p2a: Ceruledge|Shadow Sneak|p1a: Gengar
+|-supereffective|p1a: Gengar|1
+|-damage|p1a: Gengar|0 fnt
+|faint|p1a: Gengar
+|move|p2b: Lopunny|Close Combat|p1b: Quaquaval
+|-crit|p1b: Quaquaval
+|-damage|p1b: Quaquaval|0 fnt
+|-unboost|p2b: Lopunny|def|1
+|-unboost|p2b: Lopunny|spd|1
+|faint|p1b: Quaquaval
+|
+|upkeep
+|c|☆somethingdiff|gg
+|l| nelsoNJ
+|-message|somethingdiff forfeited.
+|c|☆ok132|gg
+|
+|win|ok132
+|raw|somethingdiff's rating: 1719 &rarr; <strong>1705</strong><br />(-14 for losing)
+|raw|ok132's rating: 1822 &rarr; <strong>1836</strong><br />(+14 for winning)
+|l|☆somethingdiff
+|player|p1|
