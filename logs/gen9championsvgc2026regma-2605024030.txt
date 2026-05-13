@@ -1,0 +1,143 @@
+|j|☆moat_vgcf
+|j|☆Chococroc
+|t:|1778263791
+|gametype|doubles
+|player|p1|moat_vgcf|lance|1774
+|player|p2|Chococroc|pokemaniac|1771
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Charizard, L50, F|
+|poke|p1|Sneasler, L50, F|
+|poke|p1|Kingambit, L50, M|
+|poke|p1|Garchomp, L50, M|
+|poke|p1|Floette-Eternal, L50, F|
+|poke|p1|Aerodactyl, L50, M|
+|poke|p2|Charizard, L50, M|
+|poke|p2|Milotic, L50, M|
+|poke|p2|Aerodactyl, L50, F|
+|poke|p2|Kingambit, L50, F|
+|poke|p2|Incineroar, L50, M|
+|poke|p2|Garchomp, L50, F|
+|teampreview|4
+|
+|t:|1778263824
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Aerodactyl|Aerodactyl, L50, M|100/100
+|switch|p1b: Sneasler|Sneasler, L50, F|100/100
+|switch|p2a: Incineroar|Incineroar, L50, M|100/100
+|switch|p2b: Garchomp|Garchomp, L50, F|100/100
+|-ability|p1a: Aerodactyl|Unnerve
+|-ability|p2a: Incineroar|Intimidate|boost
+|-unboost|p1a: Aerodactyl|atk|1
+|-unboost|p1b: Sneasler|atk|1
+|-enditem|p1b: Sneasler|White Herb
+|-clearnegativeboost|p1b: Sneasler|[silent]
+|turn|1
+|
+|t:|1778263855
+|switch|p2a: Aerodactyl|Aerodactyl, L50, F|100/100
+|-ability|p2a: Aerodactyl|Unnerve
+|move|p1b: Sneasler|Close Combat|p2a: Aerodactyl
+|-damage|p2a: Aerodactyl|2/100
+|-unboost|p1b: Sneasler|def|1
+|-unboost|p1b: Sneasler|spd|1
+|move|p1a: Aerodactyl|Tailwind|p1a: Aerodactyl
+|-sidestart|p1: moat_vgcf|move: Tailwind
+|move|p2b: Garchomp|Earthquake|p1a: Aerodactyl|[spread] p1b
+|-immune|p2a: Aerodactyl
+|-immune|p1a: Aerodactyl
+|-supereffective|p1b: Sneasler|1
+|-damage|p1b: Sneasler|0 fnt
+|faint|p1b: Sneasler
+|
+|upkeep
+|
+|t:|1778263877
+|switch|p1b: Floette|Floette-Eternal, L50, F|100/100
+|turn|2
+|
+|t:|1778263888
+|detailschange|p1b: Floette|Floette-Mega, L50, F
+|-mega|p1b: Floette|Floette|Floettite
+|-ability|p1b: Floette|Fairy Aura
+|move|p2a: Aerodactyl|Protect|p2a: Aerodactyl
+|-singleturn|p2a: Aerodactyl|Protect
+|move|p2b: Garchomp|Protect|p2b: Garchomp
+|-singleturn|p2b: Garchomp|Protect
+|move|p1a: Aerodactyl|Rock Slide|p2a: Aerodactyl|[spread] 
+|-activate|p2a: Aerodactyl|move: Protect
+|-activate|p2b: Garchomp|move: Protect
+|move|p1b: Floette|Moonblast|p2b: Garchomp
+|-activate|p2b: Garchomp|move: Protect
+|
+|upkeep
+|turn|3
+|
+|t:|1778263906
+|move|p1a: Aerodactyl|Rock Slide|p2b: Garchomp|[spread] p2a
+|-miss|p1a: Aerodactyl|p2b: Garchomp
+|-supereffective|p2a: Aerodactyl|1
+|-damage|p2a: Aerodactyl|0 fnt
+|faint|p2a: Aerodactyl
+|move|p1b: Floette|Moonblast|p2b: Garchomp
+|-supereffective|p2b: Garchomp|1
+|-damage|p2b: Garchomp|0 fnt
+|faint|p2b: Garchomp
+|
+|upkeep
+|
+|t:|1778263914
+|switch|p2a: Charizard|Charizard, L50, M|100/100
+|switch|p2b: Incineroar|Incineroar, L50, M|100/100
+|-ability|p2b: Incineroar|Intimidate|boost
+|-unboost|p1a: Aerodactyl|atk|1
+|-unboost|p1b: Floette|atk|1
+|turn|4
+|
+|t:|1778263923
+|switch|p1a: Garchomp|Garchomp, L50, M|100/100
+|detailschange|p2a: Charizard|Charizard-Mega-Y, L50, M
+|-mega|p2a: Charizard|Charizard|Charizardite Y
+|-weather|SunnyDay|[from] ability: Drought|[of] p2a: Charizard
+|move|p1b: Floette|Protect|p1b: Floette
+|-singleturn|p1b: Floette|Protect
+|move|p2b: Incineroar|Fake Out|p1a: Garchomp
+|-damage|p1a: Garchomp|87/100
+|-damage|p2b: Incineroar|87/100|[from] ability: Rough Skin|[of] p1a: Garchomp
+|move|p2a: Charizard|Heat Wave|p1b: Floette|[spread] p1a
+|-activate|p1b: Floette|move: Protect
+|-resisted|p1a: Garchomp|1
+|-damage|p1a: Garchomp|55/100
+|
+|-weather|SunnyDay|[upkeep]
+|-sideend|p1: moat_vgcf|move: Tailwind
+|upkeep
+|turn|5
+|
+|t:|1778263958
+|move|p1a: Garchomp|Rock Slide|p2a: Charizard|[spread] p2a,p2b
+|-supereffective|p2a: Charizard|2
+|-supereffective|p2b: Incineroar|1
+|-damage|p2a: Charizard|1/100
+|-damage|p2b: Incineroar|50/100g
+|move|p1b: Floette|Moonblast|p2b: Incineroar
+|-damage|p2b: Incineroar|0 fnt
+|faint|p2b: Incineroar
+|cant|p2a: Charizard|flinch
+|
+|-weather|SunnyDay|[upkeep]
+|upkeep
+|turn|6
+|-message|Chococroc forfeited.
+|
+|win|moat_vgcf
+|raw|moat_vgcf's rating: 1774 &rarr; <strong>1794</strong><br />(+20 for winning)
+|raw|Chococroc's rating: 1771 &rarr; <strong>1751</strong><br />(-20 for losing)
+|l|☆Chococroc
+|player|p2|

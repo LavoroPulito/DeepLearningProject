@@ -1,0 +1,180 @@
+|j|☆lionlasnia
+|j|☆bwahacough
+|t:|1778300767
+|gametype|doubles
+|player|p1|lionlasnia|hilda-wonderlauncher|1739
+|player|p2|bwahacough|102|1877
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Incineroar, L50, F|
+|poke|p1|Garchomp, L50, M|
+|poke|p1|Floette-Eternal, L50, F|
+|poke|p1|Sinistcha, L50|
+|poke|p1|Kangaskhan, L50, F|
+|poke|p1|Charizard, L50, F|
+|poke|p2|Lycanroc, L50, M, shiny|
+|poke|p2|Tyranitar, L50, F|
+|poke|p2|Farigiraf, L50, M, shiny|
+|poke|p2|Floette-Eternal, L50, F|
+|poke|p2|Milotic, L50, F, shiny|
+|poke|p2|Kingambit, L50, M, shiny|
+|teampreview|4
+|
+|t:|1778300780
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Kangaskhan|Kangaskhan, L50, F|100/100
+|switch|p1b: Floette|Floette-Eternal, L50, F|100/100
+|switch|p2a: Milotic|Milotic, L50, F, shiny|100/100
+|switch|p2b: Floette|Floette-Eternal, L50, F|100/100
+|turn|1
+|
+|t:|1778300799
+|move|p2b: Floette|Protect|p2b: Floette
+|-singleturn|p2b: Floette|Protect
+|move|p1a: Kangaskhan|Fake Out|p2b: Floette
+|-activate|p2b: Floette|move: Protect
+|move|p2a: Milotic|Icy Wind|p1b: Floette|[spread] p1a,p1b
+|-damage|p1a: Kangaskhan|89/100
+|-damage|p1b: Floette|91/100
+|-unboost|p1a: Kangaskhan|spe|1
+|-unboost|p1b: Floette|spe|1
+|move|p1b: Floette|Calm Mind|p1b: Floette
+|-boost|p1b: Floette|spa|1
+|-boost|p1b: Floette|spd|1
+|
+|upkeep
+|turn|2
+|
+|t:|1778300811
+|detailschange|p2b: Floette|Floette-Mega, L50, F
+|-mega|p2b: Floette|Floette|Floettite
+|-ability|p2b: Floette|Fairy Aura
+|detailschange|p1b: Floette|Floette-Mega, L50, F
+|-mega|p1b: Floette|Floette|Floettite
+|-ability|p1b: Floette|Fairy Aura
+|move|p2b: Floette|Dazzling Gleam|p1a: Kangaskhan|[spread] p1a,p1b
+|-damage|p1a: Kangaskhan|37/100
+|-damage|p1b: Floette|69/100
+|move|p2a: Milotic|Scald|p1a: Kangaskhan
+|-damage|p1a: Kangaskhan|4/100
+|-status|p1a: Kangaskhan|brn
+|move|p1a: Kangaskhan|Double-Edge|p2b: Floette
+|-damage|p2b: Floette|63/100
+|-damage|p1a: Kangaskhan|0 fnt|[from] Recoil
+|faint|p1a: Kangaskhan
+|move|p1b: Floette|Dazzling Gleam|p2b: Floette|[spread] p2a,p2b
+|-damage|p2a: Milotic|48/100
+|-damage|p2b: Floette|1/100
+|
+|upkeep
+|
+|t:|1778300823
+|switch|p1a: Sinistcha|Sinistcha, L50|100/100
+|-heal|p1b: Floette|93/100|[from] ability: Hospitality|[of] p1a: Sinistcha
+|turn|3
+|
+|t:|1778300828
+|move|p2b: Floette|Moonblast|p1a: Sinistcha
+|-damage|p1a: Sinistcha|27/100
+|move|p2a: Milotic|Ice Beam|p1a: Sinistcha
+|-supereffective|p1a: Sinistcha|1
+|-damage|p1a: Sinistcha|0 fnt
+|faint|p1a: Sinistcha
+|move|p1b: Floette|Dazzling Gleam|p2b: Floette|[spread] p2a,p2b
+|-crit|p2b: Floette
+|-damage|p2a: Milotic|0 fnt
+|-damage|p2b: Floette|0 fnt
+|faint|p2a: Milotic
+|faint|p2b: Floette
+|
+|upkeep
+|
+|t:|1778300831
+|switch|p2b: Lycanroc|Lycanroc, L50, M, shiny|100/100
+|switch|p2a: Tyranitar|Tyranitar, L50, F|100/100
+|switch|p1a: Incineroar|Incineroar, L50, F|100/100
+|-ability|p1a: Incineroar|Intimidate|boost
+|-unboost|p2a: Tyranitar|atk|1
+|-unboost|p2b: Lycanroc|atk|1
+|-weather|Sandstorm|[from] ability: Sand Stream|[of] p2a: Tyranitar
+|turn|4
+|
+|t:|1778300838
+|move|p2b: Lycanroc|Protect|p2b: Lycanroc
+|-singleturn|p2b: Lycanroc|Protect
+|move|p2a: Tyranitar|Protect|p2a: Tyranitar
+|-singleturn|p2a: Tyranitar|Protect
+|move|p1a: Incineroar|Fake Out|p2b: Lycanroc
+|-activate|p2b: Lycanroc|move: Protect
+|move|p1b: Floette|Dazzling Gleam|p2b: Lycanroc|[spread] 
+|-activate|p2a: Tyranitar|move: Protect
+|-activate|p2b: Lycanroc|move: Protect
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1a: Incineroar|94/100|[from] Sandstorm
+|-damage|p1b: Floette|87/100|[from] Sandstorm
+|upkeep
+|turn|5
+|
+|t:|1778300855
+|move|p2b: Lycanroc|Rock Slide|p1a: Incineroar|[spread] p1a,p1b
+|-supereffective|p1a: Incineroar|1
+|-damage|p1a: Incineroar|61/100
+|-damage|p1b: Floette|70/100
+|move|p1a: Incineroar|Darkest Lariat|p2b: Lycanroc
+|-damage|p2b: Lycanroc|38/100
+|move|p1b: Floette|Dazzling Gleam|p2a: Tyranitar|[spread] p2a,p2b
+|-supereffective|p2a: Tyranitar|1
+|-damage|p2a: Tyranitar|20/100r
+|-damage|p2b: Lycanroc|0 fnt
+|faint|p2b: Lycanroc
+|move|p2a: Tyranitar|Rock Slide|p1a: Incineroar|[spread] p1a
+|-miss|p2a: Tyranitar|p1b: Floette
+|-supereffective|p1a: Incineroar|1
+|-damage|p1a: Incineroar|25/100
+|-enditem|p1a: Incineroar|Sitrus Berry|[eat]
+|-heal|p1a: Incineroar|50/100g|[from] item: Sitrus Berry
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1a: Incineroar|44/100|[from] Sandstorm
+|-damage|p1b: Floette|64/100|[from] Sandstorm
+|upkeep
+|turn|6
+|
+|t:|1778300869
+|move|p1b: Floette|Protect|p1b: Floette
+|-singleturn|p1b: Floette|Protect
+|move|p1a: Incineroar|Parting Shot|p2a: Tyranitar
+|-unboost|p2a: Tyranitar|atk|1
+|-unboost|p2a: Tyranitar|spa|1
+|move|p2a: Tyranitar|Rock Slide|p1b: Floette|[spread] p1a
+|-activate|p1b: Floette|move: Protect
+|-supereffective|p1a: Incineroar|1
+|-damage|p1a: Incineroar|17/100
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1a: Incineroar|11/100|[from] Sandstorm
+|-damage|p1b: Floette|58/100|[from] Sandstorm
+|upkeep
+|turn|7
+|
+|t:|1778300884
+|move|p1a: Incineroar|Parting Shot|p2a: Tyranitar
+|-unboost|p2a: Tyranitar|atk|1
+|-unboost|p2a: Tyranitar|spa|1
+|move|p1b: Floette|Moonblast|p2a: Tyranitar
+|-supereffective|p2a: Tyranitar|1
+|-damage|p2a: Tyranitar|0 fnt
+|faint|p2a: Tyranitar
+|
+|win|lionlasnia
+|raw|lionlasnia's rating: 1739 &rarr; <strong>1767</strong><br />(+28 for winning)
+|raw|bwahacough's rating: 1890 &rarr; <strong>1862</strong><br />(-28 for losing)
+|l|☆bwahacough
+|player|p2|

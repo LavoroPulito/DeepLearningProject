@@ -1,0 +1,167 @@
+|j|☆ScribbleScribble
+|j|☆Wolfe Flick
+|t:|1778186339
+|gametype|doubles
+|player|p1|ScribbleScribble|mina-lgpe|1905
+|player|p2|Wolfe Flick|leon-tower|1757
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Lopunny, L50, F, shiny|
+|poke|p1|Farigiraf, L50, M|
+|poke|p1|Basculegion, L50, M, shiny|
+|poke|p1|Ceruledge, L50, F|
+|poke|p1|Kingambit, L50, F|
+|poke|p1|Ninetales-Alola, L50, F|
+|poke|p2|Excadrill, L50, M|
+|poke|p2|Rotom-Wash, L50|
+|poke|p2|Tyranitar, L50, M|
+|poke|p2|Hydreigon, L50, F|
+|poke|p2|Corviknight, L50, F|
+|poke|p2|Scovillain, L50, M|
+|teampreview|4
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by ScribbleScribble)
+|j| Wenler
+|inactive|Wolfe Flick has 60 seconds left.
+|
+|t:|1778186387
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Ceruledge|Ceruledge, L50, F|100/100
+|switch|p1b: Lopunny|Lopunny, L50, F, shiny|100/100
+|switch|p2a: Excadrill|Excadrill, L50, M|100/100
+|switch|p2b: Corviknight|Corviknight, L50, F|100/100
+|turn|1
+|j| Gbriel_Tpns
+|inactive|Wolfe Flick has 30 seconds left.
+|
+|t:|1778186414
+|switch|p2b: Tyranitar|Tyranitar, L50, M|100/100
+|-weather|Sandstorm|[from] ability: Sand Stream|[of] p2b: Tyranitar
+|detailschange|p1b: Lopunny|Lopunny-Mega, L50, F, shiny
+|-mega|p1b: Lopunny|Lopunny|Lopunnite
+|move|p2a: Excadrill|Protect|p2a: Excadrill
+|-singleturn|p2a: Excadrill|Protect
+|move|p1b: Lopunny|Fake Out|p2a: Excadrill
+|-activate|p2a: Excadrill|move: Protect
+|move|p1a: Ceruledge|Swords Dance|p1a: Ceruledge
+|-boost|p1a: Ceruledge|atk|2
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1b: Lopunny|94/100|[from] Sandstorm
+|-damage|p1a: Ceruledge|94/100|[from] Sandstorm
+|upkeep
+|turn|2
+|
+|t:|1778186430
+|switch|p2b: Corviknight|Corviknight, L50, F|100/100
+|move|p1b: Lopunny|Mach Punch|p2a: Excadrill
+|-supereffective|p2a: Excadrill|1
+|-damage|p2a: Excadrill|38/100
+|move|p1a: Ceruledge|Shadow Sneak|p2a: Excadrill
+|-damage|p2a: Excadrill|0 fnt
+|faint|p2a: Excadrill
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1b: Lopunny|88/100|[from] Sandstorm
+|-damage|p1a: Ceruledge|88/100|[from] Sandstorm
+|upkeep
+|
+|t:|1778186442
+|switch|p2a: Hydreigon|Hydreigon, L50, F|100/100
+|turn|3
+|
+|t:|1778186454
+|move|p2a: Hydreigon|Dark Pulse|p1a: Ceruledge
+|-supereffective|p1a: Ceruledge|1
+|-damage|p1a: Ceruledge|0 fnt
+|faint|p1a: Ceruledge
+|move|p1b: Lopunny|Close Combat|p2a: Hydreigon
+|-supereffective|p2a: Hydreigon|1
+|-damage|p2a: Hydreigon|0 fnt
+|-unboost|p1b: Lopunny|def|1
+|-unboost|p1b: Lopunny|spd|1
+|faint|p2a: Hydreigon
+|move|p2b: Corviknight|Tailwind|p2b: Corviknight
+|-sidestart|p2: Wolfe Flick|move: Tailwind
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1b: Lopunny|83/100|[from] Sandstorm
+|upkeep
+|
+|t:|1778186466
+|switch|p1a: Kingambit|Kingambit, L50, F|100/100
+|switch|p2a: Tyranitar|Tyranitar, L50, M|100/100
+|turn|4
+|
+|t:|1778186478
+|switch|p1b: Ninetales|Ninetales-Alola, L50, F|100/100
+|-weather|Snowscape|[from] ability: Snow Warning|[of] p1b: Ninetales
+|detailschange|p2a: Tyranitar|Tyranitar-Mega, L50, M
+|-mega|p2a: Tyranitar|Tyranitar|Tyranitarite
+|-weather|Sandstorm|[from] ability: Sand Stream|[of] p2a: Tyranitar
+|move|p2a: Tyranitar|Low Kick|p1a: Kingambit
+|-supereffective|p1a: Kingambit|2
+|-enditem|p1a: Kingambit|Chople Berry|[eat]
+|-enditem|p1a: Kingambit|Chople Berry|[weaken]
+|-damage|p1a: Kingambit|38/100
+|move|p2b: Corviknight|Brave Bird|p1b: Ninetales
+|-damage|p1b: Ninetales|33/100
+|-damage|p2b: Corviknight|83/100|[from] Recoil
+|move|p1a: Kingambit|Low Kick|p2a: Tyranitar
+|-supereffective|p2a: Tyranitar|2
+|-damage|p2a: Tyranitar|0 fnt
+|faint|p2a: Tyranitar
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1b: Ninetales|27/100|[from] Sandstorm
+|-heal|p2b: Corviknight|89/100|[from] item: Leftovers
+|upkeep
+|turn|5
+|
+|t:|1778186501
+|move|p1a: Kingambit|Sucker Punch|p2b: Corviknight
+|-damage|p2b: Corviknight|55/100
+|move|p2b: Corviknight|Brave Bird|p1b: Ninetales
+|-damage|p1b: Ninetales|0 fnt
+|faint|p1b: Ninetales
+|-damage|p2b: Corviknight|48/100|[from] Recoil
+|
+|-weather|Sandstorm|[upkeep]
+|-heal|p2b: Corviknight|54/100|[from] item: Leftovers
+|upkeep
+|
+|t:|1778186506
+|switch|p1b: Lopunny|Lopunny-Mega, L50, F, shiny|83/100
+|turn|6
+|j| huhyuhyuhyuh
+|
+|t:|1778186511
+|move|p1b: Lopunny|Fake Out|p2b: Corviknight
+|-resisted|p2b: Corviknight|1
+|-damage|p2b: Corviknight|46/100
+|cant|p2b: Corviknight|flinch
+|move|p1a: Kingambit|Kowtow Cleave|p2b: Corviknight
+|-damage|p2b: Corviknight|9/100
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1b: Lopunny|77/100|[from] Sandstorm
+|-heal|p2b: Corviknight|15/100|[from] item: Leftovers
+|-sideend|p2: Wolfe Flick|move: Tailwind
+|upkeep
+|turn|7
+|
+|t:|1778186517
+|move|p1b: Lopunny|Close Combat|p2b: Corviknight
+|-damage|p2b: Corviknight|0 fnt
+|-unboost|p1b: Lopunny|def|1
+|-unboost|p1b: Lopunny|spd|1
+|faint|p2b: Corviknight
+|
+|win|ScribbleScribble
+|raw|ScribbleScribble's rating: 1905 &rarr; <strong>1917</strong><br />(+12 for winning)
+|raw|Wolfe Flick's rating: 1757 &rarr; <strong>1745</strong><br />(-12 for losing)

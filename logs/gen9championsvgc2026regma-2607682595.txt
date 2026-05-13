@@ -1,0 +1,165 @@
+|j|☆Spottedwoot
+|j|☆sagthebag
+|t:|1778565932
+|gametype|doubles
+|player|p1|Spottedwoot|265|1771
+|player|p2|sagthebag|ghetsis|1742
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Excadrill, L50, M|
+|poke|p1|Milotic, L50, F|
+|poke|p1|Whimsicott, L50, M|
+|poke|p1|Sneasler, L50, M|
+|poke|p1|Meganium, L50, F|
+|poke|p1|Aegislash, L50, F|
+|poke|p2|Basculegion, L50, M|
+|poke|p2|Glimmora, L50, F|
+|poke|p2|Pelipper, L50, F|
+|poke|p2|Politoed, L50, M|
+|poke|p2|Kangaskhan, L50, F|
+|poke|p2|Archaludon, L50, M|
+|teampreview|4
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by Spottedwoot)
+|
+|t:|1778565987
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Meganium|Meganium, L50, F|100/100
+|switch|p1b: Whimsicott|Whimsicott, L50, M|100/100
+|switch|p2a: Kangaskhan|Kangaskhan, L50, F|100/100
+|switch|p2b: Archaludon|Archaludon, L50, M|100/100
+|turn|1
+|inactive|sagthebag has 30 seconds left.
+|
+|t:|1778566014
+|switch|p2a: Pelipper|Pelipper, L50, F|100/100
+|-weather|RainDance|[from] ability: Drizzle|[of] p2a: Pelipper
+|detailschange|p1a: Meganium|Meganium-Mega, L50, F
+|-mega|p1a: Meganium|Meganium|Meganiumite
+|move|p1b: Whimsicott|Fake Tears|p2b: Archaludon
+|-unboost|p2b: Archaludon|spd|2
+|move|p2b: Archaludon|Flash Cannon|p1a: Meganium
+|-supereffective|p1a: Meganium|1
+|-damage|p1a: Meganium|22/100
+|-unboost|p1a: Meganium|spd|1
+|move|p1a: Meganium|Weather Ball|p2b: Archaludon
+|-crit|p2b: Archaludon
+|-ability|p2b: Archaludon|Sturdy
+|-damage|p2b: Archaludon|1/100
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|turn|2
+|
+|t:|1778566038
+|move|p1b: Whimsicott|Tailwind|p1b: Whimsicott
+|-sidestart|p1: Spottedwoot|move: Tailwind
+|move|p1a: Meganium|Dazzling Gleam|p2b: Archaludon|[spread] p2a,p2b
+|-damage|p2a: Pelipper|41/100
+|-damage|p2b: Archaludon|0 fnt
+|faint|p2b: Archaludon
+|move|p2a: Pelipper|Tailwind|p2a: Pelipper
+|-sidestart|p2: sagthebag|move: Tailwind
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|
+|t:|1778566053
+|switch|p2b: Basculegion|Basculegion, L50, M|100/100
+|turn|3
+|
+|t:|1778566061
+|switch|p2a: Kangaskhan|Kangaskhan, L50, F|100/100
+|move|p2b: Basculegion|Last Respects|p1a: Meganium
+|-damage|p1a: Meganium|0 fnt
+|faint|p1a: Meganium
+|move|p1b: Whimsicott|Moonblast|p2b: Basculegion
+|-damage|p2b: Basculegion|60/100
+|-unboost|p2b: Basculegion|spa|1
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|
+|t:|1778566068
+|switch|p1a: Aegislash|Aegislash, L50, F|100/100
+|turn|4
+|
+|t:|1778566081
+|detailschange|p2a: Kangaskhan|Kangaskhan-Mega, L50, F
+|-mega|p2a: Kangaskhan|Kangaskhan|Kangaskhanite
+|move|p2b: Basculegion|Protect|p2b: Basculegion
+|-singleturn|p2b: Basculegion|Protect
+|-formechange|p1a: Aegislash|Aegislash-Blade|
+|move|p1a: Aegislash|Shadow Sneak|p2b: Basculegion
+|-activate|p2b: Basculegion|move: Protect
+|move|p1b: Whimsicott|Moonblast|p2b: Basculegion
+|-activate|p2b: Basculegion|move: Protect
+|move|p2a: Kangaskhan|Double-Edge|p1b: Whimsicott
+|-enditem|p1b: Whimsicott|Focus Sash
+|-damage|p1b: Whimsicott|1/100
+|-damage|p1b: Whimsicott|0 fnt
+|faint|p1b: Whimsicott
+|-hitcount|p1: Whimsicott|2
+|-damage|p2a: Kangaskhan|77/100|[from] Recoil
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|
+|t:|1778566087
+|switch|p1b: Sneasler|Sneasler, L50, M|100/100
+|turn|5
+|inactive|sagthebag has 30 seconds left.
+|inactive|sagthebag has 20 seconds left.
+|inactive|sagthebag has 15 seconds left.
+|j| can de palleiro
+|inactive|sagthebag has 10 seconds left.
+|
+|t:|1778566132
+|move|p1b: Sneasler|Fake Out|p2a: Kangaskhan
+|-damage|p2a: Kangaskhan|63/100
+|move|p2b: Basculegion|Aqua Jet|p1a: Aegislash
+|-damage|p1a: Aegislash|39/100
+|move|p1a: Aegislash|Shadow Sneak|p2b: Basculegion
+|-supereffective|p2b: Basculegion|1
+|-damage|p2b: Basculegion|0 fnt
+|faint|p2b: Basculegion
+|cant|p2a: Kangaskhan|flinch
+|
+|-weather|none
+|-sideend|p1: Spottedwoot|move: Tailwind
+|-sideend|p2: sagthebag|move: Tailwind
+|upkeep
+|
+|t:|1778566140
+|switch|p2b: Pelipper|Pelipper, L50, F|41/100
+|-weather|RainDance|[from] ability: Drizzle|[of] p2b: Pelipper
+|turn|6
+|
+|t:|1778566147
+|move|p2a: Kangaskhan|Sucker Punch|p1a: Aegislash
+|-supereffective|p1a: Aegislash|1
+|-damage|p1a: Aegislash|0 fnt
+|faint|p1a: Aegislash
+|move|p1b: Sneasler|Close Combat|p2a: Kangaskhan
+|-supereffective|p2a: Kangaskhan|1
+|-damage|p2a: Kangaskhan|0 fnt
+|-unboost|p1b: Sneasler|def|1
+|-unboost|p1b: Sneasler|spd|1
+|faint|p2a: Kangaskhan
+|-enditem|p1b: Sneasler|White Herb
+|-clearnegativeboost|p1b: Sneasler|[silent]
+|move|p2b: Pelipper|Hurricane|p1b: Sneasler
+|-supereffective|p1b: Sneasler|1
+|-damage|p1b: Sneasler|0 fnt
+|faint|p1b: Sneasler
+|
+|win|sagthebag
+|raw|Spottedwoot's rating: 1771 &rarr; <strong>1749</strong><br />(-22 for losing)
+|raw|sagthebag's rating: 1742 &rarr; <strong>1764</strong><br />(+22 for winning)
+|l|☆sagthebag
+|player|p2|

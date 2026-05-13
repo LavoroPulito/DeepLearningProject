@@ -1,0 +1,120 @@
+|j|☆zeimei
+|j|☆ScribbleScribble
+|t:|1778562525
+|gametype|doubles
+|player|p1|zeimei|265|1819
+|player|p2|ScribbleScribble|mina-lgpe|1839
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Sinistcha, L50|
+|poke|p1|Rotom-Wash, L50|
+|poke|p1|Kingambit, L50, M|
+|poke|p1|Basculegion, L50, M|
+|poke|p1|Camerupt, L50, M, shiny|
+|poke|p1|Garchomp, L50, F|
+|poke|p2|Lopunny, L50, F, shiny|
+|poke|p2|Farigiraf, L50, F|
+|poke|p2|Basculegion, L50, M, shiny|
+|poke|p2|Ceruledge, L50, M|
+|poke|p2|Kingambit, L50, F|
+|poke|p2|Ninetales-Alola, L50, M|
+|teampreview|4
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by ScribbleScribble)
+|inactive|zeimei has 60 seconds left.
+|
+|t:|1778562555
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Camerupt|Camerupt, L50, M, shiny|100/100
+|switch|p1b: Kingambit|Kingambit, L50, M|100/100
+|switch|p2a: Lopunny|Lopunny, L50, F, shiny|100/100
+|switch|p2b: Ninetales|Ninetales-Alola, L50, M|100/100
+|-weather|Snowscape|[from] ability: Snow Warning|[of] p2b: Ninetales
+|turn|1
+|
+|t:|1778562574
+|detailschange|p2a: Lopunny|Lopunny-Mega, L50, F, shiny
+|-mega|p2a: Lopunny|Lopunny|Lopunnite
+|detailschange|p1a: Camerupt|Camerupt-Mega, L50, M, shiny
+|-mega|p1a: Camerupt|Camerupt|Cameruptite
+|move|p2a: Lopunny|Close Combat|p1b: Kingambit
+|-supereffective|p1b: Kingambit|2
+|-enditem|p1b: Kingambit|Chople Berry|[eat]
+|-enditem|p1b: Kingambit|Chople Berry|[weaken]
+|-damage|p1b: Kingambit|7/100
+|-unboost|p2a: Lopunny|def|1
+|-unboost|p2a: Lopunny|spd|1
+|move|p2b: Ninetales|Blizzard|p1a: Camerupt|[spread] p1a,p1b
+|-resisted|p1b: Kingambit|1
+|-crit|p1b: Kingambit
+|-damage|p1a: Camerupt|64/100
+|-damage|p1b: Kingambit|0 fnt
+|faint|p1b: Kingambit
+|move|p1a: Camerupt|Heat Wave|p2a: Lopunny|[spread] p2a,p2b
+|-supereffective|p2b: Ninetales|1
+|-damage|p2a: Lopunny|0 fnt
+|-damage|p2b: Ninetales|0 fnt
+|faint|p2a: Lopunny
+|faint|p2b: Ninetales
+|
+|-weather|Snowscape|[upkeep]
+|upkeep
+|
+|t:|1778562595
+|switch|p2a: Ceruledge|Ceruledge, L50, M|100/100
+|switch|p2b: Kingambit|Kingambit, L50, F|100/100
+|switch|p1b: Sinistcha|Sinistcha, L50|100/100
+|-heal|p1a: Camerupt|89/100|[from] ability: Hospitality|[of] p1b: Sinistcha
+|turn|2
+|
+|t:|1778562610
+|move|p1b: Sinistcha|Rage Powder|p1b: Sinistcha
+|-singleturn|p1b: Sinistcha|move: Rage Powder
+|move|p2a: Ceruledge|Poltergeist|p1b: Sinistcha
+|-activate|p1b: Sinistcha|move: Poltergeist|Occa Berry
+|-supereffective|p1b: Sinistcha|1
+|-damage|p1b: Sinistcha|8/100
+|move|p2b: Kingambit|Kowtow Cleave|p1b: Sinistcha
+|-supereffective|p1b: Sinistcha|1
+|-damage|p1b: Sinistcha|0 fnt
+|faint|p1b: Sinistcha
+|move|p1a: Camerupt|Earth Power|p2b: Kingambit
+|-supereffective|p2b: Kingambit|1
+|-damage|p2b: Kingambit|0 fnt
+|faint|p2b: Kingambit
+|
+|-weather|Snowscape|[upkeep]
+|upkeep
+|
+|t:|1778562627
+|switch|p1b: Basculegion|Basculegion, L50, M|100/100
+|turn|3
+|
+|t:|1778562633
+|move|p2a: Ceruledge|Poltergeist|p1b: Basculegion
+|-activate|p1b: Basculegion|move: Poltergeist|Focus Sash
+|-supereffective|p1b: Basculegion|1
+|-enditem|p1b: Basculegion|Focus Sash
+|-damage|p1b: Basculegion|1/100
+|move|p1b: Basculegion|Last Respects|p2a: Ceruledge
+|-supereffective|p2a: Ceruledge|1
+|-enditem|p2a: Ceruledge|Focus Sash
+|-damage|p2a: Ceruledge|1/100
+|-ability|p2a: Ceruledge|Weak Armor|boost
+|-unboost|p2a: Ceruledge|def|1
+|-boost|p2a: Ceruledge|spe|2
+|move|p1a: Camerupt|Earth Power|p2a: Ceruledge
+|-supereffective|p2a: Ceruledge|1
+|-damage|p2a: Ceruledge|0 fnt
+|faint|p2a: Ceruledge
+|
+|win|zeimei
+|raw|zeimei's rating: 1819 &rarr; <strong>1840</strong><br />(+21 for winning)
+|raw|ScribbleScribble's rating: 1839 &rarr; <strong>1818</strong><br />(-21 for losing)
+|l|☆ScribbleScribble
+|player|p2|

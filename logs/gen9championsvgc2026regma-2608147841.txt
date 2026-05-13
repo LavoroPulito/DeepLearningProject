@@ -1,0 +1,182 @@
+|j|☆darthmorton
+|j|☆swirlingroses
+|t:|1778611845
+|gametype|doubles
+|player|p1|darthmorton|dragontamer|1837
+|player|p2|swirlingroses|lisia|1793
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Sneasler, L50, F|
+|poke|p1|Sinistcha, L50|
+|poke|p1|Incineroar, L50, F|
+|poke|p1|Charizard, L50, F|
+|poke|p1|Floette-Eternal, L50, F|
+|poke|p1|Kingambit, L50, F|
+|poke|p2|Floette-Eternal, L50, F|
+|poke|p2|Incineroar, L50, M|
+|poke|p2|Sneasler, L50, M|
+|poke|p2|Basculegion, L50, M|
+|poke|p2|Kingambit, L50, F|
+|poke|p2|Dragapult, L50, M|
+|teampreview|4
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by darthmorton)
+|inactive|darthmorton has 60 seconds left.
+|
+|t:|1778611884
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Sneasler|Sneasler, L50, F|100/100
+|switch|p1b: Floette|Floette-Eternal, L50, F|100/100
+|switch|p2a: Dragapult|Dragapult, L50, M|100/100
+|switch|p2b: Kingambit|Kingambit, L50, F|100/100
+|turn|1
+|
+|t:|1778611903
+|detailschange|p1b: Floette|Floette-Mega, L50, F
+|-mega|p1b: Floette|Floette|Floettite
+|-ability|p1b: Floette|Fairy Aura
+|move|p2a: Dragapult|Protect|p2a: Dragapult
+|-singleturn|p2a: Dragapult|Protect
+|move|p2b: Kingambit|Protect|p2b: Kingambit
+|-singleturn|p2b: Kingambit|Protect
+|move|p1a: Sneasler|Fake Out|p2b: Kingambit
+|-activate|p2b: Kingambit|move: Protect
+|move|p1b: Floette|Calm Mind|p1b: Floette
+|-boost|p1b: Floette|spa|1
+|-boost|p1b: Floette|spd|1
+|
+|upkeep
+|turn|2
+|
+|t:|1778611924
+|move|p2b: Kingambit|Sucker Punch||[still]
+|-fail|p2b: Kingambit
+|move|p2a: Dragapult|Draco Meteor|p1a: Sneasler
+|-damage|p1a: Sneasler|28/100
+|-unboost|p2a: Dragapult|spa|2
+|move|p1a: Sneasler|Coaching|p1b: Floette
+|-boost|p1b: Floette|atk|1
+|-boost|p1b: Floette|def|1
+|move|p1b: Floette|Moonblast|p2b: Kingambit
+|-crit|p2b: Kingambit
+|-damage|p2b: Kingambit|0 fnt
+|faint|p2b: Kingambit
+|
+|upkeep
+|
+|t:|1778611932
+|switch|p2b: Sneasler|Sneasler, L50, M|100/100
+|turn|3
+|inactive|swirlingroses has 30 seconds left.
+|
+|t:|1778611959
+|move|p1b: Floette|Protect|p1b: Floette
+|-singleturn|p1b: Floette|Protect
+|move|p2b: Sneasler|Fake Out|p1b: Floette
+|-activate|p1b: Floette|move: Protect
+|move|p2a: Dragapult|Draco Meteor|p1a: Sneasler|[miss]
+|-miss|p2a: Dragapult|p1a: Sneasler
+|move|p1a: Sneasler|Coaching|p1b: Floette
+|-boost|p1b: Floette|atk|1
+|-boost|p1b: Floette|def|1
+|
+|upkeep
+|turn|4
+|
+|t:|1778611974
+|switch|p1a: Sinistcha|Sinistcha, L50|100/100
+|move|p2a: Dragapult|Thunder Wave|p1b: Floette
+|-status|p1b: Floette|par
+|move|p2b: Sneasler|Dire Claw|p1b: Floette
+|-supereffective|p1b: Floette|1
+|-damage|p1b: Floette|53/100 par
+|-fail|p1b: Floette|par
+|move|p1b: Floette|Moonblast|p2b: Sneasler
+|-damage|p2b: Sneasler|0 fnt
+|faint|p2b: Sneasler
+|
+|upkeep
+|
+|t:|1778611981
+|switch|p2b: Floette|Floette-Eternal, L50, F|100/100
+|turn|5
+|
+|t:|1778611994
+|switch|p1a: Kingambit|Kingambit, L50, F|100/100
+|detailschange|p2b: Floette|Floette-Mega, L50, F
+|-mega|p2b: Floette|Floette|Floettite
+|-ability|p2b: Floette|Fairy Aura
+|move|p2a: Dragapult|Thunder Wave|p1a: Kingambit
+|-status|p1a: Kingambit|par
+|move|p2b: Floette|Calm Mind|p2b: Floette
+|-boost|p2b: Floette|spa|1
+|-boost|p2b: Floette|spd|1
+|move|p1b: Floette|Dazzling Gleam|p2a: Dragapult|[spread] p2a,p2b
+|-supereffective|p2a: Dragapult|1
+|-enditem|p2a: Dragapult|Focus Sash
+|-damage|p2a: Dragapult|1/100
+|-damage|p2b: Floette|67/100
+|
+|upkeep
+|turn|6
+|
+|t:|1778612013
+|switch|p1a: Sinistcha|Sinistcha, L50|100/100
+|-heal|p1b: Floette|78/100 par|[from] ability: Hospitality|[of] p1a: Sinistcha
+|move|p2a: Dragapult|Hex|p1a: Sinistcha
+|-supereffective|p1a: Sinistcha|1
+|-damage|p1a: Sinistcha|65/100
+|move|p2b: Floette|Moonblast|p1b: Floette
+|-damage|p1b: Floette|24/100 par
+|move|p1b: Floette|Dazzling Gleam|p2b: Floette|[spread] p2a,p2b
+|-supereffective|p2a: Dragapult|1
+|-damage|p2a: Dragapult|0 fnt
+|-damage|p2b: Floette|36/100
+|faint|p2a: Dragapult
+|
+|upkeep
+|turn|7
+|j| thisoldmanheplayed
+|
+|t:|1778612024
+|move|p2b: Floette|Dazzling Gleam|p1b: Floette|[spread] p1a,p1b
+|-damage|p1a: Sinistcha|0 fnt
+|-damage|p1b: Floette|0 fnt
+|faint|p1a: Sinistcha
+|faint|p1b: Floette
+|
+|upkeep
+|
+|t:|1778612027
+|switch|p1b: Sneasler|Sneasler, L50, F|28/100
+|switch|p1a: Kingambit|Kingambit, L50, F|100/100 par
+|turn|8
+|
+|t:|1778612031
+|move|p2b: Floette|Protect|p2b: Floette
+|-singleturn|p2b: Floette|Protect
+|move|p1a: Kingambit|Sucker Punch||[still]
+|-fail|p1a: Kingambit
+|move|p1b: Sneasler|Dire Claw|p2b: Floette
+|-activate|p2b: Floette|move: Protect
+|
+|upkeep
+|turn|9
+|
+|t:|1778612034
+|move|p1a: Kingambit|Sucker Punch|p2b: Floette
+|-resisted|p2b: Floette|1
+|-damage|p2b: Floette|13/100
+|move|p1b: Sneasler|Dire Claw|p2b: Floette
+|-supereffective|p2b: Floette|1
+|-damage|p2b: Floette|0 fnt
+|faint|p2b: Floette
+|
+|win|darthmorton
+|raw|darthmorton's rating: 1837 &rarr; <strong>1854</strong><br />(+17 for winning)
+|raw|swirlingroses's rating: 1793 &rarr; <strong>1776</strong><br />(-17 for losing)

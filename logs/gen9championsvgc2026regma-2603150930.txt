@@ -1,0 +1,112 @@
+|raw|<div class="broadcast-blue"><strong>This battle is required to be public due to a player having a name starting with 'sdlt'.</div>
+|j|☆SDLT2FCO TEP
+|j|☆peesan
+|t:|1778079108
+|gametype|doubles
+|player|p1|SDLT2FCO TEP|266|1812
+|player|p2|peesan|101|1828
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Tyranitar, L50, F|
+|poke|p1|Excadrill, L50, F|
+|poke|p1|Kommo-o, L50, M|
+|poke|p1|Milotic, L50, M|
+|poke|p1|Meganium, L50, F|
+|poke|p1|Volcarona, L50, F|
+|poke|p2|Basculegion, L50, M|
+|poke|p2|Aerodactyl, L50, M|
+|poke|p2|Floette-Eternal, L50, F|
+|poke|p2|Sneasler, L50, M|
+|poke|p2|Kingambit, L50, F|
+|poke|p2|Charizard, L50, M, shiny|
+|teampreview|4
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by SDLT2FCO TEP)
+|j| Mikeflem12326171
+|inactive|peesan has 60 seconds left.
+|
+|t:|1778079144
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Tyranitar|Tyranitar, L50, F|100/100
+|switch|p1b: Excadrill|Excadrill, L50, F|100/100
+|switch|p2a: Aerodactyl|Aerodactyl, L50, M|100/100
+|switch|p2b: Kingambit|Kingambit, L50, F|100/100
+|-ability|p2a: Aerodactyl|Unnerve
+|-weather|Sandstorm|[from] ability: Sand Stream|[of] p1a: Tyranitar
+|turn|1
+|c| Mikeflem12326171|woah volc on top gotta see this
+|
+|t:|1778079157
+|switch|p1a: Volcarona|Volcarona, L50, F|100/100
+|move|p1b: Excadrill|Iron Head|p2a: Aerodactyl
+|-supereffective|p2a: Aerodactyl|1
+|-damage|p2a: Aerodactyl|0 fnt
+|faint|p2a: Aerodactyl
+|move|p2b: Kingambit|Low Kick|p1a: Volcarona
+|-resisted|p1a: Volcarona|1
+|-damage|p1a: Volcarona|88/100
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1a: Volcarona|82/100|[from] Sandstorm
+|upkeep
+|c| Mikeflem12326171|amazing calls
+|
+|t:|1778079171
+|switch|p2a: Basculegion|Basculegion, L50, M|100/100
+|turn|2
+|
+|t:|1778079181
+|move|p1b: Excadrill|Protect|p1b: Excadrill
+|-singleturn|p1b: Excadrill|Protect
+|move|p2a: Basculegion|Last Respects|p1a: Volcarona
+|-damage|p1a: Volcarona|26/100
+|move|p1a: Volcarona|Heat Wave|p2a: Basculegion|[spread] p2a,p2b
+|-resisted|p2a: Basculegion|1
+|-supereffective|p2b: Kingambit|1
+|-damage|p2a: Basculegion|81/100
+|-damage|p2b: Kingambit|37/100
+|-status|p2a: Basculegion|brn
+|move|p2b: Kingambit|Low Kick|p1b: Excadrill
+|-activate|p1b: Excadrill|move: Protect
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p2a: Basculegion|75/100 brn|[from] Sandstorm
+|-damage|p1a: Volcarona|19/100|[from] Sandstorm
+|-damage|p2a: Basculegion|69/100 brn|[from] brn
+|upkeep
+|turn|3
+|j| hachiware
+|
+|t:|1778079200
+|move|p1a: Volcarona|Rage Powder|p1a: Volcarona
+|-singleturn|p1a: Volcarona|move: Rage Powder
+|move|p2a: Basculegion|Aqua Jet|p1a: Volcarona
+|-supereffective|p1a: Volcarona|1
+|-enditem|p1a: Volcarona|Passho Berry|[eat]
+|-enditem|p1a: Volcarona|Passho Berry|[weaken]
+|-damage|p1a: Volcarona|7/100
+|move|p2b: Kingambit|Sucker Punch||[still]
+|-fail|p2b: Kingambit
+|move|p1b: Excadrill|High Horsepower|p2b: Kingambit
+|-supereffective|p2b: Kingambit|1
+|-damage|p2b: Kingambit|0 fnt
+|faint|p2b: Kingambit
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p2a: Basculegion|63/100 brn|[from] Sandstorm
+|-damage|p1a: Volcarona|1/100|[from] Sandstorm
+|-damage|p2a: Basculegion|57/100 brn|[from] brn
+|upkeep
+|c| Mikeflem12326171|WAH
+|-message|peesan forfeited.
+|
+|win|SDLT2FCO TEP
+|raw|SDLT2FCO TEP's rating: 1812 &rarr; <strong>1833</strong><br />(+21 for winning)
+|raw|peesan's rating: 1828 &rarr; <strong>1807</strong><br />(-21 for losing)
+|l|☆peesan
+|player|p2|

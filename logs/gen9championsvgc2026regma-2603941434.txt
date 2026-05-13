@@ -1,0 +1,184 @@
+|j|☆lpelpe
+|j|☆PikaTROD
+|t:|1778159703
+|gametype|doubles
+|player|p1|lpelpe|101|1809
+|player|p2|PikaTROD|2|1822
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Kangaskhan, L50, F|
+|poke|p1|Farigiraf, L50, M|
+|poke|p1|Camerupt, L50, M|
+|poke|p1|Kleavor, L50, M|
+|poke|p1|Sylveon, L50, F|
+|poke|p1|Drampa, L50, F|
+|poke|p2|Glimmora, L50, F|
+|poke|p2|Ninetales-Alola, L50, F|
+|poke|p2|Corviknight, L50, F|
+|poke|p2|Rotom-Wash, L50|
+|poke|p2|Garchomp, L50, M|
+|poke|p2|Hydreigon, L50, M|
+|teampreview|4
+|j| whgsosla
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by lpelpe)
+|j| alkagen101
+|inactive|lpelpe has 60 seconds left.
+|inactive|PikaTROD has 60 seconds left.
+|
+|t:|1778159749
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Kangaskhan|Kangaskhan, L50, F|100/100
+|switch|p1b: Farigiraf|Farigiraf, L50, M|100/100
+|switch|p2a: Garchomp|Garchomp, L50, M|100/100
+|switch|p2b: Rotom|Rotom-Wash, L50|100/100
+|turn|1
+|inactive|lpelpe has 30 seconds left.
+|
+|t:|1778159779
+|switch|p2b: Glimmora|Glimmora, L50, F|100/100
+|move|p1a: Kangaskhan|Fake Out|p2b: Glimmora
+|-resisted|p2b: Glimmora|1
+|-damage|p2b: Glimmora|85/100
+|-activate|p2b: Glimmora|ability: Toxic Debris
+|-sidestart|p1: lpelpe|move: Toxic Spikes
+|move|p2a: Garchomp|Stomping Tantrum|p1b: Farigiraf
+|-damage|p1b: Farigiraf|51/100
+|move|p1b: Farigiraf|Trick Room|p1b: Farigiraf
+|-fieldstart|move: Trick Room|[of] p1b: Farigiraf
+|
+|upkeep
+|turn|2
+|
+|t:|1778159803
+|switch|p2b: Rotom|Rotom-Wash, L50|100/100
+|move|p1b: Farigiraf|Psychic Noise|p2b: Rotom
+|-damage|p2b: Rotom|61/100
+|-start|p2b: Rotom|move: Heal Block
+|move|p1a: Kangaskhan|Double-Edge|p2a: Garchomp
+|-damage|p2a: Garchomp|32/100
+|-damage|p1a: Kangaskhan|87/100|[from] ability: Rough Skin|[of] p2a: Garchomp
+|-damage|p1a: Kangaskhan|66/100|[from] Recoil
+|move|p2a: Garchomp|Earthquake|p1b: Farigiraf|[spread] p1a,p1b
+|-immune|p2b: Rotom|[from] ability: Levitate
+|-damage|p1a: Kangaskhan|19/100
+|-damage|p1b: Farigiraf|3/100
+|
+|upkeep
+|turn|3
+|inactive|lpelpe has 30 seconds left.
+|inactive|PikaTROD has 30 seconds left.
+|inactive|lpelpe has 20 seconds left.
+|inactive|lpelpe has 15 seconds left.
+|inactive|lpelpe has 10 seconds left.
+|inactive|lpelpe has 5 seconds left.
+|
+|t:|1778159859
+|switch|p2b: Corviknight|Corviknight, L50, F|100/100
+|move|p2a: Garchomp|Protect|p2a: Garchomp
+|-singleturn|p2a: Garchomp|Protect
+|move|p1b: Farigiraf|Nasty Plot|p1b: Farigiraf
+|-boost|p1b: Farigiraf|spa|2
+|move|p1a: Kangaskhan|Double-Edge|p2a: Garchomp
+|-activate|p2a: Garchomp|move: Protect
+|
+|upkeep
+|turn|4
+|inactive|PikaTROD has 30 seconds left.
+|inactive|PikaTROD has 20 seconds left.
+|inactive|PikaTROD has 15 seconds left.
+|inactive|PikaTROD has 10 seconds left.
+|
+|t:|1778159907
+|switch|p2a: Rotom|Rotom-Wash, L50|61/100
+|move|p1b: Farigiraf|Psychic Noise|p2b: Corviknight
+|-resisted|p2b: Corviknight|1
+|-damage|p2b: Corviknight|69/100
+|-start|p2b: Corviknight|move: Heal Block
+|cant|p2b: Corviknight|move: Heal Block|Roost
+|move|p1a: Kangaskhan|Double-Edge|p2a: Rotom
+|-crit|p2a: Rotom
+|-damage|p2a: Rotom|0 fnt
+|faint|p2a: Rotom
+|-damage|p1a: Kangaskhan|4/100|[from] Recoil
+|
+|upkeep
+|
+|t:|1778159922
+|switch|p2a: Garchomp|Garchomp, L50, M|32/100
+|turn|5
+|
+|t:|1778159934
+|move|p2a: Garchomp|Protect|p2a: Garchomp
+|-singleturn|p2a: Garchomp|Protect
+|move|p1b: Farigiraf|Hyper Voice|p2b: Corviknight|[spread] p2b
+|-activate|p2a: Garchomp|move: Protect
+|-resisted|p2b: Corviknight|1
+|-damage|p2b: Corviknight|42/100
+|move|p2b: Corviknight|Brave Bird|p1a: Kangaskhan
+|-damage|p1a: Kangaskhan|0 fnt
+|faint|p1a: Kangaskhan
+|-damage|p2b: Corviknight|41/100|[from] Recoil
+|
+|-end|p2b: Corviknight|move: Heal Block
+|-fieldend|move: Trick Room
+|upkeep
+|j| Lei41
+|
+|t:|1778159937
+|switch|p1a: Sylveon|Sylveon, L50, F|100/100
+|-status|p1a: Sylveon|psn
+|turn|6
+|
+|t:|1778159949
+|switch|p2a: Glimmora|Glimmora, L50, F|85/100
+|move|p2b: Corviknight|Brave Bird|p1b: Farigiraf
+|-damage|p1b: Farigiraf|0 fnt
+|faint|p1b: Farigiraf
+|-damage|p2b: Corviknight|40/100|[from] Recoil
+|move|p1a: Sylveon|Hyper Voice|p2a: Glimmora|[spread] p2a,p2b
+|-resisted|p2a: Glimmora|1
+|-resisted|p2b: Corviknight|1
+|-damage|p2a: Glimmora|51/100
+|-damage|p2b: Corviknight|21/100
+|
+|-heal|p2b: Corviknight|27/100|[from] item: Leftovers
+|-damage|p1a: Sylveon|87/100 psn|[from] psn
+|upkeep
+|
+|t:|1778159955
+|switch|p1b: Drampa|Drampa, L50, F|100/100
+|-status|p1b: Drampa|psn
+|-ability|p1b: Drampa|Cloud Nine
+|turn|7
+|
+|t:|1778159971
+|move|p2a: Glimmora|Spiky Shield|p2a: Glimmora
+|-singleturn|p2a: Glimmora|move: Protect
+|move|p2b: Corviknight|Brave Bird|p1a: Sylveon
+|-damage|p1a: Sylveon|45/100 psn
+|-damage|p2b: Corviknight|13/100|[from] Recoil
+|move|p1a: Sylveon|Hyper Voice|p2b: Corviknight|[spread] p2b
+|-activate|p2a: Glimmora|move: Protect
+|-resisted|p2b: Corviknight|1
+|-damage|p2b: Corviknight|0 fnt
+|faint|p2b: Corviknight
+|move|p1b: Drampa|Hyper Voice|p2a: Glimmora
+|-activate|p2a: Glimmora|move: Protect
+|
+|-damage|p1a: Sylveon|33/100 psn|[from] psn
+|-damage|p1b: Drampa|87/100 psn|[from] psn
+|upkeep
+|-message|lpelpe forfeited.
+|
+|win|PikaTROD
+|raw|lpelpe's rating: 1809 &rarr; <strong>1790</strong><br />(-19 for losing)
+|raw|PikaTROD's rating: 1822 &rarr; <strong>1841</strong><br />(+19 for winning)
+|l|☆lpelpe
+|player|p1|
+|j| 67sigmagrindset

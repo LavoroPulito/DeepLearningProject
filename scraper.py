@@ -1,5 +1,6 @@
 import requests
 from tqdm import tqdm
+import os
 # 1. Inserisci l'URL della pagina o dell'API
 replayUrl = "https://replay.pokemonshowdown.com/" #base for download replay. add '.json' at the end after append the battleID
 battleHistoryUrl = "https://replay.pokemonshowdown.com/search.json?format=[Gen%209%20Champions]%20VGC%202026%20Reg%20M-A&sort=rating&page=1"
@@ -17,9 +18,8 @@ def scarica_id(targetUrl):
         dati_json = risposta.json()
     
     # 5. Ora puoi usare i dati!
-        print("Dati scaricati con successo:")
-        print(len(dati_json))
-        print(dati_json[0].keys())
+        print(len(dati_json)," logs scaricati con successo:")
+#        print(dati_json[0].keys())
         for dic in dati_json:
             ids.append(dic['id'])
     
@@ -56,10 +56,22 @@ def scarica_log(battleID):
         print("La pagina non ha restituito un JSON valido.")
 
 
-ids = scarica_id(battleHistoryUrl)
+ids = scarica_id(battleHistoryUrl) #scarico i logs
+existent_logs = os.listdir("logs/") #prendo i nomi dei log scaricati
+for i in range(len(existent_logs)): # tolgo l'estensione ".txt"
+    existent_logs[i] = existent_logs[i][:len(existent_logs[i])-4]
+esistenti = 0
+for Id in ids:# tolgo dalla lista i log che ho già 
+    if Id in existent_logs:
+        esistenti+=1
+        ids.remove(Id)
+
+print("ne esistevano ",esistenti, "ne scaricherai ", len(ids) )
+
+
 for ID in tqdm(ids):
     scarica_log(ID)
-#TODO aggiungi un controllo sugli id già scaricati 
+#TODO mo so pochi log, non so se ha senso implementare una ricerca binaria per il controllo sui log esistenti
 #TODO semplifica i nomi dei log
 
 

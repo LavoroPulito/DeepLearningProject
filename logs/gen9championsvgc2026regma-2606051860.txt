@@ -1,0 +1,168 @@
+|j|☆Snowstorm brute
+|j|☆luuquocviet2008
+|t:|1778382267
+|gametype|doubles
+|player|p1|Snowstorm brute|veteran|1777
+|player|p2|luuquocviet2008|169|1804
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Bellibolt, L50, M|
+|poke|p1|Sinistcha, L50|
+|poke|p1|Charizard, L50, F|
+|poke|p1|Krookodile, L50, M|
+|poke|p1|Alcremie, L50, F|
+|poke|p1|Araquanid, L50, F|
+|poke|p2|Charizard, L50, M|
+|poke|p2|Aerodactyl, L50, F|
+|poke|p2|Garchomp, L50, F|
+|poke|p2|Kingambit, L50, M|
+|poke|p2|Basculegion, L50, M|
+|poke|p2|Sylveon, L50, M|
+|teampreview|4
+|c|☆luuquocviet2008|hello
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by luuquocviet2008)
+|
+|t:|1778382306
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Bellibolt|Bellibolt, L50, M|100/100
+|switch|p1b: Charizard|Charizard, L50, F|100/100
+|switch|p2a: Aerodactyl|Aerodactyl, L50, F|100/100
+|switch|p2b: Kingambit|Kingambit, L50, M|100/100
+|-ability|p2a: Aerodactyl|Unnerve
+|turn|1
+|j| Savagesandler
+|
+|t:|1778382326
+|move|p2a: Aerodactyl|Protect|p2a: Aerodactyl
+|-singleturn|p2a: Aerodactyl|Protect
+|move|p1b: Charizard|Protect|p1b: Charizard
+|-singleturn|p1b: Charizard|Protect
+|move|p2b: Kingambit|Kowtow Cleave|p1a: Bellibolt
+|-damage|p1a: Bellibolt|63/100
+|-start|p1a: Bellibolt|Charge|Kowtow Cleave|[from] ability: Electromorphosis
+|move|p1a: Bellibolt|Parabolic Charge|p2a: Aerodactyl|[spread] p2b
+|-activate|p1b: Charizard|move: Protect
+|-activate|p2a: Aerodactyl|move: Protect
+|-damage|p2b: Kingambit|60/100
+|-heal|p1a: Bellibolt|82/100|[from] drain|[of] p2b: Kingambit
+|-end|p1a: Bellibolt|Charge|[silent]
+|
+|upkeep
+|turn|2
+|inactive|luuquocviet2008 has 30 seconds left.
+|
+|t:|1778382361
+|switch|p2a: Sylveon|Sylveon, L50, M|100/100
+|switch|p1b: Sinistcha|Sinistcha, L50|100/100
+|-heal|p1a: Bellibolt|100/100|[from] ability: Hospitality|[of] p1b: Sinistcha
+|move|p2b: Kingambit|Low Kick|p1b: Sinistcha
+|-immune|p1b: Sinistcha
+|move|p1a: Bellibolt|Parabolic Charge|p2b: Kingambit|[spread] p1b,p2a,p2b
+|-resisted|p1b: Sinistcha|1
+|-damage|p1b: Sinistcha|91/100
+|-damage|p2a: Sylveon|83/100
+|-damage|p2b: Kingambit|40/100
+|
+|upkeep
+|turn|3
+|
+|t:|1778382385
+|move|p1b: Sinistcha|Protect|p1b: Sinistcha
+|-singleturn|p1b: Sinistcha|Protect
+|move|p2a: Sylveon|Hyper Beam|p1b: Sinistcha
+|-activate|p1b: Sinistcha|move: Protect
+|move|p2b: Kingambit|Kowtow Cleave|p1b: Sinistcha
+|-activate|p1b: Sinistcha|move: Protect
+|move|p1a: Bellibolt|Parabolic Charge|p2b: Kingambit|[spread] p2a,p2b
+|-activate|p1b: Sinistcha|move: Protect
+|-damage|p2a: Sylveon|64/100
+|-damage|p2b: Kingambit|20/100y
+|
+|upkeep
+|turn|4
+|
+|t:|1778382398
+|move|p2a: Sylveon|Hyper Beam|p1b: Sinistcha
+|-damage|p1b: Sinistcha|0 fnt
+|-mustrecharge|p2a: Sylveon
+|faint|p1b: Sinistcha
+|move|p2b: Kingambit|Kowtow Cleave|p1a: Bellibolt
+|-damage|p1a: Bellibolt|65/100
+|-start|p1a: Bellibolt|Charge|Kowtow Cleave|[from] ability: Electromorphosis
+|move|p1a: Bellibolt|Thunderbolt|p2a: Sylveon
+|-damage|p2a: Sylveon|0 fnt
+|faint|p2a: Sylveon
+|-end|p1a: Bellibolt|Charge|[silent]
+|
+|upkeep
+|j| rauhina
+|
+|t:|1778382411
+|switch|p2a: Aerodactyl|Aerodactyl, L50, F|100/100
+|switch|p1b: Krookodile|Krookodile, L50, M|100/100
+|-ability|p2a: Aerodactyl|Unnerve
+|-ability|p1b: Krookodile|Intimidate|boost
+|-unboost|p2a: Aerodactyl|atk|1
+|-unboost|p2b: Kingambit|atk|1
+|-ability|p2b: Kingambit|Defiant|boost
+|-boost|p2b: Kingambit|atk|2
+|turn|5
+|
+|t:|1778382426
+|move|p2b: Kingambit|Protect|p2b: Kingambit
+|-singleturn|p2b: Kingambit|Protect
+|move|p2a: Aerodactyl|Tailwind|p2a: Aerodactyl
+|-sidestart|p2: luuquocviet2008|move: Tailwind
+|move|p1b: Krookodile|High Horsepower|p2b: Kingambit
+|-activate|p2b: Kingambit|move: Protect
+|move|p1a: Bellibolt|Parabolic Charge|p2a: Aerodactyl|[spread] p2a
+|-activate|p2b: Kingambit|move: Protect
+|-immune|p1b: Krookodile
+|-supereffective|p2a: Aerodactyl|1
+|-damage|p2a: Aerodactyl|36/100
+|-heal|p1a: Bellibolt|87/100|[from] drain|[of] p2a: Aerodactyl
+|
+|upkeep
+|turn|6
+|
+|t:|1778382449
+|detailschange|p2a: Aerodactyl|Aerodactyl-Mega, L50, F
+|-mega|p2a: Aerodactyl|Aerodactyl|Aerodactylite
+|move|p2a: Aerodactyl|Rock Slide|p1b: Krookodile|[spread] p1a,p1b
+|-resisted|p1b: Krookodile|1
+|-damage|p1a: Bellibolt|73/100
+|-damage|p1b: Krookodile|90/100
+|-start|p1a: Bellibolt|Charge|Rock Slide|[from] ability: Electromorphosis
+|move|p2b: Kingambit|Kowtow Cleave|p1a: Bellibolt
+|-damage|p1a: Bellibolt|23/100
+|-start|p1a: Bellibolt|Charge|Kowtow Cleave|[from] ability: Electromorphosis
+|cant|p1b: Krookodile|flinch
+|move|p1a: Bellibolt|Parabolic Charge|p2a: Aerodactyl|[spread] p2a,p2b
+|-immune|p1b: Krookodile
+|-supereffective|p2a: Aerodactyl|1
+|-damage|p2a: Aerodactyl|0 fnt
+|-heal|p1a: Bellibolt|36/100|[from] drain|[of] p2a: Aerodactyl
+|-damage|p2b: Kingambit|0 fnt
+|-heal|p1a: Bellibolt|46/100|[from] drain|[of] p2b: Kingambit
+|faint|p2a: Aerodactyl
+|faint|p2b: Kingambit
+|-end|p1a: Bellibolt|Charge|[silent]
+|
+|upkeep
+|-message|luuquocviet2008 forfeited.
+|
+|win|Snowstorm brute
+|raw|Snowstorm brute's rating: 1777 &rarr; <strong>1799</strong><br />(+22 for winning)
+|raw|luuquocviet2008's rating: 1804 &rarr; <strong>1782</strong><br />(-22 for losing)
+|l|☆luuquocviet2008
+|player|p2|
+|l|☆Snowstorm brute
+|player|p1|
+|j|☆Snowstorm brute
+|player|p1|Snowstorm brute|veteran|

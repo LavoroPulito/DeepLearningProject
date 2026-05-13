@@ -1,0 +1,296 @@
+|raw|<div class="broadcast-blue"><strong>This battle is required to be public due to a player having a name starting with 'sdlt'.</div>
+|j|☆SDLT2FCO TEP
+|j|☆Trissomia28
+|t:|1778155630
+|gametype|doubles
+|player|p1|SDLT2FCO TEP|1|1716
+|player|p2|Trissomia28|169|1805
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Tyranitar, L50, F|
+|poke|p1|Excadrill, L50, F|
+|poke|p1|Kommo-o, L50, M|
+|poke|p1|Milotic, L50, M|
+|poke|p1|Meganium, L50, M|
+|poke|p1|Volcarona, L50, M|
+|poke|p2|Blastoise, L50, F|
+|poke|p2|Maushold, L50|
+|poke|p2|Sinistcha, L50|
+|poke|p2|Sneasler, L50, M|
+|poke|p2|Incineroar, L50, F|
+|poke|p2|Tinkaton, L50, F|
+|teampreview|4
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by Trissomia28)
+|inactive|SDLT2FCO TEP also wants the timer to be on.
+|
+|t:|1778155659
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Milotic|Milotic, L50, M|100/100
+|switch|p1b: Meganium|Meganium, L50, M|100/100
+|switch|p2a: Blastoise|Blastoise, L50, F|100/100
+|switch|p2b: Tinkaton|Tinkaton, L50, F|100/100
+|-ability|p2b: Tinkaton|Mold Breaker
+|turn|1
+|inactive|SDLT2FCO TEP has 30 seconds left.
+|inactive|SDLT2FCO TEP has 20 seconds left.
+|
+|t:|1778155695
+|detailschange|p1b: Meganium|Meganium-Mega, L50, M
+|-mega|p1b: Meganium|Meganium|Meganiumite
+|detailschange|p2a: Blastoise|Blastoise-Mega, L50, F
+|-mega|p2a: Blastoise|Blastoise|Blastoisinite
+|move|p1b: Meganium|Protect|p1b: Meganium
+|-singleturn|p1b: Meganium|Protect
+|move|p2b: Tinkaton|Fake Out|p1b: Meganium
+|-activate|p1b: Meganium|move: Protect
+|move|p2a: Blastoise|Shell Smash|p2a: Blastoise
+|-unboost|p2a: Blastoise|def|1
+|-unboost|p2a: Blastoise|spd|1
+|-boost|p2a: Blastoise|atk|2
+|-boost|p2a: Blastoise|spa|2
+|-boost|p2a: Blastoise|spe|2
+|move|p1a: Milotic|Icy Wind|p2a: Blastoise|[spread] p2a,p2b
+|-resisted|p2a: Blastoise|1
+|-resisted|p2b: Tinkaton|1
+|-damage|p2a: Blastoise|94/100
+|-damage|p2b: Tinkaton|95/100
+|-unboost|p2a: Blastoise|spe|1
+|-unboost|p2b: Tinkaton|spe|1
+|
+|upkeep
+|turn|2
+|
+|t:|1778155714
+|switch|p2b: Maushold|Maushold, L50|100/100
+|move|p2a: Blastoise|Protect|p2a: Blastoise
+|-singleturn|p2a: Blastoise|Protect
+|move|p1b: Meganium|Weather Ball|p2b: Maushold
+|-damage|p2b: Maushold|42/100
+|move|p1a: Milotic|Life Dew||[still]|[still]|[spread] 
+|-fail|p1a: Milotic|heal
+|-fail|p1b: Meganium|heal
+|
+|upkeep
+|turn|3
+|inactive|SDLT2FCO TEP has 30 seconds left.
+|
+|t:|1778155743
+|move|p2b: Maushold|Follow Me|p2b: Maushold
+|-singleturn|p2b: Maushold|move: Follow Me
+|move|p2a: Blastoise|Shell Smash|p2a: Blastoise
+|-unboost|p2a: Blastoise|def|1
+|-unboost|p2a: Blastoise|spd|1
+|-boost|p2a: Blastoise|atk|2
+|-boost|p2a: Blastoise|spa|2
+|-boost|p2a: Blastoise|spe|2
+|move|p1b: Meganium|Dazzling Gleam|p2b: Maushold|[spread] p2a,p2b
+|-damage|p2a: Blastoise|47/100
+|-damage|p2b: Maushold|4/100
+|move|p1a: Milotic|Life Dew||[still]|[still]|[spread] 
+|-fail|p1a: Milotic|heal
+|-fail|p1b: Meganium|heal
+|
+|upkeep
+|turn|4
+|
+|t:|1778155756
+|move|p2a: Blastoise|Protect|p2a: Blastoise
+|-singleturn|p2a: Blastoise|Protect
+|move|p2b: Maushold|Rain Dance|p2b: Maushold
+|-weather|RainDance
+|move|p1b: Meganium|Dazzling Gleam|p2b: Maushold|[spread] p2b
+|-activate|p2a: Blastoise|move: Protect
+|-damage|p2b: Maushold|0 fnt
+|faint|p2b: Maushold
+|move|p1a: Milotic|Life Dew||[still]|[still]|[spread] 
+|-fail|p1a: Milotic|heal
+|-fail|p1b: Meganium|heal
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|
+|t:|1778155758
+|switch|p2b: Tinkaton|Tinkaton, L50, F|95/100
+|-ability|p2b: Tinkaton|Mold Breaker
+|turn|5
+|j| championstestroom
+|j| alkagen101
+|inactive|SDLT2FCO TEP has 30 seconds left.
+|
+|t:|1778155791
+|move|p1b: Meganium|Protect|p1b: Meganium
+|-singleturn|p1b: Meganium|Protect
+|move|p1a: Milotic|Protect|p1a: Milotic
+|-singleturn|p1a: Milotic|Protect
+|move|p2a: Blastoise|Dark Pulse|p1a: Milotic
+|-activate|p1a: Milotic|move: Protect
+|move|p2b: Tinkaton|Gigaton Hammer|p1b: Meganium
+|-activate|p1b: Meganium|move: Protect
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|turn|6
+|
+|t:|1778155806
+|switch|p1a: Tyranitar|Tyranitar, L50, F|100/100
+|-weather|Sandstorm|[from] ability: Sand Stream|[of] p1a: Tyranitar
+|move|p2a: Blastoise|Dark Pulse|p1a: Tyranitar
+|-resisted|p1a: Tyranitar|1
+|-damage|p1a: Tyranitar|55/100
+|move|p2b: Tinkaton|Fling|p1b: Meganium
+|-resisted|p1b: Meganium|1
+|-damage|p1b: Meganium|96/100
+|-enditem|p2b: Tinkaton|King's Rock|[from] move: Fling
+|cant|p1b: Meganium|flinch
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p2a: Blastoise|41/100|[from] Sandstorm
+|-damage|p1b: Meganium|90/100|[from] Sandstorm
+|upkeep
+|turn|7
+|l| championstestroom
+|inactive|Trissomia28 has 30 seconds left.
+|inactive|Trissomia28 has 20 seconds left.
+|
+|t:|1778155842
+|move|p2a: Blastoise|Protect|p2a: Blastoise
+|-singleturn|p2a: Blastoise|Protect
+|move|p1b: Meganium|Protect|p1b: Meganium
+|-singleturn|p1b: Meganium|Protect
+|move|p2b: Tinkaton|Gigaton Hammer|p1b: Meganium
+|-activate|p1b: Meganium|move: Protect
+|move|p1a: Tyranitar|Rock Slide|p2b: Tinkaton|[spread] p2b
+|-activate|p2a: Blastoise|move: Protect
+|-resisted|p2b: Tinkaton|1
+|-damage|p2b: Tinkaton|75/100
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p2a: Blastoise|35/100|[from] Sandstorm
+|-damage|p1b: Meganium|84/100|[from] Sandstorm
+|upkeep
+|turn|8
+|
+|t:|1778155860
+|switch|p2b: Sinistcha|Sinistcha, L50|100/100
+|-heal|p2a: Blastoise|60/100|[from] ability: Hospitality|[of] p2b: Sinistcha
+|switch|p1b: Milotic|Milotic, L50, M|100/100
+|switch|p1a: Excadrill|Excadrill, L50, F|100/100
+|move|p2a: Blastoise|Water Spout|p1a: Excadrill|[spread] p1a,p1b
+|-supereffective|p1a: Excadrill|1
+|-resisted|p1b: Milotic|1
+|-enditem|p1a: Excadrill|Focus Sash
+|-damage|p1a: Excadrill|1/100
+|-damage|p1b: Milotic|58/100
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p2a: Blastoise|54/100|[from] Sandstorm
+|-damage|p1b: Milotic|52/100|[from] Sandstorm
+|-damage|p2b: Sinistcha|93/100|[from] Sandstorm
+|-heal|p1b: Milotic|58/100|[from] item: Leftovers
+|upkeep
+|turn|9
+|inactive|SDLT2FCO TEP has 30 seconds left.
+|
+|t:|1778155887
+|move|p2a: Blastoise|Protect|p2a: Blastoise
+|-singleturn|p2a: Blastoise|Protect
+|move|p1a: Excadrill|Iron Head|p2b: Sinistcha
+|-damage|p2b: Sinistcha|62/100
+|move|p1b: Milotic|Life Dew|p1b: Milotic|[spread] p1a,p1b
+|-heal|p1a: Excadrill|25/100
+|-heal|p1b: Milotic|83/100
+|move|p2b: Sinistcha|Matcha Gotcha|p1a: Excadrill|[spread] p1a,p1b
+|-supereffective|p1b: Milotic|1
+|-damage|p1a: Excadrill|0 fnt
+|-heal|p2b: Sinistcha|76/100|[from] drain|[of] p1a: Excadrill
+|-damage|p1b: Milotic|44/100
+|-heal|p2b: Sinistcha|97/100|[from] drain|[of] p1b: Milotic
+|faint|p1a: Excadrill
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p2a: Blastoise|49/100|[from] Sandstorm
+|-damage|p1b: Milotic|38/100|[from] Sandstorm
+|-damage|p2b: Sinistcha|91/100|[from] Sandstorm
+|-heal|p1b: Milotic|44/100|[from] item: Leftovers
+|upkeep
+|
+|t:|1778155893
+|switch|p1a: Meganium|Meganium-Mega, L50, M|84/100
+|turn|10
+|
+|t:|1778155913
+|move|p2a: Blastoise|Dark Pulse|p1a: Meganium
+|-resisted|p1a: Meganium|1
+|-damage|p1a: Meganium|21/100
+|move|p1a: Meganium|Dazzling Gleam|p2b: Sinistcha|[spread] p2a,p2b
+|-damage|p2a: Blastoise|0 fnt
+|-damage|p2b: Sinistcha|47/100
+|faint|p2a: Blastoise
+|move|p1b: Milotic|Icy Wind|p2b: Sinistcha
+|-supereffective|p2b: Sinistcha|1
+|-damage|p2b: Sinistcha|16/100
+|-unboost|p2b: Sinistcha|spe|1
+|move|p2b: Sinistcha|Matcha Gotcha|p1a: Meganium|[spread] p1a,p1b
+|-resisted|p1a: Meganium|1
+|-supereffective|p1b: Milotic|1
+|-damage|p1a: Meganium|8/100
+|-heal|p2b: Sinistcha|23/100|[from] drain|[of] p1a: Meganium
+|-damage|p1b: Milotic|7/100
+|-heal|p2b: Sinistcha|43/100|[from] drain|[of] p1b: Milotic
+|
+|-weather|none
+|-heal|p1b: Milotic|13/100|[from] item: Leftovers
+|upkeep
+|
+|t:|1778155919
+|switch|p2a: Tinkaton|Tinkaton, L50, F|75/100
+|-ability|p2a: Tinkaton|Mold Breaker
+|turn|11
+|
+|t:|1778155938
+|move|p2a: Tinkaton|Feint|p1a: Meganium
+|-damage|p1a: Meganium|2/100
+|move|p1a: Meganium|Weather Ball|p2a: Tinkaton
+|-supereffective|p2a: Tinkaton|1
+|-damage|p2a: Tinkaton|0 fnt
+|faint|p2a: Tinkaton
+|move|p1b: Milotic|Icy Wind|p2b: Sinistcha
+|-supereffective|p2b: Sinistcha|1
+|-damage|p2b: Sinistcha|10/100
+|-unboost|p2b: Sinistcha|spe|1
+|move|p2b: Sinistcha|Matcha Gotcha|p1b: Milotic|[spread] p1a,p1b
+|-resisted|p1a: Meganium|1
+|-supereffective|p1b: Milotic|1
+|-damage|p1a: Meganium|0 fnt
+|-heal|p2b: Sinistcha|11/100|[from] drain|[of] p1a: Meganium
+|-damage|p1b: Milotic|0 fnt
+|-heal|p2b: Sinistcha|19/100|[from] drain|[of] p1b: Milotic
+|faint|p1a: Meganium
+|faint|p1b: Milotic
+|
+|upkeep
+|
+|t:|1778155944
+|switch|p1b: Tyranitar|Tyranitar, L50, F|55/100
+|-weather|Sandstorm|[from] ability: Sand Stream|[of] p1b: Tyranitar
+|turn|12
+|
+|t:|1778155946
+|move|p1b: Tyranitar|Crunch|p2b: Sinistcha
+|-supereffective|p2b: Sinistcha|1
+|-damage|p2b: Sinistcha|0 fnt
+|faint|p2b: Sinistcha
+|
+|win|SDLT2FCO TEP
+|raw|SDLT2FCO TEP's rating: 1742 &rarr; <strong>1766</strong><br />(+24 for winning)
+|raw|Trissomia28's rating: 1805 &rarr; <strong>1781</strong><br />(-24 for losing)
+|l|☆SDLT2FCO TEP
+|player|p1|
+|l|☆Trissomia28
+|player|p2|

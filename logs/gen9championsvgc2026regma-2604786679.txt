@@ -1,0 +1,173 @@
+|j|☆swirlingroses
+|j|☆taterstotz
+|t:|1778245367
+|gametype|doubles
+|player|p1|swirlingroses|lisia|1791
+|player|p2|taterstotz|2|1799
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Floette-Eternal, L50, F|
+|poke|p1|Incineroar, L50, F|
+|poke|p1|Sneasler, L50, M|
+|poke|p1|Basculegion, L50, M|
+|poke|p1|Kingambit, L50, M|
+|poke|p1|Dragapult, L50, F|
+|poke|p2|Tyranitar, L50, M|
+|poke|p2|Excadrill, L50, F|
+|poke|p2|Rotom-Wash, L50|
+|poke|p2|Hawlucha, L50, F|
+|poke|p2|Zoroark-Hisui, L50, M|
+|poke|p2|Tsareena, L50, F|
+|teampreview|4
+|j| Distress Signal 8!
+|j| 67sigmagrindset
+|j| DontEatMyLarvae
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by taterstotz)
+|
+|t:|1778245398
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Dragapult|Dragapult, L50, F|100/100
+|switch|p1b: Floette|Floette-Eternal, L50, F|100/100
+|switch|p2a: Hawlucha|Hawlucha, L50, F|100/100
+|switch|p2b: Excadrill|Excadrill, L50, F|100/100
+|turn|1
+|j| hachiware
+|
+|t:|1778245417
+|detailschange|p1b: Floette|Floette-Mega, L50, F
+|-mega|p1b: Floette|Floette|Floettite
+|-ability|p1b: Floette|Fairy Aura
+|move|p2b: Excadrill|Shadow Ball|p1a: Dragapult
+|-supereffective|p1a: Dragapult|1
+|-enditem|p1a: Dragapult|Focus Sash
+|-damage|p1a: Dragapult|1/100
+|move|p1a: Dragapult|Thunder Wave|p2a: Hawlucha
+|-status|p2a: Hawlucha|par
+|move|p1b: Floette|Moonblast|p2a: Hawlucha
+|-supereffective|p2a: Hawlucha|1
+|-damage|p2a: Hawlucha|0 fnt
+|faint|p2a: Hawlucha
+|
+|upkeep
+|
+|t:|1778245429
+|switch|p2a: Excadrill|Excadrill, L50, F|100/100
+|turn|2
+|inactive|swirlingroses has 30 seconds left.
+|inactive|taterstotz has 30 seconds left.
+|
+|t:|1778245460
+|switch|p2b: Tyranitar|Tyranitar, L50, M|100/100
+|-weather|Sandstorm|[from] ability: Sand Stream|[of] p2b: Tyranitar
+|move|p1a: Dragapult|Protect|p1a: Dragapult
+|-singleturn|p1a: Dragapult|Protect
+|move|p2a: Excadrill|Iron Head|p1b: Floette
+|-supereffective|p1b: Floette|1
+|-damage|p1b: Floette|3/100
+|move|p1b: Floette|Moonblast|p2a: Excadrill
+|-resisted|p2a: Excadrill|1
+|-damage|p2a: Excadrill|54/100
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1a: Dragapult|0 fnt|[from] Sandstorm
+|-damage|p1b: Floette|0 fnt|[from] Sandstorm
+|faint|p1a: Dragapult
+|faint|p1b: Floette
+|upkeep
+|
+|t:|1778245471
+|switch|p1a: Basculegion|Basculegion, L50, M|100/100
+|switch|p1b: Sneasler|Sneasler, L50, M|100/100
+|turn|3
+|
+|t:|1778245486
+|move|p2a: Excadrill|Protect|p2a: Excadrill
+|-singleturn|p2a: Excadrill|Protect
+|move|p2b: Tyranitar|Protect|p2b: Tyranitar
+|-singleturn|p2b: Tyranitar|Protect
+|move|p1a: Basculegion|Wave Crash|p2b: Tyranitar
+|-activate|p2b: Tyranitar|move: Protect
+|move|p1b: Sneasler|Close Combat|p2b: Tyranitar
+|-activate|p2b: Tyranitar|move: Protect
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1a: Basculegion|93/100|[from] Sandstorm
+|-damage|p1b: Sneasler|94/100|[from] Sandstorm
+|upkeep
+|turn|4
+|
+|t:|1778245503
+|detailschange|p2b: Tyranitar|Tyranitar-Mega, L50, M
+|-mega|p2b: Tyranitar|Tyranitar|Tyranitarite
+|move|p1b: Sneasler|Protect|p1b: Sneasler
+|-singleturn|p1b: Sneasler|Protect
+|move|p2a: Excadrill|Earthquake|p1b: Sneasler|[spread] p2b,p1a
+|-activate|p1b: Sneasler|move: Protect
+|-supereffective|p2b: Tyranitar|1
+|-damage|p2b: Tyranitar|47/100
+|-damage|p1a: Basculegion|51/100
+|move|p1a: Basculegion|Wave Crash|p2a: Excadrill
+|-supereffective|p2a: Excadrill|1
+|-damage|p2a: Excadrill|0 fnt
+|faint|p2a: Excadrill
+|-damage|p1a: Basculegion|34/100|[from] Recoil
+|move|p2b: Tyranitar|Knock Off|p1a: Basculegion
+|-supereffective|p1a: Basculegion|1
+|-damage|p1a: Basculegion|0 fnt
+|-enditem|p1a: Basculegion|Choice Scarf|[from] move: Knock Off|[of] p2b: Tyranitar
+|faint|p1a: Basculegion
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1b: Sneasler|88/100|[from] Sandstorm
+|upkeep
+|
+|t:|1778245513
+|switch|p2a: Tyranitar|Tyranitar-Mega, L50, M|100/100
+|turn|5
+|
+|t:|1778245522
+|move|p2a: Tyranitar|Hyper Voice|p1b: Sneasler
+|-damage|p1b: Sneasler|15/100
+|move|p1b: Sneasler|Dire Claw|p2a: Tyranitar
+|-resisted|p2a: Tyranitar|1
+|-damage|p2a: Tyranitar|51/100
+|-status|p2a: Tyranitar|slp
+|replace|p2a: Zoroark|Zoroark-Hisui, L50, M
+|-end|p2a: Zoroark|Illusion
+|move|p2b: Tyranitar|Rock Slide|p1b: Sneasler|[miss]
+|-miss|p2b: Tyranitar|p1b: Sneasler
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p2a: Zoroark|45/100 slp|[from] Sandstorm
+|-damage|p1b: Sneasler|9/100|[from] Sandstorm
+|upkeep
+|turn|6
+|
+|t:|1778245533
+|move|p2b: Tyranitar|Protect|p2b: Tyranitar
+|-singleturn|p2b: Tyranitar|Protect
+|cant|p2a: Zoroark|slp
+|move|p1b: Sneasler|Dire Claw|p2a: Zoroark
+|-resisted|p2a: Zoroark|1
+|-damage|p2a: Zoroark|0 fnt
+|faint|p2a: Zoroark
+|
+|-weather|none
+|upkeep
+|turn|7
+|-message|taterstotz forfeited.
+|
+|win|swirlingroses
+|raw|swirlingroses's rating: 1791 &rarr; <strong>1811</strong><br />(+20 for winning)
+|raw|taterstotz's rating: 1799 &rarr; <strong>1779</strong><br />(-20 for losing)
+|l|☆taterstotz
+|player|p2|
+|l|☆swirlingroses
+|player|p1|
+|l| hachiware

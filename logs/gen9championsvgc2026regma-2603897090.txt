@@ -1,0 +1,180 @@
+|j|☆SDLT2FCO TEP
+|j|☆coachingmanrich
+|t:|1778155612
+|gametype|doubles
+|player|p1|SDLT2FCO TEP|1|1716
+|player|p2|coachingmanrich|265|1829
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Tyranitar, L50, F|
+|poke|p1|Excadrill, L50, M|
+|poke|p1|Kommo-o, L50, F|
+|poke|p1|Milotic, L50, F|
+|poke|p1|Meganium, L50, M|
+|poke|p1|Volcarona, L50, F|
+|poke|p2|Mamoswine, L50, M|
+|poke|p2|Talonflame, L50, M|
+|poke|p2|Glimmora, L50, F|
+|poke|p2|Meganium, L50, M|
+|poke|p2|Dragonite, L50, F|
+|poke|p2|Aegislash, L50, M|
+|teampreview|4
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by SDLT2FCO TEP)
+|inactive|coachingmanrich has 60 seconds left.
+|
+|t:|1778155652
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Tyranitar|Tyranitar, L50, F|100/100
+|switch|p1b: Excadrill|Excadrill, L50, M|100/100
+|switch|p2a: Talonflame|Talonflame, L50, M|100/100
+|switch|p2b: Mamoswine|Mamoswine, L50, M|100/100
+|-weather|Sandstorm|[from] ability: Sand Stream|[of] p1a: Tyranitar
+|turn|1
+|
+|t:|1778155667
+|move|p1a: Tyranitar|Protect|p1a: Tyranitar
+|-singleturn|p1a: Tyranitar|Protect
+|move|p2a: Talonflame|Tailwind|p2a: Talonflame
+|-sidestart|p2: coachingmanrich|move: Tailwind
+|move|p1b: Excadrill|Iron Head|p2b: Mamoswine
+|-supereffective|p2b: Mamoswine|1
+|-enditem|p2b: Mamoswine|Focus Sash
+|-damage|p2b: Mamoswine|1/100
+|move|p2b: Mamoswine|Earthquake|p1a: Tyranitar|[spread] p1b
+|-activate|p1a: Tyranitar|move: Protect
+|-immune|p2a: Talonflame
+|-supereffective|p1b: Excadrill|1
+|-enditem|p1b: Excadrill|Focus Sash
+|-damage|p1b: Excadrill|1/100
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p2a: Talonflame|94/100|[from] Sandstorm
+|upkeep
+|turn|2
+|
+|t:|1778155688
+|move|p1b: Excadrill|Protect|p1b: Excadrill
+|-singleturn|p1b: Excadrill|Protect
+|move|p2b: Mamoswine|Ice Shard|p1b: Excadrill
+|-activate|p1b: Excadrill|move: Protect
+|move|p2a: Talonflame|Will-O-Wisp|p1a: Tyranitar
+|-status|p1a: Tyranitar|brn
+|move|p1a: Tyranitar|Rock Slide|p2b: Mamoswine|[spread] p2a,p2b
+|-supereffective|p2a: Talonflame|2
+|-enditem|p2a: Talonflame|Charti Berry|[eat]
+|-enditem|p2a: Talonflame|Charti Berry|[weaken]
+|-damage|p2a: Talonflame|52/100
+|-damage|p2b: Mamoswine|0 fnt
+|faint|p2b: Mamoswine
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p2a: Talonflame|46/100|[from] Sandstorm
+|-damage|p1a: Tyranitar|93/100 brn|[from] brn
+|upkeep
+|
+|t:|1778155694
+|switch|p2b: Meganium|Meganium, L50, M|100/100
+|turn|3
+|inactive|SDLT2FCO TEP has 30 seconds left.
+|
+|t:|1778155721
+|detailschange|p2b: Meganium|Meganium-Mega, L50, M
+|-mega|p2b: Meganium|Meganium|Meganiumite
+|move|p2a: Talonflame|Brave Bird|p1b: Excadrill
+|-resisted|p1b: Excadrill|1
+|-damage|p1b: Excadrill|0 fnt
+|faint|p1b: Excadrill
+|-damage|p2a: Talonflame|45/100|[from] Recoil
+|move|p2b: Meganium|Solar Beam||[still]
+|-prepare|p2b: Meganium|Solar Beam
+|-activate|p2b: Meganium|ability: Mega Sol
+|-anim|p2b: Meganium|Solar Beam|p1a: Tyranitar
+|-supereffective|p1a: Tyranitar|1
+|-damage|p1a: Tyranitar|0 fnt
+|faint|p1a: Tyranitar
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p2a: Talonflame|39/100|[from] Sandstorm
+|-damage|p2b: Meganium|94/100|[from] Sandstorm
+|upkeep
+|
+|t:|1778155726
+|switch|p1b: Meganium|Meganium, L50, M|100/100
+|switch|p1a: Volcarona|Volcarona, L50, F|100/100
+|turn|4
+|inactive|SDLT2FCO TEP has 30 seconds left.
+|
+|t:|1778155761
+|detailschange|p1b: Meganium|Meganium-Mega, L50, M
+|-mega|p1b: Meganium|Meganium|Meganiumite
+|move|p1b: Meganium|Protect|p1b: Meganium
+|-singleturn|p1b: Meganium|Protect
+|move|p2a: Talonflame|Brave Bird|p1a: Volcarona
+|-supereffective|p1a: Volcarona|1
+|-damage|p1a: Volcarona|23/100
+|-damage|p2a: Talonflame|8/100|[from] Recoil
+|move|p2b: Meganium|Weather Ball|p1b: Meganium
+|-activate|p1b: Meganium|move: Protect
+|move|p1a: Volcarona|Heat Wave|p2b: Meganium|[spread] p2a
+|-miss|p1a: Volcarona|p2b: Meganium
+|-resisted|p2a: Talonflame|1
+|-damage|p2a: Talonflame|0 fnt
+|faint|p2a: Talonflame
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p2b: Meganium|88/100|[from] Sandstorm
+|-damage|p1b: Meganium|93/100|[from] Sandstorm
+|-damage|p1a: Volcarona|17/100|[from] Sandstorm
+|-sideend|p2: coachingmanrich|move: Tailwind
+|upkeep
+|
+|t:|1778155774
+|switch|p2a: Aegislash|Aegislash, L50, M|100/100
+|turn|5
+|
+|t:|1778155780
+|-formechange|p2a: Aegislash|Aegislash-Blade|
+|move|p2a: Aegislash|Shadow Sneak|p1a: Volcarona
+|-damage|p1a: Volcarona|0 fnt
+|faint|p1a: Volcarona
+|move|p1b: Meganium|Weather Ball|p2b: Meganium
+|-supereffective|p2b: Meganium|1
+|-damage|p2b: Meganium|0 fnt
+|faint|p2b: Meganium
+|
+|-weather|none
+|upkeep
+|turn|6
+|j| championstestroom
+|
+|t:|1778155787
+|-formechange|p2a: Aegislash|Aegislash|
+|move|p2a: Aegislash|King's Shield|p2a: Aegislash
+|-singleturn|p2a: Aegislash|Protect
+|move|p1b: Meganium|Weather Ball|p2a: Aegislash
+|-activate|p2a: Aegislash|move: Protect
+|
+|upkeep
+|turn|7
+|l| championstestroom
+|inactive|SDLT2FCO TEP has 30 seconds left.
+|
+|t:|1778155821
+|move|p1b: Meganium|Weather Ball|p2a: Aegislash
+|-supereffective|p2a: Aegislash|1
+|-damage|p2a: Aegislash|0 fnt
+|faint|p2a: Aegislash
+|
+|win|SDLT2FCO TEP
+|raw|SDLT2FCO TEP's rating: 1716 &rarr; <strong>1742</strong><br />(+26 for winning)
+|raw|coachingmanrich's rating: 1829 &rarr; <strong>1803</strong><br />(-26 for losing)
+|l|☆SDLT2FCO TEP
+|player|p1|
+|l|☆coachingmanrich
+|player|p2|

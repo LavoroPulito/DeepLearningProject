@@ -1,0 +1,303 @@
+|j|☆nebulavgc
+|j|☆Pasodoble
+|t:|1778363726
+|gametype|doubles
+|player|p1|nebulavgc|lance|1841
+|player|p2|Pasodoble|102|1805
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Excadrill, L50, M|
+|poke|p1|Tyranitar, L50, M|
+|poke|p1|Corviknight, L50, F|
+|poke|p1|Sinistcha, L50|
+|poke|p1|Rotom-Wash, L50|
+|poke|p1|Dragonite, L50, F|
+|poke|p2|Archaludon, L50, M|
+|poke|p2|Pelipper, L50, M|
+|poke|p2|Sableye, L50, F|
+|poke|p2|Sinistcha, L50|
+|poke|p2|Blastoise, L50, F|
+|poke|p2|Vivillon, L50, M|
+|teampreview|4
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by nebulavgc)
+|inactive|nebulavgc has 60 seconds left.
+|j| veluzasabiote
+|
+|t:|1778363767
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Rotom|Rotom-Wash, L50|100/100
+|switch|p1b: Excadrill|Excadrill, L50, M|100/100
+|switch|p2a: Archaludon|Archaludon, L50, M|100/100
+|switch|p2b: Sableye|Sableye, L50, F|100/100
+|turn|1
+|inactive|Pasodoble has 30 seconds left.
+|
+|t:|1778363794
+|move|p2b: Sableye|Reflect|p2b: Sableye
+|-sidestart|p2: Pasodoble|Reflect
+|move|p1a: Rotom|Trick|p2a: Archaludon
+|-activate|p1a: Rotom|move: Trick|[of] p2a: Archaludon
+|-item|p2a: Archaludon|Choice Scarf|[from] move: Trick
+|-item|p1a: Rotom|Leftovers|[from] move: Trick
+|move|p2a: Archaludon|Dragon Pulse|p1b: Excadrill
+|-resisted|p1b: Excadrill|1
+|-damage|p1b: Excadrill|71/100
+|move|p1b: Excadrill|Earthquake|p2a: Archaludon|[spread] p2a,p2b
+|-immune|p1a: Rotom|[from] ability: Levitate
+|-supereffective|p2a: Archaludon|1
+|-damage|p2a: Archaludon|55/100
+|-damage|p2b: Sableye|67/100
+|-ability|p2a: Archaludon|Stamina|boost
+|-boost|p2a: Archaludon|def|1
+|
+|upkeep
+|turn|2
+|
+|t:|1778363817
+|switch|p2b: Sinistcha|Sinistcha, L50|100/100
+|-heal|p2a: Archaludon|80/100|[from] ability: Hospitality|[of] p2b: Sinistcha
+|move|p2a: Archaludon|Dragon Pulse|p1a: Rotom
+|-damage|p1a: Rotom|44/100
+|move|p1a: Rotom|Volt Switch|p2b: Sinistcha
+|-resisted|p2b: Sinistcha|1
+|-damage|p2b: Sinistcha|82/100
+|
+|t:|1778363822
+|switch|p1a: Sinistcha|Sinistcha, L50|100/100|[from] Volt Switch
+|-heal|p1b: Excadrill|95/100|[from] ability: Hospitality|[of] p1a: Sinistcha
+|move|p1b: Excadrill|Earthquake|p2a: Archaludon|[spread] p1a,p2a,p2b
+|-resisted|p1a: Sinistcha|1
+|-supereffective|p2a: Archaludon|1
+|-resisted|p2b: Sinistcha|1
+|-crit|p2b: Sinistcha
+|-damage|p1a: Sinistcha|80/100
+|-damage|p2a: Archaludon|51/100
+|-damage|p2b: Sinistcha|52/100
+|-ability|p2a: Archaludon|Stamina|boost
+|-boost|p2a: Archaludon|def|1
+|
+|upkeep
+|turn|3
+|j| testerman0092
+|
+|t:|1778363840
+|move|p2b: Sinistcha|Rage Powder|p2b: Sinistcha
+|-singleturn|p2b: Sinistcha|move: Rage Powder
+|move|p2a: Archaludon|Dragon Pulse|p1a: Sinistcha
+|-damage|p1a: Sinistcha|44/100
+|move|p1b: Excadrill|Iron Head|p2b: Sinistcha
+|-damage|p2b: Sinistcha|20/100y
+|move|p1a: Sinistcha|Matcha Gotcha|p2a: Archaludon|[spread] p2a,p2b
+|-resisted|p2a: Archaludon|2
+|-resisted|p2b: Sinistcha|1
+|-damage|p2a: Archaludon|44/100
+|-heal|p1a: Sinistcha|48/100|[from] drain|[of] p2a: Archaludon
+|-damage|p2b: Sinistcha|6/100
+|-heal|p1a: Sinistcha|56/100|[from] drain|[of] p2b: Sinistcha
+|-ability|p2a: Archaludon|Stamina|boost
+|-boost|p2a: Archaludon|def|1
+|
+|upkeep
+|turn|4
+|inactive|Pasodoble has 30 seconds left.
+|inactive|Pasodoble has 20 seconds left.
+|
+|t:|1778363878
+|switch|p2b: Sableye|Sableye, L50, F|67/100
+|move|p1a: Sinistcha|Protect|p1a: Sinistcha
+|-singleturn|p1a: Sinistcha|Protect
+|move|p2a: Archaludon|Dragon Pulse|p1a: Sinistcha
+|-activate|p1a: Sinistcha|move: Protect
+|move|p1b: Excadrill|Earthquake|p2b: Sableye|[spread] p2a,p2b
+|-activate|p1a: Sinistcha|move: Protect
+|-supereffective|p2a: Archaludon|1
+|-crit|p2b: Sableye
+|-damage|p2a: Archaludon|26/100
+|-damage|p2b: Sableye|0 fnt
+|-ability|p2a: Archaludon|Stamina|boost
+|-boost|p2a: Archaludon|def|1
+|faint|p2b: Sableye
+|
+|upkeep
+|
+|t:|1778363889
+|switch|p2b: Sinistcha|Sinistcha, L50|6/100
+|-heal|p2a: Archaludon|51/100|[from] ability: Hospitality|[of] p2b: Sinistcha
+|turn|5
+|
+|t:|1778363904
+|switch|p1a: Tyranitar|Tyranitar, L50, M|100/100
+|-weather|Sandstorm|[from] ability: Sand Stream|[of] p1a: Tyranitar
+|move|p1b: Excadrill|Iron Head|p2b: Sinistcha
+|-damage|p2b: Sinistcha|0 fnt
+|faint|p2b: Sinistcha
+|move|p2a: Archaludon|Dragon Pulse|p1a: Tyranitar
+|-damage|p1a: Tyranitar|73/100
+|
+|-weather|Sandstorm|[upkeep]
+|-sideend|p2: Pasodoble|Reflect
+|upkeep
+|
+|t:|1778363910
+|switch|p2b: Blastoise|Blastoise, L50, F|100/100
+|turn|6
+|inactive|nebulavgc has 30 seconds left.
+|inactive|nebulavgc has 20 seconds left.
+|inactive|nebulavgc has 15 seconds left.
+|
+|t:|1778363950
+|detailschange|p2b: Blastoise|Blastoise-Mega, L50, F
+|-mega|p2b: Blastoise|Blastoise|Blastoisinite
+|move|p1b: Excadrill|Protect|p1b: Excadrill
+|-singleturn|p1b: Excadrill|Protect
+|move|p1a: Tyranitar|Protect|p1a: Tyranitar
+|-singleturn|p1a: Tyranitar|Protect
+|move|p2a: Archaludon|Dragon Pulse|p1a: Tyranitar
+|-activate|p1a: Tyranitar|move: Protect
+|move|p2b: Blastoise|Water Spout|p1a: Tyranitar|[spread] 
+|-activate|p1a: Tyranitar|move: Protect
+|-activate|p1b: Excadrill|move: Protect
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p2b: Blastoise|94/100|[from] Sandstorm
+|upkeep
+|turn|7
+|
+|t:|1778363975
+|detailschange|p1a: Tyranitar|Tyranitar-Mega, L50, M
+|-mega|p1a: Tyranitar|Tyranitar|Tyranitarite
+|move|p1b: Excadrill|Iron Head|p2b: Blastoise
+|-resisted|p2b: Blastoise|1
+|-damage|p2b: Blastoise|71/100
+|move|p2a: Archaludon|Dragon Pulse|p1a: Tyranitar
+|-damage|p1a: Tyranitar|52/100
+|move|p2b: Blastoise|Water Spout|p1b: Excadrill|[spread] p1a,p1b
+|-supereffective|p1a: Tyranitar|1
+|-supereffective|p1b: Excadrill|1
+|-damage|p1a: Tyranitar|5/100
+|-damage|p1b: Excadrill|0 fnt
+|faint|p1b: Excadrill
+|move|p1a: Tyranitar|Knock Off|p2b: Blastoise
+|-damage|p2b: Blastoise|32/100
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p2b: Blastoise|26/100|[from] Sandstorm
+|upkeep
+|
+|t:|1778363986
+|switch|p1b: Sinistcha|Sinistcha, L50|56/100
+|-heal|p1a: Tyranitar|30/100|[from] ability: Hospitality|[of] p1b: Sinistcha
+|turn|8
+|inactive|Pasodoble has 30 seconds left.
+|inactive|nebulavgc has 30 seconds left.
+|inactive|nebulavgc has 20 seconds left.
+|
+|t:|1778364026
+|move|p2a: Archaludon|Dragon Pulse|p1b: Sinistcha
+|-damage|p1b: Sinistcha|17/100
+|move|p2b: Blastoise|Aura Sphere|p1a: Tyranitar
+|-supereffective|p1a: Tyranitar|2
+|-damage|p1a: Tyranitar|0 fnt
+|faint|p1a: Tyranitar
+|move|p1b: Sinistcha|Life Dew|p1b: Sinistcha
+|-heal|p1b: Sinistcha|42/100
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p2b: Blastoise|20/100y|[from] Sandstorm
+|-damage|p1b: Sinistcha|36/100|[from] Sandstorm
+|upkeep
+|
+|t:|1778364030
+|switch|p1a: Rotom|Rotom-Wash, L50|44/100
+|turn|9
+|
+|t:|1778364047
+|move|p2a: Archaludon|Dragon Pulse|p1a: Rotom
+|-damage|p1a: Rotom|0 fnt
+|faint|p1a: Rotom
+|move|p2b: Blastoise|Water Spout|p1b: Sinistcha
+|-resisted|p1b: Sinistcha|1
+|-damage|p1b: Sinistcha|29/100
+|move|p1b: Sinistcha|Life Dew|p1b: Sinistcha
+|-heal|p1b: Sinistcha|54/100
+|
+|-weather|none
+|upkeep
+|turn|10
+|
+|t:|1778364059
+|move|p1b: Sinistcha|Protect|p1b: Sinistcha
+|-singleturn|p1b: Sinistcha|Protect
+|move|p2a: Archaludon|Dragon Pulse|p1b: Sinistcha
+|-activate|p1b: Sinistcha|move: Protect
+|move|p2b: Blastoise|Shell Smash|p2b: Blastoise
+|-unboost|p2b: Blastoise|def|1
+|-unboost|p2b: Blastoise|spd|1
+|-boost|p2b: Blastoise|atk|2
+|-boost|p2b: Blastoise|spa|2
+|-boost|p2b: Blastoise|spe|2
+|
+|upkeep
+|turn|11
+|
+|t:|1778364065
+|move|p2b: Blastoise|Water Spout|p1b: Sinistcha
+|-resisted|p1b: Sinistcha|1
+|-damage|p1b: Sinistcha|39/100
+|move|p2a: Archaludon|Dragon Pulse|p1b: Sinistcha
+|-damage|p1b: Sinistcha|6/100
+|move|p1b: Sinistcha|Matcha Gotcha|p2a: Archaludon|[spread] p2a,p2b
+|-resisted|p2a: Archaludon|2
+|-supereffective|p2b: Blastoise|1
+|-damage|p2a: Archaludon|45/100
+|-heal|p1b: Sinistcha|10/100|[from] drain|[of] p2a: Archaludon
+|-damage|p2b: Blastoise|0 fnt
+|-heal|p1b: Sinistcha|19/100|[from] drain|[of] p2b: Blastoise
+|-ability|p2a: Archaludon|Stamina|boost
+|-boost|p2a: Archaludon|def|1
+|faint|p2b: Blastoise
+|
+|upkeep
+|turn|12
+|
+|t:|1778364076
+|move|p1b: Sinistcha|Protect|p1b: Sinistcha
+|-singleturn|p1b: Sinistcha|Protect
+|move|p2a: Archaludon|Dragon Pulse|p1b: Sinistcha
+|-activate|p1b: Sinistcha|move: Protect
+|
+|upkeep
+|turn|13
+|
+|t:|1778364078
+|-activate|p2a: Archaludon|move: Struggle
+|move|p2a: Archaludon|Struggle|p1b: Sinistcha
+|-damage|p1b: Sinistcha|8/100
+|-damage|p2a: Archaludon|20/100y|[from] recoil
+|move|p1b: Sinistcha|Life Dew|p1b: Sinistcha
+|-heal|p1b: Sinistcha|33/100
+|
+|upkeep
+|turn|14
+|
+|t:|1778364082
+|-activate|p2a: Archaludon|move: Struggle
+|move|p2a: Archaludon|Struggle|p1b: Sinistcha
+|-damage|p1b: Sinistcha|23/100
+|-damage|p2a: Archaludon|0 fnt|[from] recoil
+|faint|p2a: Archaludon
+|
+|win|nebulavgc
+|raw|nebulavgc's rating: 1841 &rarr; <strong>1859</strong><br />(+18 for winning)
+|raw|Pasodoble's rating: 1805 &rarr; <strong>1787</strong><br />(-18 for losing)
+|l|☆Pasodoble
+|player|p2|
+|l|☆nebulavgc
+|player|p1|
+|l| veluzasabiote

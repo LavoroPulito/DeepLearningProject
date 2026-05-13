@@ -1,0 +1,219 @@
+|j|☆Snowsquall brute
+|j|☆Agent Aquato
+|t:|1777406136
+|gametype|doubles
+|player|p1|Snowsquall brute|veteran|1892
+|player|p2|Agent Aquato|leon-tower|1736
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Dragonite, L50, M|
+|poke|p1|Glimmora, L50, F|
+|poke|p1|Torterra, L50, M|
+|poke|p1|Incineroar, L50, F|
+|poke|p1|Rotom-Wash, L50|
+|poke|p1|Pangoro, L50, M|
+|poke|p2|Scizor, L50, M|
+|poke|p2|Pelipper, L50, M|
+|poke|p2|Sinistcha, L50, shiny|
+|poke|p2|Incineroar, L50, M|
+|poke|p2|Archaludon, L50, F|
+|poke|p2|Dragonite, L50, F|
+|teampreview|4
+|j| 2-2-2 Ape
+|j| IceIceCrazy
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by Snowsquall brute)
+|l| IceIceCrazy
+|
+|t:|1777406225
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Torterra|Torterra, L50, M|100/100
+|switch|p1b: Rotom|Rotom-Wash, L50|100/100
+|switch|p2a: Incineroar|Incineroar, L50, M|100/100
+|switch|p2b: Dragonite|Dragonite, L50, F|100/100
+|-ability|p2a: Incineroar|Intimidate|boost
+|-unboost|p1a: Torterra|atk|1
+|-unboost|p1b: Rotom|atk|1
+|turn|1
+|j| IceIceCrazy
+|l| IceIceCrazy
+|
+|t:|1777406243
+|switch|p1b: Glimmora|Glimmora, L50, F|100/100
+|switch|p2a: Archaludon|Archaludon, L50, F|100/100
+|detailschange|p2b: Dragonite|Dragonite-Mega, L50, F
+|-mega|p2b: Dragonite|Dragonite|Dragoninite
+|move|p1a: Torterra|Protect|p1a: Torterra
+|-singleturn|p1a: Torterra|Protect
+|move|p2b: Dragonite|Draco Meteor|p1b: Glimmora
+|-damage|p1b: Glimmora|27/100
+|-unboost|p2b: Dragonite|spa|2
+|
+|upkeep
+|turn|2
+|inactive|Agent Aquato has 30 seconds left.
+|
+|t:|1777406273
+|detailschange|p1b: Glimmora|Glimmora-Mega, L50, F
+|-mega|p1b: Glimmora|Glimmora|Glimmoranite
+|move|p2b: Dragonite|Hurricane|p1a: Torterra
+|-supereffective|p1a: Torterra|1
+|-damage|p1a: Torterra|39/100
+|-enditem|p1a: Torterra|Sitrus Berry|[eat]
+|-heal|p1a: Torterra|64/100|[from] item: Sitrus Berry
+|move|p1b: Glimmora|Power Gem|p2b: Dragonite
+|-supereffective|p2b: Dragonite|1
+|-damage|p2b: Dragonite|57/100
+|move|p2a: Archaludon|Dragon Pulse|p1b: Glimmora
+|-damage|p1b: Glimmora|0 fnt
+|faint|p1b: Glimmora
+|move|p1a: Torterra|Leech Seed|p2a: Archaludon
+|-start|p2a: Archaludon|move: Leech Seed
+|
+|-damage|p2a: Archaludon|87/100|[from] Leech Seed|[of] p1a: Torterra
+|-heal|p1a: Torterra|76/100|[silent]
+|upkeep
+|
+|t:|1777406281
+|switch|p1b: Rotom|Rotom-Wash, L50|100/100
+|turn|3
+|
+|t:|1777406301
+|switch|p2b: Pelipper|Pelipper, L50, M|100/100
+|-weather|RainDance|[from] ability: Drizzle|[of] p2b: Pelipper
+|move|p1a: Torterra|Protect|p1a: Torterra
+|-singleturn|p1a: Torterra|Protect
+|move|p1b: Rotom|Volt Switch|p2b: Pelipper
+|-supereffective|p2b: Pelipper|2
+|-damage|p2b: Pelipper|0 fnt
+|faint|p2b: Pelipper
+|
+|t:|1777406304
+|switch|p1b: Dragonite|Dragonite, L50, M|100/100|[from] Volt Switch
+|move|p2a: Archaludon|Electro Shot||[still]
+|-prepare|p2a: Archaludon|Electro Shot
+|-boost|p2a: Archaludon|spa|1
+|-anim|p2a: Archaludon|Electro Shot|p1b: Dragonite
+|-damage|p1b: Dragonite|79/100
+|
+|-weather|RainDance|[upkeep]
+|-heal|p2a: Archaludon|93/100|[from] item: Leftovers
+|-heal|p1b: Dragonite|85/100|[from] item: Leftovers
+|-damage|p2a: Archaludon|81/100|[from] Leech Seed|[of] p1a: Torterra
+|-heal|p1a: Torterra|88/100|[silent]
+|upkeep
+|
+|t:|1777406321
+|switch|p2b: Incineroar|Incineroar, L50, M|100/100
+|-ability|p2b: Incineroar|Intimidate|boost
+|-unboost|p1a: Torterra|atk|1
+|-unboost|p1b: Dragonite|atk|1
+|turn|4
+|
+|t:|1777406329
+|move|p2b: Incineroar|Fake Out|p1b: Dragonite
+|-damage|p1b: Dragonite|78/100
+|move|p2a: Archaludon|Electro Shot||[still]
+|-prepare|p2a: Archaludon|Electro Shot
+|-boost|p2a: Archaludon|spa|1
+|-anim|p2a: Archaludon|Electro Shot|p1b: Dragonite
+|-damage|p1b: Dragonite|18/100
+|cant|p1b: Dragonite|flinch
+|move|p1a: Torterra|Leech Seed|p2b: Incineroar
+|-start|p2b: Incineroar|move: Leech Seed
+|
+|-weather|RainDance|[upkeep]
+|-heal|p2a: Archaludon|87/100|[from] item: Leftovers
+|-heal|p1b: Dragonite|24/100|[from] item: Leftovers
+|-damage|p2a: Archaludon|75/100|[from] Leech Seed|[of] p1a: Torterra
+|-heal|p1a: Torterra|100/100|[silent]
+|-damage|p2b: Incineroar|87/100|[from] Leech Seed|[of] p1a: Torterra
+|upkeep
+|turn|5
+|
+|t:|1777406347
+|switch|p2b: Dragonite|Dragonite-Mega, L50, F|57/100
+|move|p1b: Dragonite|Protect|p1b: Dragonite
+|-singleturn|p1b: Dragonite|Protect
+|move|p2a: Archaludon|Electro Shot||[still]
+|-prepare|p2a: Archaludon|Electro Shot
+|-boost|p2a: Archaludon|spa|1
+|-anim|p2a: Archaludon|Electro Shot|p1b: Dragonite
+|-activate|p1b: Dragonite|move: Protect
+|move|p1a: Torterra|High Horsepower|p2a: Archaludon
+|-supereffective|p2a: Archaludon|1
+|-damage|p2a: Archaludon|52/100
+|-ability|p2a: Archaludon|Stamina|boost
+|-boost|p2a: Archaludon|def|1
+|
+|-weather|RainDance|[upkeep]
+|-heal|p2a: Archaludon|58/100|[from] item: Leftovers
+|-heal|p1b: Dragonite|30/100|[from] item: Leftovers
+|-damage|p2a: Archaludon|45/100|[from] Leech Seed|[of] p1a: Torterra
+|upkeep
+|turn|6
+|
+|t:|1777406365
+|switch|p1a: Rotom|Rotom-Wash, L50|100/100
+|move|p1b: Dragonite|Protect||[still]
+|-fail|p1b: Dragonite
+|move|p2b: Dragonite|Hurricane|p1a: Rotom
+|-resisted|p1a: Rotom|1
+|-damage|p1a: Rotom|64/100
+|-start|p1a: Rotom|confusion
+|move|p2a: Archaludon|Electro Shot||[still]
+|-prepare|p2a: Archaludon|Electro Shot
+|-boost|p2a: Archaludon|spa|1
+|-anim|p2a: Archaludon|Electro Shot|p1b: Dragonite
+|-damage|p1b: Dragonite|0 fnt
+|faint|p1b: Dragonite
+|
+|-weather|RainDance|[upkeep]
+|-heal|p2a: Archaludon|52/100|[from] item: Leftovers
+|-damage|p2a: Archaludon|39/100|[from] Leech Seed|[of] p1a: Rotom
+|-heal|p1a: Rotom|80/100|[silent]
+|upkeep
+|
+|t:|1777406367
+|switch|p1b: Torterra|Torterra, L50, M|100/100
+|turn|7
+|
+|t:|1777406385
+|move|p1b: Torterra|Protect|p1b: Torterra
+|-singleturn|p1b: Torterra|Protect
+|-activate|p1a: Rotom|confusion
+|move|p1a: Rotom|Hydro Pump|p2a: Archaludon
+|-resisted|p2a: Archaludon|1
+|-damage|p2a: Archaludon|9/100
+|-ability|p2a: Archaludon|Stamina|boost
+|-boost|p2a: Archaludon|def|1
+|move|p2b: Dragonite|Hurricane|p1b: Torterra
+|-activate|p1b: Torterra|move: Protect
+|move|p2a: Archaludon|Dragon Pulse|p1a: Rotom
+|-damage|p1a: Rotom|0 fnt
+|faint|p1a: Rotom
+|
+|-weather|none
+|-heal|p2a: Archaludon|16/100|[from] item: Leftovers
+|upkeep
+|turn|8
+|
+|t:|1777406403
+|move|p2b: Dragonite|Draco Meteor|p1b: Torterra
+|-damage|p1b: Torterra|31/100
+|-unboost|p2b: Dragonite|spa|2
+|move|p2a: Archaludon|Dragon Pulse|p1b: Torterra
+|-damage|p1b: Torterra|0 fnt
+|faint|p1b: Torterra
+|
+|win|Agent Aquato
+|raw|Snowsquall brute's rating: 1892 &rarr; <strong>1864</strong><br />(-28 for losing)
+|raw|Agent Aquato's rating: 1736 &rarr; <strong>1764</strong><br />(+28 for winning)
+|l|☆Snowsquall brute
+|player|p1|
+|l| 2-2-2 Ape
