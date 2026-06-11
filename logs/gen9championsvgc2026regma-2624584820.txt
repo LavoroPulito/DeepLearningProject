@@ -1,0 +1,145 @@
+|j|☆Xiao Shi
+|j|☆bwahacough
+|t:|1780540662
+|gametype|doubles
+|player|p1|Xiao Shi|1|1858
+|player|p2|bwahacough|102|1933
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Farigiraf, L50, F|
+|poke|p1|Basculegion, L50, M|
+|poke|p1|Talonflame, L50, F|
+|poke|p1|Garchomp, L50, M|
+|poke|p1|Archaludon, L50, M|
+|poke|p1|Blastoise, L50, M|
+|poke|p2|Lycanroc, L50, F, shiny|
+|poke|p2|Tyranitar, L50, M|
+|poke|p2|Farigiraf, L50, F, shiny|
+|poke|p2|Floette-Eternal, L50, F|
+|poke|p2|Basculegion-F, L50, F|
+|poke|p2|Scizor, L50, F, shiny|
+|teampreview|4
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by Xiao Shi)
+|
+|t:|1780540675
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Talonflame|Talonflame, L50, F|100/100
+|switch|p1b: Garchomp|Garchomp, L50, M|100/100
+|switch|p2a: Lycanroc|Lycanroc, L50, F, shiny|100/100
+|switch|p2b: Tyranitar|Tyranitar, L50, M|100/100
+|-weather|Sandstorm|[from] ability: Sand Stream|[of] p2b: Tyranitar
+|turn|1
+|
+|t:|1780540688
+|move|p2a: Lycanroc|Protect|p2a: Lycanroc
+|-singleturn|p2a: Lycanroc|Protect
+|move|p1a: Talonflame|Tailwind|p1a: Talonflame
+|-sidestart|p1: Xiao Shi|move: Tailwind
+|move|p1b: Garchomp|Earthquake|p2b: Tyranitar|[spread] p2b
+|-activate|p2a: Lycanroc|move: Protect
+|-immune|p1a: Talonflame
+|-supereffective|p2b: Tyranitar|1
+|-enditem|p2b: Tyranitar|Shuca Berry|[eat]
+|-enditem|p2b: Tyranitar|Shuca Berry|[weaken]
+|-damage|p2b: Tyranitar|70/100
+|move|p2b: Tyranitar|Ice Punch|p1b: Garchomp
+|-supereffective|p1b: Garchomp|2
+|-damage|p1b: Garchomp|0 fnt
+|-damage|p2b: Tyranitar|58/100|[from] ability: Rough Skin|[of] p1b: Garchomp
+|faint|p1b: Garchomp
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1a: Talonflame|94/100|[from] Sandstorm
+|upkeep
+|
+|t:|1780540695
+|switch|p1b: Blastoise|Blastoise, L50, M|100/100
+|turn|2
+|
+|t:|1780540704
+|switch|p2b: Farigiraf|Farigiraf, L50, F, shiny|100/100
+|detailschange|p1b: Blastoise|Blastoise-Mega, L50, M
+|-mega|p1b: Blastoise|Blastoise|Blastoisinite
+|move|p1a: Talonflame|Acrobatics|p2a: Lycanroc
+|-resisted|p2a: Lycanroc|1
+|-damage|p2a: Lycanroc|66/100
+|move|p2a: Lycanroc|Rock Slide|p1a: Talonflame|[spread] p1a,p1b
+|-supereffective|p1a: Talonflame|2
+|-damage|p1a: Talonflame|0 fnt
+|-damage|p1b: Blastoise|69/100
+|faint|p1a: Talonflame
+|cant|p1b: Blastoise|flinch
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1b: Blastoise|64/100|[from] Sandstorm
+|-damage|p2b: Farigiraf|94/100|[from] Sandstorm
+|upkeep
+|
+|t:|1780540716
+|switch|p1a: Basculegion|Basculegion, L50, M|100/100
+|turn|3
+|
+|t:|1780540729
+|move|p2a: Lycanroc|Protect|p2a: Lycanroc
+|-singleturn|p2a: Lycanroc|Protect
+|move|p2b: Farigiraf|Protect|p2b: Farigiraf
+|-singleturn|p2b: Farigiraf|Protect
+|move|p1a: Basculegion|Waterfall|p2b: Farigiraf
+|-activate|p2b: Farigiraf|move: Protect
+|move|p1b: Blastoise|Dark Pulse|p2b: Farigiraf
+|-activate|p2b: Farigiraf|move: Protect
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1a: Basculegion|93/100|[from] Sandstorm
+|-damage|p1b: Blastoise|58/100|[from] Sandstorm
+|-damage|p2b: Farigiraf|88/100|[from] Sandstorm
+|upkeep
+|turn|4
+|
+|t:|1780540736
+|move|p2b: Farigiraf|Helping Hand|p2a: Lycanroc
+|-singleturn|p2a: Lycanroc|Helping Hand|[of] p2b: Farigiraf
+|move|p2a: Lycanroc|Rock Slide|p1b: Blastoise|[spread] p1a,p1b
+|-damage|p1a: Basculegion|38/100
+|-damage|p1b: Blastoise|16/100
+|move|p1a: Basculegion|Waterfall|p2a: Lycanroc
+|-supereffective|p2a: Lycanroc|1
+|-damage|p2a: Lycanroc|0 fnt
+|faint|p2a: Lycanroc
+|move|p1b: Blastoise|Dark Pulse|p2b: Farigiraf
+|-supereffective|p2b: Farigiraf|1
+|-damage|p2b: Farigiraf|0 fnt
+|faint|p2b: Farigiraf
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1a: Basculegion|32/100|[from] Sandstorm
+|-damage|p1b: Blastoise|11/100|[from] Sandstorm
+|-sideend|p1: Xiao Shi|move: Tailwind
+|upkeep
+|
+|t:|1780540739
+|switch|p2a: Tyranitar|Tyranitar, L50, M|58/100
+|switch|p2b: Floette|Floette-Eternal, L50, F|100/100
+|turn|5
+|
+|t:|1780540751
+|detailschange|p2b: Floette|Floette-Mega, L50, F
+|-mega|p2b: Floette|Floette|Floettite
+|-ability|p2b: Floette|Fairy Aura
+|move|p1a: Basculegion|Last Respects|p2b: Floette
+|-damage|p2b: Floette|0 fnt
+|faint|p2b: Floette
+|move|p1b: Blastoise|Aura Sphere|p2a: Tyranitar
+|-supereffective|p2a: Tyranitar|2
+|-damage|p2a: Tyranitar|0 fnt
+|faint|p2a: Tyranitar
+|
+|win|Xiao Shi
+|raw|Xiao Shi's rating: 1858 &rarr; <strong>1883</strong><br />(+25 for winning)
+|raw|bwahacough's rating: 1949 &rarr; <strong>1924</strong><br />(-25 for losing)

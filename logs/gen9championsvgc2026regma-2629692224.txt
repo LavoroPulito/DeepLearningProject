@@ -1,0 +1,139 @@
+|j|☆Avriss
+|j|☆klanes1209
+|t:|1781166295
+|gametype|doubles
+|player|p1|Avriss|anabel|1956
+|player|p2|klanes1209|266|1945
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Scovillain, L50, M|
+|poke|p1|Aerodactyl, L50, F|
+|poke|p1|Garchomp, L50, M|
+|poke|p1|Basculegion, L50, M|
+|poke|p1|Kingambit, L50, F|
+|poke|p1|Sylveon, L50, F, shiny|
+|poke|p2|Blastoise, L50, M|
+|poke|p2|Archaludon, L50, F|
+|poke|p2|Vivillon-Pokeball, L50, F|
+|poke|p2|Sinistcha-Masterpiece, L50|
+|poke|p2|Sneasler, L50, F|
+|poke|p2|Pelipper, L50, F|
+|teampreview|4
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by Avriss)
+|inactive|Avriss has 60 seconds left.
+|inactive|klanes1209 has 60 seconds left.
+|
+|t:|1781166338
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Harvey|Scovillain, L50, M|100/100
+|switch|p1b: Vinsmoke|Kingambit, L50, F|100/100
+|switch|p2a: Blastoise|Blastoise, L50, M|100/100
+|switch|p2b: Sneasler|Sneasler, L50, F|100/100
+|turn|1
+|inactive|klanes1209 has 30 seconds left.
+|
+|t:|1781166368
+|detailschange|p2a: Blastoise|Blastoise-Mega, L50, M
+|-mega|p2a: Blastoise|Blastoise|Blastoisinite
+|detailschange|p1a: Harvey|Scovillain-Mega, L50, M
+|-mega|p1a: Harvey|Scovillain|Scovillainite
+|move|p2b: Sneasler|Gunk Shot|p1a: Harvey
+|-supereffective|p1a: Harvey|1
+|-damage|p1a: Harvey|0 fnt
+|-status|p2b: Sneasler|brn|[from] ability: Spicy Spray|[of] p1a: Harvey
+|faint|p1a: Harvey
+|move|p2a: Blastoise|Shell Smash|p2a: Blastoise
+|-unboost|p2a: Blastoise|def|1
+|-unboost|p2a: Blastoise|spd|1
+|-boost|p2a: Blastoise|atk|2
+|-boost|p2a: Blastoise|spa|2
+|-boost|p2a: Blastoise|spe|2
+|move|p1b: Vinsmoke|Kowtow Cleave|p2a: Blastoise
+|-damage|p2a: Blastoise|31/100
+|
+|-damage|p2b: Sneasler|93/100 brn|[from] brn
+|upkeep
+|
+|t:|1781166381
+|switch|p1a: Deepthroat|Basculegion, L50, M|100/100
+|turn|2
+|j| FloetteAbuse30000
+|l| FloetteAbuse30000
+|
+|t:|1781166394
+|move|p1b: Vinsmoke|Sucker Punch|p2a: Blastoise
+|-damage|p2a: Blastoise|0 fnt
+|faint|p2a: Blastoise
+|move|p1a: Deepthroat|Last Respects|p2b: Sneasler
+|-damage|p2b: Sneasler|0 fnt
+|faint|p2b: Sneasler
+|
+|upkeep
+|
+|t:|1781166403
+|switch|p2b: Archaludon|Archaludon, L50, F|100/100
+|switch|p2a: Pelipper|Pelipper, L50, F|100/100
+|-weather|RainDance|[from] ability: Drizzle|[of] p2a: Pelipper
+|turn|3
+|j| FloetteAbuse30000
+|
+|t:|1781166419
+|move|p1a: Deepthroat|Last Respects|p2a: Pelipper
+|-damage|p2a: Pelipper|25/100
+|move|p2a: Pelipper|Weather Ball|p1b: Vinsmoke
+|-damage|p1b: Vinsmoke|25/100
+|move|p2b: Archaludon|Electro Shot||[still]
+|-prepare|p2b: Archaludon|Electro Shot
+|-boost|p2b: Archaludon|spa|1
+|-anim|p2b: Archaludon|Electro Shot|p1a: Deepthroat
+|-supereffective|p1a: Deepthroat|1
+|-damage|p1a: Deepthroat|0 fnt
+|faint|p1a: Deepthroat
+|move|p1b: Vinsmoke|Kowtow Cleave|p2a: Pelipper
+|-damage|p2a: Pelipper|0 fnt
+|faint|p2a: Pelipper
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|
+|t:|1781166422
+|switch|p1a: Mikuu|Sylveon, L50, F, shiny|100/100
+|turn|4
+|
+|t:|1781166444
+|move|p2b: Archaludon|Electro Shot||[still]
+|-prepare|p2b: Archaludon|Electro Shot
+|-boost|p2b: Archaludon|spa|1
+|-anim|p2b: Archaludon|Electro Shot|p1b: Vinsmoke
+|-damage|p1b: Vinsmoke|0 fnt
+|faint|p1b: Vinsmoke
+|move|p1a: Mikuu|Hyper Voice|p2b: Archaludon
+|-damage|p2b: Archaludon|28/100
+|-ability|p2b: Archaludon|Stamina|boost
+|-boost|p2b: Archaludon|def|1
+|
+|-weather|RainDance|[upkeep]
+|-heal|p2b: Archaludon|34/100|[from] item: Leftovers
+|upkeep
+|turn|5
+|
+|t:|1781166457
+|move|p2b: Archaludon|Flash Cannon|p1a: Mikuu
+|-supereffective|p1a: Mikuu|1
+|-damage|p1a: Mikuu|0 fnt
+|faint|p1a: Mikuu
+|
+|win|klanes1209
+|raw|Avriss's rating: 1956 &rarr; <strong>1935</strong><br />(-21 for losing)
+|raw|klanes1209's rating: 1945 &rarr; <strong>1966</strong><br />(+21 for winning)
+|l|☆klanes1209
+|player|p2|
+|l|☆Avriss
+|player|p1|
+|l| FloetteAbuse30000

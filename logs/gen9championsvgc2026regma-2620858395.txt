@@ -1,0 +1,145 @@
+|j|☆Sheeshshane925
+|j|☆toucansoup
+|t:|1780082231
+|gametype|doubles
+|player|p1|Sheeshshane925|crasherwake|1993
+|player|p2|toucansoup|2|1870
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Scizor, L50, F|
+|poke|p1|Dragonite, L50, F|
+|poke|p1|Archaludon, L50, M|
+|poke|p1|Pelipper, L50, F|
+|poke|p1|Basculegion, L50, M|
+|poke|p1|Sneasler, L50, M|
+|poke|p2|Scizor, L50, M|
+|poke|p2|Kleavor, L50, M|
+|poke|p2|Blastoise, L50, F|
+|poke|p2|Farigiraf, L50, M|
+|poke|p2|Whimsicott, L50, F|
+|poke|p2|Delphox, L50, M|
+|teampreview|4
+|
+|t:|1780082270
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Sneasler|Sneasler, L50, M|100/100
+|switch|p1b: Basculegion|Basculegion, L50, M|100/100
+|switch|p2a: Blastoise|Blastoise, L50, F|100/100
+|switch|p2b: Whimsicott|Whimsicott, L50, F|100/100
+|turn|1
+|
+|t:|1780082282
+|detailschange|p2a: Blastoise|Blastoise-Mega, L50, F
+|-mega|p2a: Blastoise|Blastoise|Blastoisinite
+|move|p2b: Whimsicott|Tailwind|p2b: Whimsicott
+|-sidestart|p2: toucansoup|move: Tailwind
+|move|p1b: Basculegion|Wave Crash|p2a: Blastoise
+|-resisted|p2a: Blastoise|1
+|-damage|p2a: Blastoise|71/100
+|-damage|p1b: Basculegion|91/100|[from] Recoil
+|move|p2a: Blastoise|Dark Pulse|p1b: Basculegion
+|-supereffective|p1b: Basculegion|1
+|-damage|p1b: Basculegion|0 fnt
+|faint|p1b: Basculegion
+|move|p1a: Sneasler|Close Combat|p2a: Blastoise
+|-damage|p2a: Blastoise|17/100
+|-unboost|p1a: Sneasler|def|1
+|-unboost|p1a: Sneasler|spd|1
+|
+|upkeep
+|j| thisoldmanheplayed
+|
+|t:|1780082304
+|switch|p1b: Archaludon|Archaludon, L50, M|100/100
+|turn|2
+|
+|t:|1780082315
+|switch|p1a: Pelipper|Pelipper, L50, F|100/100
+|-weather|RainDance|[from] ability: Drizzle|[of] p1a: Pelipper
+|move|p2b: Whimsicott|Moonblast|p1a: Pelipper
+|-damage|p1a: Pelipper|43/100
+|-enditem|p1a: Pelipper|Sitrus Berry|[eat]
+|-heal|p1a: Pelipper|68/100|[from] item: Sitrus Berry
+|move|p2a: Blastoise|Aura Sphere|p1b: Archaludon
+|-supereffective|p1b: Archaludon|1
+|-damage|p1b: Archaludon|4/100
+|-ability|p1b: Archaludon|Stamina|boost
+|-boost|p1b: Archaludon|def|1
+|move|p1b: Archaludon|Electro Shot||[still]
+|-prepare|p1b: Archaludon|Electro Shot
+|-boost|p1b: Archaludon|spa|1
+|-anim|p1b: Archaludon|Electro Shot|p2a: Blastoise
+|-supereffective|p2a: Blastoise|1
+|-damage|p2a: Blastoise|0 fnt
+|faint|p2a: Blastoise
+|
+|-weather|RainDance|[upkeep]
+|-heal|p1b: Archaludon|10/100|[from] item: Leftovers
+|upkeep
+|
+|t:|1780082321
+|switch|p2a: Kleavor|Kleavor, L50, M|100/100
+|turn|3
+|
+|t:|1780082349
+|move|p2b: Whimsicott|Moonblast|p1b: Archaludon
+|-damage|p1b: Archaludon|0 fnt
+|faint|p1b: Archaludon
+|move|p2a: Kleavor|Stone Axe|p1a: Pelipper|[miss]
+|-miss|p2a: Kleavor|p1a: Pelipper
+|move|p1a: Pelipper|Weather Ball|p2a: Kleavor
+|-supereffective|p2a: Kleavor|1
+|-enditem|p2a: Kleavor|Focus Sash
+|-damage|p2a: Kleavor|1/100
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|
+|t:|1780082352
+|switch|p1b: Sneasler|Sneasler, L50, M|100/100
+|turn|4
+|
+|t:|1780082372
+|move|p2b: Whimsicott|Sunny Day|p2b: Whimsicott
+|-weather|SunnyDay
+|move|p2a: Kleavor|Stone Axe|p1a: Pelipper
+|-supereffective|p1a: Pelipper|1
+|-damage|p1a: Pelipper|0 fnt
+|-sidestart|p1: Sheeshshane925|move: Stealth Rock
+|faint|p1a: Pelipper
+|move|p1b: Sneasler|Dire Claw|p2a: Kleavor
+|-resisted|p2a: Kleavor|1
+|-damage|p2a: Kleavor|0 fnt
+|faint|p2a: Kleavor
+|
+|-weather|SunnyDay|[upkeep]
+|-sideend|p2: toucansoup|move: Tailwind
+|upkeep
+|
+|t:|1780082376
+|switch|p2a: Delphox|Delphox, L50, M|100/100
+|turn|5
+|
+|t:|1780082383
+|move|p2b: Whimsicott|Moonblast|p1b: Sneasler
+|-damage|p1b: Sneasler|41/100
+|move|p1b: Sneasler|Dire Claw|p2b: Whimsicott
+|-supereffective|p2b: Whimsicott|2
+|-damage|p2b: Whimsicott|0 fnt
+|faint|p2b: Whimsicott
+|move|p2a: Delphox|Psyshock|p1b: Sneasler
+|-supereffective|p1b: Sneasler|2
+|-damage|p1b: Sneasler|0 fnt
+|faint|p1b: Sneasler
+|
+|win|toucansoup
+|raw|Sheeshshane925's rating: 1993 &rarr; <strong>1966</strong><br />(-27 for losing)
+|raw|toucansoup's rating: 1870 &rarr; <strong>1897</strong><br />(+27 for winning)
+|l|☆Sheeshshane925
+|player|p1|

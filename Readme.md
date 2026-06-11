@@ -13,3 +13,16 @@ Youtube:
 - [ Attention ](https://www.youtube.com/watch?v=RNF0FvRjGZk&t=2s)
 - [ Transformer](https://www.youtube.com/watch?v=wjZofJX0v4M)
 
+## Setup
+
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+### instruction to first use 
+git clone <repo>
+cd <repo>
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python3 scraper.py

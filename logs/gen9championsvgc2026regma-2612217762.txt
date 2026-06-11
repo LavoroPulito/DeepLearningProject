@@ -1,0 +1,180 @@
+|j|☆Grade a type b
+|j|☆Pasodoble
+|t:|1779074856
+|gametype|doubles
+|player|p1|Grade a type b|266|1886
+|player|p2|Pasodoble|101|1907
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Charizard, L50, M|
+|poke|p1|Basculegion, L50, M|
+|poke|p1|Kommo-o, L50, F|
+|poke|p1|Whimsicott, L50, M|
+|poke|p1|Kingambit, L50, M|
+|poke|p1|Kleavor, L50, M|
+|poke|p2|Scovillain, L50, M|
+|poke|p2|Sylveon, L50, F|
+|poke|p2|Tyranitar, L50, F|
+|poke|p2|Excadrill, L50, M|
+|poke|p2|Sinistcha, L50|
+|poke|p2|Basculegion, L50, M|
+|teampreview|4
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by Grade a type b)
+|j| Rabbithorn05
+|inactive|Grade a type b has 60 seconds left.
+|inactive|Pasodoble has 60 seconds left.
+|c| Rabbithorn05|wow rematch. hf for both of you two
+|c|☆Pasodoble|sup
+|inactive|Grade a type b has 30 seconds left.
+|
+|t:|1779074923
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Emergency Button|Whimsicott, L50, M|100/100
+|switch|p1b: Calyrex-Shadow?|Kommo-o, L50, F|100/100
+|switch|p2a: Tyranitar|Tyranitar, L50, F|100/100
+|switch|p2b: Sylveon|Sylveon, L50, F|100/100
+|-weather|Sandstorm|[from] ability: Sand Stream|[of] p2a: Tyranitar
+|turn|1
+|inactive|Pasodoble has 30 seconds left.
+|inactive|Pasodoble has 20 seconds left.
+|inactive|Pasodoble has 15 seconds left.
+|
+|t:|1779074964
+|detailschange|p2a: Tyranitar|Tyranitar-Mega, L50, F
+|-mega|p2a: Tyranitar|Tyranitar|Tyranitarite
+|move|p1a: Emergency Button|Protect|p1a: Emergency Button
+|-singleturn|p1a: Emergency Button|Protect
+|move|p1b: Calyrex-Shadow?|Protect|p1b: Calyrex-Shadow?
+|-singleturn|p1b: Calyrex-Shadow?|Protect
+|move|p2a: Tyranitar|Rock Slide|p1b: Calyrex-Shadow?|[spread] 
+|-activate|p1a: Emergency Button|move: Protect
+|-activate|p1b: Calyrex-Shadow?|move: Protect
+|move|p2b: Sylveon|Draining Kiss|p1b: Calyrex-Shadow?
+|-activate|p1b: Calyrex-Shadow?|move: Protect
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1a: Emergency Button|94/100|[from] Sandstorm
+|-damage|p1b: Calyrex-Shadow?|93/100|[from] Sandstorm
+|-damage|p2b: Sylveon|94/100|[from] Sandstorm
+|-heal|p2b: Sylveon|100/100|[from] item: Leftovers
+|upkeep
+|turn|2
+|inactive|Pasodoble has 30 seconds left.
+|
+|t:|1779074995
+|switch|p1b: Kleavor|Kleavor, L50, M|100/100
+|move|p2a: Tyranitar|Protect|p2a: Tyranitar
+|-singleturn|p2a: Tyranitar|Protect
+|move|p1a: Emergency Button|Encore|p2b: Sylveon
+|-start|p2b: Sylveon|Encore
+|move|p2b: Sylveon|Draining Kiss|p1a: Emergency Button
+|-damage|p1a: Emergency Button|52/100
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1a: Emergency Button|46/100|[from] Sandstorm
+|-damage|p2b: Sylveon|94/100|[from] Sandstorm
+|-heal|p2b: Sylveon|100/100|[from] item: Leftovers
+|upkeep
+|turn|3
+|inactive|Pasodoble has 30 seconds left.
+|inactive|Pasodoble has 20 seconds left.
+|
+|t:|1779075032
+|switch|p2a: Basculegion|Basculegion, L50, M|100/100
+|move|p1a: Emergency Button|Protect|p1a: Emergency Button
+|-singleturn|p1a: Emergency Button|Protect
+|move|p1b: Kleavor|Stone Axe|p2b: Sylveon
+|-damage|p2b: Sylveon|36/100
+|-sidestart|p2: Pasodoble|move: Stealth Rock
+|move|p2b: Sylveon|Draining Kiss|p1a: Emergency Button
+|-activate|p1a: Emergency Button|move: Protect
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p2a: Basculegion|93/100|[from] Sandstorm
+|-damage|p1a: Emergency Button|40/100|[from] Sandstorm
+|-damage|p2b: Sylveon|30/100|[from] Sandstorm
+|-heal|p2b: Sylveon|36/100|[from] item: Leftovers
+|upkeep
+|turn|4
+|inactive|Grade a type b has 30 seconds left.
+|inactive|Pasodoble has 30 seconds left.
+|
+|t:|1779075061
+|switch|p2b: Tyranitar|Tyranitar-Mega, L50, F|100/100
+|-damage|p2b: Tyranitar|87/100|[from] Stealth Rock
+|move|p1a: Emergency Button|Tailwind|p1a: Emergency Button
+|-sidestart|p1: Grade a type b|move: Tailwind
+|move|p1b: Kleavor|Stone Axe|p2a: Basculegion
+|-damage|p2a: Basculegion|13/100
+|move|p2a: Basculegion|Wave Crash|p1b: Kleavor
+|-supereffective|p1b: Kleavor|1
+|-damage|p1b: Kleavor|0 fnt
+|faint|p1b: Kleavor
+|-damage|p2a: Basculegion|0 fnt|[from] Recoil
+|faint|p2a: Basculegion
+|
+|-weather|Sandstorm|[upkeep]
+|-damage|p1a: Emergency Button|35/100|[from] Sandstorm
+|upkeep
+|
+|t:|1779075075
+|switch|p2a: Sylveon|Sylveon, L50, F|36/100
+|switch|p1b: Calyrex-Shadow?|Kommo-o, L50, F|93/100
+|-damage|p2a: Sylveon|23/100|[from] Stealth Rock
+|turn|5
+|j| pedroemiya
+|
+|t:|1779075087
+|move|p1a: Emergency Button|Moonblast|p2a: Sylveon
+|-damage|p2a: Sylveon|0 fnt
+|faint|p2a: Sylveon
+|move|p1b: Calyrex-Shadow?|Aura Sphere|p2b: Tyranitar
+|-supereffective|p2b: Tyranitar|2
+|-damage|p2b: Tyranitar|16/100
+|move|p2b: Tyranitar|Rock Slide|p1b: Calyrex-Shadow?|[spread] p1a,p1b
+|-resisted|p1b: Calyrex-Shadow?|1
+|-damage|p1a: Emergency Button|0 fnt
+|-damage|p1b: Calyrex-Shadow?|79/100
+|faint|p1a: Emergency Button
+|
+|-weather|none
+|upkeep
+|
+|t:|1779075097
+|switch|p1a: Jurassic Park|Charizard, L50, M|100/100
+|switch|p2a: Excadrill|Excadrill, L50, M|100/100
+|-damage|p2a: Excadrill|97/100|[from] Stealth Rock
+|turn|6
+|
+|t:|1779075106
+|detailschange|p1a: Jurassic Park|Charizard-Mega-Y, L50, M
+|-mega|p1a: Jurassic Park|Charizard|Charizardite Y
+|-weather|SunnyDay|[from] ability: Drought|[of] p1a: Jurassic Park
+|move|p1a: Jurassic Park|Solar Beam||[still]
+|-prepare|p1a: Jurassic Park|Solar Beam
+|-anim|p1a: Jurassic Park|Solar Beam|p2b: Tyranitar
+|-supereffective|p2b: Tyranitar|1
+|-damage|p2b: Tyranitar|0 fnt
+|faint|p2b: Tyranitar
+|move|p1b: Calyrex-Shadow?|Aura Sphere|p2a: Excadrill
+|-supereffective|p2a: Excadrill|1
+|-damage|p2a: Excadrill|0 fnt
+|faint|p2a: Excadrill
+|
+|win|Grade a type b
+|raw|Grade a type b's rating: 1886 &rarr; <strong>1907</strong><br />(+21 for winning)
+|raw|Pasodoble's rating: 1907 &rarr; <strong>1886</strong><br />(-21 for losing)
+|c|☆Pasodoble|gg
+|l|☆Grade a type b
+|player|p1|
+|l|☆Pasodoble
+|player|p2|
+|l| Rabbithorn05
+|l| pedroemiya
+|j| AlexMXVGC

@@ -1,0 +1,154 @@
+|j|☆klanes1209
+|j|☆Fuzis
+|t:|1779865813
+|gametype|doubles
+|player|p1|klanes1209|169|1926
+|player|p2|Fuzis|karen|1941
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Blastoise, L50, F|
+|poke|p1|Garchomp, L50, F|
+|poke|p1|Vivillon-Pokeball, L50, M|
+|poke|p1|Sinistcha-Masterpiece, L50|
+|poke|p1|Sneasler, L50, F|
+|poke|p1|Pelipper, L50, M|
+|poke|p2|Blastoise, L50, M|
+|poke|p2|Sinistcha-Masterpiece, L50|
+|poke|p2|Incineroar, L50, M|
+|poke|p2|Vivillon-Garden, L50, F|
+|poke|p2|Garchomp, L50, M|
+|poke|p2|Floette-Eternal, L50, F|
+|teampreview|4
+|j| Claarity
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by Fuzis)
+|inactive|klanes1209 has 60 seconds left.
+|
+|t:|1779865863
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Blastoise|Blastoise, L50, F|100/100
+|switch|p1b: Sneasler|Sneasler, L50, F|100/100
+|switch|p2a: Vivillon|Vivillon-Garden, L50, F|100/100
+|switch|p2b: Floette|Floette-Eternal, L50, F|100/100
+|turn|1
+|inactive|Fuzis has 30 seconds left.
+|
+|t:|1779865893
+|detailschange|p2b: Floette|Floette-Mega, L50, F
+|-mega|p2b: Floette|Floette|Floettite
+|-ability|p2b: Floette|Fairy Aura
+|detailschange|p1a: Blastoise|Blastoise-Mega, L50, F
+|-mega|p1a: Blastoise|Blastoise|Blastoisinite
+|move|p1b: Sneasler|Gunk Shot|p2b: Floette
+|-supereffective|p2b: Floette|1
+|-damage|p2b: Floette|0 fnt
+|faint|p2b: Floette
+|move|p2a: Vivillon|Sleep Powder|p1a: Blastoise
+|-status|p1a: Blastoise|slp|[from] move: Sleep Powder
+|cant|p1a: Blastoise|slp
+|
+|upkeep
+|
+|t:|1779865904
+|switch|p2b: Incineroar|Incineroar, L50, M|100/100
+|-ability|p2b: Incineroar|Intimidate|boost
+|-unboost|p1a: Blastoise|atk|1
+|-unboost|p1b: Sneasler|atk|1
+|-enditem|p1b: Sneasler|White Herb
+|-clearnegativeboost|p1b: Sneasler|[silent]
+|turn|2
+|
+|t:|1779865925
+|switch|p2b: Sinistcha|Sinistcha-Masterpiece, L50|100/100
+|move|p1b: Sneasler|Close Combat|p2b: Sinistcha
+|-immune|p2b: Sinistcha
+|move|p2a: Vivillon|Hurricane|p1b: Sneasler
+|-supereffective|p1b: Sneasler|1
+|-damage|p1b: Sneasler|0 fnt
+|faint|p1b: Sneasler
+|-curestatus|p1a: Blastoise|slp|[msg]
+|move|p1a: Blastoise|Shell Smash|p1a: Blastoise
+|-unboost|p1a: Blastoise|def|1
+|-unboost|p1a: Blastoise|spd|1
+|-boost|p1a: Blastoise|atk|2
+|-boost|p1a: Blastoise|spa|2
+|-boost|p1a: Blastoise|spe|2
+|
+|upkeep
+|
+|t:|1779865944
+|switch|p1b: Sinistcha|Sinistcha-Masterpiece, L50|100/100
+|turn|3
+|inactive|Fuzis has 30 seconds left.
+|inactive|Fuzis has 20 seconds left.
+|inactive|Fuzis has 15 seconds left.
+|inactive|Fuzis has 10 seconds left.
+|
+|t:|1779865991
+|move|p1b: Sinistcha|Rage Powder|p1b: Sinistcha
+|-singleturn|p1b: Sinistcha|move: Rage Powder
+|move|p1a: Blastoise|Dark Pulse|p2b: Sinistcha
+|-supereffective|p2b: Sinistcha|1
+|-damage|p2b: Sinistcha|0 fnt
+|faint|p2b: Sinistcha
+|move|p2a: Vivillon|Hurricane|p1b: Sinistcha
+|-supereffective|p1b: Sinistcha|1
+|-damage|p1b: Sinistcha|11/100
+|
+|upkeep
+|
+|t:|1779866001
+|switch|p2b: Incineroar|Incineroar, L50, M|100/100
+|-ability|p2b: Incineroar|Intimidate|boost
+|-unboost|p1a: Blastoise|atk|1
+|-unboost|p1b: Sinistcha|atk|1
+|turn|4
+|
+|t:|1779866019
+|move|p1a: Blastoise|Protect|p1a: Blastoise
+|-singleturn|p1a: Blastoise|Protect
+|move|p2a: Vivillon|Tailwind|p2a: Vivillon
+|-sidestart|p2: Fuzis|move: Tailwind
+|move|p2b: Incineroar|Throat Chop|p1b: Sinistcha
+|-supereffective|p1b: Sinistcha|1
+|-damage|p1b: Sinistcha|0 fnt
+|faint|p1b: Sinistcha
+|
+|upkeep
+|
+|t:|1779866028
+|switch|p1b: Vivillon|Vivillon-Pokeball, L50, M|100/100
+|turn|5
+|
+|t:|1779866042
+|move|p1b: Vivillon|Rage Powder|p1b: Vivillon
+|-singleturn|p1b: Vivillon|move: Rage Powder
+|move|p2a: Vivillon|Hurricane|p1b: Vivillon
+|-supereffective|p1b: Vivillon|1
+|-enditem|p1b: Vivillon|Focus Sash
+|-damage|p1b: Vivillon|1/100
+|-start|p1b: Vivillon|confusion
+|move|p1a: Blastoise|Water Spout|p2a: Vivillon|[spread] p2a,p2b
+|-supereffective|p2b: Incineroar|1
+|-enditem|p2a: Vivillon|Focus Sash
+|-damage|p2a: Vivillon|1/100
+|-damage|p2b: Incineroar|0 fnt
+|faint|p2b: Incineroar
+|
+|upkeep
+|turn|6
+|-message|Fuzis forfeited.
+|
+|win|klanes1209
+|raw|klanes1209's rating: 1926 &rarr; <strong>1947</strong><br />(+21 for winning)
+|raw|Fuzis's rating: 1941 &rarr; <strong>1920</strong><br />(-21 for losing)
+|l|☆Fuzis
+|player|p2|
+|l|☆klanes1209
+|player|p1|
+|l| Claarity

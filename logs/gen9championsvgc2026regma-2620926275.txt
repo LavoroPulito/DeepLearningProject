@@ -1,0 +1,125 @@
+|j|☆ToiletClogger456
+|j|☆toucansoup
+|t:|1780089157
+|gametype|doubles
+|player|p1|ToiletClogger456|barry|1862
+|player|p2|toucansoup|2|1920
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Umbreon, L50, F, shiny|
+|poke|p1|Sylveon, L50, F, shiny|
+|poke|p1|Charizard, L50, F|
+|poke|p1|Venusaur, L50, M|
+|poke|p1|Basculegion, L50, M|
+|poke|p1|Archaludon, L50, F|
+|poke|p2|Scizor, L50, M|
+|poke|p2|Kleavor, L50, M|
+|poke|p2|Blastoise, L50, M|
+|poke|p2|Farigiraf, L50, F|
+|poke|p2|Whimsicott, L50, F|
+|poke|p2|Delphox, L50, M|
+|teampreview|4
+|j| lowk like dat
+|
+|t:|1780089182
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Archaludon|Archaludon, L50, F|100/100
+|switch|p1b: Basculegion|Basculegion, L50, M|100/100
+|switch|p2a: Kleavor|Kleavor, L50, M|100/100
+|switch|p2b: Blastoise|Blastoise, L50, M|100/100
+|turn|1
+|
+|t:|1780089193
+|detailschange|p2b: Blastoise|Blastoise-Mega, L50, M
+|-mega|p2b: Blastoise|Blastoise|Blastoisinite
+|move|p1b: Basculegion|Aqua Jet|p2a: Kleavor
+|-supereffective|p2a: Kleavor|1
+|-damage|p2a: Kleavor|14/100
+|move|p1a: Archaludon|Flash Cannon|p2a: Kleavor
+|-supereffective|p2a: Kleavor|1
+|-damage|p2a: Kleavor|0 fnt
+|faint|p2a: Kleavor
+|move|p2b: Blastoise|Aura Sphere|p1a: Archaludon
+|-supereffective|p1a: Archaludon|1
+|-ability|p1a: Archaludon|Sturdy
+|-damage|p1a: Archaludon|1/100
+|
+|upkeep
+|
+|t:|1780089197
+|switch|p2a: Whimsicott|Whimsicott, L50, F|100/100
+|turn|2
+|
+|t:|1780089202
+|move|p2a: Whimsicott|Tailwind|p2a: Whimsicott
+|-sidestart|p2: toucansoup|move: Tailwind
+|move|p1a: Archaludon|Flash Cannon|p2a: Whimsicott
+|-supereffective|p2a: Whimsicott|1
+|-damage|p2a: Whimsicott|0 fnt
+|faint|p2a: Whimsicott
+|move|p2b: Blastoise|Water Spout|p1a: Archaludon|[spread] p1a,p1b
+|-resisted|p1a: Archaludon|1
+|-resisted|p1b: Basculegion|1
+|-damage|p1a: Archaludon|0 fnt
+|-damage|p1b: Basculegion|68/100
+|faint|p1a: Archaludon
+|move|p1b: Basculegion|Last Respects|p2b: Blastoise
+|-damage|p2b: Blastoise|45/100
+|
+|upkeep
+|j| dontlookatmeimnoob
+|
+|t:|1780089213
+|switch|p2a: Delphox|Delphox, L50, M|100/100
+|switch|p1a: Charizard|Charizard, L50, F|100/100
+|turn|3
+|
+|t:|1780089222
+|detailschange|p1a: Charizard|Charizard-Mega-Y, L50, F
+|-mega|p1a: Charizard|Charizard|Charizardite Y
+|-weather|SunnyDay|[from] ability: Drought|[of] p1a: Charizard
+|move|p1b: Basculegion|Protect|p1b: Basculegion
+|-singleturn|p1b: Basculegion|Protect
+|move|p2a: Delphox|Psyshock|p1a: Charizard
+|-damage|p1a: Charizard|60/100
+|move|p2b: Blastoise|Dark Pulse|p1b: Basculegion
+|-activate|p1b: Basculegion|move: Protect
+|move|p1a: Charizard|Heat Wave|p2a: Delphox|[spread] p2a,p2b
+|-resisted|p2a: Delphox|1
+|-resisted|p2b: Blastoise|1
+|-damage|p2a: Delphox|65/100
+|-damage|p2b: Blastoise|19/100
+|
+|-weather|SunnyDay|[upkeep]
+|upkeep
+|turn|4
+|
+|t:|1780089240
+|move|p1b: Basculegion|Aqua Jet|p2a: Delphox
+|-supereffective|p2a: Delphox|1
+|-damage|p2a: Delphox|21/100
+|move|p2a: Delphox|Psyshock|p1a: Charizard
+|-damage|p1a: Charizard|21/100
+|move|p2b: Blastoise|Dark Pulse|p1b: Basculegion
+|-supereffective|p1b: Basculegion|1
+|-damage|p1b: Basculegion|0 fnt
+|faint|p1b: Basculegion
+|move|p1a: Charizard|Heat Wave|p2b: Blastoise|[spread] p2a,p2b
+|-resisted|p2a: Delphox|1
+|-resisted|p2b: Blastoise|1
+|-damage|p2a: Delphox|0 fnt
+|-damage|p2b: Blastoise|0 fnt
+|faint|p2a: Delphox
+|faint|p2b: Blastoise
+|
+|win|ToiletClogger456
+|raw|ToiletClogger456's rating: 1862 &rarr; <strong>1885</strong><br />(+23 for winning)
+|raw|toucansoup's rating: 1920 &rarr; <strong>1897</strong><br />(-23 for losing)
+|l| lowk like dat
+|l| dontlookatmeimnoob

@@ -1,0 +1,251 @@
+|j|☆klanes1209
+|j|☆megagenger2023
+|t:|1780399406
+|gametype|doubles
+|player|p1|klanes1209|266|1898
+|player|p2|megagenger2023|101|1956
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Blastoise, L50, F|
+|poke|p1|Garchomp, L50, M|
+|poke|p1|Vivillon-Pokeball, L50, F|
+|poke|p1|Sinistcha-Masterpiece, L50|
+|poke|p1|Sneasler, L50, F|
+|poke|p1|Pelipper, L50, M|
+|poke|p2|Gengar, L50, F|
+|poke|p2|Archaludon, L50, M|
+|poke|p2|Politoed, L50, F|
+|poke|p2|Incineroar, L50, M|
+|poke|p2|Sinistcha-Masterpiece, L50|
+|poke|p2|Manectric, L50, M|
+|teampreview|4
+|
+|t:|1780399424
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Blastoise|Blastoise, L50, F|100/100
+|switch|p1b: Vivillon|Vivillon-Pokeball, L50, F|100/100
+|switch|p2a: Gengar|Gengar, L50, F|100/100
+|switch|p2b: Sinistcha|Sinistcha-Masterpiece, L50|100/100
+|turn|1
+|
+|t:|1780399460
+|detailschange|p2a: Gengar|Gengar-Mega, L50, F
+|-mega|p2a: Gengar|Gengar|Gengarite
+|detailschange|p1a: Blastoise|Blastoise-Mega, L50, F
+|-mega|p1a: Blastoise|Blastoise|Blastoisinite
+|move|p2b: Sinistcha|Rage Powder|p2b: Sinistcha
+|-singleturn|p2b: Sinistcha|move: Rage Powder
+|move|p2a: Gengar|Perish Song|p2a: Gengar
+|-start|p1a: Blastoise|perish3|[silent]
+|-start|p1b: Vivillon|perish3|[silent]
+|-start|p2a: Gengar|perish3|[silent]
+|-start|p2b: Sinistcha|perish3|[silent]
+|-fieldactivate|move: Perish Song
+|move|p1b: Vivillon|Hurricane|p2b: Sinistcha
+|-supereffective|p2b: Sinistcha|1
+|-damage|p2b: Sinistcha|22/100
+|move|p1a: Blastoise|Dark Pulse|p2b: Sinistcha
+|-supereffective|p2b: Sinistcha|1
+|-enditem|p2b: Sinistcha|Colbur Berry|[eat]
+|-enditem|p2b: Sinistcha|Colbur Berry|[weaken]
+|-damage|p2b: Sinistcha|0 fnt
+|faint|p2b: Sinistcha
+|
+|-start|p2a: Gengar|perish3
+|-start|p1b: Vivillon|perish3
+|-start|p1a: Blastoise|perish3
+|upkeep
+|
+|t:|1780399474
+|switch|p2b: Incineroar|Incineroar, L50, M|100/100
+|-ability|p2b: Incineroar|Intimidate|boost
+|-unboost|p1a: Blastoise|atk|1
+|-unboost|p1b: Vivillon|atk|1
+|turn|2
+|
+|t:|1780399503
+|move|p2b: Incineroar|Fake Out|p1b: Vivillon
+|-damage|p1b: Vivillon|78/100
+|move|p2a: Gengar|Sludge Bomb|p1a: Blastoise
+|-damage|p1a: Blastoise|43/100
+|-status|p1a: Blastoise|psn
+|cant|p1b: Vivillon|flinch
+|move|p1a: Blastoise|Water Spout|p2a: Gengar|[spread] p2a,p2b
+|-supereffective|p2b: Incineroar|1
+|-damage|p2a: Gengar|74/100
+|-damage|p2b: Incineroar|58/100
+|
+|-damage|p1a: Blastoise|31/100 psn|[from] psn
+|-start|p2a: Gengar|perish2
+|-start|p1b: Vivillon|perish2
+|-start|p1a: Blastoise|perish2
+|upkeep
+|turn|3
+|
+|t:|1780399533
+|move|p2a: Gengar|Protect|p2a: Gengar
+|-singleturn|p2a: Gengar|Protect
+|move|p2b: Incineroar|Protect|p2b: Incineroar
+|-singleturn|p2b: Incineroar|Protect
+|move|p1b: Vivillon|Sleep Powder|p2b: Incineroar
+|-activate|p2b: Incineroar|move: Protect
+|move|p1a: Blastoise|Shell Smash|p1a: Blastoise
+|-unboost|p1a: Blastoise|def|1
+|-unboost|p1a: Blastoise|spd|1
+|-boost|p1a: Blastoise|atk|2
+|-boost|p1a: Blastoise|spa|2
+|-boost|p1a: Blastoise|spe|2
+|
+|-damage|p1a: Blastoise|19/100 psn|[from] psn
+|-start|p1a: Blastoise|perish1
+|-start|p2a: Gengar|perish1
+|-start|p1b: Vivillon|perish1
+|upkeep
+|turn|4
+|
+|t:|1780399558
+|switch|p2a: Politoed|Politoed, L50, F|100/100
+|-weather|RainDance|[from] ability: Drizzle|[of] p2a: Politoed
+|move|p1a: Blastoise|Dark Pulse|p2a: Politoed
+|-damage|p2a: Politoed|27/100
+|-enditem|p2a: Politoed|Sitrus Berry|[eat]
+|-heal|p2a: Politoed|52/100|[from] item: Sitrus Berry
+|move|p1b: Vivillon|Sleep Powder|p2b: Incineroar
+|-status|p2b: Incineroar|slp|[from] move: Sleep Powder
+|cant|p2b: Incineroar|slp
+|
+|-weather|RainDance|[upkeep]
+|-damage|p1a: Blastoise|7/100 psn|[from] psn
+|-start|p1a: Blastoise|perish0
+|-start|p1b: Vivillon|perish0
+|upkeep
+|faint|p1a: Blastoise
+|faint|p1b: Vivillon
+|
+|t:|1780399576
+|switch|p1b: Garchomp|Garchomp, L50, M|100/100
+|switch|p1a: Pelipper|Pelipper, L50, M|100/100
+|turn|5
+|
+|t:|1780399607
+|switch|p2b: Gengar|Gengar-Mega, L50, F|74/100
+|move|p2a: Politoed|Protect|p2a: Politoed
+|-singleturn|p2a: Politoed|Protect
+|move|p1a: Pelipper|Hurricane|p2a: Politoed
+|-activate|p2a: Politoed|move: Protect
+|move|p1b: Garchomp|Earthquake|p2a: Politoed|[spread] p2b
+|-activate|p2a: Politoed|move: Protect
+|-immune|p1a: Pelipper
+|-supereffective|p2b: Gengar|1
+|-damage|p2b: Gengar|0 fnt
+|faint|p2b: Gengar
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|
+|t:|1780399620
+|switch|p2b: Incineroar|Incineroar, L50, M|58/100 slp
+|-ability|p2b: Incineroar|Intimidate|boost
+|-unboost|p1a: Pelipper|atk|1
+|-unboost|p1b: Garchomp|atk|1
+|turn|6
+|
+|t:|1780399632
+|-curestatus|p2b: Incineroar|slp|[msg]
+|move|p2b: Incineroar|Fake Out|p1a: Pelipper
+|-damage|p1a: Pelipper|87/100
+|cant|p1a: Pelipper|flinch
+|move|p1b: Garchomp|Earthquake|p2a: Politoed|[spread] p2a,p2b
+|-immune|p1a: Pelipper
+|-supereffective|p2b: Incineroar|1
+|-damage|p2a: Politoed|30/100
+|-damage|p2b: Incineroar|13/100
+|move|p2a: Politoed|Perish Song|p2a: Politoed
+|-start|p1a: Pelipper|perish3|[silent]
+|-start|p1b: Garchomp|perish3|[silent]
+|-start|p2a: Politoed|perish3|[silent]
+|-start|p2b: Incineroar|perish3|[silent]
+|-fieldactivate|move: Perish Song
+|
+|-weather|RainDance|[upkeep]
+|-start|p1a: Pelipper|perish3
+|-start|p1b: Garchomp|perish3
+|-start|p2a: Politoed|perish3
+|-start|p2b: Incineroar|perish3
+|upkeep
+|turn|7
+|
+|t:|1780399652
+|move|p2a: Politoed|Protect|p2a: Politoed
+|-singleturn|p2a: Politoed|Protect
+|move|p2b: Incineroar|Protect|p2b: Incineroar
+|-singleturn|p2b: Incineroar|Protect
+|move|p1a: Pelipper|Hurricane|p2a: Politoed
+|-activate|p2a: Politoed|move: Protect
+|move|p1b: Garchomp|Earthquake|p2b: Incineroar|[spread] 
+|-activate|p2a: Politoed|move: Protect
+|-activate|p2b: Incineroar|move: Protect
+|-immune|p1a: Pelipper
+|
+|-weather|RainDance|[upkeep]
+|-start|p1a: Pelipper|perish2
+|-start|p1b: Garchomp|perish2
+|-start|p2a: Politoed|perish2
+|-start|p2b: Incineroar|perish2
+|upkeep
+|turn|8
+|
+|t:|1780399672
+|move|p2a: Politoed|Protect|p2a: Politoed
+|-singleturn|p2a: Politoed|Protect
+|move|p2b: Incineroar|Protect|p2b: Incineroar
+|-singleturn|p2b: Incineroar|Protect
+|move|p1a: Pelipper|Hurricane|p2a: Politoed
+|-activate|p2a: Politoed|move: Protect
+|move|p1b: Garchomp|Earthquake|p2b: Incineroar|[spread] 
+|-activate|p2a: Politoed|move: Protect
+|-activate|p2b: Incineroar|move: Protect
+|-immune|p1a: Pelipper
+|
+|-weather|none
+|-start|p1a: Pelipper|perish1
+|-start|p1b: Garchomp|perish1
+|-start|p2a: Politoed|perish1
+|-start|p2b: Incineroar|perish1
+|upkeep
+|turn|9
+|
+|t:|1780399693
+|move|p2a: Politoed|Protect||[still]
+|-fail|p2a: Politoed
+|move|p2b: Incineroar|Protect|p2b: Incineroar
+|-singleturn|p2b: Incineroar|Protect
+|move|p1a: Pelipper|Hurricane|p2a: Politoed
+|-damage|p2a: Politoed|0 fnt
+|faint|p2a: Politoed
+|move|p1b: Garchomp|Earthquake|p2b: Incineroar|[spread] 
+|-activate|p2b: Incineroar|move: Protect
+|-immune|p1a: Pelipper
+|
+|-start|p1a: Pelipper|perish0
+|-start|p1b: Garchomp|perish0
+|-start|p2b: Incineroar|perish0
+|faint|p1a: Pelipper
+|faint|p1b: Garchomp
+|faint|p2b: Incineroar
+|
+|win|megagenger2023
+|raw|klanes1209's rating: 1898 &rarr; <strong>1881</strong><br />(-17 for losing)
+|raw|megagenger2023's rating: 1956 &rarr; <strong>1973</strong><br />(+17 for winning)
+|l|☆klanes1209
+|player|p1|
+|l|☆megagenger2023
+|player|p2|
+|j|☆klanes1209
+|player|p1|klanes1209|266|

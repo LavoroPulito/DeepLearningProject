@@ -1,0 +1,175 @@
+|j|☆meh is ok
+|j|☆PATRIOTS_VG
+|t:|1781023912
+|gametype|doubles
+|player|p1|meh is ok|clair|1912
+|player|p2|PATRIOTS_VG|drayden|1884
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Gallade, L50, M, shiny|
+|poke|p1|Archaludon, L50, M|
+|poke|p1|Basculegion, L50, M|
+|poke|p1|Charizard, L50, F, shiny|
+|poke|p1|Sinistcha, L50|
+|poke|p1|Kingambit, L50, F|
+|poke|p2|Delphox, L50, F, shiny|
+|poke|p2|Sneasler, L50, M|
+|poke|p2|Sinistcha, L50|
+|poke|p2|Basculegion, L50, M|
+|poke|p2|Incineroar, L50, M|
+|poke|p2|Floette-Eternal, L50, F|
+|teampreview|4
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by meh is ok)
+|j| ddgfdhad
+|inactive|meh is ok has 60 seconds left.
+|inactive|PATRIOTS_VG has 60 seconds left.
+|c|☆meh is ok|glhf
+|
+|t:|1781023950
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Gallade|Gallade, L50, M, shiny|100/100
+|switch|p1b: Kingambit|Kingambit, L50, F|100/100
+|switch|p2a: Sneasler|Sneasler, L50, M|100/100
+|switch|p2b: Floette|Floette-Eternal, L50, F|100/100
+|turn|1
+|
+|t:|1781023965
+|switch|p1b: Basculegion|Basculegion, L50, M|100/100
+|detailschange|p2b: Floette|Floette-Mega, L50, F
+|-mega|p2b: Floette|Floette|Floettite
+|-ability|p2b: Floette|Fairy Aura
+|detailschange|p1a: Gallade|Gallade-Mega, L50, M, shiny
+|-mega|p1a: Gallade|Gallade|Galladite
+|move|p2a: Sneasler|Close Combat|p1b: Basculegion
+|-immune|p1b: Basculegion
+|move|p1a: Gallade|Psycho Cut|p2b: Floette
+|-damage|p2b: Floette|53/100
+|move|p2b: Floette|Dazzling Gleam|p1b: Basculegion|[spread] p1a,p1b
+|-supereffective|p1a: Gallade|1
+|-damage|p1a: Gallade|14/100
+|-damage|p1b: Basculegion|50/100g
+|
+|upkeep
+|turn|2
+|inactive|PATRIOTS_VG has 30 seconds left.
+|inactive|meh is ok has 30 seconds left.
+|
+|t:|1781024002
+|switch|p2a: Sinistcha|Sinistcha, L50|100/100
+|-heal|p2b: Floette|78/100|[from] ability: Hospitality|[of] p2a: Sinistcha
+|move|p2b: Floette|Protect|p2b: Floette
+|-singleturn|p2b: Floette|Protect
+|move|p1a: Gallade|Wide Guard|p1a: Gallade
+|-singleturn|p1a: Gallade|Wide Guard
+|move|p1b: Basculegion|Liquidation|p2b: Floette
+|-activate|p2b: Floette|move: Protect
+|
+|upkeep
+|turn|3
+|inactive|PATRIOTS_VG has 30 seconds left.
+|
+|t:|1781024028
+|move|p1b: Basculegion|Protect|p1b: Basculegion
+|-singleturn|p1b: Basculegion|Protect
+|move|p2a: Sinistcha|Rage Powder|p2a: Sinistcha
+|-singleturn|p2a: Sinistcha|move: Rage Powder
+|move|p1a: Gallade|Psycho Cut|p2a: Sinistcha
+|-damage|p2a: Sinistcha|63/100
+|move|p2b: Floette|Draining Kiss|p1a: Gallade
+|-supereffective|p1a: Gallade|1
+|-damage|p1a: Gallade|0 fnt
+|-heal|p2b: Floette|88/100|[from] drain|[of] p1a: Gallade
+|faint|p1a: Gallade
+|
+|upkeep
+|
+|t:|1781024037
+|switch|p1a: Kingambit|Kingambit, L50, F|100/100
+|turn|4
+|
+|t:|1781024041
+|switch|p1b: Archaludon|Archaludon, L50, M|100/100
+|move|p2a: Sinistcha|Rage Powder|p2a: Sinistcha
+|-singleturn|p2a: Sinistcha|move: Rage Powder
+|move|p2b: Floette|Calm Mind|p2b: Floette
+|-boost|p2b: Floette|spa|1
+|-boost|p2b: Floette|spd|1
+|move|p1a: Kingambit|Kowtow Cleave|p2a: Sinistcha
+|-supereffective|p2a: Sinistcha|1
+|-damage|p2a: Sinistcha|0 fnt
+|faint|p2a: Sinistcha
+|
+|upkeep
+|
+|t:|1781024045
+|switch|p2a: Sneasler|Sneasler, L50, M|100/100
+|turn|5
+|
+|t:|1781024054
+|move|p1a: Kingambit|Protect|p1a: Kingambit
+|-singleturn|p1a: Kingambit|Protect
+|move|p2a: Sneasler|Close Combat|p1a: Kingambit
+|-activate|p1a: Kingambit|move: Protect
+|move|p2b: Floette|Dazzling Gleam|p1a: Kingambit|[spread] p1b
+|-activate|p1a: Kingambit|move: Protect
+|-damage|p1b: Archaludon|39/100
+|-ability|p1b: Archaludon|Stamina|boost
+|-boost|p1b: Archaludon|def|1
+|move|p1b: Archaludon|Flash Cannon|p2b: Floette
+|-supereffective|p2b: Floette|1
+|-damage|p2b: Floette|49/100
+|
+|-heal|p1b: Archaludon|45/100|[from] item: Leftovers
+|upkeep
+|turn|6
+|
+|t:|1781024068
+|move|p1b: Archaludon|Protect|p1b: Archaludon
+|-singleturn|p1b: Archaludon|Protect
+|move|p1a: Kingambit|Sucker Punch|p2b: Floette
+|-resisted|p2b: Floette|1
+|-damage|p2b: Floette|24/100
+|move|p2a: Sneasler|Close Combat|p1a: Kingambit
+|-supereffective|p1a: Kingambit|2
+|-damage|p1a: Kingambit|0 fnt
+|-unboost|p2a: Sneasler|def|1
+|-unboost|p2a: Sneasler|spd|1
+|faint|p1a: Kingambit
+|-enditem|p2a: Sneasler|White Herb
+|-clearnegativeboost|p2a: Sneasler|[silent]
+|move|p2b: Floette|Dazzling Gleam|p1b: Archaludon
+|-activate|p1b: Archaludon|move: Protect
+|
+|-heal|p1b: Archaludon|51/100|[from] item: Leftovers
+|upkeep
+|
+|t:|1781024070
+|switch|p1a: Basculegion|Basculegion, L50, M|50/100g
+|turn|7
+|
+|t:|1781024088
+|move|p2a: Sneasler|Close Combat|p1b: Archaludon
+|-supereffective|p1b: Archaludon|1
+|-damage|p1b: Archaludon|0 fnt
+|-unboost|p2a: Sneasler|def|1
+|-unboost|p2a: Sneasler|spd|1
+|faint|p1b: Archaludon
+|move|p2b: Floette|Draining Kiss|p1a: Basculegion
+|-damage|p1a: Basculegion|0 fnt
+|-heal|p2b: Floette|68/100|[from] drain|[of] p1a: Basculegion
+|faint|p1a: Basculegion
+|
+|win|PATRIOTS_VG
+|raw|meh is ok's rating: 1912 &rarr; <strong>1890</strong><br />(-22 for losing)
+|raw|PATRIOTS_VG's rating: 1884 &rarr; <strong>1906</strong><br />(+22 for winning)
+|l|☆meh is ok
+|player|p1|
+|l|☆PATRIOTS_VG
+|player|p2|
+|l| ddgfdhad

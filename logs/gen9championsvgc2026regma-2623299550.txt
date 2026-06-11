@@ -1,0 +1,172 @@
+|j|☆klanes1209
+|j|☆fgeazfz
+|t:|1780402333
+|gametype|doubles
+|player|p1|klanes1209|266|1881
+|player|p2|fgeazfz|101|1917
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Blastoise, L50, F|
+|poke|p1|Basculegion, L50, M|
+|poke|p1|Vivillon-Pokeball, L50, M|
+|poke|p1|Sinistcha-Masterpiece, L50|
+|poke|p1|Sneasler, L50, F|
+|poke|p1|Pelipper, L50, M|
+|poke|p2|Farigiraf, L50, M|
+|poke|p2|Sylveon, L50, M|
+|poke|p2|Aegislash, L50, M|
+|poke|p2|Charizard, L50, F|
+|poke|p2|Aerodactyl, L50, M|
+|poke|p2|Venusaur, L50, F|
+|teampreview|4
+|j| lilypria
+|
+|t:|1780402393
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Basculegion|Basculegion, L50, M|100/100
+|switch|p1b: Pelipper|Pelipper, L50, M|100/100
+|switch|p2a: Sylveon|Sylveon, L50, M|100/100
+|switch|p2b: Charizard|Charizard, L50, F|100/100
+|-weather|RainDance|[from] ability: Drizzle|[of] p1b: Pelipper
+|turn|1
+|
+|t:|1780402416
+|detailschange|p2b: Charizard|Charizard-Mega-Y, L50, F
+|-mega|p2b: Charizard|Charizard|Charizardite Y
+|-weather|SunnyDay|[from] ability: Drought|[of] p2b: Charizard
+|move|p1b: Pelipper|Rain Dance|p1b: Pelipper
+|-weather|RainDance
+|move|p1a: Basculegion|Wave Crash|p2a: Sylveon
+|-crit|p2a: Sylveon
+|-damage|p2a: Sylveon|0 fnt
+|faint|p2a: Sylveon
+|-damage|p1a: Basculegion|70/100|[from] Recoil
+|move|p2b: Charizard|Heat Wave|p1b: Pelipper|[spread] p1a,p1b
+|-resisted|p1a: Basculegion|1
+|-crit|p1a: Basculegion
+|-resisted|p1b: Pelipper|1
+|-damage|p1a: Basculegion|51/100
+|-damage|p1b: Pelipper|83/100
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|
+|t:|1780402427
+|switch|p2a: Aegislash|Aegislash, L50, M|100/100
+|turn|2
+|
+|t:|1780402444
+|switch|p1b: Vivillon|Vivillon-Pokeball, L50, M|100/100
+|switch|p2b: Venusaur|Venusaur, L50, F|100/100
+|-formechange|p2a: Aegislash|Aegislash-Blade|
+|move|p2a: Aegislash|Shadow Sneak|p1a: Basculegion
+|-supereffective|p1a: Basculegion|1
+|-damage|p1a: Basculegion|0 fnt
+|faint|p1a: Basculegion
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|
+|t:|1780402457
+|switch|p1a: Blastoise|Blastoise, L50, F|100/100
+|turn|3
+|
+|t:|1780402479
+|switch|p2a: Charizard|Charizard-Mega-Y, L50, F|100/100
+|-weather|SunnyDay|[from] ability: Drought|[of] p2a: Charizard
+|detailschange|p1a: Blastoise|Blastoise-Mega, L50, F
+|-mega|p1a: Blastoise|Blastoise|Blastoisinite
+|move|p2b: Venusaur|Leaf Storm|p1a: Blastoise|[miss]
+|-miss|p2b: Venusaur|p1a: Blastoise
+|move|p1b: Vivillon|Hurricane|p2b: Venusaur
+|-supereffective|p2b: Venusaur|1
+|-damage|p2b: Venusaur|5/100
+|move|p1a: Blastoise|Dark Pulse|p2a: Charizard
+|-damage|p2a: Charizard|53/100
+|
+|-weather|SunnyDay|[upkeep]
+|upkeep
+|turn|4
+|
+|t:|1780402499
+|switch|p1a: Pelipper|Pelipper, L50, M|83/100
+|-weather|RainDance|[from] ability: Drizzle|[of] p1a: Pelipper
+|move|p1b: Vivillon|Hurricane|p2b: Venusaur
+|-supereffective|p2b: Venusaur|1
+|-damage|p2b: Venusaur|0 fnt
+|faint|p2b: Venusaur
+|move|p2a: Charizard|Weather Ball|p1b: Vivillon
+|-enditem|p1b: Vivillon|Focus Sash
+|-damage|p1b: Vivillon|1/100
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|
+|t:|1780402510
+|switch|p2b: Aegislash|Aegislash, L50, M|100/100
+|turn|5
+|
+|t:|1780402535
+|move|p2a: Charizard|Protect|p2a: Charizard
+|-singleturn|p2a: Charizard|Protect
+|move|p1a: Pelipper|Weather Ball|p2a: Charizard
+|-activate|p2a: Charizard|move: Protect
+|move|p1b: Vivillon|Sleep Powder|p2b: Aegislash
+|-status|p2b: Aegislash|slp|[from] move: Sleep Powder
+|cant|p2b: Aegislash|slp
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|turn|6
+|
+|t:|1780402552
+|move|p2a: Charizard|Protect|p2a: Charizard
+|-singleturn|p2a: Charizard|Protect
+|move|p1a: Pelipper|Weather Ball|p2a: Charizard
+|-activate|p2a: Charizard|move: Protect
+|move|p1b: Vivillon|Hurricane|p2b: Aegislash
+|-resisted|p2b: Aegislash|1
+|-damage|p2b: Aegislash|78/100 slp
+|-curestatus|p2b: Aegislash|slp|[msg]
+|-formechange|p2b: Aegislash|Aegislash-Blade|
+|move|p2b: Aegislash|Poltergeist|p1a: Pelipper
+|-activate|p1a: Pelipper|move: Poltergeist|Choice Scarf
+|-damage|p1a: Pelipper|0 fnt
+|faint|p1a: Pelipper
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|
+|t:|1780402570
+|switch|p1a: Blastoise|Blastoise-Mega, L50, F|100/100
+|turn|7
+|
+|t:|1780402595
+|move|p1b: Vivillon|Protect|p1b: Vivillon
+|-singleturn|p1b: Vivillon|Protect
+|move|p2b: Aegislash|Shadow Sneak|p1b: Vivillon
+|-activate|p1b: Vivillon|move: Protect
+|move|p2a: Charizard|Weather Ball|p1a: Blastoise
+|-resisted|p1a: Blastoise|1
+|-damage|p1a: Blastoise|72/100
+|move|p1a: Blastoise|Water Spout|p2a: Charizard|[spread] p2a,p2b
+|-supereffective|p2a: Charizard|1
+|-damage|p2a: Charizard|0 fnt
+|-damage|p2b: Aegislash|0 fnt
+|faint|p2a: Charizard
+|faint|p2b: Aegislash
+|
+|win|klanes1209
+|raw|klanes1209's rating: 1881 &rarr; <strong>1903</strong><br />(+22 for winning)
+|raw|fgeazfz's rating: 1917 &rarr; <strong>1895</strong><br />(-22 for losing)
+|l|☆fgeazfz
+|player|p2|
+|l|☆klanes1209
+|player|p1|
+|l| lilypria

@@ -1,0 +1,283 @@
+|j|☆quagzacian
+|j|☆megagenger2023
+|t:|1780444883
+|gametype|doubles
+|player|p1|quagzacian|barry|1860
+|player|p2|megagenger2023|102|1942
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Umbreon, L50, M, shiny|
+|poke|p1|Sylveon, L50, M, shiny|
+|poke|p1|Charizard, L50, M|
+|poke|p1|Venusaur, L50, F|
+|poke|p1|Basculegion, L50, M|
+|poke|p1|Archaludon, L50, F|
+|poke|p2|Gengar, L50, F|
+|poke|p2|Archaludon, L50, F|
+|poke|p2|Politoed, L50, M|
+|poke|p2|Incineroar, L50, F|
+|poke|p2|Sinistcha-Masterpiece, L50|
+|poke|p2|Ninetales-Alola, L50, M|
+|teampreview|4
+|
+|t:|1780444926
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Umbreon|Umbreon, L50, M, shiny|100/100
+|switch|p1b: Basculegion|Basculegion, L50, M|100/100
+|switch|p2a: Gengar|Gengar, L50, F|100/100
+|switch|p2b: Incineroar|Incineroar, L50, F|100/100
+|-ability|p2b: Incineroar|Intimidate|boost
+|-fail|p1a: Umbreon|unboost|Attack|[from] ability: Inner Focus|[of] p1a: Umbreon
+|-unboost|p1b: Basculegion|atk|1
+|turn|1
+|
+|t:|1780444941
+|switch|p2b: Archaludon|Archaludon, L50, F|100/100
+|detailschange|p2a: Gengar|Gengar-Mega, L50, F
+|-mega|p2a: Gengar|Gengar|Gengarite
+|move|p2a: Gengar|Protect|p2a: Gengar
+|-singleturn|p2a: Gengar|Protect
+|move|p1b: Basculegion|Wave Crash|p2a: Gengar
+|-activate|p2a: Gengar|move: Protect
+|move|p1a: Umbreon|Yawn|p2b: Archaludon
+|-start|p2b: Archaludon|move: Yawn|[of] p1a: Umbreon
+|
+|upkeep
+|turn|2
+|j| EllAkuro
+|
+|t:|1780444963
+|switch|p2b: Incineroar|Incineroar, L50, F|100/100
+|-ability|p2b: Incineroar|Intimidate|boost
+|-fail|p1a: Umbreon|unboost|Attack|[from] ability: Inner Focus|[of] p1a: Umbreon
+|-unboost|p1b: Basculegion|atk|1
+|switch|p1b: Sylveon|Sylveon, L50, M, shiny|100/100
+|move|p2a: Gengar|Shadow Ball|p1b: Sylveon
+|-damage|p1b: Sylveon|58/100
+|move|p1a: Umbreon|Snarl|p2a: Gengar|[spread] p2a,p2b
+|-supereffective|p2a: Gengar|1
+|-resisted|p2b: Incineroar|1
+|-damage|p2a: Gengar|81/100
+|-damage|p2b: Incineroar|97/100
+|-unboost|p2a: Gengar|spa|1
+|-unboost|p2b: Incineroar|spa|1
+|
+|upkeep
+|turn|3
+|
+|t:|1780444988
+|move|p2a: Gengar|Protect|p2a: Gengar
+|-singleturn|p2a: Gengar|Protect
+|move|p1b: Sylveon|Hyper Voice|p2a: Gengar|[spread] p2b
+|-activate|p2a: Gengar|move: Protect
+|-damage|p2b: Incineroar|59/100
+|move|p1a: Umbreon|Foul Play|p2a: Gengar
+|-activate|p2a: Gengar|move: Protect
+|move|p2b: Incineroar|Parting Shot|p1a: Umbreon
+|-unboost|p1a: Umbreon|atk|1
+|-unboost|p1a: Umbreon|spa|1
+|j| vuutan
+|
+|t:|1780445000
+|switch|p2b: Archaludon|Archaludon, L50, F|100/100|[from] Parting Shot
+|
+|upkeep
+|turn|4
+|
+|t:|1780445008
+|switch|p2b: Incineroar|Incineroar, L50, F|59/100
+|-ability|p2b: Incineroar|Intimidate|boost
+|-fail|p1a: Umbreon|unboost|Attack|[from] ability: Inner Focus|[of] p1a: Umbreon
+|-unboost|p1b: Sylveon|atk|1
+|move|p1b: Sylveon|Detect|p1b: Sylveon
+|-singleturn|p1b: Sylveon|Protect
+|move|p2a: Gengar|Sludge Bomb|p1b: Sylveon
+|-activate|p1b: Sylveon|move: Protect
+|move|p1a: Umbreon|Snarl|p2b: Incineroar|[spread] p2a,p2b
+|-supereffective|p2a: Gengar|1
+|-resisted|p2b: Incineroar|1
+|-damage|p2a: Gengar|70/100
+|-damage|p2b: Incineroar|57/100
+|-unboost|p2a: Gengar|spa|1
+|-unboost|p2b: Incineroar|spa|1
+|
+|upkeep
+|turn|5
+|
+|t:|1780445039
+|move|p2b: Incineroar|Fake Out|p1b: Sylveon
+|-damage|p1b: Sylveon|45/100
+|move|p2a: Gengar|Sludge Bomb|p1b: Sylveon
+|-supereffective|p1b: Sylveon|1
+|-damage|p1b: Sylveon|0 fnt
+|faint|p1b: Sylveon
+|move|p1a: Umbreon|Foul Play|p2a: Gengar
+|-supereffective|p2a: Gengar|1
+|-damage|p2a: Gengar|12/100
+|
+|upkeep
+|
+|t:|1780445053
+|switch|p1b: Basculegion|Basculegion, L50, M|100/100
+|turn|6
+|
+|t:|1780445060
+|switch|p2b: Archaludon|Archaludon, L50, F|100/100
+|move|p2a: Gengar|Protect|p2a: Gengar
+|-singleturn|p2a: Gengar|Protect
+|move|p1b: Basculegion|Wave Crash|p2b: Archaludon
+|-resisted|p2b: Archaludon|1
+|-damage|p2b: Archaludon|64/100
+|-ability|p2b: Archaludon|Stamina|boost
+|-boost|p2b: Archaludon|def|1
+|-damage|p1b: Basculegion|89/100|[from] Recoil
+|move|p1a: Umbreon|Yawn|p2b: Archaludon
+|-start|p2b: Archaludon|move: Yawn|[of] p1a: Umbreon
+|
+|-heal|p2b: Archaludon|70/100|[from] item: Leftovers
+|upkeep
+|turn|7
+|
+|t:|1780445114
+|switch|p2a: Politoed|Politoed, L50, M|100/100
+|-weather|RainDance|[from] ability: Drizzle|[of] p2a: Politoed
+|move|p1b: Basculegion|Protect|p1b: Basculegion
+|-singleturn|p1b: Basculegion|Protect
+|move|p2b: Archaludon|Electro Shot||[still]
+|-prepare|p2b: Archaludon|Electro Shot
+|-boost|p2b: Archaludon|spa|1
+|-anim|p2b: Archaludon|Electro Shot|p1b: Basculegion
+|-activate|p1b: Basculegion|move: Protect
+|move|p1a: Umbreon|Foul Play|p2a: Politoed
+|-damage|p2a: Politoed|77/100
+|
+|-weather|RainDance|[upkeep]
+|-heal|p2b: Archaludon|77/100|[from] item: Leftovers
+|-end|p2b: Archaludon|move: Yawn|[silent]
+|-status|p2b: Archaludon|slp
+|upkeep
+|turn|8
+|
+|t:|1780445141
+|cant|p2b: Archaludon|slp
+|move|p1b: Basculegion|Last Respects|p2a: Politoed
+|-damage|p2a: Politoed|12/100
+|-enditem|p2a: Politoed|Sitrus Berry|[eat]
+|-heal|p2a: Politoed|37/100|[from] item: Sitrus Berry
+|move|p2a: Politoed|Hypnosis|p1b: Basculegion
+|-status|p1b: Basculegion|slp|[from] move: Hypnosis
+|move|p1a: Umbreon|Snarl|p2a: Politoed|[spread] p2a,p2b
+|-damage|p2a: Politoed|33/100
+|-damage|p2b: Archaludon|69/100 slp
+|-unboost|p2a: Politoed|spa|1
+|-unboost|p2b: Archaludon|spa|1
+|-ability|p2b: Archaludon|Stamina|boost
+|-boost|p2b: Archaludon|def|1
+|
+|-weather|RainDance|[upkeep]
+|-heal|p2b: Archaludon|75/100 slp|[from] item: Leftovers
+|upkeep
+|turn|9
+|
+|t:|1780445156
+|switch|p1b: Charizard|Charizard, L50, M|100/100
+|switch|p2a: Incineroar|Incineroar, L50, F|57/100
+|-ability|p2a: Incineroar|Intimidate|boost
+|-fail|p1a: Umbreon|unboost|Attack|[from] ability: Inner Focus|[of] p1a: Umbreon
+|-unboost|p1b: Charizard|atk|1
+|cant|p2b: Archaludon|slp
+|move|p1a: Umbreon|Snarl|p2b: Archaludon|[spread] p2a,p2b
+|-resisted|p2a: Incineroar|1
+|-damage|p2a: Incineroar|55/100
+|-damage|p2b: Archaludon|68/100 slp
+|-unboost|p2a: Incineroar|spa|1
+|-unboost|p2b: Archaludon|spa|1
+|-ability|p2b: Archaludon|Stamina|boost
+|-boost|p2b: Archaludon|def|1
+|
+|-weather|RainDance|[upkeep]
+|-heal|p2b: Archaludon|75/100 slp|[from] item: Leftovers
+|upkeep
+|turn|10
+|
+|t:|1780445182
+|-curestatus|p2b: Archaludon|slp|[msg]
+|move|p2b: Archaludon|Protect|p2b: Archaludon
+|-singleturn|p2b: Archaludon|Protect
+|move|p1b: Charizard|Weather Ball|p2a: Incineroar
+|-supereffective|p2a: Incineroar|1
+|-crit|p2a: Incineroar
+|-damage|p2a: Incineroar|0 fnt
+|faint|p2a: Incineroar
+|move|p1a: Umbreon|Yawn|p2b: Archaludon
+|-activate|p2b: Archaludon|move: Protect
+|
+|-weather|RainDance|[upkeep]
+|-heal|p2b: Archaludon|81/100|[from] item: Leftovers
+|upkeep
+|
+|t:|1780445192
+|switch|p2a: Gengar|Gengar-Mega, L50, F|12/100
+|turn|11
+|j| Testerboi14
+|
+|t:|1780445213
+|move|p2b: Archaludon|Protect|p2b: Archaludon
+|-singleturn|p2b: Archaludon|Protect
+|move|p2a: Gengar|Sludge Bomb|p1b: Charizard
+|-damage|p1b: Charizard|28/100
+|move|p1b: Charizard|Heat Wave|p2a: Gengar|[spread] 
+|-activate|p2b: Archaludon|move: Protect
+|-miss|p1b: Charizard|p2a: Gengar
+|move|p1a: Umbreon|Foul Play|p2a: Gengar
+|-supereffective|p2a: Gengar|1
+|-damage|p2a: Gengar|0 fnt
+|faint|p2a: Gengar
+|
+|-weather|none
+|-heal|p2b: Archaludon|87/100|[from] item: Leftovers
+|upkeep
+|
+|t:|1780445223
+|switch|p2a: Politoed|Politoed, L50, M|33/100
+|-weather|RainDance|[from] ability: Drizzle|[of] p2a: Politoed
+|turn|12
+|
+|t:|1780445240
+|detailschange|p1b: Charizard|Charizard-Mega-Y, L50, M
+|-mega|p1b: Charizard|Charizard|Charizardite Y
+|-weather|SunnyDay|[from] ability: Drought|[of] p1b: Charizard
+|move|p2b: Archaludon|Protect||[still]
+|-fail|p2b: Archaludon
+|move|p1b: Charizard|Weather Ball|p2b: Archaludon
+|-damage|p2b: Archaludon|1/100
+|-ability|p2b: Archaludon|Stamina|boost
+|-boost|p2b: Archaludon|def|1
+|move|p2a: Politoed|Hypnosis|p1b: Charizard
+|-status|p1b: Charizard|slp|[from] move: Hypnosis
+|move|p1a: Umbreon|Snarl|p2a: Politoed|[spread] p2a,p2b
+|-damage|p2a: Politoed|28/100
+|-damage|p2b: Archaludon|0 fnt
+|-unboost|p2a: Politoed|spa|1
+|faint|p2b: Archaludon
+|
+|-weather|SunnyDay|[upkeep]
+|upkeep
+|turn|13
+|-message|megagenger2023 forfeited.
+|
+|win|quagzacian
+|raw|quagzacian's rating: 1860 &rarr; <strong>1885</strong><br />(+25 for winning)
+|raw|megagenger2023's rating: 1942 &rarr; <strong>1917</strong><br />(-25 for losing)
+|l|☆megagenger2023
+|player|p2|
+|l| vuutan
+|l| EllAkuro
+|l|☆quagzacian
+|player|p1|

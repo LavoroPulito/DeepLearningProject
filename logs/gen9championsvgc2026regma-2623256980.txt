@@ -1,0 +1,60 @@
+|j|☆klanes1209
+|j|☆megagenger2023
+|t:|1780397004
+|gametype|doubles
+|player|p1|klanes1209|266|1907
+|player|p2|megagenger2023|101|2004
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Blastoise, L50, M|
+|poke|p1|Basculegion, L50, M|
+|poke|p1|Vivillon-Pokeball, L50, M|
+|poke|p1|Sinistcha-Masterpiece, L50|
+|poke|p1|Sneasler, L50, M|
+|poke|p1|Pelipper, L50, M|
+|poke|p2|Gengar, L50, F|
+|poke|p2|Archaludon, L50, F|
+|poke|p2|Politoed, L50, F|
+|poke|p2|Incineroar, L50, F|
+|poke|p2|Sinistcha-Masterpiece, L50|
+|poke|p2|Froslass, L50, F|
+|teampreview|4
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by megagenger2023)
+|
+|t:|1780397040
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Basculegion|Basculegion, L50, M|100/100
+|switch|p1b: Pelipper|Pelipper, L50, M|100/100
+|switch|p2a: Gengar|Gengar, L50, F|100/100
+|switch|p2b: Sinistcha|Sinistcha-Masterpiece, L50|100/100
+|-weather|RainDance|[from] ability: Drizzle|[of] p1b: Pelipper
+|turn|1
+|inactive|megagenger2023 has 30 seconds left.
+|
+|t:|1780397068
+|detailschange|p2a: Gengar|Gengar-Mega, L50, F
+|-mega|p2a: Gengar|Gengar|Gengarite
+|move|p2b: Sinistcha|Protect|p2b: Sinistcha
+|-singleturn|p2b: Sinistcha|Protect
+|move|p1a: Basculegion|Wave Crash|p2a: Gengar
+|-damage|p2a: Gengar|0 fnt
+|faint|p2a: Gengar
+|-damage|p1a: Basculegion|72/100|[from] Recoil
+|move|p1b: Pelipper|Hurricane|p2b: Sinistcha
+|-activate|p2b: Sinistcha|move: Protect
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|-message|megagenger2023 forfeited.
+|
+|win|klanes1209
+|raw|klanes1209's rating: 1907 &rarr; <strong>1932</strong><br />(+25 for winning)
+|raw|megagenger2023's rating: 2004 &rarr; <strong>1979</strong><br />(-25 for losing)
+|l|☆megagenger2023
+|player|p2|

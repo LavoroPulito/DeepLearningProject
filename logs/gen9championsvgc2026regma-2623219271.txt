@@ -1,0 +1,174 @@
+|j|☆megagenger2023
+|j|☆Fuzis
+|t:|1780391621
+|gametype|doubles
+|player|p1|megagenger2023|101|1927
+|player|p2|Fuzis|karen|1955
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Gengar, L50, F|
+|poke|p1|Archaludon, L50, M|
+|poke|p1|Politoed, L50, F|
+|poke|p1|Incineroar, L50, M|
+|poke|p1|Sinistcha-Masterpiece, L50|
+|poke|p1|Froslass, L50, F|
+|poke|p2|Blastoise, L50, M|
+|poke|p2|Sinistcha-Masterpiece, L50|
+|poke|p2|Incineroar, L50, M|
+|poke|p2|Vivillon-Garden, L50, F|
+|poke|p2|Garchomp, L50, M|
+|poke|p2|Floette-Eternal, L50, F|
+|teampreview|4
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by Fuzis)
+|
+|t:|1780391645
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Gengar|Gengar, L50, F|100/100
+|switch|p1b: Sinistcha|Sinistcha-Masterpiece, L50|100/100
+|switch|p2a: Vivillon|Vivillon-Garden, L50, F|100/100
+|switch|p2b: Blastoise|Blastoise, L50, M|100/100
+|turn|1
+|
+|t:|1780391669
+|detailschange|p1a: Gengar|Gengar-Mega, L50, F
+|-mega|p1a: Gengar|Gengar|Gengarite
+|detailschange|p2b: Blastoise|Blastoise-Mega, L50, M
+|-mega|p2b: Blastoise|Blastoise|Blastoisinite
+|move|p1b: Sinistcha|Rage Powder|p1b: Sinistcha
+|-singleturn|p1b: Sinistcha|move: Rage Powder
+|move|p1a: Gengar|Sludge Bomb|p2b: Blastoise
+|-damage|p2b: Blastoise|48/100
+|-status|p2b: Blastoise|psn
+|move|p2a: Vivillon|Hurricane|p1b: Sinistcha
+|-supereffective|p1b: Sinistcha|1
+|-damage|p1b: Sinistcha|20/100y
+|-start|p1b: Sinistcha|confusion
+|move|p2b: Blastoise|Water Spout|p1b: Sinistcha|[spread] p1a,p1b
+|-resisted|p1b: Sinistcha|1
+|-damage|p1a: Gengar|70/100
+|-damage|p1b: Sinistcha|7/100
+|
+|-damage|p2b: Blastoise|36/100 psn|[from] psn
+|upkeep
+|turn|2
+|inactive|megagenger2023 has 30 seconds left.
+|inactive|Fuzis has 30 seconds left.
+|
+|t:|1780391700
+|move|p2b: Blastoise|Protect|p2b: Blastoise
+|-singleturn|p2b: Blastoise|Protect
+|-activate|p1b: Sinistcha|confusion
+|move|p1b: Sinistcha|Rage Powder|p1b: Sinistcha
+|-singleturn|p1b: Sinistcha|move: Rage Powder
+|move|p1a: Gengar|Sludge Bomb|p2a: Vivillon
+|-enditem|p2a: Vivillon|Focus Sash
+|-damage|p2a: Vivillon|1/100
+|-status|p2a: Vivillon|psn
+|move|p2a: Vivillon|Tailwind|p2a: Vivillon
+|-sidestart|p2: Fuzis|move: Tailwind
+|
+|-damage|p2a: Vivillon|0 fnt|[from] psn
+|faint|p2a: Vivillon
+|-damage|p2b: Blastoise|24/100 psn|[from] psn
+|upkeep
+|
+|t:|1780391721
+|switch|p2a: Sinistcha|Sinistcha-Masterpiece, L50|100/100
+|-heal|p2b: Blastoise|48/100 psn|[from] ability: Hospitality|[of] p2a: Sinistcha
+|turn|3
+|
+|t:|1780391737
+|move|p2a: Sinistcha|Rage Powder|p2a: Sinistcha
+|-singleturn|p2a: Sinistcha|move: Rage Powder
+|-activate|p1b: Sinistcha|confusion
+|move|p1b: Sinistcha|Rage Powder|p1b: Sinistcha
+|-singleturn|p1b: Sinistcha|move: Rage Powder
+|move|p2b: Blastoise|Shell Smash|p2b: Blastoise
+|-unboost|p2b: Blastoise|def|1
+|-unboost|p2b: Blastoise|spd|1
+|-boost|p2b: Blastoise|atk|2
+|-boost|p2b: Blastoise|spa|2
+|-boost|p2b: Blastoise|spe|2
+|move|p1a: Gengar|Shadow Ball|p2a: Sinistcha
+|-supereffective|p2a: Sinistcha|1
+|-damage|p2a: Sinistcha|17/100
+|-enditem|p2a: Sinistcha|Sitrus Berry|[eat]
+|-heal|p2a: Sinistcha|42/100|[from] item: Sitrus Berry
+|
+|-damage|p2b: Blastoise|36/100 psn|[from] psn
+|upkeep
+|turn|4
+|inactive|megagenger2023 has 30 seconds left.
+|j| sdisthbest
+|
+|t:|1780391766
+|move|p2a: Sinistcha|Rage Powder|p2a: Sinistcha
+|-singleturn|p2a: Sinistcha|move: Rage Powder
+|-activate|p1b: Sinistcha|confusion
+|move|p1b: Sinistcha|Rage Powder|p1b: Sinistcha
+|-singleturn|p1b: Sinistcha|move: Rage Powder
+|move|p2b: Blastoise|Water Spout|p1a: Gengar|[spread] p1a,p1b
+|-resisted|p1b: Sinistcha|1
+|-crit|p1b: Sinistcha
+|-damage|p1a: Gengar|24/100
+|-damage|p1b: Sinistcha|0 fnt
+|faint|p1b: Sinistcha
+|move|p1a: Gengar|Shadow Ball|p2a: Sinistcha
+|-supereffective|p2a: Sinistcha|1
+|-damage|p2a: Sinistcha|0 fnt
+|faint|p2a: Sinistcha
+|
+|-damage|p2b: Blastoise|24/100 psn|[from] psn
+|upkeep
+|
+|t:|1780391779
+|switch|p2a: Incineroar|Incineroar, L50, M|100/100
+|switch|p1b: Incineroar|Incineroar, L50, M|100/100
+|-ability|p2a: Incineroar|Intimidate|boost
+|-unboost|p1a: Gengar|atk|1
+|-unboost|p1b: Incineroar|atk|1
+|-ability|p1b: Incineroar|Intimidate|boost
+|-unboost|p2a: Incineroar|atk|1
+|-unboost|p2b: Blastoise|atk|1
+|turn|5
+|
+|t:|1780391797
+|move|p2a: Incineroar|Fake Out|p1b: Incineroar
+|-damage|p1b: Incineroar|93/100
+|cant|p1b: Incineroar|flinch
+|move|p2b: Blastoise|Shell Smash|p2b: Blastoise
+|-unboost|p2b: Blastoise|def|1
+|-unboost|p2b: Blastoise|spd|1
+|-boost|p2b: Blastoise|atk|2
+|-boost|p2b: Blastoise|spa|2
+|-boost|p2b: Blastoise|spe|2
+|move|p1a: Gengar|Perish Song|p1a: Gengar
+|-start|p1a: Gengar|perish3|[silent]
+|-start|p1b: Incineroar|perish3|[silent]
+|-start|p2a: Incineroar|perish3|[silent]
+|-start|p2b: Blastoise|perish3|[silent]
+|-fieldactivate|move: Perish Song
+|
+|-damage|p2b: Blastoise|12/100 psn|[from] psn
+|-start|p2b: Blastoise|perish3
+|-start|p2a: Incineroar|perish3
+|-start|p1a: Gengar|perish3
+|-start|p1b: Incineroar|perish3
+|-sideend|p2: Fuzis|move: Tailwind
+|upkeep
+|turn|6
+|-message|Fuzis forfeited.
+|
+|win|megagenger2023
+|raw|megagenger2023's rating: 1927 &rarr; <strong>1949</strong><br />(+22 for winning)
+|raw|Fuzis's rating: 1955 &rarr; <strong>1933</strong><br />(-22 for losing)
+|l|☆Fuzis
+|player|p2|
+|l|☆megagenger2023
+|player|p1|

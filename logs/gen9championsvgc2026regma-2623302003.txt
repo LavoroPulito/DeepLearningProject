@@ -1,0 +1,212 @@
+|j|☆klanes1209
+|j|☆megagenger2023
+|t:|1780402615
+|gametype|doubles
+|player|p1|klanes1209|266|1903
+|player|p2|megagenger2023|101|1963
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Blastoise, L50, M|
+|poke|p1|Basculegion, L50, M|
+|poke|p1|Vivillon-Pokeball, L50, M|
+|poke|p1|Sinistcha-Masterpiece, L50|
+|poke|p1|Sneasler, L50, M|
+|poke|p1|Pelipper, L50, M|
+|poke|p2|Gengar, L50, M|
+|poke|p2|Archaludon, L50, F|
+|poke|p2|Politoed, L50, F|
+|poke|p2|Incineroar, L50, M|
+|poke|p2|Sinistcha-Masterpiece, L50|
+|poke|p2|Manectric, L50, F|
+|teampreview|4
+|
+|t:|1780402650
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Basculegion|Basculegion, L50, M|100/100
+|switch|p1b: Pelipper|Pelipper, L50, M|100/100
+|switch|p2a: Gengar|Gengar, L50, M|100/100
+|switch|p2b: Incineroar|Incineroar, L50, M|100/100
+|-weather|RainDance|[from] ability: Drizzle|[of] p1b: Pelipper
+|-ability|p2b: Incineroar|Intimidate|boost
+|-unboost|p1a: Basculegion|atk|1
+|-unboost|p1b: Pelipper|atk|1
+|turn|1
+|
+|t:|1780402667
+|switch|p2b: Archaludon|Archaludon, L50, F|100/100
+|detailschange|p2a: Gengar|Gengar-Mega, L50, M
+|-mega|p2a: Gengar|Gengar|Gengarite
+|move|p2a: Gengar|Protect|p2a: Gengar
+|-singleturn|p2a: Gengar|Protect
+|move|p1a: Basculegion|Wave Crash|p2a: Gengar
+|-activate|p2a: Gengar|move: Protect
+|move|p1b: Pelipper|Weather Ball|p2b: Archaludon
+|-resisted|p2b: Archaludon|1
+|-damage|p2b: Archaludon|68/100
+|-ability|p2b: Archaludon|Stamina|boost
+|-boost|p2b: Archaludon|def|1
+|
+|-weather|RainDance|[upkeep]
+|-heal|p2b: Archaludon|74/100|[from] item: Leftovers
+|upkeep
+|turn|2
+|
+|t:|1780402689
+|switch|p2a: Sinistcha|Sinistcha-Masterpiece, L50|100/100
+|-heal|p2b: Archaludon|99/100|[from] ability: Hospitality|[of] p2a: Sinistcha
+|move|p1a: Basculegion|Wave Crash|p2a: Sinistcha
+|-resisted|p2a: Sinistcha|1
+|-damage|p2a: Sinistcha|66/100
+|-damage|p1a: Basculegion|89/100|[from] Recoil
+|move|p1b: Pelipper|Weather Ball|p2a: Sinistcha
+|-resisted|p2a: Sinistcha|1
+|-crit|p2a: Sinistcha
+|-damage|p2a: Sinistcha|27/100
+|move|p2b: Archaludon|Electro Shot||[still]
+|-prepare|p2b: Archaludon|Electro Shot
+|-boost|p2b: Archaludon|spa|1
+|-anim|p2b: Archaludon|Electro Shot|p1b: Pelipper
+|-supereffective|p1b: Pelipper|2
+|-damage|p1b: Pelipper|0 fnt
+|faint|p1b: Pelipper
+|
+|-weather|RainDance|[upkeep]
+|-heal|p2b: Archaludon|100/100|[from] item: Leftovers
+|upkeep
+|
+|t:|1780402712
+|switch|p1b: Vivillon|Vivillon-Pokeball, L50, M|100/100
+|turn|3
+|j| binding soul
+|
+|t:|1780402729
+|switch|p2a: Incineroar|Incineroar, L50, M|100/100
+|-ability|p2a: Incineroar|Intimidate|boost
+|-unboost|p1a: Basculegion|atk|1
+|-unboost|p1b: Vivillon|atk|1
+|move|p2b: Archaludon|Protect|p2b: Archaludon
+|-singleturn|p2b: Archaludon|Protect
+|move|p1a: Basculegion|Wave Crash|p2a: Incineroar
+|-supereffective|p2a: Incineroar|1
+|-damage|p2a: Incineroar|0 fnt
+|faint|p2a: Incineroar
+|-damage|p1a: Basculegion|55/100|[from] Recoil
+|move|p1b: Vivillon|Sleep Powder|p2b: Archaludon
+|-activate|p2b: Archaludon|move: Protect
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|
+|t:|1780402753
+|switch|p2a: Gengar|Gengar-Mega, L50, M|100/100
+|turn|4
+|
+|t:|1780402764
+|move|p1a: Basculegion|Last Respects|p2a: Gengar
+|-supereffective|p2a: Gengar|1
+|-damage|p2a: Gengar|34/100
+|move|p2a: Gengar|Shadow Ball|p1a: Basculegion
+|-supereffective|p1a: Basculegion|1
+|-crit|p1a: Basculegion
+|-damage|p1a: Basculegion|0 fnt
+|faint|p1a: Basculegion
+|move|p1b: Vivillon|Sleep Powder|p2b: Archaludon
+|-status|p2b: Archaludon|slp|[from] move: Sleep Powder
+|cant|p2b: Archaludon|slp
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|
+|t:|1780402778
+|switch|p1a: Blastoise|Blastoise, L50, M|100/100
+|turn|5
+|
+|t:|1780402790
+|detailschange|p1a: Blastoise|Blastoise-Mega, L50, M
+|-mega|p1a: Blastoise|Blastoise|Blastoisinite
+|move|p1b: Vivillon|Rage Powder|p1b: Vivillon
+|-singleturn|p1b: Vivillon|move: Rage Powder
+|move|p2a: Gengar|Perish Song|p2a: Gengar
+|-start|p1a: Blastoise|perish3|[silent]
+|-start|p1b: Vivillon|perish3|[silent]
+|-start|p2a: Gengar|perish3|[silent]
+|-start|p2b: Archaludon|perish3|[silent]
+|-fieldactivate|move: Perish Song
+|move|p1a: Blastoise|Shell Smash|p1a: Blastoise
+|-unboost|p1a: Blastoise|def|1
+|-unboost|p1a: Blastoise|spd|1
+|-boost|p1a: Blastoise|atk|2
+|-boost|p1a: Blastoise|spa|2
+|-boost|p1a: Blastoise|spe|2
+|-curestatus|p2b: Archaludon|slp|[msg]
+|move|p2b: Archaludon|Electro Shot||[still]
+|-prepare|p2b: Archaludon|Electro Shot
+|-boost|p2b: Archaludon|spa|1
+|-anim|p2b: Archaludon|Electro Shot|p1b: Vivillon
+|-supereffective|p1b: Vivillon|1
+|-enditem|p1b: Vivillon|Focus Sash
+|-damage|p1b: Vivillon|1/100
+|
+|-weather|none
+|-start|p1a: Blastoise|perish3
+|-start|p2a: Gengar|perish3
+|-start|p1b: Vivillon|perish3
+|-start|p2b: Archaludon|perish3
+|upkeep
+|turn|6
+|
+|t:|1780402827
+|move|p2a: Gengar|Protect|p2a: Gengar
+|-singleturn|p2a: Gengar|Protect
+|move|p2b: Archaludon|Protect|p2b: Archaludon
+|-singleturn|p2b: Archaludon|Protect
+|move|p1a: Blastoise|Water Spout|p2b: Archaludon|[spread] 
+|-activate|p2a: Gengar|move: Protect
+|-activate|p2b: Archaludon|move: Protect
+|move|p1b: Vivillon|Hurricane|p2b: Archaludon
+|-activate|p2b: Archaludon|move: Protect
+|
+|-start|p1a: Blastoise|perish2
+|-start|p2a: Gengar|perish2
+|-start|p1b: Vivillon|perish2
+|-start|p2b: Archaludon|perish2
+|upkeep
+|turn|7
+|
+|t:|1780402847
+|switch|p2b: Sinistcha|Sinistcha-Masterpiece, L50|27/100
+|-heal|p2a: Gengar|59/100|[from] ability: Hospitality|[of] p2b: Sinistcha
+|move|p2a: Gengar|Protect||[still]
+|-fail|p2a: Gengar
+|move|p1a: Blastoise|Water Spout|p2b: Sinistcha|[spread] p2a,p2b
+|-resisted|p2b: Sinistcha|1
+|-damage|p2a: Gengar|0 fnt
+|-damage|p2b: Sinistcha|0 fnt
+|faint|p2a: Gengar
+|faint|p2b: Sinistcha
+|move|p1b: Vivillon|Hurricane|p2: Gengar|[notarget]
+|-fail|p1b: Vivillon
+|
+|-start|p1a: Blastoise|perish1
+|-start|p1b: Vivillon|perish1
+|upkeep
+|
+|t:|1780402857
+|switch|p2b: Archaludon|Archaludon, L50, F|100/100
+|turn|8
+|-message|klanes1209 forfeited.
+|
+|win|megagenger2023
+|raw|klanes1209's rating: 1903 &rarr; <strong>1886</strong><br />(-17 for losing)
+|raw|megagenger2023's rating: 1963 &rarr; <strong>1980</strong><br />(+17 for winning)
+|l|☆klanes1209
+|player|p1|
+|l| binding soul
+|l|☆megagenger2023
+|player|p2|

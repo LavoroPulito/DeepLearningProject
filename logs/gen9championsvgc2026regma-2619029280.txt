@@ -1,0 +1,542 @@
+|j|☆Fuzis
+|j|☆megagenger2023
+|t:|1779878411
+|gametype|doubles
+|player|p1|Fuzis|karen|1867
+|player|p2|megagenger2023|101|1964
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Blastoise, L50, M|
+|poke|p1|Sinistcha-Masterpiece, L50|
+|poke|p1|Incineroar, L50, M|
+|poke|p1|Vivillon-Garden, L50, F|
+|poke|p1|Garchomp, L50, M|
+|poke|p1|Floette-Eternal, L50, F|
+|poke|p2|Gengar, L50, F|
+|poke|p2|Archaludon, L50, M|
+|poke|p2|Politoed, L50, F|
+|poke|p2|Incineroar, L50, M|
+|poke|p2|Sinistcha-Masterpiece, L50|
+|poke|p2|Froslass, L50, F|
+|teampreview|4
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by Fuzis)
+|
+|t:|1779878441
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Vivillon|Vivillon-Garden, L50, F|100/100
+|switch|p1b: Blastoise|Blastoise, L50, M|100/100
+|switch|p2a: Gengar|Gengar, L50, F|100/100
+|switch|p2b: Sinistcha|Sinistcha-Masterpiece, L50|100/100
+|turn|1
+|inactive|Fuzis has 30 seconds left.
+|
+|t:|1779878471
+|detailschange|p2a: Gengar|Gengar-Mega, L50, F
+|-mega|p2a: Gengar|Gengar|Gengarite
+|detailschange|p1b: Blastoise|Blastoise-Mega, L50, M
+|-mega|p1b: Blastoise|Blastoise|Blastoisinite
+|move|p2b: Sinistcha|Rage Powder|p2b: Sinistcha
+|-singleturn|p2b: Sinistcha|move: Rage Powder
+|move|p2a: Gengar|Perish Song|p2a: Gengar
+|-start|p1a: Vivillon|perish3|[silent]
+|-start|p1b: Blastoise|perish3|[silent]
+|-start|p2a: Gengar|perish3|[silent]
+|-start|p2b: Sinistcha|perish3|[silent]
+|-fieldactivate|move: Perish Song
+|move|p1a: Vivillon|Tailwind|p1a: Vivillon
+|-sidestart|p1: Fuzis|move: Tailwind
+|move|p1b: Blastoise|Dark Pulse|p2b: Sinistcha
+|-supereffective|p2b: Sinistcha|1
+|-enditem|p2b: Sinistcha|Colbur Berry|[eat]
+|-enditem|p2b: Sinistcha|Colbur Berry|[weaken]
+|-damage|p2b: Sinistcha|61/100
+|
+|-start|p1a: Vivillon|perish3
+|-start|p1b: Blastoise|perish3
+|-start|p2a: Gengar|perish3
+|-start|p2b: Sinistcha|perish3
+|upkeep
+|turn|2
+|inactive|megagenger2023 has 30 seconds left.
+|inactive|megagenger2023 has 20 seconds left.
+|inactive|megagenger2023 has 15 seconds left.
+|j| kkbng
+|inactive|megagenger2023 has 10 seconds left.
+|
+|t:|1779878517
+|move|p2a: Gengar|Protect|p2a: Gengar
+|-singleturn|p2a: Gengar|Protect
+|move|p2b: Sinistcha|Protect|p2b: Sinistcha
+|-singleturn|p2b: Sinistcha|Protect
+|move|p1a: Vivillon|Hurricane|p2b: Sinistcha
+|-activate|p2b: Sinistcha|move: Protect
+|move|p1b: Blastoise|Shell Smash|p1b: Blastoise
+|-unboost|p1b: Blastoise|def|1
+|-unboost|p1b: Blastoise|spd|1
+|-boost|p1b: Blastoise|atk|2
+|-boost|p1b: Blastoise|spa|2
+|-boost|p1b: Blastoise|spe|2
+|
+|-start|p1b: Blastoise|perish2
+|-start|p1a: Vivillon|perish2
+|-start|p2a: Gengar|perish2
+|-start|p2b: Sinistcha|perish2
+|upkeep
+|turn|3
+|inactive|Fuzis has 30 seconds left.
+|
+|t:|1779878544
+|switch|p2a: Politoed|Politoed, L50, F|100/100
+|-weather|RainDance|[from] ability: Drizzle|[of] p2a: Politoed
+|move|p2b: Sinistcha|Rage Powder|p2b: Sinistcha
+|-singleturn|p2b: Sinistcha|move: Rage Powder
+|move|p1b: Blastoise|Water Spout|p2a: Politoed|[spread] p2a,p2b
+|-resisted|p2a: Politoed|1
+|-resisted|p2b: Sinistcha|1
+|-damage|p2a: Politoed|32/100
+|-damage|p2b: Sinistcha|0 fnt
+|-enditem|p2a: Politoed|Sitrus Berry|[eat]
+|-heal|p2a: Politoed|57/100|[from] item: Sitrus Berry
+|faint|p2b: Sinistcha
+|move|p1a: Vivillon|Sleep Powder|p2a: Politoed
+|-status|p2a: Politoed|slp|[from] move: Sleep Powder
+|
+|-weather|RainDance|[upkeep]
+|-start|p1b: Blastoise|perish1
+|-start|p1a: Vivillon|perish1
+|upkeep
+|
+|t:|1779878554
+|switch|p2b: Gengar|Gengar-Mega, L50, F|100/100
+|turn|4
+|
+|t:|1779878564
+|move|p2b: Gengar|Protect|p2b: Gengar
+|-singleturn|p2b: Gengar|Protect
+|cant|p2a: Politoed|slp
+|move|p1b: Blastoise|Water Spout|p2a: Politoed|[spread] p2a
+|-activate|p2b: Gengar|move: Protect
+|-resisted|p2a: Politoed|1
+|-damage|p2a: Politoed|0 fnt
+|faint|p2a: Politoed
+|move|p1a: Vivillon|Hurricane|p2b: Gengar
+|-activate|p2b: Gengar|move: Protect
+|
+|-weather|RainDance|[upkeep]
+|-start|p1b: Blastoise|perish0
+|-start|p1a: Vivillon|perish0
+|-sideend|p1: Fuzis|move: Tailwind
+|faint|p1b: Blastoise
+|faint|p1a: Vivillon
+|upkeep
+|
+|t:|1779878574
+|switch|p1a: Incineroar|Incineroar, L50, M|100/100
+|switch|p1b: Sinistcha|Sinistcha-Masterpiece, L50|100/100
+|switch|p2a: Incineroar|Incineroar, L50, M|100/100
+|-ability|p1a: Incineroar|Intimidate|boost
+|-unboost|p2a: Incineroar|atk|1
+|-unboost|p2b: Gengar|atk|1
+|-ability|p2a: Incineroar|Intimidate|boost
+|-unboost|p1a: Incineroar|atk|1
+|-unboost|p1b: Sinistcha|atk|1
+|turn|5
+|
+|t:|1779878598
+|move|p2a: Incineroar|Fake Out|p1a: Incineroar
+|-damage|p1a: Incineroar|94/100
+|move|p2b: Gengar|Shadow Ball|p1b: Sinistcha
+|-supereffective|p1b: Sinistcha|1
+|-damage|p1b: Sinistcha|21/100
+|-enditem|p1b: Sinistcha|Sitrus Berry|[eat]
+|-heal|p1b: Sinistcha|45/100|[from] item: Sitrus Berry
+|move|p1b: Sinistcha|Matcha Gotcha|p2a: Incineroar|[spread] p2b
+|-miss|p1b: Sinistcha|p2a: Incineroar
+|-resisted|p2b: Gengar|1
+|-damage|p2b: Gengar|89/100
+|-heal|p1b: Sinistcha|50/100g|[from] drain|[of] p2b: Gengar
+|-status|p2b: Gengar|brn
+|cant|p1a: Incineroar|flinch
+|
+|-weather|RainDance|[upkeep]
+|-heal|p1a: Incineroar|100/100|[from] item: Leftovers
+|-damage|p2b: Gengar|83/100 brn|[from] brn
+|upkeep
+|turn|6
+|inactive|megagenger2023 has 30 seconds left.
+|
+|t:|1779878629
+|move|p2b: Gengar|Protect|p2b: Gengar
+|-singleturn|p2b: Gengar|Protect
+|move|p1b: Sinistcha|Protect|p1b: Sinistcha
+|-singleturn|p1b: Sinistcha|Protect
+|move|p1a: Incineroar|Throat Chop|p2b: Gengar
+|-activate|p2b: Gengar|move: Protect
+|move|p2a: Incineroar|Parting Shot|p1a: Incineroar
+|-unboost|p1a: Incineroar|atk|1
+|-unboost|p1a: Incineroar|spa|1
+|
+|-weather|RainDance|[upkeep]
+|-damage|p2b: Gengar|76/100 brn|[from] brn
+|upkeep
+|turn|7
+|
+|t:|1779878649
+|move|p2b: Gengar|Shadow Ball|p1b: Sinistcha
+|-supereffective|p1b: Sinistcha|1
+|-damage|p1b: Sinistcha|0 fnt
+|faint|p1b: Sinistcha
+|move|p1a: Incineroar|Throat Chop|p2b: Gengar
+|-supereffective|p2b: Gengar|1
+|-damage|p2b: Gengar|35/100 brn
+|-start|p2b: Gengar|Throat Chop|[silent]
+|move|p2a: Incineroar|Parting Shot|p1a: Incineroar
+|-unboost|p1a: Incineroar|atk|1
+|-unboost|p1a: Incineroar|spa|1
+|
+|-weather|none
+|-damage|p2b: Gengar|29/100 brn|[from] brn
+|upkeep
+|turn|8
+|
+|t:|1779878659
+|move|p2b: Gengar|Sludge Bomb|p1a: Incineroar
+|-damage|p1a: Incineroar|56/100
+|move|p1a: Incineroar|Throat Chop|p2b: Gengar
+|-supereffective|p2b: Gengar|1
+|-damage|p2b: Gengar|0 fnt
+|faint|p2b: Gengar
+|move|p2a: Incineroar|Flare Blitz|p1a: Incineroar
+|-resisted|p1a: Incineroar|1
+|-damage|p1a: Incineroar|42/100
+|-damage|p2a: Incineroar|95/100|[from] Recoil
+|
+|-heal|p1a: Incineroar|48/100|[from] item: Leftovers
+|upkeep
+|turn|9
+|
+|t:|1779878670
+|move|p1a: Incineroar|Parting Shot|p2a: Incineroar
+|-unboost|p2a: Incineroar|atk|1
+|-unboost|p2a: Incineroar|spa|1
+|move|p2a: Incineroar|Flare Blitz|p1a: Incineroar
+|-resisted|p1a: Incineroar|1
+|-damage|p1a: Incineroar|38/100
+|-damage|p2a: Incineroar|92/100|[from] Recoil
+|
+|-heal|p1a: Incineroar|44/100|[from] item: Leftovers
+|upkeep
+|turn|10
+|
+|t:|1779878680
+|move|p1a: Incineroar|Parting Shot|p2a: Incineroar
+|-unboost|p2a: Incineroar|atk|1
+|-unboost|p2a: Incineroar|spa|1
+|move|p2a: Incineroar|Flare Blitz|p1a: Incineroar
+|-resisted|p1a: Incineroar|1
+|-damage|p1a: Incineroar|37/100
+|-damage|p2a: Incineroar|89/100|[from] Recoil
+|
+|-heal|p1a: Incineroar|43/100|[from] item: Leftovers
+|upkeep
+|turn|11
+|
+|t:|1779878689
+|move|p1a: Incineroar|Parting Shot|p2a: Incineroar
+|-unboost|p2a: Incineroar|atk|1
+|-unboost|p2a: Incineroar|spa|1
+|move|p2a: Incineroar|Flare Blitz|p1a: Incineroar
+|-resisted|p1a: Incineroar|1
+|-damage|p1a: Incineroar|36/100
+|-damage|p2a: Incineroar|87/100|[from] Recoil
+|
+|-heal|p1a: Incineroar|42/100|[from] item: Leftovers
+|upkeep
+|turn|12
+|
+|t:|1779878697
+|move|p1a: Incineroar|Parting Shot|p2a: Incineroar
+|-unboost|p2a: Incineroar|atk|1
+|-unboost|p2a: Incineroar|spa|1
+|move|p2a: Incineroar|Parting Shot|p1a: Incineroar
+|-unboost|p1a: Incineroar|atk|1
+|-unboost|p1a: Incineroar|spa|1
+|
+|-heal|p1a: Incineroar|48/100|[from] item: Leftovers
+|upkeep
+|turn|13
+|
+|t:|1779878709
+|move|p1a: Incineroar|Throat Chop|p2a: Incineroar
+|-resisted|p2a: Incineroar|1
+|-damage|p2a: Incineroar|82/100
+|-start|p2a: Incineroar|Throat Chop|[silent]
+|cant|p2a: Incineroar|move: Throat Chop
+|
+|-heal|p1a: Incineroar|54/100|[from] item: Leftovers
+|upkeep
+|turn|14
+|
+|t:|1779878715
+|move|p2a: Incineroar|Protect|p2a: Incineroar
+|-singleturn|p2a: Incineroar|Protect
+|move|p1a: Incineroar|Parting Shot|p2a: Incineroar
+|-activate|p2a: Incineroar|move: Protect
+|
+|-heal|p1a: Incineroar|60/100|[from] item: Leftovers
+|-end|p2a: Incineroar|Throat Chop|[silent]
+|upkeep
+|turn|15
+|
+|t:|1779878718
+|move|p1a: Incineroar|Parting Shot|p2a: Incineroar
+|-unboost|p2a: Incineroar|atk|1
+|-unboost|p2a: Incineroar|spa|1
+|move|p2a: Incineroar|Flare Blitz|p1a: Incineroar
+|-resisted|p1a: Incineroar|1
+|-damage|p1a: Incineroar|55/100
+|-damage|p2a: Incineroar|81/100|[from] Recoil
+|
+|-heal|p1a: Incineroar|61/100|[from] item: Leftovers
+|upkeep
+|turn|16
+|
+|t:|1779878725
+|move|p1a: Incineroar|Throat Chop|p2a: Incineroar
+|-resisted|p2a: Incineroar|1
+|-damage|p2a: Incineroar|76/100
+|-start|p2a: Incineroar|Throat Chop|[silent]
+|move|p2a: Incineroar|Flare Blitz|p1a: Incineroar
+|-resisted|p1a: Incineroar|1
+|-damage|p1a: Incineroar|57/100
+|-damage|p2a: Incineroar|75/100|[from] Recoil
+|
+|-heal|p1a: Incineroar|63/100|[from] item: Leftovers
+|upkeep
+|turn|17
+|
+|t:|1779878729
+|move|p2a: Incineroar|Protect|p2a: Incineroar
+|-singleturn|p2a: Incineroar|Protect
+|move|p1a: Incineroar|Throat Chop|p2a: Incineroar
+|-activate|p2a: Incineroar|move: Protect
+|
+|-heal|p1a: Incineroar|69/100|[from] item: Leftovers
+|-end|p2a: Incineroar|Throat Chop|[silent]
+|upkeep
+|turn|18
+|
+|t:|1779878735
+|move|p1a: Incineroar|Throat Chop|p2a: Incineroar
+|-resisted|p2a: Incineroar|1
+|-damage|p2a: Incineroar|70/100
+|-start|p2a: Incineroar|Throat Chop|[silent]
+|move|p2a: Incineroar|Flare Blitz|p1a: Incineroar
+|-resisted|p1a: Incineroar|1
+|-damage|p1a: Incineroar|64/100
+|-damage|p2a: Incineroar|69/100|[from] Recoil
+|
+|-heal|p1a: Incineroar|70/100|[from] item: Leftovers
+|upkeep
+|turn|19
+|
+|t:|1779878739
+|move|p2a: Incineroar|Protect|p2a: Incineroar
+|-singleturn|p2a: Incineroar|Protect
+|move|p1a: Incineroar|Throat Chop|p2a: Incineroar
+|-activate|p2a: Incineroar|move: Protect
+|
+|-heal|p1a: Incineroar|76/100|[from] item: Leftovers
+|-end|p2a: Incineroar|Throat Chop|[silent]
+|upkeep
+|turn|20
+|
+|t:|1779878742
+|move|p1a: Incineroar|Throat Chop|p2a: Incineroar
+|-resisted|p2a: Incineroar|1
+|-damage|p2a: Incineroar|64/100
+|-start|p2a: Incineroar|Throat Chop|[silent]
+|cant|p2a: Incineroar|move: Throat Chop
+|
+|-heal|p1a: Incineroar|82/100|[from] item: Leftovers
+|upkeep
+|turn|21
+|
+|t:|1779878748
+|move|p1a: Incineroar|Parting Shot|p2a: Incineroar
+|-unboost|p2a: Incineroar|atk|0
+|-unboost|p2a: Incineroar|spa|1
+|move|p2a: Incineroar|Flare Blitz|p1a: Incineroar
+|-resisted|p1a: Incineroar|1
+|-damage|p1a: Incineroar|78/100
+|-damage|p2a: Incineroar|63/100|[from] Recoil
+|
+|-heal|p1a: Incineroar|84/100|[from] item: Leftovers
+|-end|p2a: Incineroar|Throat Chop|[silent]
+|upkeep
+|turn|22
+|
+|t:|1779878758
+|move|p1a: Incineroar|Flare Blitz|p2a: Incineroar
+|-resisted|p2a: Incineroar|1
+|-damage|p2a: Incineroar|56/100
+|-damage|p1a: Incineroar|81/100|[from] Recoil
+|move|p2a: Incineroar|Flare Blitz|p1a: Incineroar
+|-resisted|p1a: Incineroar|1
+|-damage|p1a: Incineroar|77/100
+|-damage|p2a: Incineroar|54/100|[from] Recoil
+|
+|-heal|p1a: Incineroar|83/100|[from] item: Leftovers
+|upkeep
+|turn|23
+|
+|t:|1779878765
+|move|p2a: Incineroar|Protect|p2a: Incineroar
+|-singleturn|p2a: Incineroar|Protect
+|move|p1a: Incineroar|Flare Blitz|p2a: Incineroar
+|-activate|p2a: Incineroar|move: Protect
+|
+|-heal|p1a: Incineroar|89/100|[from] item: Leftovers
+|upkeep
+|turn|24
+|
+|t:|1779878767
+|move|p1a: Incineroar|Flare Blitz|p2a: Incineroar
+|-resisted|p2a: Incineroar|1
+|-damage|p2a: Incineroar|47/100
+|-damage|p1a: Incineroar|86/100|[from] Recoil
+|move|p2a: Incineroar|Flare Blitz|p1a: Incineroar
+|-resisted|p1a: Incineroar|1
+|-damage|p1a: Incineroar|82/100
+|-damage|p2a: Incineroar|45/100|[from] Recoil
+|
+|-heal|p1a: Incineroar|88/100|[from] item: Leftovers
+|upkeep
+|turn|25
+|j| A11335588996622
+|
+|t:|1779878770
+|move|p1a: Incineroar|Throat Chop|p2a: Incineroar
+|-resisted|p2a: Incineroar|1
+|-damage|p2a: Incineroar|41/100
+|-start|p2a: Incineroar|Throat Chop|[silent]
+|move|p2a: Incineroar|Flare Blitz|p1a: Incineroar
+|-resisted|p1a: Incineroar|1
+|-damage|p1a: Incineroar|83/100
+|-damage|p2a: Incineroar|39/100|[from] Recoil
+|
+|-heal|p1a: Incineroar|89/100|[from] item: Leftovers
+|upkeep
+|turn|26
+|
+|t:|1779878773
+|move|p2a: Incineroar|Protect|p2a: Incineroar
+|-singleturn|p2a: Incineroar|Protect
+|move|p1a: Incineroar|Flare Blitz|p2a: Incineroar
+|-activate|p2a: Incineroar|move: Protect
+|
+|-heal|p1a: Incineroar|95/100|[from] item: Leftovers
+|-end|p2a: Incineroar|Throat Chop|[silent]
+|upkeep
+|turn|27
+|
+|t:|1779878777
+|move|p1a: Incineroar|Throat Chop|p2a: Incineroar
+|-resisted|p2a: Incineroar|1
+|-damage|p2a: Incineroar|34/100
+|-start|p2a: Incineroar|Throat Chop|[silent]
+|cant|p2a: Incineroar|move: Throat Chop
+|
+|-heal|p1a: Incineroar|100/100|[from] item: Leftovers
+|upkeep
+|turn|28
+|
+|t:|1779878782
+|move|p2a: Incineroar|Protect|p2a: Incineroar
+|-singleturn|p2a: Incineroar|Protect
+|move|p1a: Incineroar|Flare Blitz|p2a: Incineroar
+|-activate|p2a: Incineroar|move: Protect
+|
+|-end|p2a: Incineroar|Throat Chop|[silent]
+|upkeep
+|turn|29
+|
+|t:|1779878785
+|move|p1a: Incineroar|Throat Chop|p2a: Incineroar
+|-resisted|p2a: Incineroar|1
+|-damage|p2a: Incineroar|30/100
+|-start|p2a: Incineroar|Throat Chop|[silent]
+|cant|p2a: Incineroar|move: Throat Chop
+|
+|upkeep
+|turn|30
+|
+|t:|1779878788
+|move|p2a: Incineroar|Protect|p2a: Incineroar
+|-singleturn|p2a: Incineroar|Protect
+|move|p1a: Incineroar|Flare Blitz|p2a: Incineroar
+|-activate|p2a: Incineroar|move: Protect
+|
+|-end|p2a: Incineroar|Throat Chop|[silent]
+|upkeep
+|turn|31
+|
+|t:|1779878791
+|move|p1a: Incineroar|Throat Chop|p2a: Incineroar
+|-resisted|p2a: Incineroar|1
+|-damage|p2a: Incineroar|25/100
+|-start|p2a: Incineroar|Throat Chop|[silent]
+|cant|p2a: Incineroar|move: Throat Chop
+|
+|upkeep
+|turn|32
+|
+|t:|1779878794
+|move|p2a: Incineroar|Protect|p2a: Incineroar
+|-singleturn|p2a: Incineroar|Protect
+|move|p1a: Incineroar|Flare Blitz|p2a: Incineroar
+|-activate|p2a: Incineroar|move: Protect
+|
+|-end|p2a: Incineroar|Throat Chop|[silent]
+|upkeep
+|turn|33
+|
+|t:|1779878801
+|move|p1a: Incineroar|Throat Chop|p2a: Incineroar
+|-resisted|p2a: Incineroar|1
+|-damage|p2a: Incineroar|21/100
+|-start|p2a: Incineroar|Throat Chop|[silent]
+|cant|p2a: Incineroar|move: Throat Chop
+|
+|upkeep
+|turn|34
+|
+|t:|1779878807
+|move|p1a: Incineroar|Flare Blitz|p2a: Incineroar
+|-resisted|p2a: Incineroar|1
+|-damage|p2a: Incineroar|15/100
+|-damage|p1a: Incineroar|98/100|[from] Recoil
+|move|p2a: Incineroar|Flare Blitz|p1a: Incineroar
+|-resisted|p1a: Incineroar|1
+|-damage|p1a: Incineroar|93/100
+|-damage|p2a: Incineroar|13/100|[from] Recoil
+|
+|-heal|p1a: Incineroar|99/100|[from] item: Leftovers
+|-end|p2a: Incineroar|Throat Chop|[silent]
+|upkeep
+|turn|35
+|-message|megagenger2023 forfeited.
+|
+|win|Fuzis
+|raw|Fuzis's rating: 1867 &rarr; <strong>1892</strong><br />(+25 for winning)
+|raw|megagenger2023's rating: 1964 &rarr; <strong>1939</strong><br />(-25 for losing)
+|l|☆megagenger2023
+|player|p2|
+|l|☆Fuzis
+|player|p1|

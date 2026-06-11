@@ -1,4 +1,4 @@
-file = open("esempioLog.txt")
+file = open("logs/gen9championsvgc2026regma-2584198395.txt")
 tutto = file.read()
 righe = tutto.split("\n")
 for i in range(10):

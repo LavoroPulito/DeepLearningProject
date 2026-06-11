@@ -1,0 +1,169 @@
+|j|☆Sheeshshane925
+|j|☆ToiletClogger456
+|t:|1780093858
+|gametype|doubles
+|player|p1|Sheeshshane925|crasherwake|1961
+|player|p2|ToiletClogger456|barry|1875
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Scizor, L50, F|
+|poke|p1|Dragonite, L50, M|
+|poke|p1|Archaludon, L50, F|
+|poke|p1|Pelipper, L50, F|
+|poke|p1|Basculegion, L50, M|
+|poke|p1|Sneasler, L50, M|
+|poke|p2|Umbreon, L50, F, shiny|
+|poke|p2|Sylveon, L50, M, shiny|
+|poke|p2|Charizard, L50, F|
+|poke|p2|Venusaur, L50, M|
+|poke|p2|Basculegion, L50, M|
+|poke|p2|Archaludon, L50, M|
+|teampreview|4
+|
+|t:|1780093897
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Basculegion|Basculegion, L50, M|100/100
+|switch|p1b: Sneasler|Sneasler, L50, M|100/100
+|switch|p2a: Basculegion|Basculegion, L50, M|100/100
+|switch|p2b: Charizard|Charizard, L50, F|100/100
+|turn|1
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by Sheeshshane925)
+|
+|t:|1780093916
+|detailschange|p2b: Charizard|Charizard-Mega-Y, L50, F
+|-mega|p2b: Charizard|Charizard|Charizardite Y
+|-weather|SunnyDay|[from] ability: Drought|[of] p2b: Charizard
+|move|p1a: Basculegion|Last Respects|p2a: Basculegion
+|-supereffective|p2a: Basculegion|1
+|-damage|p2a: Basculegion|32/100
+|move|p1b: Sneasler|Dire Claw|p2a: Basculegion
+|-resisted|p2a: Basculegion|1
+|-damage|p2a: Basculegion|7/100
+|move|p2b: Charizard|Heat Wave|p1b: Sneasler|[spread] p1a,p1b
+|-resisted|p1a: Basculegion|1
+|-damage|p1a: Basculegion|66/100
+|-damage|p1b: Sneasler|10/100
+|-status|p1a: Basculegion|brn
+|move|p2a: Basculegion|Last Respects|p1a: Basculegion
+|-supereffective|p1a: Basculegion|1
+|-damage|p1a: Basculegion|0 fnt
+|faint|p1a: Basculegion
+|
+|-weather|SunnyDay|[upkeep]
+|upkeep
+|
+|t:|1780093929
+|switch|p1a: Pelipper|Pelipper, L50, F|100/100
+|-weather|RainDance|[from] ability: Drizzle|[of] p1a: Pelipper
+|turn|2
+|
+|t:|1780093946
+|switch|p1b: Scizor|Scizor, L50, F|100/100
+|switch|p2b: Sylveon|Sylveon, L50, M, shiny|100/100
+|switch|p2a: Umbreon|Umbreon, L50, F, shiny|100/100
+|move|p1a: Pelipper|Hurricane|p2a: Umbreon
+|-damage|p2a: Umbreon|68/100
+|
+|-weather|RainDance|[upkeep]
+|-heal|p2a: Umbreon|74/100|[from] item: Leftovers
+|upkeep
+|turn|3
+|
+|t:|1780093961
+|switch|p2b: Charizard|Charizard-Mega-Y, L50, F|100/100
+|-weather|SunnyDay|[from] ability: Drought|[of] p2b: Charizard
+|detailschange|p1b: Scizor|Scizor-Mega, L50, F
+|-mega|p1b: Scizor|Scizor|Scizorite
+|move|p1b: Scizor|Bug Bite|p2a: Umbreon
+|-supereffective|p2a: Umbreon|1
+|-damage|p2a: Umbreon|0 fnt
+|faint|p2a: Umbreon
+|move|p1a: Pelipper|Hurricane|p2b: Charizard|[miss]
+|-miss|p1a: Pelipper|p2b: Charizard
+|
+|-weather|SunnyDay|[upkeep]
+|upkeep
+|
+|t:|1780093968
+|switch|p2a: Basculegion|Basculegion, L50, M|7/100
+|turn|4
+|
+|t:|1780093985
+|switch|p2b: Sylveon|Sylveon, L50, M, shiny|100/100
+|switch|p1a: Sneasler|Sneasler, L50, M|10/100
+|move|p1b: Scizor|Protect|p1b: Scizor
+|-singleturn|p1b: Scizor|Protect
+|move|p2a: Basculegion|Aqua Jet|p1a: Sneasler
+|-damage|p1a: Sneasler|0 fnt
+|faint|p1a: Sneasler
+|
+|-weather|SunnyDay|[upkeep]
+|upkeep
+|
+|t:|1780093988
+|switch|p1a: Pelipper|Pelipper, L50, F|100/100
+|-weather|RainDance|[from] ability: Drizzle|[of] p1a: Pelipper
+|turn|5
+|
+|t:|1780093998
+|move|p2a: Basculegion|Aqua Jet|p1b: Scizor
+|-damage|p1b: Scizor|60/100
+|move|p1b: Scizor|Bullet Punch|p2a: Basculegion
+|-resisted|p2a: Basculegion|1
+|-damage|p2a: Basculegion|0 fnt
+|faint|p2a: Basculegion
+|move|p2b: Sylveon|Hyper Voice|p1b: Scizor|[spread] p1a,p1b
+|-resisted|p1b: Scizor|1
+|-damage|p1a: Pelipper|32/100
+|-damage|p1b: Scizor|38/100
+|-enditem|p1a: Pelipper|Sitrus Berry|[eat]
+|-heal|p1a: Pelipper|57/100|[from] item: Sitrus Berry
+|move|p1a: Pelipper|Hurricane|p2b: Sylveon
+|-damage|p2b: Sylveon|60/100
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|
+|t:|1780094001
+|switch|p2a: Charizard|Charizard-Mega-Y, L50, F|100/100
+|-weather|SunnyDay|[from] ability: Drought|[of] p2a: Charizard
+|turn|6
+|
+|t:|1780094007
+|move|p1b: Scizor|Bullet Punch|p2b: Sylveon
+|-supereffective|p2b: Sylveon|1
+|-crit|p2b: Sylveon
+|-damage|p2b: Sylveon|0 fnt
+|faint|p2b: Sylveon
+|move|p2a: Charizard|Heat Wave|p1b: Scizor|[spread] p1a,p1b
+|-resisted|p1a: Pelipper|1
+|-supereffective|p1b: Scizor|2
+|-damage|p1a: Pelipper|15/100
+|-damage|p1b: Scizor|0 fnt
+|faint|p1b: Scizor
+|move|p1a: Pelipper|Hurricane|p2a: Charizard
+|-damage|p2a: Charizard|53/100
+|
+|-weather|SunnyDay|[upkeep]
+|upkeep
+|turn|7
+|
+|t:|1780094011
+|move|p2a: Charizard|Weather Ball|p1a: Pelipper
+|-resisted|p1a: Pelipper|1
+|-damage|p1a: Pelipper|0 fnt
+|faint|p1a: Pelipper
+|
+|win|ToiletClogger456
+|raw|Sheeshshane925's rating: 1961 &rarr; <strong>1936</strong><br />(-25 for losing)
+|raw|ToiletClogger456's rating: 1875 &rarr; <strong>1900</strong><br />(+25 for winning)
+|l|☆Sheeshshane925
+|player|p1|
+|l|☆ToiletClogger456
+|player|p2|

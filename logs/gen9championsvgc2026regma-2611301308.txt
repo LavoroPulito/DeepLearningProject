@@ -1,0 +1,159 @@
+|j|‽Matumotomasao
+|j|☆ScribbleScribble
+|t:|1778959435
+|gametype|doubles
+|player|p1|Matumotomasao|2|1859
+|player|p2|ScribbleScribble|mina-lgpe|1934
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Kingambit, L50, M|
+|poke|p1|Charizard, L50, M|
+|poke|p1|Floette-Eternal, L50, F|
+|poke|p1|Basculegion, L50, M|
+|poke|p1|Whimsicott, L50, F|
+|poke|p1|Garchomp, L50, M|
+|poke|p2|Lopunny, L50, F, shiny|
+|poke|p2|Ceruledge, L50, M|
+|poke|p2|Farigiraf, L50, F|
+|poke|p2|Basculegion, L50, M, shiny|
+|poke|p2|Ninetales-Alola, L50, F|
+|poke|p2|Kingambit, L50, M|
+|teampreview|4
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by ScribbleScribble)
+|
+|t:|1778959463
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Whimsicott|Whimsicott, L50, F|100/100
+|switch|p1b: Floette|Floette-Eternal, L50, F|100/100
+|switch|p2a: Lopunny|Lopunny, L50, F, shiny|100/100
+|switch|p2b: Ceruledge|Ceruledge, L50, M|100/100
+|turn|1
+|inactive|ScribbleScribble has 30 seconds left.
+|
+|t:|1778959495
+|move|p1a: Whimsicott|Protect|p1a: Whimsicott
+|-singleturn|p1a: Whimsicott|Protect
+|move|p1b: Floette|Protect|p1b: Floette
+|-singleturn|p1b: Floette|Protect
+|move|p2a: Lopunny|Fake Out|p1a: Whimsicott
+|-activate|p1a: Whimsicott|move: Protect
+|move|p2b: Ceruledge|Poltergeist|p1b: Floette
+|-activate|p1b: Floette|move: Protect
+|
+|upkeep
+|turn|2
+|
+|t:|1778959519
+|switch|p2a: Ninetales|Ninetales-Alola, L50, F|100/100
+|-weather|Snowscape|[from] ability: Snow Warning|[of] p2a: Ninetales
+|detailschange|p1b: Floette|Floette-Mega, L50, F
+|-mega|p1b: Floette|Floette|Floettite
+|-ability|p1b: Floette|Fairy Aura
+|move|p1a: Whimsicott|Tailwind|p1a: Whimsicott
+|-sidestart|p1: Matumotomasao|move: Tailwind
+|move|p1b: Floette|Moonblast|p2a: Ninetales
+|-damage|p2a: Ninetales|2/100
+|move|p2b: Ceruledge|Poltergeist|p1b: Floette
+|-activate|p1b: Floette|move: Poltergeist|Floettite
+|-damage|p1b: Floette|27/100
+|
+|-weather|Snowscape|[upkeep]
+|upkeep
+|turn|3
+|
+|t:|1778959534
+|move|p1a: Whimsicott|Moonblast|p2a: Ninetales
+|-damage|p2a: Ninetales|0 fnt
+|faint|p2a: Ninetales
+|move|p1b: Floette|Light of Ruin|p2b: Ceruledge
+|-resisted|p2b: Ceruledge|1
+|-damage|p2b: Ceruledge|25/100
+|-damage|p1b: Floette|0 fnt|[from] Recoil
+|faint|p1b: Floette
+|move|p2b: Ceruledge|Bitter Blade|p1a: Whimsicott
+|-supereffective|p1a: Whimsicott|1
+|-damage|p1a: Whimsicott|0 fnt
+|-heal|p2b: Ceruledge|75/100|[from] drain|[of] p1a: Whimsicott
+|faint|p1a: Whimsicott
+|
+|-weather|Snowscape|[upkeep]
+|upkeep
+|
+|t:|1778959546
+|switch|p2a: Lopunny|Lopunny, L50, F, shiny|100/100
+|switch|p1a: Garchomp|Garchomp, L50, M|100/100
+|switch|p1b: Basculegion|Basculegion, L50, M|100/100
+|turn|4
+|
+|t:|1778959565
+|detailschange|p2a: Lopunny|Lopunny-Mega, L50, F, shiny
+|-mega|p2a: Lopunny|Lopunny|Lopunnite
+|move|p1b: Basculegion|Protect|p1b: Basculegion
+|-singleturn|p1b: Basculegion|Protect
+|move|p2a: Lopunny|Fake Out|p1b: Basculegion
+|-activate|p1b: Basculegion|move: Protect
+|move|p2b: Ceruledge|Shadow Sneak|p1b: Basculegion
+|-activate|p1b: Basculegion|move: Protect
+|move|p1a: Garchomp|Earthquake|p2b: Ceruledge|[spread] p2a,p2b
+|-activate|p1b: Basculegion|move: Protect
+|-supereffective|p2b: Ceruledge|1
+|-damage|p2a: Lopunny|45/100
+|-damage|p2b: Ceruledge|0 fnt
+|faint|p2b: Ceruledge
+|
+|-weather|Snowscape|[upkeep]
+|upkeep
+|
+|t:|1778959566
+|switch|p2b: Basculegion|Basculegion, L50, M, shiny|100/100
+|turn|5
+|
+|t:|1778959582
+|move|p1b: Basculegion|Last Respects|p2b: Basculegion
+|-supereffective|p2b: Basculegion|1
+|-damage|p2b: Basculegion|0 fnt
+|faint|p2b: Basculegion
+|move|p1a: Garchomp|Rock Slide|p2a: Lopunny
+|-resisted|p2a: Lopunny|1
+|-damage|p2a: Lopunny|26/100
+|move|p2a: Lopunny|Triple Axel|p1a: Garchomp|[miss]
+|-miss|p2a: Lopunny|p1a: Garchomp
+|
+|-weather|Snowscape|[upkeep]
+|-sideend|p1: Matumotomasao|move: Tailwind
+|upkeep
+|turn|6
+|
+|t:|1778959591
+|move|p1b: Basculegion|Protect|p1b: Basculegion
+|-singleturn|p1b: Basculegion|Protect
+|move|p2a: Lopunny|Triple Axel|p1a: Garchomp
+|-supereffective|p1a: Garchomp|2
+|-damage|p1a: Garchomp|71/100
+|-damage|p2a: Lopunny|14/100|[from] ability: Rough Skin|[of] p1a: Garchomp
+|-supereffective|p1a: Garchomp|2
+|-damage|p1a: Garchomp|24/100
+|-damage|p2a: Lopunny|2/100|[from] ability: Rough Skin|[of] p1a: Garchomp
+|-enditem|p1a: Garchomp|Sitrus Berry|[eat]
+|-heal|p1a: Garchomp|49/100|[from] item: Sitrus Berry
+|-supereffective|p1a: Garchomp|2
+|-damage|p1a: Garchomp|0 fnt
+|-damage|p2a: Lopunny|0 fnt|[from] ability: Rough Skin|[of] p1a: Garchomp
+|faint|p1a: Garchomp
+|faint|p2a: Lopunny
+|
+|win|Matumotomasao
+|-hitcount|p1: Garchomp|3
+|raw|Matumotomasao's rating: 1859 &rarr; <strong>1883</strong><br />(+24 for winning)
+|raw|ScribbleScribble's rating: 1934 &rarr; <strong>1910</strong><br />(-24 for losing)
+|l|‽Matumotomasao
+|player|p1|
+|j|‽Matumotomasao
+|player|p1|Matumotomasao|2|
+|n|‽Matumotomasao|matumotomasao

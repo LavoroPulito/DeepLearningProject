@@ -1,0 +1,95 @@
+|j|☆Murphy's kitchen
+|j|☆Pasodoble
+|t:|1779909534
+|gametype|doubles
+|player|p1|Murphy's kitchen|1|1862
+|player|p2|Pasodoble|2|1955
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Excadrill, L50, M|
+|poke|p1|Hydreigon, L50, F|
+|poke|p1|Rotom-Wash, L50|
+|poke|p1|Scovillain, L50, M|
+|poke|p1|Sneasler, L50, M|
+|poke|p1|Tyranitar, L50, F|
+|poke|p2|Excadrill, L50, M|
+|poke|p2|Tyranitar, L50, F|
+|poke|p2|Sinistcha, L50|
+|poke|p2|Incineroar, L50, M|
+|poke|p2|Palafin, L50, M|
+|poke|p2|Venusaur, L50, F|
+|teampreview|4
+|j| AaronB21
+|l| AaronB21
+|
+|t:|1779909582
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Sneasler|Sneasler, L50, M|100/100
+|switch|p1b: Hydreigon|Hydreigon, L50, F|100/100
+|switch|p2a: Venusaur|Venusaur, L50, F|100/100
+|switch|p2b: Palafin|Palafin, L50, M|100/100
+|turn|1
+|
+|t:|1779909599
+|detailschange|p2a: Venusaur|Venusaur-Mega, L50, F
+|-mega|p2a: Venusaur|Venusaur|Venusaurite
+|move|p1a: Sneasler|Fake Out|p2a: Venusaur
+|-damage|p2a: Venusaur|88/100
+|move|p1b: Hydreigon|Dark Pulse|p2a: Venusaur
+|-damage|p2a: Venusaur|53/100
+|move|p2b: Palafin|Wave Crash|p1a: Sneasler
+|-damage|p1a: Sneasler|32/100
+|-damage|p2b: Palafin|81/100|[from] Recoil
+|cant|p2a: Venusaur|flinch
+|
+|upkeep
+|turn|2
+|
+|t:|1779909650
+|move|p1a: Sneasler|Protect|p1a: Sneasler
+|-singleturn|p1a: Sneasler|Protect
+|move|p2a: Venusaur|Protect|p2a: Venusaur
+|-singleturn|p2a: Venusaur|Protect
+|move|p2b: Palafin|Jet Punch|p1a: Sneasler
+|-activate|p1a: Sneasler|move: Protect
+|move|p1b: Hydreigon|Dark Pulse|p2b: Palafin
+|-crit|p2b: Palafin
+|-damage|p2b: Palafin|0 fnt
+|faint|p2b: Palafin
+|
+|upkeep
+|
+|t:|1779909660
+|switch|p2b: Incineroar|Incineroar, L50, M|100/100
+|-ability|p2b: Incineroar|Intimidate|boost
+|-unboost|p1a: Sneasler|atk|1
+|-unboost|p1b: Hydreigon|atk|1
+|-enditem|p1a: Sneasler|White Herb
+|-clearnegativeboost|p1a: Sneasler|[silent]
+|turn|3
+|
+|t:|1779909698
+|move|p1a: Sneasler|Dire Claw|p2a: Venusaur
+|-damage|p2a: Venusaur|22/100
+|-status|p2a: Venusaur|par
+|move|p1b: Hydreigon|Dark Pulse|p2a: Venusaur
+|-damage|p2a: Venusaur|0 fnt
+|faint|p2a: Venusaur
+|move|p2b: Incineroar|Parting Shot|p1b: Hydreigon
+|-unboost|p1b: Hydreigon|atk|1
+|-unboost|p1b: Hydreigon|spa|1
+|-message|Pasodoble forfeited.
+|
+|win|Murphy's kitchen
+|raw|Murphy&apos;s kitchen's rating: 1862 &rarr; <strong>1887</strong><br />(+25 for winning)
+|raw|Pasodoble's rating: 1955 &rarr; <strong>1930</strong><br />(-25 for losing)
+|l|☆Pasodoble
+|player|p2|
+|l|☆Murphy's kitchen
+|player|p1|

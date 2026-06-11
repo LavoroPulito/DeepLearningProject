@@ -1,0 +1,158 @@
+|j|☆goomba number one
+|j|☆klanes1209
+|t:|1780823736
+|gametype|doubles
+|player|p1|goomba number one|barry|1941
+|player|p2|klanes1209|266|1902
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Umbreon, L50, F, shiny|
+|poke|p1|Sylveon, L50, F, shiny|
+|poke|p1|Charizard, L50, F|
+|poke|p1|Venusaur, L50, M|
+|poke|p1|Basculegion, L50, M|
+|poke|p1|Archaludon, L50, M|
+|poke|p2|Blastoise, L50, F|
+|poke|p2|Incineroar, L50, M|
+|poke|p2|Vivillon-Pokeball, L50, M|
+|poke|p2|Sinistcha-Masterpiece, L50|
+|poke|p2|Sneasler, L50, F|
+|poke|p2|Pelipper, L50, F|
+|teampreview|4
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by goomba number one)
+|
+|t:|1780823774
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Umbreon|Umbreon, L50, F, shiny|100/100
+|switch|p1b: Venusaur|Venusaur, L50, M|100/100
+|switch|p2a: Blastoise|Blastoise, L50, F|100/100
+|switch|p2b: Incineroar|Incineroar, L50, M|100/100
+|-ability|p2b: Incineroar|Intimidate|boost
+|-fail|p1a: Umbreon|unboost|Attack|[from] ability: Inner Focus|[of] p1a: Umbreon
+|-unboost|p1b: Venusaur|atk|1
+|turn|1
+|
+|t:|1780823789
+|detailschange|p2a: Blastoise|Blastoise-Mega, L50, F
+|-mega|p2a: Blastoise|Blastoise|Blastoisinite
+|detailschange|p1b: Venusaur|Venusaur-Mega, L50, M
+|-mega|p1b: Venusaur|Venusaur|Venusaurite
+|move|p2b: Incineroar|Fake Out|p1b: Venusaur
+|-damage|p1b: Venusaur|89/100
+|move|p2a: Blastoise|Shell Smash|p2a: Blastoise
+|-unboost|p2a: Blastoise|def|1
+|-unboost|p2a: Blastoise|spd|1
+|-boost|p2a: Blastoise|atk|2
+|-boost|p2a: Blastoise|spa|2
+|-boost|p2a: Blastoise|spe|2
+|cant|p1b: Venusaur|flinch
+|move|p1a: Umbreon|Yawn|p2a: Blastoise
+|-start|p2a: Blastoise|move: Yawn|[of] p1a: Umbreon
+|
+|upkeep
+|turn|2
+|
+|t:|1780823807
+|switch|p1a: Basculegion|Basculegion, L50, M|100/100
+|move|p2a: Blastoise|Water Spout|p1b: Venusaur|[spread] p1a,p1b
+|-resisted|p1a: Basculegion|1
+|-resisted|p1b: Venusaur|1
+|-damage|p1a: Basculegion|38/100
+|-damage|p1b: Venusaur|47/100
+|move|p1b: Venusaur|Sludge Bomb|p2a: Blastoise
+|-damage|p2a: Blastoise|47/100
+|move|p2b: Incineroar|Flare Blitz|p1b: Venusaur
+|-supereffective|p1b: Venusaur|1
+|-damage|p1b: Venusaur|0 fnt
+|faint|p1b: Venusaur
+|-damage|p2b: Incineroar|85/100|[from] Recoil
+|
+|-end|p2a: Blastoise|move: Yawn|[silent]
+|-status|p2a: Blastoise|slp
+|upkeep
+|
+|t:|1780823819
+|switch|p1b: Sylveon|Sylveon, L50, F, shiny|100/100
+|turn|3
+|
+|t:|1780823840
+|cant|p2a: Blastoise|slp
+|move|p1a: Basculegion|Wave Crash|p2b: Incineroar
+|-supereffective|p2b: Incineroar|1
+|-damage|p2b: Incineroar|0 fnt
+|faint|p2b: Incineroar
+|-damage|p1a: Basculegion|10/100|[from] Recoil
+|move|p1b: Sylveon|Hyper Voice|p2a: Blastoise
+|-damage|p2a: Blastoise|0 fnt
+|faint|p2a: Blastoise
+|
+|upkeep
+|
+|t:|1780823854
+|switch|p2a: Vivillon|Vivillon-Pokeball, L50, M|100/100
+|switch|p2b: Pelipper|Pelipper, L50, F|100/100
+|-weather|RainDance|[from] ability: Drizzle|[of] p2b: Pelipper
+|turn|4
+|
+|t:|1780823863
+|move|p1a: Basculegion|Aqua Jet|p2a: Vivillon
+|-enditem|p2a: Vivillon|Focus Sash
+|-damage|p2a: Vivillon|1/100
+|move|p2b: Pelipper|Weather Ball|p1a: Basculegion
+|-resisted|p1a: Basculegion|1
+|-damage|p1a: Basculegion|0 fnt
+|faint|p1a: Basculegion
+|move|p2a: Vivillon|Sleep Powder|p1b: Sylveon
+|-status|p1b: Sylveon|slp|[from] move: Sleep Powder
+|cant|p1b: Sylveon|slp
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|
+|t:|1780823867
+|switch|p1a: Umbreon|Umbreon, L50, F, shiny|100/100
+|turn|5
+|
+|t:|1780823884
+|-curestatus|p1b: Sylveon|slp|[msg]
+|move|p1b: Sylveon|Quick Attack|p2a: Vivillon
+|-damage|p2a: Vivillon|0 fnt
+|faint|p2a: Vivillon
+|move|p2b: Pelipper|Weather Ball|p1b: Sylveon
+|-damage|p1b: Sylveon|48/100
+|move|p1a: Umbreon|Snarl|p2b: Pelipper
+|-damage|p2b: Pelipper|76/100
+|-unboost|p2b: Pelipper|spa|1
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|turn|6
+|
+|t:|1780823898
+|move|p1b: Sylveon|Detect|p1b: Sylveon
+|-singleturn|p1b: Sylveon|Protect
+|move|p2b: Pelipper|Weather Ball|p1b: Sylveon
+|-activate|p1b: Sylveon|move: Protect
+|move|p1a: Umbreon|Yawn|p2b: Pelipper
+|-start|p2b: Pelipper|move: Yawn|[of] p1a: Umbreon
+|
+|-weather|RainDance|[upkeep]
+|upkeep
+|turn|7
+|
+|t:|1780823909
+|move|p2b: Pelipper|Weather Ball|p1b: Sylveon
+|-damage|p1b: Sylveon|18/100
+|move|p1b: Sylveon|Hyper Voice|p2b: Pelipper
+|-damage|p2b: Pelipper|0 fnt
+|faint|p2b: Pelipper
+|
+|win|goomba number one
+|raw|goomba number one's rating: 1941 &rarr; <strong>1959</strong><br />(+18 for winning)
+|raw|klanes1209's rating: 1902 &rarr; <strong>1884</strong><br />(-18 for losing)

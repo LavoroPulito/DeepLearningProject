@@ -1,0 +1,258 @@
+|j|☆Sheeshshane925
+|j|☆ToiletClogger456
+|t:|1780034519
+|gametype|doubles
+|player|p1|Sheeshshane925|crasherwake|1969
+|player|p2|ToiletClogger456|barry|1850
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rated|
+|rule|Species Clause: Limit one of each Pokémon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Scizor, L50, M|
+|poke|p1|Dragonite, L50, F, shiny|
+|poke|p1|Archaludon, L50, F, shiny|
+|poke|p1|Pelipper, L50, F, shiny|
+|poke|p1|Basculegion, L50, M|
+|poke|p1|Sneasler, L50, M|
+|poke|p2|Umbreon, L50, M, shiny|
+|poke|p2|Sylveon, L50, F, shiny|
+|poke|p2|Charizard, L50, M|
+|poke|p2|Venusaur, L50, M|
+|poke|p2|Basculegion, L50, M|
+|poke|p2|Archaludon, L50, F|
+|teampreview|4
+|
+|t:|1780034571
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|switch|p1a: Basculegion|Basculegion, L50, M|100/100
+|switch|p1b: Sneasler|Sneasler, L50, M|100/100
+|switch|p2a: Umbreon|Umbreon, L50, M, shiny|100/100
+|switch|p2b: Charizard|Charizard, L50, M|100/100
+|turn|1
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up. (requested by ToiletClogger456)
+|
+|t:|1780034623
+|switch|p2a: Basculegion|Basculegion, L50, M|100/100
+|detailschange|p2b: Charizard|Charizard-Mega-Y, L50, M
+|-mega|p2b: Charizard|Charizard|Charizardite Y
+|-weather|SunnyDay|[from] ability: Drought|[of] p2b: Charizard
+|move|p2b: Charizard|Protect|p2b: Charizard
+|-singleturn|p2b: Charizard|Protect
+|move|p1b: Sneasler|Fake Out|p2a: Basculegion
+|-immune|p2a: Basculegion
+|move|p1a: Basculegion|Wave Crash|p2b: Charizard
+|-activate|p2b: Charizard|move: Protect
+|
+|-weather|SunnyDay|[upkeep]
+|upkeep
+|turn|2
+|inactive|Sheeshshane925 has 30 seconds left.
+|inactive|Sheeshshane925 has 20 seconds left.
+|inactive|Sheeshshane925 has 15 seconds left.
+|inactive|Sheeshshane925 has 10 seconds left.
+|
+|t:|1780034670
+|switch|p1b: Archaludon|Archaludon, L50, F, shiny|100/100
+|switch|p2b: Umbreon|Umbreon, L50, M, shiny|100/100
+|move|p1a: Basculegion|Wave Crash|p2b: Umbreon
+|-damage|p2b: Umbreon|74/100
+|-damage|p1a: Basculegion|91/100|[from] Recoil
+|move|p2a: Basculegion|Wave Crash|p1b: Archaludon
+|-resisted|p1b: Archaludon|1
+|-damage|p1b: Archaludon|81/100
+|-ability|p1b: Archaludon|Stamina|boost
+|-boost|p1b: Archaludon|def|1
+|-damage|p2a: Basculegion|94/100|[from] Recoil
+|
+|-weather|SunnyDay|[upkeep]
+|-heal|p1b: Archaludon|87/100|[from] item: Leftovers
+|-heal|p2b: Umbreon|80/100|[from] item: Leftovers
+|upkeep
+|turn|3
+|inactive|Sheeshshane925 has 30 seconds left.
+|inactive|Sheeshshane925 has 20 seconds left.
+|inactive|Sheeshshane925 has 15 seconds left.
+|
+|t:|1780034711
+|switch|p1a: Pelipper|Pelipper, L50, F, shiny|100/100
+|-weather|RainDance|[from] ability: Drizzle|[of] p1a: Pelipper
+|switch|p2a: Charizard|Charizard-Mega-Y, L50, M|100/100
+|-weather|SunnyDay|[from] ability: Drought|[of] p2a: Charizard
+|move|p1b: Archaludon|Dragon Pulse|p2a: Charizard
+|-damage|p2a: Charizard|63/100
+|move|p2b: Umbreon|Yawn|p1b: Archaludon
+|-start|p1b: Archaludon|move: Yawn|[of] p2b: Umbreon
+|
+|-weather|SunnyDay|[upkeep]
+|-heal|p1b: Archaludon|93/100|[from] item: Leftovers
+|-heal|p2b: Umbreon|86/100|[from] item: Leftovers
+|upkeep
+|turn|4
+|inactive|Sheeshshane925 has 30 seconds left.
+|
+|t:|1780034743
+|switch|p1b: Sneasler|Sneasler, L50, M|100/100
+|move|p2a: Charizard|Heat Wave|p1b: Sneasler|[spread] p1a,p1b
+|-resisted|p1a: Pelipper|1
+|-damage|p1a: Pelipper|53/100
+|-damage|p1b: Sneasler|14/100
+|-status|p1a: Pelipper|brn
+|-status|p1b: Sneasler|brn
+|move|p1a: Pelipper|Tailwind|p1a: Pelipper
+|-sidestart|p1: Sheeshshane925|move: Tailwind
+|move|p2b: Umbreon|Foul Play|p1b: Sneasler
+|-resisted|p1b: Sneasler|1
+|-damage|p1b: Sneasler|0 fnt
+|faint|p1b: Sneasler
+|
+|-weather|SunnyDay|[upkeep]
+|-heal|p2b: Umbreon|92/100|[from] item: Leftovers
+|-damage|p1a: Pelipper|46/100 brn|[from] brn
+|upkeep
+|-enditem|p1a: Pelipper|Sitrus Berry|[eat]
+|-heal|p1a: Pelipper|71/100 brn|[from] item: Sitrus Berry
+|j| mauveracor
+|
+|t:|1780034753
+|switch|p1b: Basculegion|Basculegion, L50, M|91/100
+|turn|5
+|
+|t:|1780034761
+|switch|p1a: Archaludon|Archaludon, L50, F, shiny|93/100
+|move|p2a: Charizard|Protect|p2a: Charizard
+|-singleturn|p2a: Charizard|Protect
+|move|p1b: Basculegion|Flip Turn|p2a: Charizard
+|-activate|p2a: Charizard|move: Protect
+|move|p2b: Umbreon|Yawn|p1a: Archaludon
+|-start|p1a: Archaludon|move: Yawn|[of] p2b: Umbreon
+|
+|-weather|SunnyDay|[upkeep]
+|-heal|p1a: Archaludon|100/100|[from] item: Leftovers
+|-heal|p2b: Umbreon|98/100|[from] item: Leftovers
+|upkeep
+|turn|6
+|l| mauveracor
+|
+|t:|1780034784
+|switch|p1a: Pelipper|Pelipper, L50, F, shiny|71/100 brn
+|-weather|RainDance|[from] ability: Drizzle|[of] p1a: Pelipper
+|switch|p2a: Sylveon|Sylveon, L50, F, shiny|100/100
+|move|p1b: Basculegion|Flip Turn|p2b: Umbreon
+|-damage|p2b: Umbreon|60/100
+|
+|t:|1780034792
+|switch|p1b: Archaludon|Archaludon, L50, F, shiny|100/100|[from] Flip Turn
+|move|p2b: Umbreon|Snarl|p1a: Pelipper|[spread] p1b
+|-miss|p2b: Umbreon|p1a: Pelipper
+|-damage|p1b: Archaludon|90/100
+|-unboost|p1b: Archaludon|spa|1
+|-ability|p1b: Archaludon|Stamina|boost
+|-boost|p1b: Archaludon|def|1
+|
+|-weather|RainDance|[upkeep]
+|-heal|p1b: Archaludon|96/100|[from] item: Leftovers
+|-heal|p2b: Umbreon|66/100|[from] item: Leftovers
+|-damage|p1a: Pelipper|65/100 brn|[from] brn
+|upkeep
+|turn|7
+|
+|t:|1780034805
+|switch|p2b: Charizard|Charizard-Mega-Y, L50, M|63/100
+|-weather|SunnyDay|[from] ability: Drought|[of] p2b: Charizard
+|move|p1a: Pelipper|Wide Guard|p1a: Pelipper
+|-singleturn|p1a: Pelipper|Wide Guard
+|move|p1b: Archaludon|Flash Cannon|p2a: Sylveon
+|-supereffective|p2a: Sylveon|1
+|-damage|p2a: Sylveon|58/100
+|move|p2a: Sylveon|Hyper Voice|p1b: Archaludon|[spread] 
+|-activate|p1a: Pelipper|move: Wide Guard
+|-activate|p1b: Archaludon|move: Wide Guard
+|
+|-weather|SunnyDay|[upkeep]
+|-heal|p1b: Archaludon|100/100|[from] item: Leftovers
+|-damage|p1a: Pelipper|59/100 brn|[from] brn
+|-sideend|p1: Sheeshshane925|move: Tailwind
+|upkeep
+|turn|8
+|
+|t:|1780034824
+|switch|p1a: Basculegion|Basculegion, L50, M|91/100
+|move|p1b: Archaludon|Protect|p1b: Archaludon
+|-singleturn|p1b: Archaludon|Protect
+|move|p2b: Charizard|Weather Ball|p1b: Archaludon
+|-activate|p1b: Archaludon|move: Protect
+|move|p2a: Sylveon|Moonblast|p1a: Basculegion
+|-damage|p1a: Basculegion|23/100
+|-unboost|p1a: Basculegion|spa|1
+|
+|-weather|SunnyDay|[upkeep]
+|upkeep
+|turn|9
+|inactive|ToiletClogger456 has 30 seconds left.
+|inactive|ToiletClogger456 has 20 seconds left.
+|
+|t:|1780034860
+|switch|p2b: Umbreon|Umbreon, L50, M, shiny|66/100
+|move|p1a: Basculegion|Flip Turn|p2a: Sylveon
+|-damage|p2a: Sylveon|36/100
+|
+|t:|1780034865
+|switch|p1a: Pelipper|Pelipper, L50, F, shiny|59/100 brn|[from] Flip Turn
+|-weather|RainDance|[from] ability: Drizzle|[of] p1a: Pelipper
+|move|p1b: Archaludon|Electro Shot||[still]
+|-prepare|p1b: Archaludon|Electro Shot
+|-boost|p1b: Archaludon|spa|1
+|-anim|p1b: Archaludon|Electro Shot|p2a: Sylveon
+|-damage|p2a: Sylveon|3/100
+|move|p2a: Sylveon|Hyper Voice|p1a: Pelipper|[spread] p1a,p1b
+|-damage|p1a: Pelipper|0 fnt
+|-damage|p1b: Archaludon|57/100
+|-ability|p1b: Archaludon|Stamina|boost
+|-boost|p1b: Archaludon|def|1
+|faint|p1a: Pelipper
+|
+|-weather|RainDance|[upkeep]
+|-heal|p1b: Archaludon|63/100|[from] item: Leftovers
+|-heal|p2b: Umbreon|72/100|[from] item: Leftovers
+|upkeep
+|
+|t:|1780034874
+|switch|p1a: Basculegion|Basculegion, L50, M|23/100
+|turn|10
+|
+|t:|1780034887
+|switch|p2a: Charizard|Charizard-Mega-Y, L50, M|63/100
+|-weather|SunnyDay|[from] ability: Drought|[of] p2a: Charizard
+|move|p1a: Basculegion|Wave Crash|p2b: Umbreon
+|-damage|p2b: Umbreon|47/100
+|-damage|p1a: Basculegion|14/100|[from] Recoil
+|move|p1b: Archaludon|Dragon Pulse|p2b: Umbreon
+|-crit|p2b: Umbreon
+|-damage|p2b: Umbreon|10/100
+|move|p2b: Umbreon|Snarl|p1a: Basculegion|[spread] p1a,p1b
+|-supereffective|p1a: Basculegion|1
+|-damage|p1a: Basculegion|0 fnt
+|-damage|p1b: Archaludon|54/100
+|-unboost|p1b: Archaludon|spa|1
+|-ability|p1b: Archaludon|Stamina|boost
+|-boost|p1b: Archaludon|def|1
+|faint|p1a: Basculegion
+|
+|-weather|SunnyDay|[upkeep]
+|-heal|p1b: Archaludon|60/100|[from] item: Leftovers
+|-heal|p2b: Umbreon|16/100|[from] item: Leftovers
+|upkeep
+|turn|11
+|-message|Sheeshshane925 forfeited.
+|
+|win|ToiletClogger456
+|raw|Sheeshshane925's rating: 1969 &rarr; <strong>1942</strong><br />(-27 for losing)
+|raw|ToiletClogger456's rating: 1850 &rarr; <strong>1877</strong><br />(+27 for winning)
+|l|☆Sheeshshane925
+|player|p1|
+|l|☆ToiletClogger456
+|player|p2|
