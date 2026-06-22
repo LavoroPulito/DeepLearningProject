@@ -1,9 +1,9 @@
-import requests
-from tqdm import tqdm
+import requests # type: ignore
+from tqdm import tqdm # type: ignore
 import os
 # 1. Inserisci l'URL della pagina o dell'API
 replayUrl = "https://replay.pokemonshowdown.com/" #base for download replay. add '.json' at the end after append the battleID
-battleHistoryUrl = "https://replay.pokemonshowdown.com/search.json?format=[Gen%209%20Champions]%20VGC%202026%20Reg%20M-A&sort=rating&page=1"
+battleHistoryUrl = "https://replay.pokemonshowdown.com/search.json?format=[Gen%209%20Champions]%20VGC%202026%20Reg%20M-A&sort=rating&page="
 
 def scarica_id(targetUrl):
     ids = []
@@ -46,7 +46,7 @@ def scarica_log(battleID):
     
         # 5. Ora puoi usare i dati!
         #print("Dati scaricati con successo:")
-        log_file = open("logs/"+battleID+'.txt','w')
+        log_file = open("../logs/"+battleID+'.txt','w')
         log_file.write(dati_json['log'])
         log_file.close()
     
@@ -55,22 +55,17 @@ def scarica_log(battleID):
     except ValueError:
         print("La pagina non ha restituito un JSON valido.")
 
+for i in range(50):
+    ids = scarica_id(battleHistoryUrl+str(i))
+    existent_logs = os.listdir("../logs/")
+    existent_logs = [f[:-4] for f in existent_logs]  # rimuove .txt, più pythonico
+    existent_logs_set = set(existent_logs)  # set per ricerca O(1) invece di O(n)
+    ids_to_download = [Id for Id in ids if Id not in existent_logs_set]
+    esistenti = len(ids) - len(ids_to_download)
 
-ids = scarica_id(battleHistoryUrl) #scarico i logs
-existent_logs = os.listdir("logs/") #prendo i nomi dei log scaricati
-for i in range(len(existent_logs)): # tolgo l'estensione ".txt"
-    existent_logs[i] = existent_logs[i][:len(existent_logs[i])-4]
-esistenti = 0
-for Id in ids:# tolgo dalla lista i log che ho già 
-    if Id in existent_logs:
-        esistenti+=1
-        ids.remove(Id)
-
-print("ne esistevano ",esistenti, "ne scaricherai ", len(ids) )
-
-
-for ID in tqdm(ids):
-    scarica_log(ID)
+    print("ne esistevano ",esistenti, "ne scaricherai ", len(ids_to_download) )
+    for ID in tqdm(ids_to_download):
+        scarica_log(ID)
 #TODO mo so pochi log, non so se ha senso implementare una ricerca binaria per il controllo sui log esistenti
 #TODO semplifica i nomi dei log
 
