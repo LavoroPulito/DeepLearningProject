@@ -28,3 +28,46 @@ python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 python3 scraper.py
+
+
+## Costruzione del modello
+token
+ - stato:
+    - x12 pokemon:
+        id 
+        type
+        ability
+        item
+        slot 
+        seen
+        --continue
+        stats
+        stats_change
+        status
+        hp_ratio
+        - 4x move
+            id 
+            d_class
+            t_class
+
+            --continue
+            power
+            priority
+            d_class
+            t_class
+            accuracy
+    - campo
+        meteo
+        speed_modifier\[taw 0, taw 1,tkrm \]
+
+ - turno:
+    (timestamp)
+
+ - 2x azione: 
+    src
+    dest    
+    mega
+    [0,1,2,3,4,5]
+
+ - reward
+    {0,1}
