@@ -3,6 +3,10 @@
 - [ ] non tutti gli status sono riconosciuti
 - [ ] alcune abilità non vengono lette (\[from\] del avversario)
 - [ ] pulire e sistemare il codice che fa schifo
+- [ ] correzione dei token 
+- [ ] organizzazione delle partite per batches
+- [ ] controllare e sistemare il codice sull'embedding (mancano tutte le dimensioni)
+      
 ## theory stuff
 - [alphago](https://deepmind.google/research/alphago/) 
 - [Attention is all you need](https://arxiv.org/pdf/1706.03762) 
