@@ -1,12 +1,20 @@
 # Title to be decided
 ## To do 
 - [ ] non tutti gli status sono riconosciuti
-- [ ] alcune abilità non vengono lette (\[from\] del avversario)
+- [x] alcune abilità non vengono lette ([from] del avversario)
 - [ ] pulire e sistemare il codice che fa schifo
-- [ ] correzione dei token 
+- [x] correzione dei token 
 - [ ] organizzazione delle partite per batches
 - [ ] controllare e sistemare il codice sull'embedding (mancano tutte le dimensioni)
-      
+--- aggiungere nei token?
+- [ ] aggiungere mega pietre
+- [x] far finire i campi 
+- [ ] accuracy non la vediamo
+- [ ] aggiungere turno 0
+
+## Domande
+- ma le bitmask come funzionano? diventano liste di bit o numeri?
+
 ## theory stuff
 - [alphago](https://deepmind.google/research/alphago/) 
 - [Attention is all you need](https://arxiv.org/pdf/1706.03762) 
@@ -35,43 +43,53 @@ python3 scraper.py
 
 
 ## Costruzione del modello
+
+cosa trovi nel token
+
+
 token
  - stato:
     - x12 pokemon:
-        id 
-        type
-        ability
-        item
-        slot 
-        seen
+        - id 
+        - type
+        - ability
+        - item
+        - slot 
+        - seen
         --continue
-        stats
-        stats_change
-        status
-        hp_ratio
+        - stats
+        - stats_change
+        - status
+        - hp_ratio
         - 4x move
-            id 
-            d_class
-            t_class
+            - id 
+            - d_class
+            - t_class
 
             --continue
-            power
-            priority
-            d_class
-            t_class
-            accuracy
+            - power
+            - priority
+            - d_class
+            - t_class
+            - accuracy
     - campo
-        meteo
-        speed_modifier\[taw 0, taw 1,tkrm \]
+        - meteo
+        - speed_modifier [taw 0, taw 1,tkrm] 
 
  - turno:
-    (timestamp)
+    - (timestamp)
 
  - 2x azione: 
-    src
-    dest    
-    mega
-    [0,1,2,3,4,5]
+    - player user
+    - slot user
+    - player target
+    - slot target
+    - move $\in  \{0,1,2,3,4,5\}$
+    - mega
 
  - reward
     {0,1}
+
+
+matrice emb: batch, turns, token = (pokemon, campo, turn, action, reward) 
+
