@@ -55,7 +55,6 @@ token
         - ability
         - item
         - slot 
-        - seen
       
         --continue
         - stats
