@@ -56,7 +56,7 @@ token
         - item
         - slot 
         - seen
-        --continue
+        - -continue
         - stats
         - stats_change
         - status
@@ -72,7 +72,7 @@ token
             - accuracy
     - campo
         - meteo
-        --continue
+        - -continue
         - speed_modifier [taw 0, taw 1,tkrm] 
 
  - turno:
