@@ -1,12 +1,12 @@
-import torch
-import torch.nn as nn
-import torch.nn.functional as F
+import torch # type: ignore
+import torch.nn as nn # type: ignore
+import torch.nn.functional as F # type: ignore
 import math
 
 
 
 class SelfAttention(nn.Module):
-    def __init__(self, d_model=256, n_heads=8, max_seq_length=128):
+    def __init__(self, d_model=256, n_heads=8, max_seq_length=144):
         super().__init__()
         assert d_model % n_heads == 0, "d_model must be divisible by n_heads"
 
@@ -61,7 +61,7 @@ class SelfAttention(nn.Module):
         return self.unifyheads(attention_output)
     
 class TransformerBlock(nn.Module):
-    def __init__(self, d_model=256, n_heads=8, dropout=0.0, max_seq_length=128):
+    def __init__(self, d_model=256, n_heads=8, dropout=0.0, max_seq_length=144):
         super().__init__()
         self.self_attention = SelfAttention(d_model, n_heads, max_seq_length)
         self.layer_norm1 = nn.LayerNorm(d_model)

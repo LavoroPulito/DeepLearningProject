@@ -1,68 +1,69 @@
 #Embedding stato, azione, ricompensa e turno
 
-import torch
-import torch.nn as nn
+import torch # type: ignore
+import torch.nn as nn  # type: ignore
 
+#272=pokemon reg M-A  
+#310=pokemon reg M-B 
+#lunghezza token 544
 
 class Embedding(nn.Module):
-    def __init__(self,d_model=256):
+    def __init__(self,d_model=256, feat_dim = 16):
         super().__init__()
-        self.d_model=d_model #dimensione complessiva dello spazio degli embeddings (=256?)
+        self.d_model=d_model #dimensione complessiva dello spazio degli embeddings 
         #EMBEDDING DELLO STATO s_t
         #Da ripetere per ognuno dei 12 pokemon
         
 
 
         #Features discrete
-        self.embed_id=nn.Embedding(num_embeddings, embedding_dim) #da capire quanti sono in totale gli id  
-        self.embed_type=nn.Embedding(num_embeddings, embedding_dim) #da capire quanti sono in totale i tipi
-        self.embed_ability=nn.Embedding(num_embeddings, embedding_dim) #da capire quanti sono in totale le abilità
-        self.embed_item=nn.Embedding(num_embeddings, embedding_dim) #da capire quanti sono in totale gli strumenti
-        self.embed_slot=nn.Embedding(num_embeddings, embedding_dim) #a capire quanti sono in totale gli slot (4?)
-        # da capire qual è la dimensione dell'embedding per ciascuna feature
+        self.embed_id=nn.Embedding(num_embeddings = 310, embedding_dim = feat_dim) 
+        self.embed_type=nn.Embedding(num_embeddings = 19, embedding_dim = feat_dim) 
+        self.embed_ability=nn.Embedding(num_embeddings = 138, embedding_dim = feat_dim) 
+        self.embed_item=nn.Embedding(num_embeddings = 35, embedding_dim = feat_dim) 
+        self.embed_slot=nn.Embedding(num_embeddings = 5, embedding_dim = feat_dim) 
+
 
         #Features continue
-        self.embed_stats=nn.Linear() 
-        self.embed_stats_change=nn.Linear()
-        self.embed_status=nn.Linear()
-        self.embed_hp_ratio=nn.Linear()
-        #da capire le dimensioni di input e output di ognuno dei comandi sopra
-
+        self.embed_stats=nn.Linear(6, feat_dim) 
+        self.embed_stats_change=nn.Linear(5, feat_dim)
+        self.embed_status=nn.Linear(19, feat_dim)
+        self.embed_hp_ratio=nn.Linear(1, feat_dim)
+        
         #Mosse
-        self.embed_id_move=nn.Embedding(num_embeddings, embedding_dim) #da capire quanti sono in totale gli id delle mosse
-        self.embed_d_class=nn.Embedding(num_embeddings, embedding_dim) #da capire quanti sono in totale le classi di danno
-        self.embed_t_class=nn.Embedding(num_embeddings, embedding_dim) #da capire quanti sono in totale le classi di tipo
+        self.embed_d_class=nn.Embedding(num_embeddings = 3, embedding_dim = feat_dim) 
+        self.embed_t_class=nn.Embedding(num_embeddings = 16, embedding_dim = feat_dim) 
 
         #Mosse continue
-        self.embed_power=nn.Linear() #da capire le dimensioni di input e output
-        self.embed_priority=nn.Linear() #da capire le dimensioni di input e output
-        self.embed_accuracy=nn.Linear() #da capire le dimensioni di input e output
+        self.embed_power=nn.Linear(1,feat_dim) 
+        self.embed_priority=nn.Linear(7, feat_dim) 
+        self.embed_accuracy=nn.Linear(100, feat_dim) 
 
         #Campo
-        self.embed_current_weather=nn.Embedding(num_embeddings=5,embedding_dim)
-        self.embed_speed_modifier=nn.Linear()
+        self.embed_current_weather=nn.Embedding(num_embeddings=5,embedding_dim = feat_dim)
+        self.embed_speed_modifier=nn.Linear(3,feat_dim)
 
         #proiezione
-        self.state_proj=nn.Linear(in_features=550, out_features=d_model) # 350 è la dimensione (totale) del token di stato
+        self.state_proj=nn.Linear(in_features=5600, out_features=d_model) 
 
 
         #EMBEDDING DELL'AZIONE a_t
-        self.embed_player_user=nn.Embedding(num_embeddings=2, embedding_dim)
-        self.embed_slot_user=nn.Embedding(num_embeddings,embedding_dim)
-        self.embed_player_target=nn.Embedding(num_embeddings=2, embedding_dim)
-        self.embed_slot_target=nn.Embedding(num_embeddings,embedding_dim)
-        self.embed_mega=nn.Embedding(num_embeddings=2, embedding_dim)
-        self.embed_move=nn.Embedding(num_embeddings=6, embedding_dim)
+        self.embed_player_user=nn.Embedding(num_embeddings = 2, embedding_dim = feat_dim)
+        self.embed_slot_user=nn.Embedding(num_embeddings = 2,embedding_dim = feat_dim)
+        self.embed_player_target=nn.Embedding(num_embeddings = 2, embedding_dim = feat_dim)
+        self.embed_slot_target=nn.Embedding(num_embeddings = 2,embedding_dim = feat_dim)
+        self.embed_mega=nn.Embedding(num_embeddings = 2, embedding_dim = feat_dim)
+        self.embed_move=nn.Embedding(num_embeddings = 6, embedding_dim = feat_dim)
 
 
-        self.action_proj=nn.Linear(in_features, out_features=d_model)  #la dimensione di input è il doppio della somma delle dim di embedding (2 mosse)
+        self.action_proj=nn.Linear(in_features = 192, out_features=d_model)  #la dimensione di input è il doppio della somma delle dim di embedding (2 mosse)
 
         #EMBEDDING RICOMPENSA 
-        self.embed_reward=nn.Embedding(num_embeddings=2,embedding_dim=d_model)
+        self.embed_reward=nn.Embedding(num_embeddings = 2,embedding_dim=d_model)
 
 
         #EMBEDDING DEL TURNO t
-        self.embed_turn=nn.Embedding(num_embeddings=40, embedding_dim=d_model) #nummax turni in una partita=40
+        self.embed_turn=nn.Embedding(num_embeddings = 48, embedding_dim=d_model) 
 
         
 
@@ -97,8 +98,7 @@ class Embedding(nn.Module):
         hp_ratio_emb=self.embed_hp_ratio(state['hp_ratio'])
 
         #Mosse
-        #move ha dimensione (batch_size,turn,12,4)
-        id_move_emb=self.embed_id_move(move['id_move'])
+        #move ha dimensione (batch_size,turn,12,4) 
         d_class_emb=self.embed_d_class(move['d_class'])
         t_class_emb=self.embed_t_class(move['t_class'])
         power_emb=self.embed_power(move['power'])
@@ -111,7 +111,7 @@ class Embedding(nn.Module):
         pokemon_flat=pokemon_emb.view(pokemon_emb.size(0),pokemon_emb.size(1),-1) #stiamo rendendo il tensore una lista piatta per ogni turno
 
         #Concatenazione features delle mosse di un singolo pokemon sull'ultima dimensione
-        move_emb=torch.cat([id_move_emb,d_class_emb,t_class_emb,power_emb,priority_emb,accuracy_emb], dim=-1)
+        move_emb=torch.cat([d_class_emb,t_class_emb,power_emb,priority_emb,accuracy_emb], dim=-1)
         move_flat=move_emb.view(move_emb.size(0),move_emb.size(1),-1)
 
         #EMBEDDING CAMPO

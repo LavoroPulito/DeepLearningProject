@@ -1,0 +1,160 @@
+import numpy as np # type: ignore
+import os
+import glob
+
+def _structured_to_token(record):
+
+    """
+    Prende un record numpy strutturato di tipo _TURN_DT e lo converte
+    nella lista piatta originale di 544 elementi.
+    """
+    token = []
+    
+    # 1. Ricostruisci i 12 Pokémon
+    for i in range(12):
+        pk = record['pokemon'][i]
+        
+        # Primi 19 campi base del Pokémon
+        token.extend([
+            pk['player'],
+            pk['slot'],
+            pk['poke_id'],
+            pk['type1'],
+            pk['type2'],
+            pk['ability'],
+            pk['item'],
+            pk['hp_base'],
+            pk['atk'],
+            pk['def_'],
+            pk['spa'],
+            pk['spd'],
+            pk['spe'],
+            pk['atk_c'],
+            pk['def_c'],
+            pk['spa_c'],
+            pk['spd_c'],
+            pk['spe_c'],
+            pk['status_mask']
+        ])
+        
+        # Le 4 mosse (6 campi ciascuna)
+        for mname in ('move0', 'move1', 'move2', 'move3'):
+            m = pk[mname]
+            token.extend([
+                m['type'],
+                m['d_class'],
+                m['t_class'],
+                m['accuracy'],
+                m['power'],
+                m['priority']
+            ])
+            
+        # Ultimo campo: hp_ratio
+        token.append(pk['hp_ratio'])
+        
+    # 2. Ricostruisci il Field (4 campi)
+    field = record['field']
+    token.extend([
+        field['turn'],
+        field['weather'],
+        field['speed_mask'],
+        field['winner']
+    ])
+    
+    # 3. Ricostruisci le 2 Azioni (6 campi ciascuna)
+    for aname in ('action0', 'action1'):
+        a = record[aname]
+        token.extend([
+            a['usr_pl'],
+            a['usr_slot'],
+            a['trg_pl'],
+            a['trg_slot'],
+            a['move'],
+            a['mega']
+        ])
+        
+    return token
+
+def load_from_npz(filename):
+    """
+    Carica un file .npz salvato con save_to_npz e restituisce
+    la lista di token piatti ordinati (uno per ogni turno).
+    """
+    # Carica i dati dal file compresso
+    with np.load(filename) as data:
+        turns = data['turns']
+        
+    # Applica l'inversione a ogni record del turno
+    tokens_ricostruiti = [_structured_to_token(record) for record in turns]
+    
+    return tokens_ricostruiti
+
+if __name__ == "__main__":
+    # tokens = load_from_npz('../npz/gen9championsvgc2026regma-2584198395.npz')
+
+    # # Verifica:
+    # print(f"Numero di turni caricati: {len(tokens)}")
+    # print(f"Dimensione del primo token: {len(tokens[0])}") # Dovrebbe stampare 544
+
+    # Set per memorizzare gli ID unici (i set escludono automaticamente i duplicati)
+    id_pokemon = set()
+    id_abilita = set()
+    id_strumenti = set()
+    id_mosse = set()
+
+    # Trova tutti i file .npz nella cartella
+    file_npz = glob.glob(os.path.join('../npz/', '*.npz'))
+
+    if not file_npz:
+        print(f"Attenzione: Nessun file .npz trovato in {'../npz/'}")
+        exit()
+
+    print(f"Trovati {len(file_npz)} file. Inizio scansione...")
+
+    # 2. Scansione dei file
+    for indice, percorso_file in enumerate(file_npz, 1):
+        with np.load(percorso_file) as data:
+            # Carichiamo l'array strutturato dei turni
+            turns = data['turns'] 
+            
+            # Accediamo alla sezione pokemon: ha forma (Numero_Turni, 12)
+            pokes = turns['pokemon']
+            
+            # .flatten() trasforma la matrice in un unico vettore piatto per estrarre tutto insieme
+            id_pokemon.update(pokes['poke_id'].flatten())
+            id_abilita.update(pokes['ability'].flatten())
+            id_strumenti.update(pokes['item'].flatten())
+            
+            # Estraiamo gli ID delle mosse da tutti e 4 gli slot
+            for slot_mossa in ['move0', 'move1', 'move2', 'move3']:
+                id_mosse.update(pokes[slot_mossa].flatten())
+                    
+        # Stampa un aggiornamento ogni 50 file elaborati
+        if indice % 50 == 0 or indice == len(file_npz):
+            print(f"Elaborati {indice}/{len(file_npz)} file...")
+
+    print("\n" + "="*40)
+    print("          RISULTATI STATISTICHE")
+    print("="*40)
+
+    # 3. Mostra il numero di elementi UNICI (quanti ce ne sono nel dataset)
+    print(f"Pokémon unici nel dataset:  {len(id_pokemon)}")
+    print(f"Abilità uniche nel dataset: {len(id_abilita)}")
+    print(f"Strumenti unici nel dataset:{len(id_strumenti)}")
+    print(f"Mosse uniche nel dataset:   {len(id_mosse)}")
+
+    print("\n" + "="*40)
+    print("   VALORI MASSIMI (Per nn.Embedding senza remap)")
+    print("="*40)
+
+    # 4. Mostra il valore MASSIMO trovato + il valore da inserire in num_embeddings
+    # Nota: se usi 0 o -1 come flag per "Nessuno strumento/mossa", max() lo gestirà correttamente
+    max_poke = max(id_pokemon) if id_pokemon else 0
+    max_abi  = max(id_abilita) if id_abilita else 0
+    max_str  = max(id_strumenti) if id_strumenti else 0
+    max_mos  = max(id_mosse) if id_mosse else 0
+
+    print(f"ID Max Pokémon:   {max_poke}  -> Configura num_embeddings = {max_poke + 1}")
+    print(f"ID Max Abilità:   {max_abi}  -> Configura num_embeddings = {max_abi + 1}")
+    print(f"ID Max Strumenti: {max_str}  -> Configura num_embeddings = {max_str + 1}")
+    print(f"ID Max Mosse:     {max_mos}  -> Configura num_embeddings = {max_mos + 1}")
