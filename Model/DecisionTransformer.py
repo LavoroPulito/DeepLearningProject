@@ -1,0 +1,48 @@
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+
+from .SelfAttention import TransformerBlock
+from .Embedding import Embedding
+
+class DecisionTransformer(nn.Module):
+    def __init__(self, d_model=256, n_heads=8, depth=6, max_turn=40, action_dim):
+        super().__init__()
+        self.action_dim = action_dim #tutte le possibili azioni (mosse)
+        self.d_model=d_model
+        self.seq_length=max_turn
+        max_seq_length=3*max_turn #max_seq_length is 3 times the number of tokens (R,s,a) for each turn
+
+        #Embedding layer for states, actions, and rewards
+        self.token_embedding = Embedding(d_model=d_model)  #controllare le dimensioni
+
+        # Transformer blocks
+        self.tblocks=nn.ModuleList([
+            TransformerBlock(
+                d_model=d_model,
+                n_heads=n_heads,
+                dropout=0.0,
+                max_seq_length=max_seq_length
+                ) for _ in range(depth)
+        ])
+
+        self.predict_action=nn.Linear(d_model, self.action_dim) #per predire le mosse (azioni discrete)
+
+    
+    def forward(self, state, move, battlefield, action, reward, turn, padding_mask=None):
+        #x is a tensor of shape (batch_size, seq_length, d_model)
+        batch_size=state['id'].size(0)
+
+        x, stacked_padding_mask=self.token_embedding(state, move, battlefield, action, reward, turn, padding_mask) #embedding layer
+        
+        for block in self.tblocks:
+            x=block(x, padding_mask=stacked_padding_mask) #transformer blocks
+
+        
+        x=x.reshape(batch_size, self.seq_length, 3, self.d_model).permute(0,2,1,3) #reshape to (batch_size, seq_length, 3, d_model)
+
+        state_representation=x[:,1]
+        action_preds=self.predict_action(state_representation) #linear layer to get logits for each action
+
+        return F.log_softmax(action_preds, dim=-1) #log softmax over the last dimension (num_tokens)

@@ -55,7 +55,7 @@ token
         - ability
         - item
         - slot 
-        - seen
+      
         --continue
         - stats
         - stats_change
@@ -69,11 +69,11 @@ token
             --continue
             - power
             - priority
-            - d_class
-            - t_class
             - accuracy
     - campo
         - meteo
+
+        --continue
         - speed_modifier [taw 0, taw 1,tkrm] 
 
  - turno:
