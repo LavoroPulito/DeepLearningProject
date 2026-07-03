@@ -55,7 +55,7 @@ def scarica_log(battleID):
     except ValueError:
         print("La pagina non ha restituito un JSON valido.")
 
-for i in range(50):
+for i in range(50,100):
     ids = scarica_id(battleHistoryUrl+str(i))
     existent_logs = os.listdir("../logs/")
     existent_logs = [f[:-4] for f in existent_logs]  # rimuove .txt, più pythonico

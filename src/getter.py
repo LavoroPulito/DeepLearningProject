@@ -38,7 +38,10 @@ replacement = {
     'Mimikyu': '778',
     'Morpeko': '877',
     'Palafin': 'palafin-zero',
-    'Basculegion-F': 'Basculegion-female'
+    'Basculegion-F': 'Basculegion-female',
+    'Tauros-Paldea-Combat':'10250',
+    'Tauros-Paldea-Blaze':'10251',
+    'Tauros-Paldea-Aqua':'10252',
 
 }
 
@@ -170,9 +173,10 @@ class Pokemon:
             return replacement[name]
         elif name.split('-')[0] in to_set_sex: 
             return name + "-male"  
+        name = name.replace('.','').replace(' ','-')
         return name
     
-    def __init__(self, player, poke_id, stats_change=None, hp_ratio=1.0, slot=0, seen=0, known_moves=None, item=0, status=None):
+    def __init__(self, player, poke_id, stats_change=None, hp_ratio=1.0, slot=0, known_moves=None, item=0, status=None):
         self.player = int(player)
         self.name = poke_id
         
@@ -193,7 +197,7 @@ class Pokemon:
         self.stats_change = stats_change if stats_change is not None else [0, 0, 0, 0, 0]
         self.hp_ratio = hp_ratio 
         self.slot = slot
-        self.seen = seen
+
         
         self.known_moves = known_moves if known_moves is not None else [Move(0) for _ in range(4)]
         self.item = item
@@ -209,7 +213,7 @@ class Pokemon:
         moves_list = []
         for m in self.known_moves:
             moves_list += m.to_list()
-        return [self.player, self.slot, self.seen, self.poke_id] + self.types + [self.ability, self.item] + self.stats + self.stats_change + [self.status.mask] + moves_list + [self.hp_ratio]
+        return [self.player, self.slot, self.poke_id] + self.types + [self.ability, self.item] + self.stats + self.stats_change + [self.status.mask] + moves_list + [self.hp_ratio]
     
     def add_move(self, new_move):
         for i in range(4):
@@ -227,7 +231,7 @@ class Pokemon:
         return (
             f"=== Pokémon ===\n"
             f"  ID/Nome      : {self.poke_id} ({self.name})\n"
-            f"  Allenatore   : Giocatore {self.player} (Slot: {self.slot}, Visto: {self.seen})\n"
+            f"  Allenatore   : Giocatore {self.player} (Slot: {self.slot})\n"
             f"  Tipo         : {self.types} | Abilità: {self.ability}\n"
             f"  PS Residui   : {self.hp_ratio * 100:.1f}%\n"
             f"  Strumento    : {self.item}\n"
@@ -309,7 +313,7 @@ class Action:
 
     def __str__(self):
         mega_str = " + Mega" if self.mega == 1 else ""
-        return f"Azione(Sorgente: {self.usr_slot}, Bersaglio: {self.trg_slot}, Comando: {self.move}){mega_str}"
+        return f"Act(from: p{self.usr_pl}{self.usr_slot} to: P{self.trg_pl}{self.trg_slot}; {self.move}){mega_str}"
 
     def __repr__(self):
         return f"Action({self.usr_pl}, {self.usr_slot}, {self.trg_pl}, {self.trg_slot}, {self.move}, {self.mega})"
@@ -332,4 +336,4 @@ if __name__ == '__main__':
     get_ability_id("intimidate")
     
     # Stampa lo stato della cache
-    print_cache_stats()
+    get_cache_stats()

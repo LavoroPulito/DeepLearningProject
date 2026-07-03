@@ -2,23 +2,169 @@ from getter import *
 import os
 import re
 from collections import defaultdict
-import copy
-import csv
 from tqdm import tqdm # type: ignore
-
-
-def save_to_csv(tokens, filename, fill_none=0):
-    with open(filename, 'w', newline='') as f:
-        writer = csv.writer(f)
-        for row in tokens:
-            writer.writerow([fill_none if v is None else v for v in row])
-
+import numpy as np # type: ignore
+ 
+# ─── dtype strutturati ───────────────────────────────────────
+# Rispecchiano esattamente i to_list() delle classi in getter.py
+#
+# Move.to_list()      → [type, d_class, t_class, accuracy, power, priority]  (6)
+# Pokemon.to_list()   → [player, slot, poke_id,            (3)
+#                         type1, type2,                     (2)
+#                         ability, item,                    (2)
+#                         hp, atk, def, spa, spd, spe,     (6)
+#                         atk_c, def_c, spa_c, spd_c, spe_c,(5)
+#                         status_mask,                      (1)
+#                         move0…move3 (6×4),                (24)
+#                         hp_ratio]                         (1)  → totale 44
+# Battlefield.to_list()→ [turn, weather, speed_mask, winner] (4)
+# Action.to_list()    → [usr_pl, usr_slot, trg_pl, trg_slot, move, mega] (6)
+# Turno totale        → 12×44 + 4 + 2×6 = 544
+ 
+_MOVE_DT = np.dtype([
+    ('type',     np.int16),
+    ('d_class',  np.int8),
+    ('t_class',  np.int8),
+    ('accuracy', np.int16),
+    ('power',    np.int16),
+    ('priority', np.int8),
+])
+ 
+_POKEMON_DT = np.dtype([
+    ('player',      np.int8),
+    ('slot',        np.int8),
+    ('poke_id',     np.int16),
+    ('type1',       np.int8),
+    ('type2',       np.int8),
+    ('ability',     np.int16),
+    ('item',        np.int16),
+    ('hp_base',     np.int16),
+    ('atk',         np.int16),
+    ('def_',        np.int16),
+    ('spa',         np.int16),
+    ('spd',         np.int16),
+    ('spe',         np.int16),
+    ('atk_c',       np.int8),
+    ('def_c',       np.int8),
+    ('spa_c',       np.int8),
+    ('spd_c',       np.int8),
+    ('spe_c',       np.int8),
+    ('status_mask', np.int32),   # bitmask a 21 bit, salvata come intero
+    ('move0',       _MOVE_DT),
+    ('move1',       _MOVE_DT),
+    ('move2',       _MOVE_DT),
+    ('move3',       _MOVE_DT),
+    ('hp_ratio',    np.float32),
+])
+ 
+_FIELD_DT = np.dtype([
+    ('turn',       np.int16),
+    ('weather',    np.int8),
+    ('speed_mask', np.int8),     # bitmask a 3 bit, salvata come intero
+    ('winner',     np.int8),
+])
+ 
+_ACTION_DT = np.dtype([
+    ('usr_pl',   np.int8),
+    ('usr_slot', np.int8),
+    ('trg_pl',   np.int8),
+    ('trg_slot', np.int8),
+    ('move',     np.int8),
+    ('mega',     np.int8),
+])
+ 
+_TURN_DT = np.dtype([
+    ('pokemon', _POKEMON_DT, (12,)),
+    ('field',   _FIELD_DT),
+    ('action0', _ACTION_DT),
+    ('action1', _ACTION_DT),
+])
+ 
+ 
+def _token_to_structured(token):
+    """
+    Converte una lista piatta (output di _build_token) in un record numpy strutturato.
+    Struttura attesa: [pokemon x12 (44 campi ciascuno), field x4, action x2 (6 campi ciascuno)] tot = 544
+    """
+    record = np.zeros(1, dtype=_TURN_DT)[0]
+ 
+    offset = 0
+    POKE_SIZE = 44
+    MOVE_SIZE = 6
+ 
+    for i in range(12):
+        p = token[offset: offset + POKE_SIZE]
+        pk = record['pokemon'][i]
+        pk['player']      = p[0]
+        pk['slot']        = p[1]
+        pk['poke_id']     = p[2]
+        pk['type1']       = p[3]
+        pk['type2']       = p[4]
+        pk['ability']     = p[5]
+        pk['item']        = p[6]
+        pk['hp_base']     = p[7]
+        pk['atk']         = p[8]
+        pk['def_']        = p[9]
+        pk['spa']         = p[10]
+        pk['spd']         = p[11]
+        pk['spe']         = p[12]
+        pk['atk_c']       = p[13]
+        pk['def_c']       = p[14]
+        pk['spa_c']       = p[15]
+        pk['spd_c']       = p[16]
+        pk['spe_c']       = p[17]
+        pk['status_mask'] = p[18]
+        for j, mname in enumerate(('move0', 'move1', 'move2', 'move3')):
+            base = 19 + j * MOVE_SIZE
+            m = p[base: base + MOVE_SIZE]
+            pk[mname]['type']     = m[0]
+            pk[mname]['d_class']  = m[1]
+            pk[mname]['t_class']  = m[2]
+            pk[mname]['accuracy'] = m[3]
+            pk[mname]['power']    = m[4]
+            pk[mname]['priority'] = m[5]
+        pk['hp_ratio'] = p[43]
+        offset += POKE_SIZE
+ 
+    # field (4 campi)
+    record['field']['turn']       = token[offset]
+    record['field']['weather']    = token[offset + 1]
+    record['field']['speed_mask'] = token[offset + 2]
+    record['field']['winner']     = token[offset + 3]
+    offset += 4
+ 
+    # 2 azioni (6 campi ciascuna)
+    for aname in ('action0', 'action1'):
+        a = token[offset: offset + 6]
+        record[aname]['usr_pl']   = a[0]
+        record[aname]['usr_slot'] = a[1]
+        record[aname]['trg_pl']   = a[2]
+        record[aname]['trg_slot'] = a[3]
+        record[aname]['move']     = a[4]
+        record[aname]['mega']     = a[5]
+        offset += 6
+ 
+    return record
+ 
+ 
+def save_to_npz(tokens, filename):
+    """
+    Salva i token di una partita in un file .npz con dtype strutturato e compressione.
+    Ogni elemento di tokens è un turno; il file contiene un array di shape (T,).
+    Caricamento: data = np.load(file); turns = data['turns']
+    """
+    records = np.array(
+        [_token_to_structured(t) for t in tokens],
+        dtype=_TURN_DT
+    )
+    np.savez_compressed(filename, turns=records)
+ 
 
 # ─── costanti ────────────────────────────────────────────────
 INTERESTING_TAGS = {
     "poke", "-ability", "turn", "move", "-damage", "detailschange","switch",
     "-sidestart", "-sideend", "-enditem", "-weather", "win",
-    "-heal", "-boost", "-unboost", "-status", "-start", "-fieldstart", "-fieldend"
+    "-heal", "-boost", "-unboost", "-status", "-start", "-fieldstart", "-fieldend","drag","replace"
 }
 
 # ─── parsing ─────────────────────────────────────────────────
@@ -31,9 +177,16 @@ def parse_field(field):
 def filter_lines(raw_lines):
     if len(raw_lines) < 2:
         return []
-
-    p1_name = raw_lines[0][4:]
-    p2_name = raw_lines[1][4:]
+    names = []
+    i = 0
+    for l in raw_lines:
+        if l.startswith('|j|'):
+            names.append(l[4:]) 
+            i+=1
+        if i == 2: 
+            break
+    p1_name = names[0]
+    p2_name = names[1]
 
     result = []
     for raw in raw_lines:
@@ -53,6 +206,28 @@ def extract_pokemon_id(field):
         return player, position, name
     return None
 
+def apply_mega_subs(line, active_mega_subs):
+    """Applica le sostituzioni mega attive a una riga già processata, solo per il player corretto."""
+    if not any(active_mega_subs.values()):
+        return line
+    
+    result = []
+    for el in line:
+        new_el = el
+        for player_idx, subs in active_mega_subs.items():
+            player_str = f"p{player_idx + 1}" # Crea "p1" o "p2"
+            for old_val, new_id in subs.items():
+                if old_val.isdigit():
+                    # Se è un ID base (es. 3), sostituisci solo se preceduto dal prefisso slot corretto (es p1a:)
+                    pattern = r'(' + player_str + r'[a-c]:\s*)' + re.escape(old_val) + r'(?!\d)'
+                    new_el = re.sub(pattern, r'\g<1>' + new_id, new_el)
+                else:
+                    # Se è il nome testuale della Mega (es. "Venusaur-Mega"), sostituiscilo direttamente
+                    pattern = r'(?<![A-Za-z0-9\-])' + re.escape(old_val) + r'(?![A-Za-z0-9\-])'
+                    new_el = re.sub(pattern, new_id, new_el)
+        result.append(new_el)
+    return result
+
 # ─── sostituzione nomi → id ───────────────────────────────────
 
 def replace_in_line(raw, substitutions):
@@ -63,27 +238,19 @@ def replace_in_line(raw, substitutions):
 
 def build_nickname_map(raw_lines):
     nickname_map = {}
-    position_to_name = {}
     for raw in raw_lines:
         parts = raw.split('|')
-        if len(parts) < 2:
-            continue
-        tag = parts[1]
-
-        if tag == 'poke':
-            player_slot = parts[2]
-            real_name = parts[3].split(',')[0].strip()
-            position_to_name[player_slot] = real_name
-
-        elif tag == 'switch':
-            ref = parts[2]
-            real_name = parts[3].split(',')[0].strip()
-            match = re.match(r'p(\d)[ab]:\s*(.+)', ref)
-            if match:
-                nickname = match.group(2).strip()
-                if nickname != real_name:
-                    nickname_map[nickname] = real_name
-
+        # I nickname in Showdown emergono nei log quando il Pokémon entra in campo
+        if len(parts) >= 4 and parts[1] in ('switch', 'drag', 'replace'):
+            player_and_nick = parts[2] # Es: "p2b: Bulby"
+            real_name = parts[3].split(',')[0].strip() # Es: "Venusaur-Mega" o "Venusaur"
+            
+            if ': ' in player_and_nick:
+                nick = player_and_nick.split(': ')[1].strip()
+                
+                # Se il nickname è diverso dal nome, NON è una Mega, e non lo abbiamo ancora salvato:
+                if nick != real_name and '-Mega' not in real_name and nick not in nickname_map:
+                    nickname_map[nick] = real_name
     return nickname_map
 
 def apply_substitutions(log_lines, substitutions):
@@ -183,22 +350,25 @@ def _build_token(mons, field, turn_actions):
       - 2 azioni del giocatore 0 (con padding se necessario)
     """
     token = []
-
+    #stri = '' #just for debug
 
     for poke in mons:
+        #stri+=str(poke.name) + ', '
         token += poke.to_list()  # include internamente le 4 mosse conosciute
 
     # campo
     token += field.to_list()
+    #stri+= str(field.to_list())+ ', '
 
     # azioni player 0: esattamente 2 (padding con Action vuota se necessario)
     p0_actions = turn_actions[:2]
     while len(p0_actions) < 2:
-        p0_actions.append(Action(0, 0, 0, 0, 6))  # 6 = azione sconosciuta/padding
+        p0_actions.append(Action(0, 0, 0, 0, 5))  # 5 = azione sconosciuta/padding
 
     for action in p0_actions:
+        #stri+=str(action)+', '
         token += action.to_list()
-
+    #print(stri)
     return token
 
 # ─── entry point ──────────────────────────────────────────────
@@ -207,59 +377,63 @@ def convert_log(raw_lines):
     nickname_map = build_nickname_map(raw_lines)
     raw_lines = [replace_in_line(raw, nickname_map) for raw in raw_lines]
     log_lines = filter_lines(raw_lines)
-
+    
+    active_mega_subs = {0: {}, 1: {}}
     substitutions = {}
     mons = []
 
-    # ── costruzione team iniziale ─────────────────────────────
-    # tutti i pokemon partono con slot=0 (non ancora visti)
+    # ── costruzione team iniziale (forme base) ────────────────
     for line in [l for l in log_lines if l[0] == 'poke']:
         name = line[2].split(',')[0].strip()
-        print(name)
         pkmn = Pokemon(int(line[1][1]) - 1, name)
-        # slot=0 di default (impostato in __init__)
         substitutions[name] = str(pkmn.poke_id)
         mons.append(pkmn)
 
     ALIASES = {
         'Floette-Eternal': str(substitutions.get('Floette-Eternal', '10061')),
         'Floette': str(substitutions.get('Floette-Eternal', '10061')),
+        'Zoroark-Hisui': str(substitutions.get('Zoroark-Hisui', '10239')),
+        'Zoroark': str(substitutions.get('Zoroark-Hisui', '10239')),
     }
     substitutions.update(ALIASES)
 
-    megas = []
-    pre_sub = {}
+    # ── NOVITÀ: Raccolta forme alternative, escludendo le Mega ──
     for line in log_lines:
-        if line[0] == 'detailschange':
-            player = int(line[1][1]) - 1
-            pok = Pokemon(player, line[2].split(',')[0])
-            megas.append(pok)
-            pre_sub[pok.name] = str(pok.poke_id)
+        if line[0] in ('switch', 'drag', 'replace'):
+            name = line[2].split(',')[0].strip()
+            # Aggiunge Hisui, Galar, ecc., ma lascia inalterati i nomi con "-Mega"
+            if '-Mega' not in name and name not in substitutions:
+                pkmn = Pokemon(0, name) 
+                substitutions[name] = str(pkmn.poke_id)
 
-    log_lines = apply_substitutions(log_lines, pre_sub)
     log_lines = apply_substitutions(log_lines, substitutions)
 
     info, abilities, items = parse_battle_log(log_lines)
     update_pokemon(mons, info)
 
     tokens = []
-    turn_actions = []   # lista di Action (solo player 0)
-
-    #aggiungere turno 0 QUA
+    turn_actions = []   
+    winner = int(log_lines[-1][-1])
     
-    field = Battlefield(1, int(log_lines[-1][-1]))
+    field = Battlefield(0, winner)
     mega_used = [[0,0],[0,0]]
+
     for line in log_lines:
         if not line:
             continue
+        
+        # Le mega si applicano da qui in poi per le righe successive al detailschange
+        line = apply_mega_subs(line, active_mega_subs)
         tag = line[0]
 
-        # ── switch ────────────────────────────────────────────
-        if tag == 'switch':
+# ── switch, drag e replace ────────────────────────────────────
+        if tag in ('switch', 'drag', 'replace'):
             player = int(line[1][1]) - 1
             field_slot = get_slot(line[1][2])   # 1 o 2 (posizione in campo)
             poke_name = line[2].split(',')[0]
-
+            # for p in mons:
+            #     print(f'{p.poke_id}, {p.player}, {p.slot}')
+            # print(line)
             # pokemon entrante
             target = [p for p in mons if p.player == player and p.poke_id == int(poke_name)][0]
             incoming_slot = target.slot  # slot che aveva prima (0, 3 o 4)
@@ -277,42 +451,43 @@ def convert_log(raw_lines):
                     outgoing.slot = incoming_slot
 
             # entrante va in campo
-            target.seen = 1
             target.slot = field_slot
 
-            # azione solo per player 0
-            if player == 0:
-                # indice panchina per Action: bench_slot 3→4, 4→5 (move 4 e 5 = switch)
-                if incoming_slot == 0:
-                    # pokemon mai visto: trova quale indice ha nel team p0
-                    p0_mons = [p for p in mons if p.player == 0]
-                    bench_idx = next(
-                        (i for i, p in enumerate(p0_mons) if p.poke_id == target.poke_id),
-                        0
-                    )
-                    move_code = 4 + (bench_idx % 2)  # 4 o 5
-                else:
-                    move_code = 4 if incoming_slot == 3 else 5
+            # Registriamo l'azione solo per player 0 e se è uno switch volontario
+            if player == 0 and tag == 'switch':
                 turn_actions.append(Action(
                     usr_pl=0,
                     usr_slot=field_slot,
                     trg_pl=0,
-                    trg_slot=field_slot,
-                    move=move_code
+                    trg_slot=incoming_slot,
+                    move=4
                 ))
 
         # ── detailschange (mega/forma) ────────────────────────
         elif tag == 'detailschange':
             player, slot = int(line[1][1]) - 1, get_slot(line[1][2])
             mega_used[player][slot-1] = 1
-            megaP = [m for m in megas if m.poke_id == int(line[2].split(',')[0]) and m.player == player][0]
-            for i in range(len(mons)):
-                if mons[i].player == player and mons[i].slot == slot:
-                    mons[i].poke_id = megaP.poke_id
-                    mons[i].stats = megaP.stats[:]
-                    mons[i].types = megaP.types[:]
-                    mons[i].ability = megaP.ability
-                    break
+            
+            # Il nome qui sarà testo puro (es. "Venusaur-Mega") perché l'abbiamo escluso dal ciclo in alto
+            mega_name = line[2].split(',')[0].strip()
+            megaP = Pokemon(player, mega_name)
+
+            # Trova l'id base del pokemon
+            poke_in_slot = next(p for p in mons if p.player == player and p.slot == slot)
+            base_id = str(poke_in_slot.poke_id)   
+            mega_id_str = str(megaP.poke_id)
+
+            # Innesca la sostituzione per tutte le ITERAZIONI FUTURE del ciclo:
+            # 1. Sostituisce i puntatori posizionali di Showdown (es. "p1a: 3" diventa "p1a: 10033")
+            active_mega_subs[player][base_id] = mega_id_str
+            # 2. Sostituisce il testo in caso di switch futuri dalla panchina (es. "Venusaur-Mega" diventa "10033")
+            active_mega_subs[player][mega_name] = mega_id_str
+
+            # Aggiorna l'oggetto
+            poke_in_slot.poke_id = megaP.poke_id
+            poke_in_slot.stats   = megaP.stats[:]
+            poke_in_slot.types   = megaP.types[:]
+            poke_in_slot.ability = megaP.ability
 
         # ── field effects ─────────────────────────────────────
         elif tag == '-sidestart':
@@ -343,16 +518,15 @@ def convert_log(raw_lines):
 
             move_obj = Move(line[2])
             poke = [p for p in mons if p.player == player and p.slot == usr_slot][0]
-
             poke.add_move(move_obj)
 
             if player == 0:
                 # trova l'indice (0-3) della mossa nel moveset
                 move_slot = next(
                     (i for i, m in enumerate(poke.known_moves) if m.id == move_obj.id),
-                    6  # 6 = mossa sconosciuta/padding
+                    5 # 5 = mossa sconosciuta/padding
                 )
-                if line[-1] == '[still]':
+                if '[still]' in line:
                     trg_slot = usr_slot
                     trg_pl = 0
                 else:
@@ -459,16 +633,18 @@ def convert_log(raw_lines):
 
 
 if __name__ == "__main__":
-    existent_logs = os.listdir("../logs/")
-    ocpoke,ocmove,ocitem,ocabil = get_cache_stats()
 
-    for logfile in tqdm(existent_logs[30:50]):
+    #WARNING: eliminare dal dataset tutte le partite che contengono "Aurora|Froslass"
+    existent_logs = os.listdir("../logs/")
+    oc_poke,oc_move,oc_item,oc_abilities = get_cache_stats()
+
+    for logfile in tqdm(existent_logs[1269:]):
         print(logfile)
-        #logfile = "gen9championsvgc2026regma-2590123586.txt"
+        #logfile = "gen9championsvgc2026regma-2623019819.txt"
         with open("../logs/" + logfile) as f:
             raw = f.read().split('\n')
         toks = convert_log(raw)
-        cpoke,cmove,citem,cabil = get_cache_stats()
-        print(f'turns: {len(toks)}, poke: {cpoke}(+{cpoke-ocpoke}), moves: {cmove}(+{cmove-ocmove}), items: {citem}(+{citem-ocitem}), abilities: {cabil}(+{cabil-ocabil})')
-        ocpoke,ocmove,ocitem,ocabil = cpoke,cmove,citem,cabil 
-        save_to_csv(toks, "../csv/" + logfile.split('.')[0] + ".csv", fill_none=0)
+        c_poke,c_move,c_item,c_abilities = get_cache_stats()
+        print(f'turns: {len(toks)}, poke: {c_poke}(+{c_poke-oc_poke}), moves: {c_move}(+{c_move-oc_move}), items: {c_item}(+{c_item-oc_item}), abilities: {c_abilities}(+{c_abilities-oc_abilities})')
+        oc_poke,oc_move,oc_item,oc_abilities = c_poke,c_move,c_item,c_abilities 
+        save_to_npz(toks, "../npz/" + logfile.split('.')[0])
