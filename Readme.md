@@ -1,16 +1,19 @@
 # Title to be decided
 ## To do 
-- [ ] non tutti gli status sono riconosciuti
+- [x] non tutti gli status sono riconosciuti
 - [x] alcune abilità non vengono lette ([from] del avversario)
-- [ ] pulire e sistemare il codice che fa schifo
+- [x] pulire e sistemare il codice che fa schifo
 - [x] correzione dei token 
 - [ ] organizzazione delle partite per batches
-- [ ] controllare e sistemare il codice sull'embedding (mancano tutte le dimensioni)
+- [x] controllare e sistemare il codice sull'embedding (mancano tutte le dimensioni)
+- [ ] spacchettare le bitmask
+- [ ] mappare gli id 
+
 --- aggiungere nei token?
 - [ ] aggiungere mega pietre
 - [x] far finire i campi 
-- [ ] accuracy non la vediamo
-- [ ] aggiungere turno 0
+- [x] accuracy non la vediamo
+- [x] aggiungere turno 0
 
 ## Domande
 - ma le bitmask come funzionano? diventano liste di bit o numeri?

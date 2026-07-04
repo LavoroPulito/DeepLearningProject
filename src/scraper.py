@@ -3,7 +3,7 @@ from tqdm import tqdm # type: ignore
 import os
 # 1. Inserisci l'URL della pagina o dell'API
 replayUrl = "https://replay.pokemonshowdown.com/" #base for download replay. add '.json' at the end after append the battleID
-battleHistoryUrl = "https://replay.pokemonshowdown.com/search.json?format=[Gen%209%20Champions]%20VGC%202026%20Reg%20M-A&sort=rating&page="
+battleHistoryUrl = "https://replay.pokemonshowdown.com/search.json?format=[Gen%209%20Champions]%20VGC%202026%20Reg%20M-B&sort=rating&page="
 
 def scarica_id(targetUrl):
     ids = []
@@ -55,19 +55,45 @@ def scarica_log(battleID):
     except ValueError:
         print("La pagina non ha restituito un JSON valido.")
 
-for i in range(50,100):
-    ids = scarica_id(battleHistoryUrl+str(i))
-    existent_logs = os.listdir("../logs/")
-    existent_logs = [f[:-4] for f in existent_logs]  # rimuove .txt, più pythonico
-    existent_logs_set = set(existent_logs)  # set per ricerca O(1) invece di O(n)
-    ids_to_download = [Id for Id in ids if Id not in existent_logs_set]
-    esistenti = len(ids) - len(ids_to_download)
+def scambia_giocatori_file(percorso_file):
+    # 1. Legge il contenuto del file originale
+    with open(percorso_file, 'r', encoding='utf-8') as file:
+        contenuto = file.read()
+    
+    # 2. Scambia 'p1' con 'p2' usando un placeholder temporaneo
+    # Scegliamo un placeholder improbabile da trovare nel testo
+    contenuto = contenuto.replace('p1', '@@TEMP_P1@@')
+    contenuto = contenuto.replace('p2', 'p1')
+    contenuto = contenuto.replace('@@TEMP_P1@@', 'p2')
+    
+    # 3. Costruisce il nuovo nome del file aggiungendo 'R' all'inizio
+    cartella, nome_file = os.path.split(percorso_file)
+    nuovo_nome_file = 'R' + nome_file
+    nuovo_percorso = os.path.join(cartella, nuovo_nome_file)
+    
+    # 4. Scrive il nuovo contenuto nel nuovo file
+    with open(nuovo_percorso, 'w', encoding='utf-8') as nuovo_file:
+        nuovo_file.write(contenuto)
 
-    print("ne esistevano ",esistenti, "ne scaricherai ", len(ids_to_download) )
-    for ID in tqdm(ids_to_download):
-        scarica_log(ID)
-#TODO mo so pochi log, non so se ha senso implementare una ricerca binaria per il controllo sui log esistenti
-#TODO semplifica i nomi dei log
+if __name__ == '__main__':
+    for i in range(100):
+        print('page ',i)
+        ids = scarica_id(battleHistoryUrl+str(i))
+        existent_logs = os.listdir("../logs/")
+        existent_logs = [f[:-4] for f in existent_logs]  # rimuove .txt, più pythonico
+        existent_logs_set = set(existent_logs)  # set per ricerca O(1) invece di O(n)
+        ids_to_download = [Id for Id in ids if Id not in existent_logs_set]
+        esistenti = len(ids) - len(ids_to_download)
+
+        #print("ne esistevano ",esistenti, "ne scaricherai ", len(ids_to_download) )
+        for ID in ids_to_download:
+            scarica_log(ID)
+    # existent_logs = os.listdir("../logs/")
+    # for logfile in tqdm(existent_logs[:]):
+    #     scambia_giocatori_file("../logs/"+logfile)
+
+
+    
 
 
 

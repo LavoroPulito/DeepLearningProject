@@ -37,10 +37,11 @@ def _structured_to_token(record):
             pk['status_mask']
         ])
         
-        # Le 4 mosse (6 campi ciascuna)
+        # Le 4 mosse (7 campi ciascuna)
         for mname in ('move0', 'move1', 'move2', 'move3'):
             m = pk[mname]
             token.extend([
+                m['id'],
                 m['type'],
                 m['d_class'],
                 m['t_class'],
@@ -127,7 +128,7 @@ if __name__ == "__main__":
             
             # Estraiamo gli ID delle mosse da tutti e 4 gli slot
             for slot_mossa in ['move0', 'move1', 'move2', 'move3']:
-                id_mosse.update(pokes[slot_mossa].flatten())
+                id_mosse.update(pokes[slot_mossa]['id'].flatten())
                     
         # Stampa un aggiornamento ogni 50 file elaborati
         if indice % 50 == 0 or indice == len(file_npz):
@@ -158,3 +159,21 @@ if __name__ == "__main__":
     print(f"ID Max Abilità:   {max_abi}  -> Configura num_embeddings = {max_abi + 1}")
     print(f"ID Max Strumenti: {max_str}  -> Configura num_embeddings = {max_str + 1}")
     print(f"ID Max Mosse:     {max_mos}  -> Configura num_embeddings = {max_mos + 1}")
+
+    '''
+    ========================================
+          RISULTATI STATISTICHE
+    ========================================
+    Pokémon unici nel dataset:  241
+    Abilità uniche nel dataset: 148
+    Strumenti unici nel dataset:38
+    Mosse uniche nel dataset:   322
+
+    ========================================
+    VALORI MASSIMI (Per nn.Embedding senza remap)
+    ========================================
+    ID Max Pokémon:   10321  -> Configura num_embeddings = 10322
+    ID Max Abilità:   311  -> Configura num_embeddings = 312
+    ID Max Strumenti: 2105  -> Configura num_embeddings = 2106
+    ID Max Mosse:     918  -> Configura num_embeddings = 919
+    '''

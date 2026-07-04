@@ -8,7 +8,7 @@ import numpy as np # type: ignore
 # ─── dtype strutturati ───────────────────────────────────────
 # Rispecchiano esattamente i to_list() delle classi in getter.py
 #
-# Move.to_list()      → [type, d_class, t_class, accuracy, power, priority]  (6)
+# Move.to_list()      → [id, type, d_class, t_class, accuracy, power, priority]  (7)
 # Pokemon.to_list()   → [player, slot, poke_id,            (3)
 #                         type1, type2,                     (2)
 #                         ability, item,                    (2)
@@ -22,6 +22,7 @@ import numpy as np # type: ignore
 # Turno totale        → 12×44 + 4 + 2×6 = 544
  
 _MOVE_DT = np.dtype([
+    ('id',     np.int16),
     ('type',     np.int16),
     ('d_class',  np.int8),
     ('t_class',  np.int8),
@@ -49,7 +50,7 @@ _POKEMON_DT = np.dtype([
     ('spa_c',       np.int8),
     ('spd_c',       np.int8),
     ('spe_c',       np.int8),
-    ('status_mask', np.int32),   # bitmask a 21 bit, salvata come intero
+    ('status_mask', np.int8),   # bitmask a 6 bit, salvata come intero
     ('move0',       _MOVE_DT),
     ('move1',       _MOVE_DT),
     ('move2',       _MOVE_DT),
@@ -89,8 +90,8 @@ def _token_to_structured(token):
     record = np.zeros(1, dtype=_TURN_DT)[0]
  
     offset = 0
-    POKE_SIZE = 44
-    MOVE_SIZE = 6
+    POKE_SIZE = 48
+    MOVE_SIZE = 7
  
     for i in range(12):
         p = token[offset: offset + POKE_SIZE]
@@ -117,13 +118,14 @@ def _token_to_structured(token):
         for j, mname in enumerate(('move0', 'move1', 'move2', 'move3')):
             base = 19 + j * MOVE_SIZE
             m = p[base: base + MOVE_SIZE]
-            pk[mname]['type']     = m[0]
-            pk[mname]['d_class']  = m[1]
-            pk[mname]['t_class']  = m[2]
-            pk[mname]['accuracy'] = m[3]
-            pk[mname]['power']    = m[4]
-            pk[mname]['priority'] = m[5]
-        pk['hp_ratio'] = p[43]
+            pk[mname]['id']     = m[0]
+            pk[mname]['type']     = m[1]
+            pk[mname]['d_class']  = m[2]
+            pk[mname]['t_class']  = m[3]
+            pk[mname]['accuracy'] = m[4]
+            pk[mname]['power']    = m[5]
+            pk[mname]['priority'] = m[6]
+        pk['hp_ratio'] = p[47]
         offset += POKE_SIZE
  
     # field (4 campi)
@@ -265,6 +267,40 @@ def apply_substitutions(log_lines, substitutions):
         result.append(new_line)
     return result
 
+def fix_basculegion_raw(raw_lines):
+    """
+    Trova i giocatori che possiedono Basculegion-F e corregge tutti 
+    i riferimenti successivi nei log (che Showdown tronca a 'Basculegion')
+    ripristinando 'Basculegion-F' a priori.
+    """
+    female_players = []
+    for line in raw_lines:
+        parts = line.split('|')
+        # Cerca la definizione del team (es: |poke|p1|Basculegion-F, L50, F|)
+        if len(parts) >= 4 and parts[1] == 'poke':
+            if 'Basculegion-F' in parts[3]:
+                female_players.append(parts[2]) # Salva 'p1' o 'p2'
+                
+    if not female_players:
+        return raw_lines
+        
+    new_raw = []
+    for line in raw_lines:
+        new_line = line
+        for p_str in female_players:
+            # 1. Sistema gli identificatori (es: p1a: Basculegion -> p1a: Basculegion-F)
+            # Il negative lookahead (?!\-F) evita di aggiungere "-F" se c'è già
+            pattern_id = r'(' + p_str + r'[a-c]:\s*)Basculegion(?!\-F)(?![A-Za-z0-9\-])'
+            new_line = re.sub(pattern_id, r'\g<1>Basculegion-F', new_line)
+            
+            # 2. Sistema i nomi della specie puramente testuali negli eventi di entrata
+            # (es: |switch|p1a: Basculegion-F|Basculegion, L50... -> |switch|...|Basculegion-F, L50...)
+            if new_line.startswith(f"|switch|{p_str}") or new_line.startswith(f"|drag|{p_str}") or new_line.startswith(f"|replace|{p_str}"):
+                new_line = re.sub(r'\|Basculegion(?!\-F)', '|Basculegion-F', new_line)
+                
+        new_raw.append(new_line)
+    return new_raw
+
 # ─── raccolta info ────────────────────────────────────────────
 
 def parse_battle_log(log_lines):
@@ -371,9 +407,11 @@ def _build_token(mons, field, turn_actions):
     #print(stri)
     return token
 
-# ─── entry point ──────────────────────────────────────────────
-
+#───────────────────────────────────────────────────────────────
+# ─── Entry point ──────────────────────────────────────────────
+#───────────────────────────────────────────────────────────────
 def convert_log(raw_lines):
+    raw_lines = fix_basculegion_raw(raw_lines)
     nickname_map = build_nickname_map(raw_lines)
     raw_lines = [replace_in_line(raw, nickname_map) for raw in raw_lines]
     log_lines = filter_lines(raw_lines)
@@ -407,7 +445,6 @@ def convert_log(raw_lines):
                 substitutions[name] = str(pkmn.poke_id)
 
     log_lines = apply_substitutions(log_lines, substitutions)
-
     info, abilities, items = parse_battle_log(log_lines)
     update_pokemon(mons, info)
 
@@ -428,6 +465,7 @@ def convert_log(raw_lines):
 
 # ── switch, drag e replace ────────────────────────────────────
         if tag in ('switch', 'drag', 'replace'):
+
             player = int(line[1][1]) - 1
             field_slot = get_slot(line[1][2])   # 1 o 2 (posizione in campo)
             poke_name = line[2].split(',')[0]
@@ -543,7 +581,6 @@ def convert_log(raw_lines):
                 ))
                 mega_used[player][usr_slot-1] = 0
             
-
         # ── danno e cura ──────────────────────────────────────
         elif tag == '-damage' or tag == '-heal':
             player = int(line[1][1]) - 1
@@ -633,16 +670,25 @@ def convert_log(raw_lines):
 
 
 if __name__ == "__main__":
+    #gen9championsvgc2026regma-2629670048.txt
 
-    #WARNING: eliminare dal dataset tutte le partite che contengono "Aurora|Froslass"
     existent_logs = os.listdir("../logs/")
     oc_poke,oc_move,oc_item,oc_abilities = get_cache_stats()
-
-    for logfile in tqdm(existent_logs[1269:]):
+    existent_npz = os.listdir("../npz/")
+    for logfile in tqdm(existent_logs[:]):
+        #logfile = 'Rgen9championsvgc2026regma-2626479231.txt'
         print(logfile)
-        #logfile = "gen9championsvgc2026regma-2623019819.txt"
+        # if logfile.split('.')[0]+'.npz' in existent_npz:
+        #     print('present')
+        #     continue
+
         with open("../logs/" + logfile) as f:
-            raw = f.read().split('\n')
+            raw = f.read()
+            if "Aurora|Froslass" in raw:
+                print('skipped')
+                continue
+            raw = raw.split('\n')
+
         toks = convert_log(raw)
         c_poke,c_move,c_item,c_abilities = get_cache_stats()
         print(f'turns: {len(toks)}, poke: {c_poke}(+{c_poke-oc_poke}), moves: {c_move}(+{c_move-oc_move}), items: {c_item}(+{c_item-oc_item}), abilities: {c_abilities}(+{c_abilities-oc_abilities})')

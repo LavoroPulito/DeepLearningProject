@@ -2,9 +2,12 @@ import requests # type: ignore
 import numpy as np # type: ignore
 import torch # type: ignore
 
+import json
+import os
 # ==========================================
 # COSTANTI E CONFIGURAZIONI
 # ==========================================
+
 pokeUrl = "https://pokeapi.co/api/v2/"
 
 types = {
@@ -18,11 +21,15 @@ weather = {
     "none": 0, "SunnyDay": 1, "RainDance": 2, "Sandstorm": 3, "Snowscape": 4
 }
 
+# all_status = {
+#     'par': 0, 'slp': 1, 'frz': 2, 'brn': 3, 'psn': 4, 'confusion': 5,
+#     'infatuation': 6, 'trap': 7, 'nightmare': 8, 'torment': 9, 'disable': 10,
+#     'yawn': 11, 'heal-block': 12, 'no-type-immunity': 13, 'leech-seed': 14,
+#     'embargo': 15, 'perish-song': 16, 'ingrain': 17, 'Encore': 18, 'tox': 19
+# }
+
 all_status = {
-    'par': 0, 'slp': 1, 'frz': 2, 'brn': 3, 'psn': 4, 'confusion': 5,
-    'infatuation': 6, 'trap': 7, 'nightmare': 8, 'torment': 9, 'disable': 10,
-    'yawn': 11, 'heal-block': 12, 'no-type-immunity': 13, 'leech-seed': 14,
-    'embargo': 15, 'perish-song': 16, 'ingrain': 17, 'Encore': 18, 'tox': 19
+    'par': 0, 'slp': 1, 'frz': 2, 'brn': 3, 'psn': 4, 'tox': 5
 }
 
 stat_code = {
@@ -42,6 +49,9 @@ replacement = {
     'Tauros-Paldea-Combat':'10250',
     'Tauros-Paldea-Blaze':'10251',
     'Tauros-Paldea-Aqua':'10252',
+    'Meowstic-M-Mega':'Meowstic-male-Mega',
+    'Basculegion':'Basculegion-male',
+    'Basculegion-F':'Basculegion-female'
 
 }
 
@@ -50,8 +60,29 @@ to_set_sex = {'Basculegion', 'Meowstic'}
 # ==========================================
 # GESTIONE CACHE GLOBALE E HELPER API
 # ==========================================
-_item_cache = {}
-_ability_cache = {}
+
+CACHE_FILE = "../data/"
+os.makedirs(CACHE_FILE, exist_ok=True) # Crea la cartella se non esiste
+
+def load_cache(which):
+    file_path = CACHE_FILE + which + '_cache.json'
+    if os.path.exists(file_path):
+        try:
+            with open(file_path, "r", encoding="utf-8") as f: # <-- Usa file_path qui!
+                return json.load(f)
+        except json.JSONDecodeError:
+            pass # Se il file è corrotto o vuoto, partiamo da zero
+    return {}
+
+# Carichiamo la cache all'avvio del programma
+
+_item_cache = load_cache('item')
+_ability_cache = load_cache('ability')
+
+def save_cache(which,cache):
+    """Salva l'intero stato della cache nel file JSON."""
+    with open(CACHE_FILE+which+'_cache.json', "w", encoding="utf-8") as f:
+        json.dump(cache, f, indent=4) 
 
 def get_cache_stats():
     return len(Pokemon._api_cache), len(Move._api_cache),len(_item_cache),len(_ability_cache)
@@ -75,6 +106,7 @@ def get_item_id(name):
     dati_json = get_poke_data(pokeUrl + 'item/' + clean_name)
     item_id = dati_json.get('id', 0)
     _item_cache[clean_name] = item_id
+    save_cache('item', _item_cache) 
     return item_id
 
 def get_ability_id(name):
@@ -85,6 +117,7 @@ def get_ability_id(name):
     dati_json = get_poke_data(pokeUrl + 'ability/' + clean_name)
     ability_id = dati_json.get('id', 0)
     _ability_cache[clean_name] = ability_id
+    save_cache('ability',_ability_cache) 
     return ability_id
 
 def get_type(tyls):
@@ -104,6 +137,7 @@ def get_ability(abil):
 # ==========================================
 # CLASSI DEL GIOCO
 # ==========================================
+
 class Bitmask:
     def __init__(self, size, valore_iniziale=0):
         self.size = size
@@ -163,12 +197,14 @@ class Battlefield:
 
 
 class Pokemon:
-    _api_cache = {}
-
+    _api_cache = load_cache("pokemon") # Associa la cache alla variabile globale
     @staticmethod
     def fixname(name):
         if name.startswith('Vivillon'): 
             return 'Vivillon'
+        if name.startswith('Florges'): 
+            return 'Florges'
+        
         elif name in replacement: 
             return replacement[name]
         elif name.split('-')[0] in to_set_sex: 
@@ -188,6 +224,7 @@ class Pokemon:
         else:
             pokejs = get_poke_data(pokeUrl + "pokemon/" + fixed_name)
             Pokemon._api_cache[fixed_name] = pokejs
+            save_cache('pokemon',Pokemon._api_cache)
         
         self.poke_id = pokejs['id']
         self.stats = get_stat(pokejs['stats'])
@@ -203,11 +240,11 @@ class Pokemon:
         self.item = item
         
         if status is None:
-            self.status = Bitmask(21)
+            self.status = Bitmask(6)
         elif isinstance(status, Bitmask):
             self.status = status
         else:
-            self.status = Bitmask(21, status)
+            self.status = Bitmask(6, status)
 
     def to_list(self):
         moves_list = []
@@ -246,7 +283,7 @@ class Pokemon:
 
 
 class Move:
-    _api_cache = {}
+    _api_cache = load_cache("move")
 
     def __init__(self, move_name):
         if move_name == 0: 
@@ -276,6 +313,7 @@ class Move:
             else:
                 datajs = get_poke_data(pokeUrl + "move/" + clean_name)
                 Move._api_cache[clean_name] = datajs 
+                save_cache('move',Move._api_cache)
             
             self.d_class = int(datajs['damage_class']['url'].split('/')[-2])
             self.t_class = int(datajs['target']['url'].split('/')[-2])
@@ -286,7 +324,7 @@ class Move:
             self.type = types.get(datajs['type']['name'], 0)
     
     def to_list(self):
-        return [self.type, self.d_class, self.t_class, self.accuracy, self.power, self.priority]
+        return [self.id, self.type, self.d_class, self.t_class, self.accuracy, self.power, self.priority]
 
     def __str__(self):
         return f"{self.name}"

@@ -8,6 +8,7 @@ import torch.nn as nn  # type: ignore
 #lunghezza token 544
 
 class Embedding(nn.Module):
+    #poke: 261(+0), moves: 321(+0), items: 38(+0), abilities: 91(+0)
     def __init__(self,d_model=256, feat_dim = 16):
         super().__init__()
         self.d_model=d_model #dimensione complessiva dello spazio degli embeddings 
@@ -27,10 +28,11 @@ class Embedding(nn.Module):
         #Features continue
         self.embed_stats=nn.Linear(6, feat_dim) 
         self.embed_stats_change=nn.Linear(5, feat_dim)
-        self.embed_status=nn.Linear(19, feat_dim)
+        self.embed_status=nn.Linear(6, feat_dim)
         self.embed_hp_ratio=nn.Linear(1, feat_dim)
         
         #Mosse
+        self.embed_id_move=nn.Embedding(num_embeddings = 322, embedding_dim = feat_dim) # WARNING: controllare sotto che sia tutto ok (palese no)
         self.embed_d_class=nn.Embedding(num_embeddings = 3, embedding_dim = feat_dim) 
         self.embed_t_class=nn.Embedding(num_embeddings = 16, embedding_dim = feat_dim) 
 

@@ -2,4 +2,13 @@ venv/
 __pycache__/
 *.pyc
 .envrc
-logs/
+
+# 2. Ignora tutti i file con queste estensioni ovunque si trovino
+*.txt
+*.npz
+*.json
+*.csv
+
+# 3. ECCEZIONI (il punto esclamativo forza Git a includerli)
+!requirements.txt
+!.gitkeep
