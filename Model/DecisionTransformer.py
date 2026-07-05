@@ -55,7 +55,7 @@ class DecisionTransformer(nn.Module):
 
         def process_action(linear_layer, num_classes)
             out=linear_layer(state_representation)
-            out=out.view(batch_size, 2, num_classes)
+            out=out.view(batch_size, self.max_turn, 2, num_classes)
             return F.log_softmax(out, dim=-1)
 
         
@@ -68,7 +68,7 @@ class DecisionTransformer(nn.Module):
         move=process_action(self.pred_move, 6)
 
         preds=torch.cat([p_user, s_user, p_target, s_target, mega, move], dim=-1) 
-        #avrà dimensioni (batch_size, 2, 16=somma dim feature)
+        #avrà dimensioni (batch_size, self.max_turn, 2, 16=somma dim feature)
         
         
         return preds
