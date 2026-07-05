@@ -36,7 +36,7 @@ class DecisionTransformer(nn.Module):
         #self.predict_mega=nn.Linear(d_model, 2*2, bias=False)
         #self.predict_move=nn.Linear(d_model, 6*2, bias=False)
         
-        self.predict_action=nn.Linear(d_model, self.action_dim) #per predire le mosse (azioni discrete)
+        self.predict_action=nn.Linear(d_model, 2*self.action_dim) #per predire le mosse (azioni discrete)
 
     
     def forward(self, state, move, battlefield, action, reward, turn, padding_mask=None):
@@ -76,5 +76,5 @@ class DecisionTransformer(nn.Module):
             
         
         action_preds=self.predict_action(state_representation) #linear layer to get logits for each action
-
+        #action_preds=action_preds.view(batch_size, self.seq_length, 2, self.action_dim) dipende da come scegliamo di fare la loss
         return F.log_softmax(action_preds, dim=-1) #log softmax over the last dimension (num_tokens)
