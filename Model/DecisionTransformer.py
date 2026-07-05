@@ -76,5 +76,6 @@ class DecisionTransformer(nn.Module):
         #va fatta una maschera per le azioni illegali   
         
         action_preds=self.predict_action(state_representation) #linear layer to get logits for each action
-        #action_preds=action_preds.view(batch_size, self.seq_length, 2, self.action_dim) dipende da come scegliamo di fare la loss
+        #Stiamo considerando le due mosse scelte ad ogni turno indipendenti tra loro (vengono scelte nello stesso momento)
+        action_preds=action_preds.view(batch_size, self.seq_length, 2, self.action_dim) dipende da come scegliamo di fare la loss
         return F.log_softmax(action_preds, dim=-1) #log softmax over the last dimension (num_tokens)
