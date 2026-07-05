@@ -27,9 +27,16 @@ class DecisionTransformer(nn.Module):
                 ) for _ in range(depth)
         ])
 
+        # predizioni separate per ogni feature dell'azione.
+        # moltiplichiamo per 2 nella dimensione dell'output perché abbiamo 2 mosse da predire
+        self.predict_player_user=nn.Linear(d_model, 2*2, bias=False)
+        self.predict_slot_user=nn.Linear(d_model, 2*2, bias=False)
+        self.predict_player_target=nn.Linear(d_model, 2*2, bias=False)
+        self.predict_slot_target=nn.Linear(d_model, 2*2, bias=False)
+        self.predict_mega(d_model, 2*2, bias=False)
+        self.predict_move=nn.Linear(d_model, 6*2, bias=False)
         
-
-        self.predict_action=nn.Linear(d_model, self.action_dim) #per predire le mosse (azioni discrete)
+       # self.predict_action=nn.Linear(d_model, self.action_dim) #per predire le mosse (azioni discrete)
 
     
     def forward(self, state, move, battlefield, action, reward, turn, padding_mask=None):
@@ -45,6 +52,29 @@ class DecisionTransformer(nn.Module):
         x=x.reshape(batch_size, self.seq_length, 3, self.d_model).permute(0,2,1,3) #reshape to (batch_size, seq_length, 3, d_model)
 
         state_representation=x[:,1]
-        action_preds=self.predict_action(state_representation) #linear layer to get logits for each action
 
-        return F.log_softmax(action_preds, dim=-1) #log softmax over the last dimension (num_tokens)
+        def process_action(linear_layer, num_classes)
+            out=linear_layer(state_representation)
+            out=out.view(batch_size, 2, num_classes)
+            return F.log_softmax(out, dim=-1)
+
+        
+        
+        p_user=process_action(self.pred_player_user, 2)
+        s_user=process_action(self.pred_slot_user, 2)
+        p_target=process_action(self.pred_player_target, 2)
+        s_target=process_action(self.pred_slot_target, 2)
+        mega=process_action(self.pred_mega, 2)
+        move=process_action(self.pred_move, 6)
+
+        preds=torch.cat([p_user, s_user, p_target, s_target, mega, move], dim=-1) 
+        #avrà dimensioni (batch_size, 2, 16=somma dim feature)
+        
+        
+        return preds
+            
+            
+        
+        #action_preds=self.predict_action(state_representation) #linear layer to get logits for each action
+
+        #return F.log_softmax(action_preds, dim=-1) #log softmax over the last dimension (num_tokens)
