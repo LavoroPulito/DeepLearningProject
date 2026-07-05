@@ -46,7 +46,7 @@ class Embedding(nn.Module):
         self.embed_speed_modifier=nn.Linear(3,feat_dim)
 
         #proiezione
-        self.state_proj=nn.Linear(in_features=5664, out_features=d_model) 
+        self.state_proj=nn.Linear(in_features=6368, out_features=d_model) 
 
 
         #EMBEDDING DELL'AZIONE a_t
