@@ -208,7 +208,7 @@ class Pokemon:
         if name in replacement: 
             return replacement[name]
         elif name.split('-')[0] in to_set_sex: 
-            return name + "-male"  
+            return name.split('-')[0] + "-male"  
         else:
             for el in just_begin:
                 if name.startswith(el):
@@ -222,7 +222,6 @@ class Pokemon:
         self.name = poke_id
         
         fixed_name = self.fixname(poke_id)
-        
         # Implementazione della Cache per Pokemon
         if fixed_name in Pokemon._api_cache:
             pokejs = Pokemon._api_cache[fixed_name]

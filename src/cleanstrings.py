@@ -166,7 +166,7 @@ def save_to_npz(tokens, filename):
 INTERESTING_TAGS = {
     "poke", "-ability", "turn", "move", "-damage", "detailschange","switch",
     "-sidestart", "-sideend", "-enditem", "-weather", "win",
-    "-heal", "-boost", "-unboost", "-status", "-start", "-fieldstart", "-fieldend","drag","replace"
+    "-heal", "-boost", "-unboost", "-status", "-start", "-fieldstart", "-fieldend","drag","replace","-mega"
 }
 
 # ─── parsing ─────────────────────────────────────────────────
@@ -347,6 +347,13 @@ def parse_battle_log(log_lines):
                     item_id[line[2]] = get_item_id(line[2])
                 info[f'p{player}_{poke_id}']['item'] = item_id[line[2]]
 
+        elif tag =='-mega':
+            ref = extract_pokemon_id(line[1])
+            if ref:
+                player, _, poke_id = ref
+                info[f'p{player}_{poke_id}']['item'] = 2177 #hardcode for generic mega stone
+
+
         for field in line:
             if '[from] item:' in field:
                 item_name = field.split('[from] item:')[1].strip()
@@ -458,7 +465,6 @@ def convert_log(raw_lines):
     for line in log_lines:
         if not line:
             continue
-        
         # Le mega si applicano da qui in poi per le righe successive al detailschange
         line = apply_mega_subs(line, active_mega_subs)
         tag = line[0]
@@ -590,6 +596,13 @@ def convert_log(raw_lines):
             tm.hp_ratio = hp_res / 100
 
         # ── item consumato ────────────────────────────────────
+        elif tag == '-mega':
+            player = int(line[1][1]) - 1
+            slot = get_slot(line[1][2])
+            if player == 1:
+                tm = [p for p in mons if p.player == player and p.slot == slot][0]
+                tm.item = 2177
+        
         elif tag == '-enditem':
             player = int(line[1][1]) - 1
             slot = get_slot(line[1][2])
@@ -675,23 +688,24 @@ if __name__ == "__main__":
     existent_logs = os.listdir("../logs/")
     oc_poke,oc_move,oc_item,oc_abilities = get_cache_stats()
     existent_npz = os.listdir("../npz/")
-    for logfile in tqdm(existent_logs[:]):
-        #logfile = 'gen9championsvgc2026regmb-2643371875.txt'
-        print(logfile)
-        if not logfile.startswith('.'):
-            if logfile.split('.')[0]+'.npz' in existent_npz:
-                print('present')
-                continue
+            
+    for logfile in tqdm(existent_logs[5345:]):
+        #logfile = 'gen9championsvgc2026regmb-2641513597.txt'
+
+        if not logfile.startswith('.') and 'regma' in logfile:
+            #if logfile.split('.')[0]+'.npz' in existent_npz:
+            #    print('present')
+            #    continue
 
             with open("../logs/" + logfile) as f:
                 raw = f.read()
-                if "Aurora|Froslass" in raw:
+                if "Aurora|Froslass" in raw or 'Illusion' in raw:
                     print('skipped')
                     continue
                 raw = raw.split('\n')
 
             toks = convert_log(raw)
-            c_poke,c_move,c_item,c_abilities = get_cache_stats()
-            print(f'turns: {len(toks)}, poke: {c_poke}(+{c_poke-oc_poke}), moves: {c_move}(+{c_move-oc_move}), items: {c_item}(+{c_item-oc_item}), abilities: {c_abilities}(+{c_abilities-oc_abilities})')
-            oc_poke,oc_move,oc_item,oc_abilities = c_poke,c_move,c_item,c_abilities 
             save_to_npz(toks, "../npz/" + logfile.split('.')[0])
+
+    c_poke,c_move,c_item,c_abilities = get_cache_stats()
+    print(f'turns: {len(toks)}, poke: {c_poke}(+{c_poke-oc_poke}), moves: {c_move}(+{c_move-oc_move}), items: {c_item}(+{c_item-oc_item}), abilities: {c_abilities}(+{c_abilities-oc_abilities})')
