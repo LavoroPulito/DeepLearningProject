@@ -32,7 +32,7 @@ class Embedding(nn.Module):
         self.embed_hp_ratio=nn.Linear(1, feat_dim)
         
         #Mosse
-        self.embed_id_move=nn.Embedding(num_embeddings = 322, embedding_dim = feat_dim) # WARNING: controllare sotto che sia tutto ok (palese no)
+        self.embed_id_move=nn.Embedding(num_embeddings = 322, embedding_dim = feat_dim) 
         self.embed_d_class=nn.Embedding(num_embeddings = 3, embedding_dim = feat_dim) 
         self.embed_t_class=nn.Embedding(num_embeddings = 16, embedding_dim = feat_dim) 
 
@@ -46,7 +46,7 @@ class Embedding(nn.Module):
         self.embed_speed_modifier=nn.Linear(3,feat_dim)
 
         #proiezione
-        self.state_proj=nn.Linear(in_features=5600, out_features=d_model) 
+        self.state_proj=nn.Linear(in_features=5664, out_features=d_model) 
 
 
         #EMBEDDING DELL'AZIONE a_t
@@ -101,6 +101,7 @@ class Embedding(nn.Module):
 
         #Mosse
         #move ha dimensione (batch_size,turn,12,4) 
+        id_move_emb=self.embed_id_move(move['id'])
         d_class_emb=self.embed_d_class(move['d_class'])
         t_class_emb=self.embed_t_class(move['t_class'])
         power_emb=self.embed_power(move['power'])
@@ -113,7 +114,7 @@ class Embedding(nn.Module):
         pokemon_flat=pokemon_emb.view(pokemon_emb.size(0),pokemon_emb.size(1),-1) #stiamo rendendo il tensore una lista piatta per ogni turno
 
         #Concatenazione features delle mosse di un singolo pokemon sull'ultima dimensione
-        move_emb=torch.cat([d_class_emb,t_class_emb,power_emb,priority_emb,accuracy_emb], dim=-1)
+        move_emb=torch.cat([id_move_emb,d_class_emb,t_class_emb,power_emb,priority_emb,accuracy_emb], dim=-1)
         move_flat=move_emb.view(move_emb.size(0),move_emb.size(1),-1)
 
         #EMBEDDING CAMPO
