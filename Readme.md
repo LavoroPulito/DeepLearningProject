@@ -14,6 +14,7 @@
 - [x] far finire i campi 
 - [x] accuracy non la vediamo
 - [x] aggiungere turno 0
+- [ ] maschera illegalità
 
 
 ## theory stuff
