@@ -36,7 +36,7 @@ class DecisionTransformer(nn.Module):
         #self.predict_mega=nn.Linear(d_model, 2*2, bias=False)
         #self.predict_move=nn.Linear(d_model, 6*2, bias=False)
         
-        self.predict_action=nn.Linear(d_model, 2*self.action_dim) #per predire le mosse (azioni discrete)
+        self.predict_action=nn.Linear(d_model, 2*self.action_dim) #per predire il token dell'azione
 
     
     def forward(self, state, move, battlefield, action, reward, turn, padding_mask=None):
