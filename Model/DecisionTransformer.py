@@ -7,7 +7,7 @@ from .SelfAttention import TransformerBlock
 from .Embedding import Embedding
 
 class DecisionTransformer(nn.Module):
-    def __init__(self,action_dim=192, d_model=256, n_heads=8, depth=6, max_turn=40):
+    def __init__(self,action_dim=192, d_model=256, n_heads=8, depth=6, max_turn=48):
         super().__init__()
         self.action_dim = action_dim #tutte le possibili azioni (mosse)
         self.d_model=d_model
@@ -26,6 +26,8 @@ class DecisionTransformer(nn.Module):
                 max_seq_length=max_seq_length
                 ) for _ in range(depth)
         ])
+
+        
 
         self.predict_action=nn.Linear(d_model, self.action_dim) #per predire le mosse (azioni discrete)
 
