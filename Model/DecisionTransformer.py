@@ -73,7 +73,7 @@ class DecisionTransformer(nn.Module):
         
         #return preds
             
-            
+        #va fatta una maschera per le azioni illegali   
         
         action_preds=self.predict_action(state_representation) #linear layer to get logits for each action
         #action_preds=action_preds.view(batch_size, self.seq_length, 2, self.action_dim) dipende da come scegliamo di fare la loss
