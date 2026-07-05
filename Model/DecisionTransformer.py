@@ -33,7 +33,7 @@ class DecisionTransformer(nn.Module):
         self.predict_slot_user=nn.Linear(d_model, 2*2, bias=False)
         self.predict_player_target=nn.Linear(d_model, 2*2, bias=False)
         self.predict_slot_target=nn.Linear(d_model, 2*2, bias=False)
-        self.predict_mega(d_model, 2*2, bias=False)
+        self.predict_mega=nn.Linear(d_model, 2*2, bias=False)
         self.predict_move=nn.Linear(d_model, 6*2, bias=False)
         
        # self.predict_action=nn.Linear(d_model, self.action_dim) #per predire le mosse (azioni discrete)
@@ -53,22 +53,22 @@ class DecisionTransformer(nn.Module):
 
         state_representation=x[:,1]
 
-        def process_action(linear_layer, num_classes)
+        def process_action(linear_layer, num_classes):
             out=linear_layer(state_representation)
-            out=out.view(batch_size, self.max_turn, 2, num_classes)
+            out=out.view(batch_size, self.seq_length, 2, num_classes)
             return F.log_softmax(out, dim=-1)
 
         
         
-        p_user=process_action(self.pred_player_user, 2)
-        s_user=process_action(self.pred_slot_user, 2)
-        p_target=process_action(self.pred_player_target, 2)
-        s_target=process_action(self.pred_slot_target, 2)
-        mega=process_action(self.pred_mega, 2)
-        move=process_action(self.pred_move, 6)
+        p_user=process_action(self.predict_player_user, 2)
+        s_user=process_action(self.predict_slot_user, 2)
+        p_target=process_action(self.predict_player_target, 2)
+        s_target=process_action(self.predict_slot_target, 2)
+        mega=process_action(self.predict_mega, 2)
+        move=process_action(self.predict_move, 6)
 
         preds=torch.cat([p_user, s_user, p_target, s_target, mega, move], dim=-1) 
-        #avrà dimensioni (batch_size, self.max_turn, 2, 16=somma dim feature)
+        #avrà dimensioni (batch_size, self.seq_length, 2, 16=somma dim feature)
         
         
         return preds
