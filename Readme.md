@@ -7,7 +7,7 @@
 - [ ] organizzazione delle partite per batches
 - [x] controllare e sistemare il codice sull'embedding (mancano tutte le dimensioni)
 - [ ] spacchettare le bitmask
-- [ ] mappare gli id 
+- [x] mappare gli id 
 
 --- aggiungere nei token?
 - [ ] aggiungere mega pietre
@@ -15,8 +15,6 @@
 - [x] accuracy non la vediamo
 - [x] aggiungere turno 0
 
-## Domande
-- ma le bitmask come funzionano? diventano liste di bit o numeri?
 
 ## theory stuff
 - [alphago](https://deepmind.google/research/alphago/) 

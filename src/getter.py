@@ -51,9 +51,13 @@ replacement = {
     'Tauros-Paldea-Aqua':'10252',
     'Meowstic-M-Mega':'Meowstic-male-Mega',
     'Basculegion':'Basculegion-male',
-    'Basculegion-F':'Basculegion-female'
-
+    'Basculegion-F':'Basculegion-female',
+    'Pyroar':'Pyroar-male',
+    "Polteageist-Antique":"855",
+    "Polteageist-Antique":"855",
 }
+
+just_begin = {'Vivillon','Florges','Alcremie'}
 
 to_set_sex = {'Basculegion', 'Meowstic'}
 
@@ -200,15 +204,16 @@ class Pokemon:
     _api_cache = load_cache("pokemon") # Associa la cache alla variabile globale
     @staticmethod
     def fixname(name):
-        if name.startswith('Vivillon'): 
-            return 'Vivillon'
-        if name.startswith('Florges'): 
-            return 'Florges'
-        
-        elif name in replacement: 
+                
+        if name in replacement: 
             return replacement[name]
         elif name.split('-')[0] in to_set_sex: 
             return name + "-male"  
+        else:
+            for el in just_begin:
+                if name.startswith(el):
+                    name = el
+
         name = name.replace('.','').replace(' ','-')
         return name
     

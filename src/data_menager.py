@@ -1,6 +1,11 @@
 import numpy as np # type: ignore
 import os
 import glob
+from pathlib import Path
+import json
+
+cartella = Path('../npz/')
+
 
 def _structured_to_token(record):
 
@@ -90,29 +95,21 @@ def load_from_npz(filename):
     
     return tokens_ricostruiti
 
-if __name__ == "__main__":
-    # tokens = load_from_npz('../npz/gen9championsvgc2026regma-2584198395.npz')
-
-    # # Verifica:
-    # print(f"Numero di turni caricati: {len(tokens)}")
-    # print(f"Dimensione del primo token: {len(tokens[0])}") # Dovrebbe stampare 544
-
-    # Set per memorizzare gli ID unici (i set escludono automaticamente i duplicati)
+def collect_data_info(format):
     id_pokemon = set()
     id_abilita = set()
     id_strumenti = set()
     id_mosse = set()
 
+
+
     # Trova tutti i file .npz nella cartella
-    file_npz = glob.glob(os.path.join('../npz/', '*.npz'))
+    file_npz = list(cartella.glob(f'*{format}*.npz'))   
 
     if not file_npz:
         print(f"Attenzione: Nessun file .npz trovato in {'../npz/'}")
         exit()
-
-    print(f"Trovati {len(file_npz)} file. Inizio scansione...")
-
-    # 2. Scansione dei file
+    
     for indice, percorso_file in enumerate(file_npz, 1):
         with np.load(percorso_file) as data:
             # Carichiamo l'array strutturato dei turni
@@ -131,18 +128,22 @@ if __name__ == "__main__":
                 id_mosse.update(pokes[slot_mossa]['id'].flatten())
                     
         # Stampa un aggiornamento ogni 50 file elaborati
-        if indice % 50 == 0 or indice == len(file_npz):
-            print(f"Elaborati {indice}/{len(file_npz)} file...")
+        # if indice % 50 == 0 or indice == len(file_npz):
+        #     print(f"Elaborati {indice}/{len(file_npz)} file...")
 
+
+    return id_abilita, id_mosse, id_pokemon, id_strumenti
+
+def print_collected_data(id_a, id_m, id_p, id_s):
     print("\n" + "="*40)
     print("          RISULTATI STATISTICHE")
     print("="*40)
 
     # 3. Mostra il numero di elementi UNICI (quanti ce ne sono nel dataset)
-    print(f"Pokémon unici nel dataset:  {len(id_pokemon)}")
-    print(f"Abilità uniche nel dataset: {len(id_abilita)}")
-    print(f"Strumenti unici nel dataset:{len(id_strumenti)}")
-    print(f"Mosse uniche nel dataset:   {len(id_mosse)}")
+    print(f"Pokémon unici nel dataset:  {len(id_p)}")
+    print(f"Abilità uniche nel dataset: {len(id_a)}")
+    print(f"Strumenti unici nel dataset:{len(id_s)}")
+    print(f"Mosse uniche nel dataset:   {len(id_m)}")
 
     print("\n" + "="*40)
     print("   VALORI MASSIMI (Per nn.Embedding senza remap)")
@@ -150,19 +151,48 @@ if __name__ == "__main__":
 
     # 4. Mostra il valore MASSIMO trovato + il valore da inserire in num_embeddings
     # Nota: se usi 0 o -1 come flag per "Nessuno strumento/mossa", max() lo gestirà correttamente
-    max_poke = max(id_pokemon) if id_pokemon else 0
-    max_abi  = max(id_abilita) if id_abilita else 0
-    max_str  = max(id_strumenti) if id_strumenti else 0
-    max_mos  = max(id_mosse) if id_mosse else 0
+    max_poke = max(id_p) if id_p else 0
+    max_abi  = max(id_a) if id_a else 0
+    max_str  = max(id_s) if id_s else 0
+    max_mos  = max(id_m) if id_m else 0
 
     print(f"ID Max Pokémon:   {max_poke}  -> Configura num_embeddings = {max_poke + 1}")
     print(f"ID Max Abilità:   {max_abi}  -> Configura num_embeddings = {max_abi + 1}")
     print(f"ID Max Strumenti: {max_str}  -> Configura num_embeddings = {max_str + 1}")
     print(f"ID Max Mosse:     {max_mos}  -> Configura num_embeddings = {max_mos + 1}")
 
+def save_map(map):
+    """Salva l'intero stato della cache nel file JSON."""
+    with open('../data/maps.json', "w", encoding="utf-8") as f:
+        json.dump(map, f, indent=4) 
+
+if __name__ == "__main__":
+    id_a, id_m, id_p, id_s = collect_data_info('regma') # 'regma' for reg m-A, ow reg m-B
+
+    l_id_a = list(id_a)
+    l_id_a.append(0)
+    l_id_a.sort()
+    abil_map = {int(l_id_a[i]) : i for i in range(len(l_id_a))}
+
+    l_id_m = sorted(list(id_m))
+    move_map = {int(l_id_m[i]) : i for i in range(len(l_id_m))}
+
+    l_id_p = sorted(list(id_p))
+    poke_map = {int(l_id_p[i]) : i for i in range(len(l_id_p))}
+
+    l_id_s = sorted(list(id_s))
+    item_map = {int(l_id_s[i]) : i for i in range(len(l_id_s))}
+
+    final_map = {'ability'  : abil_map,
+                 'move'     : move_map,
+                 'pokemon'  : poke_map,
+                 'item'     : item_map}
+    
+    save_map(final_map)
+
     '''
     ========================================
-          RISULTATI STATISTICHE
+          RISULTATI STATISTICHE - reg m-A
     ========================================
     Pokémon unici nel dataset:  241
     Abilità uniche nel dataset: 148
@@ -176,4 +206,8 @@ if __name__ == "__main__":
     ID Max Abilità:   311  -> Configura num_embeddings = 312
     ID Max Strumenti: 2105  -> Configura num_embeddings = 2106
     ID Max Mosse:     918  -> Configura num_embeddings = 919
+
+
+
+
     '''

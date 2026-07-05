@@ -676,21 +676,22 @@ if __name__ == "__main__":
     oc_poke,oc_move,oc_item,oc_abilities = get_cache_stats()
     existent_npz = os.listdir("../npz/")
     for logfile in tqdm(existent_logs[:]):
-        #logfile = 'Rgen9championsvgc2026regma-2626479231.txt'
+        #logfile = 'gen9championsvgc2026regmb-2643371875.txt'
         print(logfile)
-        # if logfile.split('.')[0]+'.npz' in existent_npz:
-        #     print('present')
-        #     continue
-
-        with open("../logs/" + logfile) as f:
-            raw = f.read()
-            if "Aurora|Froslass" in raw:
-                print('skipped')
+        if not logfile.startswith('.'):
+            if logfile.split('.')[0]+'.npz' in existent_npz:
+                print('present')
                 continue
-            raw = raw.split('\n')
 
-        toks = convert_log(raw)
-        c_poke,c_move,c_item,c_abilities = get_cache_stats()
-        print(f'turns: {len(toks)}, poke: {c_poke}(+{c_poke-oc_poke}), moves: {c_move}(+{c_move-oc_move}), items: {c_item}(+{c_item-oc_item}), abilities: {c_abilities}(+{c_abilities-oc_abilities})')
-        oc_poke,oc_move,oc_item,oc_abilities = c_poke,c_move,c_item,c_abilities 
-        save_to_npz(toks, "../npz/" + logfile.split('.')[0])
+            with open("../logs/" + logfile) as f:
+                raw = f.read()
+                if "Aurora|Froslass" in raw:
+                    print('skipped')
+                    continue
+                raw = raw.split('\n')
+
+            toks = convert_log(raw)
+            c_poke,c_move,c_item,c_abilities = get_cache_stats()
+            print(f'turns: {len(toks)}, poke: {c_poke}(+{c_poke-oc_poke}), moves: {c_move}(+{c_move-oc_move}), items: {c_item}(+{c_item-oc_item}), abilities: {c_abilities}(+{c_abilities-oc_abilities})')
+            oc_poke,oc_move,oc_item,oc_abilities = c_poke,c_move,c_item,c_abilities 
+            save_to_npz(toks, "../npz/" + logfile.split('.')[0])
