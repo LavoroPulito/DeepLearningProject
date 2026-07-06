@@ -1,3 +1,5 @@
+#Self Attention and Transformer Block
+
 import torch # type: ignore
 import torch.nn as nn # type: ignore
 import torch.nn.functional as F # type: ignore
@@ -7,6 +9,7 @@ import math
 
 class SelfAttention(nn.Module):
     def __init__(self, d_model=256, n_heads=8, max_seq_length=144):
+        #144=max_turn(48)*3
         super().__init__()
         assert d_model % n_heads == 0, "d_model must be divisible by n_heads"
 
@@ -87,8 +90,6 @@ class TransformerBlock(nn.Module):
         x = x + feed_forward_output #residual connection
 
         return x
-
-
 
         
 
