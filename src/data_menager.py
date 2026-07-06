@@ -166,7 +166,7 @@ def save_map(map):
     with open('../data/maps.json', "w", encoding="utf-8") as f:
         json.dump(map, f, indent=4) 
 
-if __name__ == "__main__":
+def make_map(reg):
     id_a, id_m, id_p, id_s = collect_data_info('regma') # 'regma' for reg m-A, ow reg m-B
 
     l_id_a = list(id_a)
@@ -189,6 +189,16 @@ if __name__ == "__main__":
                  'item'     : item_map}
     
     save_map(final_map)
+
+
+if __name__ == "__main__":
+    file_name = '../npz/reg_m-A/gen9championsvgc2026regma-2584198395.npz'
+    with np.load(file_name) as data:
+        turns = data['turns']
+    for el in turns[1][0]:
+        print(el)
+
+
 
     '''
     ========================================

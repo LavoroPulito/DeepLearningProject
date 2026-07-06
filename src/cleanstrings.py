@@ -2,7 +2,7 @@ from getter import *
 import os
 import re
 from collections import defaultdict
-from tqdm import tqdm # type: ignore
+from tqdm import tqdm  # type: ignore
 import numpy as np # type: ignore
  
 # ─── dtype strutturati ───────────────────────────────────────
@@ -454,6 +454,7 @@ def convert_log(raw_lines):
     log_lines = apply_substitutions(log_lines, substitutions)
     info, abilities, items = parse_battle_log(log_lines)
     update_pokemon(mons, info)
+    #to do assign bench pokemon
 
     tokens = []
     turn_actions = []   
