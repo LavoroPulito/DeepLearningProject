@@ -9,7 +9,7 @@ from .SelfAttention import TransformerBlock
 from .Embedding import Embedding
 
 class DecisionTransformer(nn.Module):
-    def __init__(self,action_dim=384, d_model=256, n_heads=8, depth=6, max_turn=48):
+    def __init__(self,action_dim=384, d_model=256, n_heads=8, depth=6, max_turn=49):
         super().__init__()
         self.action_dim = action_dim #tutte le possibili azioni (mosse)
         self.d_model=d_model
