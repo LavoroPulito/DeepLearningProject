@@ -64,7 +64,7 @@ class SelfAttention(nn.Module):
         return self.unifyheads(attention_output)
     
 class TransformerBlock(nn.Module):
-    def __init__(self, d_model=256, n_heads=8, dropout=0.0, max_seq_length=144):
+    def __init__(self, d_model=256, n_heads=8, dropout=0.0, max_seq_length=147):
         super().__init__()
         self.self_attention = SelfAttention(d_model, n_heads, max_seq_length)
         self.layer_norm1 = nn.LayerNorm(d_model)
