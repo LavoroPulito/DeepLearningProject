@@ -14,8 +14,6 @@ class Embedding(nn.Module):
         self.d_model=d_model #dimensione complessiva dello spazio degli embeddings 
         #EMBEDDING DELLO STATO s_t
         #Da ripetere per ognuno dei 12 pokemon
-        
-
 
         #Features discrete
         self.embed_id=nn.Embedding(num_embeddings = 310, embedding_dim = feat_dim) 
@@ -35,11 +33,11 @@ class Embedding(nn.Module):
         self.embed_id_move=nn.Embedding(num_embeddings = 322, embedding_dim = feat_dim) 
         self.embed_d_class=nn.Embedding(num_embeddings = 3, embedding_dim = feat_dim) 
         self.embed_t_class=nn.Embedding(num_embeddings = 16, embedding_dim = feat_dim) 
+        self.embed_priority=nn.Embedding(7, feat_dim) 
+        self.embed_accuracy=nn.Embedding(100, feat_dim) 
 
         #Mosse continue
         self.embed_power=nn.Linear(1,feat_dim) 
-        self.embed_priority=nn.Linear(7, feat_dim) 
-        self.embed_accuracy=nn.Linear(100, feat_dim) 
 
         #Campo
         self.embed_current_weather=nn.Embedding(num_embeddings=5,embedding_dim = feat_dim)
@@ -92,7 +90,6 @@ class Embedding(nn.Module):
         item_emb=self.embed_item(state['item'])
         slot_emb=self.embed_slot(state['slot'])
         
-
         #Features continue
         stats_emb=self.embed_stats(state['stats'])
         stats_change_emb=self.embed_stats_change(state['stats_change'])
