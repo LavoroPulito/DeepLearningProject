@@ -53,7 +53,7 @@ class Embedding(nn.Module):
         self.embed_player_user=nn.Embedding(num_embeddings = 2, embedding_dim = feat_dim)
         self.embed_slot_user=nn.Embedding(num_embeddings = 2,embedding_dim = feat_dim)
         self.embed_player_target=nn.Embedding(num_embeddings = 2, embedding_dim = feat_dim)
-        self.embed_slot_target=nn.Embedding(num_embeddings = 2,embedding_dim = feat_dim)
+        self.embed_slot_target=nn.Embedding(num_embeddings = 4,embedding_dim = feat_dim)
         self.embed_mega=nn.Embedding(num_embeddings = 2, embedding_dim = feat_dim)
         self.embed_move=nn.Embedding(num_embeddings = 6, embedding_dim = feat_dim)
 
@@ -162,8 +162,6 @@ class Embedding(nn.Module):
         #La maschera viene creata nel momento in cui si crea il batch di partite e viene passata al modello come input. Viene poi ripetuta per reward, state e action
         
         return final_inputs, stacked_padding_mask
-
-
 
 
 
