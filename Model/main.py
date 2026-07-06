@@ -4,7 +4,26 @@ from torch.utils.data import DataLoader
 # Importate le vostre classi (assumendo che siano in file separati)
 from DecisionTransformer import DecisionTransformer
 # from data_module import PokemonVGCDataset # Da creare: la classe che gestisce i vostri dati
+import glob
 
+# 1. Trova tutti i file .npy nella cartella dei dati
+lista_files = glob.glob("percorso/dati_vgc/*.npy")
+
+# 2. Inizializza il Dataset
+dataset = PokemonVGCDataset(file_paths=lista_files, max_turn=48)
+
+# 3. Crea il DataLoader
+# num_workers velocizza il caricamento parallelizzando la lettura su CPU
+dataloader = DataLoader(
+    dataset, 
+    batch_size=32, 
+    shuffle=True, 
+    num_workers=4, 
+    drop_last=True
+)
+
+# 4. Passalo alla funzione di train che abbiamo scritto prima
+# train_decision_transformer(model, dataloader, epochs, device)
 def main():
     # 1. Configurazione del Device (GPU se disponibile, altrimenti CPU)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
