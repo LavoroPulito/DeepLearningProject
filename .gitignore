@@ -5,9 +5,10 @@ __pycache__/
 
 # 2. Ignora tutti i file con queste estensioni ovunque si trovino
 *.txt
-*.npz
+.npz
 *.json
 *.csv
+*.zip
 
 # 3. ECCEZIONI (il punto esclamativo forza Git a includerli)
 !requirements.txt
