@@ -1,8 +1,8 @@
 #Training loop
 
-import torch
-import torch.nn as nn
-from torch.optim import AdamW
+import torch # type: ignore
+import torch.nn as nn # type: ignore
+from torch.optim import AdamW # type: ignore
 
 def train_decision_transformer(model, dataloader, epochs, device, lr=1e-4):
     #Spostiamo il modello sul device (GPU o CPU)

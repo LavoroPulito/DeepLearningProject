@@ -80,7 +80,7 @@ class ActionMasker:
     def is_pokemon_alive(self, state, slot): 
         return next((p for p in mons if p.player == player and p.slot == slot))
         return True
-
+# |-|-|-|-|-|-|
     def can_switch(self, state, slot): return True
     def is_bench_pokemon_available(self, state, bench_idx): return True
     def can_mega_evolve(self, state, slot): return False

@@ -1,5 +1,7 @@
-import torch
-from torch.utils.data import DataLoader
+import torch # type: ignore
+from torch.utils.data import DataLoader # type: ignore
+from PokemonVGCDataset import *
+from TrainingLoop import *
 
 # Importate le vostre classi (assumendo che siano in file separati)
 from DecisionTransformer import DecisionTransformer
@@ -7,10 +9,10 @@ from DecisionTransformer import DecisionTransformer
 import glob
 
 # 1. Trova tutti i file .npy nella cartella dei dati
-lista_files = glob.glob("percorso/dati_vgc/*.npy")
+lista_files = glob.glob("../npz/reg_m-A/*.npz")
 
 # 2. Inizializza il Dataset
-dataset = PokemonVGCDataset(file_paths=lista_files, max_turn=48)
+dataset = PokemonVGCDataset(file_paths=lista_files, max_turn=49)
 
 # 3. Crea il DataLoader
 # num_workers velocizza il caricamento parallelizzando la lettura su CPU
@@ -43,7 +45,7 @@ def main():
         d_model=256, 
         n_heads=8, 
         depth=6, 
-        max_turn=48
+        max_turn=49
     )
 
     # 4. Definizione degli Iperparametri

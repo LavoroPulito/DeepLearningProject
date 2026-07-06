@@ -8,8 +8,8 @@ import math
 
 
 class SelfAttention(nn.Module):
-    def __init__(self, d_model=256, n_heads=8, max_seq_length=144):
-        #144=max_turn(48)*3
+    def __init__(self, d_model=256, n_heads=8, max_seq_length=147):
+        #147=max_turn(49)*3
         super().__init__()
         assert d_model % n_heads == 0, "d_model must be divisible by n_heads"
 
