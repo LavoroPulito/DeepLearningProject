@@ -24,20 +24,24 @@ def train_decision_transformer(model, dataloader, epochs, device, lr=1e-4):
             move = {k: v.to(device) for k, v in batch['move'].items()}
             battlefield = {k: v.to(device) for k, v in batch['battlefield'].items()}
             action = {k: v.to(device) for k, v in batch['action'].items()}
+            legal_action_mask = {k: v.to(device) for k, v in batch['legal_action_mask'].items()}
             
             reward = batch['reward'].to(device)
             turn = batch['turn'].to(device)
             padding_mask = batch['padding_mask'].to(device)
             
             # target_actions ha shape (batch_size, seq_length, 2) e contiene gli indici reali delle mosse
-            target_actions = batch['target_actions'].to(device) 
-            
+
+            target_actions = batch['target_actions']
+            ta_index = target_actions['player_user']*240+ target_actions['slot_user']*120+target_actions['player_target']*60 + target_actions['slot_target']*12+target_actions['mega']*6 + target_actions['move']
+            ta_index = ta_index.to(device)
+            #[b,s,[x,y]] x,y in [480]
             # 2. Azzeriamo i gradienti
             optimizer.zero_grad()
             
             # 3. Forward pass
             # Passiamo tutti gli argomenti previsti dal forward del DecisionTransformer
-            log_probs = model(state, move, battlefield, action, reward, turn, padding_mask)
+            log_probs = model(state, move, battlefield, action, reward, turn, padding_mask,legal_action_mask)
             
             # log_probs ora ha shape (batch_size, seq_length, 2, action_dim)
             # NLLLoss di PyTorch richiede che le classi siano nella seconda dimensione: (N, C, d1, d2, ...)
@@ -45,7 +49,7 @@ def train_decision_transformer(model, dataloader, epochs, device, lr=1e-4):
             log_probs_transposed = log_probs.permute(0, 3, 1, 2)
             
             # 4. Calcolo della Loss
-            loss = criterion(log_probs_transposed, target_actions)
+            loss = criterion(log_probs_transposed, ta_index)
             
             # loss ha shape (batch_size, seq_length, 2)
             # Applichiamo la maschera per ignorare i turni fittizi creati nel batch

@@ -95,3 +95,26 @@ token
 
 matrice emb: batch, turns, token = (pokemon, campo, turn, action, reward) 
 
+### legal actions
+
+
+per us_slot in [1,2]
+   - switch
+      se esiste vivo in 3 -> sw in 3 disp
+      se esiste vivo in 4 -> sw in 4 disp
+      se 4 vuota -> sw in 0 disp
+
+   - unknown disp
+
+   - se pokemon vivo:
+      for mve in [0,1,2,3]
+         for trg_us in [0,1]
+            for trg_sl [1,2]
+               if poke in 0,us_slot. move != 0 
+                  if (trg_us,trg_slot) in poke 0,us_slot.move.tg_class 
+                     mve da a disp non megata
+                     if poke 0 us_slot item = mega stone e no mega pokemon in state
+                        mve da a disp megate
+                     
+                  
+            

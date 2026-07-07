@@ -1,11 +1,14 @@
 import numpy as np # type: ignore
 import torch # type: ignore
 from torch.utils.data import Dataset, DataLoader # type: ignore
+from LegalActionMask import ActionMasker  # adatta il path all'import reale
+import os
 
 class PokemonVGCDataset(Dataset):
     def __init__(self, file_paths, max_turn=49):
         self.file_paths = file_paths
         self.max_turn = max_turn
+        self.masker = ActionMasker()
 
     def __len__(self):
         return len(self.file_paths)
@@ -13,6 +16,7 @@ class PokemonVGCDataset(Dataset):
     def __getitem__(self, idx):
         # 1. Caricamento del file .npz o .npy
         file_path = self.file_paths[idx]
+        mask_cache_path = file_path.replace('.npz', '_legalmask.npy')
         
         # Apriamo il file e gestiamo l'estrazione di 'turns' se è un archivio .npz
         with np.load(file_path, allow_pickle=True) as loaded_file:
@@ -26,7 +30,9 @@ class PokemonVGCDataset(Dataset):
         # --- PREPARAZIONE DIZIONARI VUOTI ---
         state = {
             'id': torch.zeros((self.max_turn, 12), dtype=torch.long),
-            'type': torch.zeros((self.max_turn, 12), dtype=torch.long),
+            'player': torch.zeros((self.max_turn, 12), dtype=torch.long),
+            'type1': torch.zeros((self.max_turn, 12), dtype=torch.long),
+            'type2': torch.zeros((self.max_turn, 12), dtype=torch.long),
             'ability': torch.zeros((self.max_turn, 12), dtype=torch.long),
             'item': torch.zeros((self.max_turn, 12), dtype=torch.long),
             'slot': torch.zeros((self.max_turn, 12), dtype=torch.long),
@@ -40,14 +46,17 @@ class PokemonVGCDataset(Dataset):
             'id': torch.zeros((self.max_turn, 12, 4), dtype=torch.long),
             'd_class': torch.zeros((self.max_turn, 12, 4), dtype=torch.long),
             't_class': torch.zeros((self.max_turn, 12, 4), dtype=torch.long),
+            'type': torch.zeros((self.max_turn, 12, 4), dtype=torch.long),
             'power': torch.zeros((self.max_turn, 12, 4, 1), dtype=torch.float32),
-            'priority': torch.zeros((self.max_turn, 12, 4), dtype=torch.float32), # Vedi nota sotto
-            'accuracy': torch.zeros((self.max_turn, 12, 4), dtype=torch.float32) # Vedi nota sotto
+            'priority': torch.zeros((self.max_turn, 12, 4), dtype=torch.float32), 
+            'accuracy': torch.zeros((self.max_turn, 12, 4), dtype=torch.float32)
+            
+            
         }
         
         battlefield = {
             'current_weather': torch.zeros((self.max_turn,), dtype=torch.long),
-            'speed_modifier': torch.zeros((self.max_turn, 3), dtype=torch.float32) # Vedi nota sotto
+            'speed_modifier': torch.zeros((self.max_turn, 3), dtype=torch.float32) 
         }
         
         action = {
@@ -66,6 +75,10 @@ class PokemonVGCDataset(Dataset):
         padding_mask = torch.zeros((self.max_turn,), dtype=torch.long)
         padding_mask[:num_turns] = 1
 
+        first_poke_data = data[0]['pokemon']
+        first_state_np = {'id': np.array([int(first_poke_data[i]['poke_id']) for i in range(12)])}
+        
+        legal_action_mask = torch.ones((self.max_turn, self.masker.total_actions), dtype=torch.bool)
         # 2. ESTRAZIONE DATI DAL NUMPY E POPOLAMENTO TENSORI
         for t in range(num_turns):
             turn_data = data[t]
@@ -93,8 +106,10 @@ class PokemonVGCDataset(Dataset):
                 p_data = poke_data[p]
                 
                 # Features discrete
+                state['player'][t, p] = int(p_data['player'])
                 state['id'][t, p] = int(p_data['poke_id'])
-                state['type'][t, p] = int(p_data['type1']) # Usiamo type1 per compatibilità con l'embedding
+                state['type1'][t, p] = int(p_data['type1']) 
+                state['type2'][t, p] = int(p_data['type2']) 
                 state['ability'][t, p] = int(p_data['ability'])
                 state['item'][t, p] = int(p_data['item'])
                 state['slot'][t, p] = int(p_data['slot'])
@@ -115,11 +130,27 @@ class PokemonVGCDataset(Dataset):
                     move['power'][t, p, m_idx, 0] = float(m_data['power'])
                     move['priority'][t, p, m_idx] = float(m_data['priority'])
                     move['accuracy'][t, p, m_idx] = float(m_data['accuracy'])
-                    
+                    move['type'][t, p, m_idx] = float(m_data['type'])
 
+            np.save(mask_cache_path, legal_action_mask.numpy())
             # Esempio di gestione Reward (se winner è nel campo, assegnare 1 al turno finale o simile)
             if t == num_turns - 1: 
                  reward[t] = int(turn_data['field']['winner'])
+
+            state_np = {
+            'player':   np.array([int(poke_data[i]['player'])   for i in range(12)]),
+            'id':       np.array([int(poke_data[i]['poke_id'])  for i in range(12)]),
+            'slot':     np.array([int(poke_data[i]['slot'])     for i in range(12)]),
+            'item':     np.array([int(poke_data[i]['item'])     for i in range(12)]),
+            'hp_ratio': np.array([[float(poke_data[i]['hp_ratio'])] for i in range(12)]),
+            }
+            move_np = {
+                'id':      np.array([[int(poke_data[i][f'move{m}']['id'])      for m in range(4)] for i in range(12)]),
+                't_class': np.array([[int(poke_data[i][f'move{m}']['t_class']) for m in range(4)] for i in range(12)]),
+            }
+
+            mask_t = self.masker.get_valid_action_mask(state_np, move_np, first_state_np)
+            legal_action_mask[t] = torch.from_numpy(mask_t)
 
         # Creazione del target_actions per la Loss (usando gli ID delle azioni scelte)
         target_actions = {k: v.clone() for k, v in action.items()} 
@@ -132,7 +163,9 @@ class PokemonVGCDataset(Dataset):
             'reward': reward,
             'turn': turn_tensor,
             'padding_mask': padding_mask,
-            'target_actions': target_actions
+            'target_actions': target_actions,
+            'legal_action_mask': legal_action_mask,   # <-- nuovo, shape (max_turn, 480)
+
         }
 
 if __name__ == '__main__':
@@ -144,6 +177,9 @@ if __name__ == '__main__':
     dataset = PokemonVGCDataset(file_paths=[test_file, test_file], max_turn=49)
     dataloader = DataLoader(dataset, batch_size=2, shuffle=False)
     
+    print(dataset[0]['move']['id'][0])
+    print(dataset[0]['move']['t_class'][0])
+
     print("\n--- Inizio Estrazione Batch ---")
     # 3. Iteriamo e controlliamo i tensori
     for batch_idx, batch in enumerate(dataloader):

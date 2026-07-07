@@ -8,21 +8,6 @@ from DecisionTransformer import DecisionTransformer
 # from data_module import PokemonVGCDataset # Da creare: la classe che gestisce i vostri dati
 import glob
 
-# 1. Trova tutti i file .npy nella cartella dei dati
-lista_files = glob.glob("../npz/reg_m-A/*.npz")
-
-# 2. Inizializza il Dataset
-dataset = PokemonVGCDataset(file_paths=lista_files, max_turn=49)
-
-# 3. Crea il DataLoader
-# num_workers velocizza il caricamento parallelizzando la lettura su CPU
-dataloader = DataLoader(
-    dataset, 
-    batch_size=32, 
-    shuffle=True, 
-    num_workers=4, 
-    drop_last=True
-)
 
 # 4. Passalo alla funzione di train che abbiamo scritto prima
 # train_decision_transformer(model, dataloader, epochs, device)
@@ -32,20 +17,33 @@ def main():
     print(f"Sto addestrando sul device: {device}")
 
     # 2. Preparazione dei Dati (Dataset e DataLoader)
-    # Qui dovrete istanziare la vostra classe Dataset personalizzata che legge i log delle partite VGC
-    # dataset = PokemonVGCDataset(percorso_file="dati_vgc.json")
-    
-    # Il DataLoader si occupa di pescare i dati dal dataset e raggrupparli in batch
-    # dataloader = DataLoader(dataset, batch_size=32, shuffle=True)
+
+    # 1. Trova tutti i file .npy nella cartella dei dati
+    lista_files = glob.glob("../npz/reg_m-A/*.npz")
+
+    # 2. Inizializza il Dataset
+    dataset = PokemonVGCDataset(file_paths=lista_files, max_turn=49)
+
+    # 3. Crea il DataLoader
+    # num_workers velocizza il caricamento parallelizzando la lettura su CPU
+    dataloader = DataLoader(
+        dataset,
+        batch_size=32, 
+        shuffle=True, 
+        num_workers=4, 
+        drop_last=True
+    )
 
     # 3. Inizializzazione del Modello
     # Richiamiamo il modello usando le dimensioni che avete definito
     model = DecisionTransformer(
-        action_dim=192, 
+        action_dim=192*2, 
         d_model=256, 
         n_heads=8, 
         depth=6, 
         max_turn=49
+
+
     )
 
     # 4. Definizione degli Iperparametri

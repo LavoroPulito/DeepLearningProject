@@ -502,7 +502,7 @@ def convert_log(raw_lines):
             if player == 0 and tag == 'switch':
                 turn_actions.append(Action(
                     usr_pl=0,
-                    usr_slot=field_slot,
+                    usr_slot=field_slot, 
                     trg_pl=0,
                     trg_slot=incoming_slot,
                     move=4
