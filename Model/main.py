@@ -1,16 +1,11 @@
-import torch # type: ignore
+from Model.PokemonVGCDataset import PokemonVGCDataset
 from torch.utils.data import DataLoader # type: ignore
-from PokemonVGCDataset import *
-from TrainingLoop import *
+from sklearn.model_selection import train_test_split # type: ignore
 
-# Importate le vostre classi (assumendo che siano in file separati)
-from DecisionTransformer import DecisionTransformer
-# from data_module import PokemonVGCDataset # Da creare: la classe che gestisce i vostri dati
-import glob
 
 
 # 4. Passalo alla funzione di train che abbiamo scritto prima
-# train_decision_transformer(model, dataloader, epochs, device)
+# train_decision_transformer(model, dataloader, num_epochs, device)
 def main():
     # 1. Configurazione del Device (GPU se disponibile, altrimenti CPU)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -19,19 +14,43 @@ def main():
     # 2. Preparazione dei Dati (Dataset e DataLoader)
 
     # 1. Trova tutti i file .npy nella cartella dei dati
-    lista_files = glob.glob("../npz/reg_m-A/*.npz")
+    lista_files = glob.glob("/kaggle/input/datasets/armandocoppola/reg-m-a/reg_m-A/*.npz")
+
+    #Splittiamo i dati in train, validation e test (80% train, 10% validation, 10% test)
+    train_files, temp_files = train_test_split(lista_files, test_size=0.2, random_state=42)
+    val_files, test_files = train_test_split(temp_files, test_size=0.5, random_state=42)
 
     # 2. Inizializza il Dataset
-    dataset = PokemonVGCDataset(file_paths=lista_files, max_turn=49)
+    dataset_training = PokemonVGCDataset(file_paths=train_files, max_turn=49)
+    dataset_validation = PokemonVGCDataset(file_paths=val_files, max_turn=49)
+    dataset_test = PokemonVGCDataset(file_paths=test_files, max_turn=49)
 
-    # 3. Crea il DataLoader
+    # 3. Crea il DataLoader del training set
     # num_workers velocizza il caricamento parallelizzando la lettura su CPU
-    dataloader = DataLoader(
-        dataset,
+    dataloader_training = DataLoader(
+        dataset_training,
         batch_size=32, 
         shuffle=True, 
         num_workers=4, 
         drop_last=True
+    )
+
+    #Creiamo il DataLoader del validation set
+    dataloader_validation = DataLoader(
+        dataset_validation,
+        batch_size=32, 
+        shuffle=False, 
+        num_workers=4, 
+        drop_last=False
+    )
+
+    # Creiamo il DataLoader del test set
+    dataloader_test = DataLoader(
+        dataset_test,
+        batch_size=32, 
+        shuffle=False, 
+        num_workers=4, 
+        drop_last=False
     )
 
     # 3. Inizializzazione del Modello
@@ -55,8 +74,9 @@ def main():
     # 5. LA CHIAMATA ALLA FUNZIONE DI TRAINING
     train_decision_transformer(
         model=model, 
-        dataloader= dataloader, # Passiamo il raggruppatore di dati
-        epochs=EPOCHS, 
+        dataloader_training=dataloader_training, # Passiamo il raggruppatore di dati
+        dataloader_validation=dataloader_validation,
+        num_epochs=EPOCHS, 
         device=device, 
         lr=LEARNING_RATE
     )
