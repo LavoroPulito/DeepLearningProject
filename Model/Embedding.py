@@ -895,7 +895,7 @@ class Embedding(nn.Module):
 
         #EMBEDDING AZIONE a_t e concatenazione
         player_user_emb=self.embed_player_user(action['player_user'])
-        slot_user_emb=self.embed_slot_user(action['slot_user'])
+        slot_user_emb=self.embed_slot_user(action['slot_user']-1) # slot_user \in {1,2}. so is shifted to {0,1}
         player_target_emb=self.embed_player_target(action['player_target'])
         slot_target_emb=self.embed_slot_target(action['slot_target'])
         mega_emb=self.embed_mega(action['mega'])

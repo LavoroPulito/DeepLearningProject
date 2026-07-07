@@ -119,8 +119,8 @@ class PokemonVGCDataset(Dataset):
                 state['slot'][t, p] = int(p_data['slot'])
                 
                 # Features continue (Raggruppiamo i campi scalari in array)
-                state['stats'][t, p] = torch.tensor([p_data['hp_base'], p_data['atk'], p_data['def_'], p_data['spa'], p_data['spd'], p_data['spe']], dtype=torch.float32)
-                state['stats_change'][t, p] = torch.tensor([p_data['atk_c'], p_data['def_c'], p_data['spa_c'], p_data['spd_c'], p_data['spe_c']], dtype=torch.float32)
+                state['stats'][t, p] = torch.tensor([p_data['hp_base'], p_data['atk'], p_data['def_'], p_data['spa'], p_data['spd'], p_data['spe']], dtype=torch.float32)/ 255.0
+                state['stats_change'][t, p] = torch.tensor([p_data['atk_c'], p_data['def_c'], p_data['spa_c'], p_data['spd_c'], p_data['spe_c']], dtype=torch.float32)/ 6.0  
                 state['hp_ratio'][t, p, 0] = float(p_data['hp_ratio'])
                 state['status'][t, p] = torch.tensor((p_data['status_mask'] >> np.arange(5, -1, -1)) & 1, dtype=torch.float32)
                 
@@ -131,9 +131,9 @@ class PokemonVGCDataset(Dataset):
                     move['id'][t, p, m_idx] = int(m_data['id'])
                     move['d_class'][t, p, m_idx] = int(m_data['d_class'])
                     move['t_class'][t, p, m_idx] = int(m_data['t_class'])
-                    move['power'][t, p, m_idx, 0] = float(m_data['power'])
-                    move['priority'][t, p, m_idx] = float(m_data['priority'])
-                    move['accuracy'][t, p, m_idx] = float(m_data['accuracy'])
+                    move['power'][t, p, m_idx, 0] = float(m_data['power'])/255.0
+                    move['priority'][t, p, m_idx] = float(m_data['priority'])/8.0
+                    move['accuracy'][t, p, m_idx] = float(m_data['accuracy'])/100.0
                     move['type'][t, p, m_idx] = float(m_data['type'])
 
             # Esempio di gestione Reward (se winner è nel campo, assegnare 1 al turno finale o simile)

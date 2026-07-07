@@ -55,7 +55,7 @@ def main():
     # 5. LA CHIAMATA ALLA FUNZIONE DI TRAINING
     train_decision_transformer(
         model=model, 
-        dataloader=dataloader, # Passiamo il raggruppatore di dati
+        dataloader= dataloader, # Passiamo il raggruppatore di dati
         epochs=EPOCHS, 
         device=device, 
         lr=LEARNING_RATE
