@@ -36,10 +36,10 @@ class PokemonVGCDataset(Dataset):
             'ability': torch.zeros((self.max_turn, 12), dtype=torch.long),
             'item': torch.zeros((self.max_turn, 12), dtype=torch.long),
             'slot': torch.zeros((self.max_turn, 12), dtype=torch.long),
-            'stats': torch.zeros((self.max_turn, 12, 6), dtype=torch.float32),
-            'stats_change': torch.zeros((self.max_turn, 12, 5), dtype=torch.float32),
-            'status': torch.zeros((self.max_turn, 12, 6), dtype=torch.float32), # Vedi nota sotto
-            'hp_ratio': torch.zeros((self.max_turn, 12, 1), dtype=torch.float32)
+            'stats': torch.zeros((self.max_turn, 12, 6), dtype=torch.float32), # cont
+            'stats_change': torch.zeros((self.max_turn, 12, 5), dtype=torch.float32), # cont
+            'status': torch.zeros((self.max_turn, 12, 6), dtype=torch.float32), # cont
+            'hp_ratio': torch.zeros((self.max_turn, 12, 1), dtype=torch.float32) # cont
         }
         
         move = {
@@ -47,9 +47,9 @@ class PokemonVGCDataset(Dataset):
             'd_class': torch.zeros((self.max_turn, 12, 4), dtype=torch.long),
             't_class': torch.zeros((self.max_turn, 12, 4), dtype=torch.long),
             'type': torch.zeros((self.max_turn, 12, 4), dtype=torch.long),
-            'power': torch.zeros((self.max_turn, 12, 4, 1), dtype=torch.float32),
+            'power': torch.zeros((self.max_turn, 12, 4, 1), dtype=torch.float32), # cont
             'priority': torch.zeros((self.max_turn, 12, 4), dtype=torch.float32), 
-            'accuracy': torch.zeros((self.max_turn, 12, 4), dtype=torch.float32)
+            'accuracy': torch.zeros((self.max_turn, 12, 4), dtype=torch.float32) # cont
             
             
         }
@@ -75,10 +75,14 @@ class PokemonVGCDataset(Dataset):
         padding_mask = torch.zeros((self.max_turn,), dtype=torch.long)
         padding_mask[:num_turns] = 1
 
-        first_poke_data = data[0]['pokemon']
-        first_state_np = {'id': np.array([int(first_poke_data[i]['poke_id']) for i in range(12)])}
-        
-        legal_action_mask = torch.ones((self.max_turn, self.masker.total_actions), dtype=torch.bool)
+        mask_cache_hit = os.path.exists(mask_cache_path)
+        if mask_cache_hit:
+            legal_action_mask = torch.from_numpy(np.load(mask_cache_path))
+        else:
+            legal_action_mask = torch.ones((self.max_turn, self.masker.total_actions), dtype=torch.bool)
+            first_poke_data = data[0]['pokemon']
+            first_state_np = {'id': np.array([int(first_poke_data[i]['poke_id']) for i in range(12)])}
+
         # 2. ESTRAZIONE DATI DAL NUMPY E POPOLAMENTO TENSORI
         for t in range(num_turns):
             turn_data = data[t]
@@ -132,27 +136,28 @@ class PokemonVGCDataset(Dataset):
                     move['accuracy'][t, p, m_idx] = float(m_data['accuracy'])
                     move['type'][t, p, m_idx] = float(m_data['type'])
 
-            np.save(mask_cache_path, legal_action_mask.numpy())
             # Esempio di gestione Reward (se winner è nel campo, assegnare 1 al turno finale o simile)
             if t == num_turns - 1: 
                  reward[t] = int(turn_data['field']['winner'])
 
-            state_np = {
-            'player':   np.array([int(poke_data[i]['player'])   for i in range(12)]),
-            'id':       np.array([int(poke_data[i]['poke_id'])  for i in range(12)]),
-            'slot':     np.array([int(poke_data[i]['slot'])     for i in range(12)]),
-            'item':     np.array([int(poke_data[i]['item'])     for i in range(12)]),
-            'hp_ratio': np.array([[float(poke_data[i]['hp_ratio'])] for i in range(12)]),
-            }
-            move_np = {
-                'id':      np.array([[int(poke_data[i][f'move{m}']['id'])      for m in range(4)] for i in range(12)]),
-                't_class': np.array([[int(poke_data[i][f'move{m}']['t_class']) for m in range(4)] for i in range(12)]),
-            }
-
-            mask_t = self.masker.get_valid_action_mask(state_np, move_np, first_state_np)
-            legal_action_mask[t] = torch.from_numpy(mask_t)
+            if not mask_cache_hit:
+                state_np = {
+                    'player':   np.array([int(poke_data[i]['player'])   for i in range(12)]),
+                    'id':       np.array([int(poke_data[i]['poke_id'])  for i in range(12)]),
+                    'slot':     np.array([int(poke_data[i]['slot'])     for i in range(12)]),
+                    'item':     np.array([int(poke_data[i]['item'])     for i in range(12)]),
+                    'hp_ratio': np.array([[float(poke_data[i]['hp_ratio'])] for i in range(12)]),
+                }
+                move_np = {
+                    'id':      np.array([[int(poke_data[i][f'move{m}']['id'])      for m in range(4)] for i in range(12)]),
+                    't_class': np.array([[int(poke_data[i][f'move{m}']['t_class']) for m in range(4)] for i in range(12)]),
+                }
+                mask_t = self.masker.get_valid_action_mask(state_np, move_np, first_state_np)
+                legal_action_mask[t] = torch.from_numpy(mask_t)
 
         # Creazione del target_actions per la Loss (usando gli ID delle azioni scelte)
+        if not mask_cache_hit:
+            np.save(mask_cache_path, legal_action_mask.numpy())
         target_actions = {k: v.clone() for k, v in action.items()} 
 
         return {
