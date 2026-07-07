@@ -6,7 +6,7 @@
 - [x] correzione dei token 
 - [ ] organizzazione delle partite per batches
 - [x] controllare e sistemare il codice sull'embedding (mancano tutte le dimensioni)
-- [ ] spacchettare le bitmask
+- [x] spacchettare le bitmask
 - [x] mappare gli id 
 
 --- aggiungere nei token?
