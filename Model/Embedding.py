@@ -784,7 +784,7 @@ class Embedding(nn.Module):
         self.embed_type1=nn.Embedding(num_embeddings = 19, embedding_dim = feat_dim) 
         self.embed_type2=nn.Embedding(num_embeddings = 19, embedding_dim = feat_dim) 
         self.embed_ability=nn.Embedding(num_embeddings = 138, embedding_dim = feat_dim) 
-        self.embed_item=nn.Embedding(num_embeddings = 35, embedding_dim = feat_dim) 
+        self.embed_item=nn.Embedding(num_embeddings = 39, embedding_dim = feat_dim) 
         self.embed_slot=nn.Embedding(num_embeddings = 5, embedding_dim = feat_dim) 
 
 
