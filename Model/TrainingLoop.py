@@ -156,5 +156,9 @@ def train_decision_transformer(model, dataloader_training, dataloader_validation
             save_checkpoint(epoch, model, optimizer, avg_val_loss, "best_model.pth")
             print(f"Nuovo miglior modello salvato all'epoca {epoch+1} con loss di validazione {avg_val_loss:.4f}")
 
+        if epoch % 5 == 0:
+            save_checkpoint(epoch, model, optimizer, avg_training_loss, f"checkpoint_epoch_{epoch}.pth")
+            print(f"Epoch [{epoch+1}/{num_epochs}] | Loss Media: {avg_training_loss:.4f}")
+
 
     return model
