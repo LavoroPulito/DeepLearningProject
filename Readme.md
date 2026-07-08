@@ -14,7 +14,7 @@
 - [x] far finire i campi 
 - [x] accuracy non la vediamo
 - [x] aggiungere turno 0
-- [ ] maschera illegalità
+- [x] maschera illegalità
 
 
 ## theory stuff
@@ -97,24 +97,20 @@ matrice emb: batch, turns, token = (pokemon, campo, turn, action, reward)
 
 ### legal actions
 
+Spazio azioni piatto = 360: dims (s_user: 3, p_target: 2, s_target: 5, mega: 2, move: 6),
+flat = s_user*120 + p_target*60 + s_target*12 + mega*6 + move.
+p_user non è una dimensione (sempre 0 nei dati). Convenzioni dei replay:
+pass = (s_user=0, trg=(0,0), move=5); switch (move=4) ha trg_slot = slot che
+il mon entrante aveva prima (0 = mai sceso in campo, 3/4 = panchina).
 
-per us_slot in [1,2]
-   - switch
-      se esiste vivo in 3 -> sw in 3 disp
-      se esiste vivo in 4 -> sw in 4 disp
-      se 4 vuota -> sw in 0 disp
+Regole (vedi Model/LegalActionMask.py, validate su tutti i replay con
+Model/validate_mask.py — copertura 99.55%, il resto è forzato legale dal Dataset):
+- pass sempre disponibile
+- switch: verso 3/4 se panchina viva (o possibile benching intra-turno), verso 0 sempre (bring-4)
+- mosse: serve un mon proprio nello slot; id==0 legale solo al primo indice
+  libero (mossa rivelata al primo uso); tutti i 4 target (i target dello
+  scraper per mosse self/spread sono rumorosi)
+- mega: solo se nessuna azione precedente della partita ha già megaevoluto
 
-   - unknown disp
-
-   - se pokemon vivo:
-      for mve in [0,1,2,3]
-         for trg_us in [0,1]
-            for trg_sl [1,2]
-               if poke in 0,us_slot. move != 0 
-                  if (trg_us,trg_slot) in poke 0,us_slot.move.tg_class 
-                     mve da a disp non megata
-                     if poke 0 us_slot item = mega stone e no mega pokemon in state
-                        mve da a disp megate
-                     
-                  
-            
+La maschera è volutamente permissiva: un -inf sull'azione vera renderebbe la
+loss infinita. Il Dataset forza comunque mask[azione_vera] = True.

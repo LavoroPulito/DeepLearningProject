@@ -5,11 +5,15 @@ import torch.nn as nn # type: ignore
 import torch.nn.functional as F # type: ignore
 
 
-from .SelfAttention import TransformerBlock
-from .Embedding import Embedding
+try:
+    from .SelfAttention import TransformerBlock
+    from .Embedding import Embedding
+except ImportError:
+    from SelfAttention import TransformerBlock
+    from Embedding import Embedding
 
 class DecisionTransformer(nn.Module):
-    def __init__(self,action_dim=480, d_model=256, n_heads=8, depth=6, max_turn=49):
+    def __init__(self, action_dim=360, d_model=256, n_heads=8, depth=6, max_turn=49, dropout=0.1):
         super().__init__()
         self.action_dim = action_dim #tutte le possibili azioni (mosse)
         self.d_model=d_model
@@ -17,14 +21,14 @@ class DecisionTransformer(nn.Module):
         max_seq_length=3*max_turn #max_seq_length is 3 times the number of tokens (R,s,a) for each turn
 
         #Embedding layer for states, actions, and rewards
-        self.token_embedding = Embedding(d_model=d_model)
+        self.token_embedding = Embedding(d_model=d_model, max_turn=max_turn)
 
         # Transformer blocks
         self.tblocks=nn.ModuleList([
             TransformerBlock(
                 d_model=d_model,
                 n_heads=n_heads,
-                dropout=0.0,
+                dropout=dropout,
                 max_seq_length=max_seq_length
                 ) for _ in range(depth)
         ])

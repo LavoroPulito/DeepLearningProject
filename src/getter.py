@@ -55,6 +55,7 @@ replacement = {
     'Pyroar':'Pyroar-male',
     "Polteageist-Antique":"855",
     "Polteageist-Antique":"855",
+    'Gourgeist': '711'
 }
 
 just_begin = {'Vivillon','Florges','Alcremie'}

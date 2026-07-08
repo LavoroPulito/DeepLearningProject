@@ -1,164 +1,144 @@
-#Training loop
+"""Training loop del Decision Transformer.
+
+Ottimizzazioni:
+  - AMP (mixed precision) automatica su CUDA;
+  - trasferimenti non_blocking + pin_memory (dal DataLoader);
+  - target flat precalcolati nel Dataset (niente aritmetica per batch);
+  - maschera delle azioni legali applicata ai logits (softmax solo sul
+    legale: il Dataset garantisce che l'azione vera sia sempre legale);
+  - metrica di accuracy sulle azioni per verificare le capacita' del modello.
+"""
+import os
+import time
+
+import torch  # type: ignore
+import torch.nn as nn  # type: ignore
+from torch.optim import AdamW  # type: ignore
 
 
+def save_checkpoint(save_dir, epoch, model, optimizer, loss,
+                    filename="latest_checkpoint.pth"):
+    os.makedirs(save_dir, exist_ok=True)
+    path = os.path.join(save_dir, filename)
+    torch.save({'epoch': epoch,
+                'model_state_dict': model.state_dict(),
+                'optimizer_state_dict': optimizer.state_dict(),
+                'loss': loss}, path)
+    return path
 
-# Su Kaggle, DEVI salvare in /kaggle/working/ affinché i file 
-# vengano conservati alla fine dell'esecuzione
-SAVE_DIR = '/kaggle/working/checkpoints'
-os.makedirs(SAVE_DIR, exist_ok=True)
-
-def save_checkpoint(epoch, model, optimizer, loss, filename="latest_checkpoint.pth"):
-    checkpoint = {
-        'epoch': epoch,
-        'model_state_dict': model.state_dict(),
-        'optimizer_state_dict': optimizer.state_dict(),
-        'loss': loss
-    }
-    path = os.path.join(SAVE_DIR, filename)
-    torch.save(checkpoint, path)
-    print(f"Checkpoint salvato: {path}")
 
 def load_checkpoint(filepath, model, optimizer):
-    if os.path.exists(filepath):
-        checkpoint = torch.load(filepath)
-        model.load_state_dict(checkpoint['model_state_dict'])
-        optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
-        epoch = checkpoint['epoch']
-        loss = checkpoint['loss']
-        print(f"Checkpoint caricato! Riprendo dall'epoca {epoch} con loss {loss:.4f}")
-        return epoch + 1 # Riprendi dall'epoca successiva
-    else:
-        print("Nessun checkpoint trovato. Inizio da zero.")
-        return 0
+    if filepath and os.path.exists(filepath):
+        ckpt = torch.load(filepath, map_location='cpu')
+        model.load_state_dict(ckpt['model_state_dict'])
+        optimizer.load_state_dict(ckpt['optimizer_state_dict'])
+        print(f"Checkpoint caricato: riprendo dall'epoca {ckpt['epoch'] + 1} "
+              f"(loss {ckpt['loss']:.4f})")
+        return ckpt['epoch'] + 1
+    print("Nessun checkpoint trovato. Inizio da zero.")
+    return 0
 
-def train_decision_transformer(model, dataloader_training, dataloader_validation, num_epochs, device, lr=1e-4):
-    #Spostiamo il modello sul device (GPU o CPU)
-    model.to(device) #model coincide con il nostro Decision Transformer 
-    
-    # Inizializziamo l'ottimizzatore
+
+def _to_device(batch, device, non_blocking):
+    out = {}
+    for k, v in batch.items():
+        if isinstance(v, dict):
+            out[k] = {kk: vv.to(device, non_blocking=non_blocking)
+                      for kk, vv in v.items()}
+        else:
+            out[k] = v.to(device, non_blocking=non_blocking)
+    return out
+
+
+def _run_batch(model, batch, criterion, use_mask=True):
+    """Ritorna (loss, n_azioni_valide, n_azioni_corrette)."""
+    legal = batch['legal_action_mask'] if use_mask else None
+    log_probs = model(batch['state'], batch['move'], batch['battlefield'],
+                      batch['action'], batch['reward'], batch['turn'],
+                      batch['padding_mask'], legal_action_mask=legal)
+    # log_probs: (B, T, 2, action_dim); target: (B, T, 2)
+    # NB: si appiattisce a 2D invece di permute(0,3,1,2): il kernel CUDA di
+    # nll_loss2d richiede input contiguo ("grad_input must be contiguous")
+    target = batch['target_flat']
+    loss_el = criterion(log_probs.reshape(-1, log_probs.size(-1)),
+                        target.reshape(-1)).view_as(target)      # (B, T, 2)
+
+    mask = batch['padding_mask'].unsqueeze(-1).expand_as(loss_el).float()
+    loss = (loss_el * mask).sum() / mask.sum()
+
+    with torch.no_grad():
+        pred = log_probs.argmax(dim=-1)
+        correct = ((pred == target).float() * mask).sum()
+    return loss, mask.sum(), correct
+
+
+def train_decision_transformer(model, dataloader_training,
+                               dataloader_validation, num_epochs, device,
+                               lr=1e-4, save_dir='checkpoints',
+                               resume_from=None, use_legal_mask=True):
+    model.to(device)
     optimizer = AdamW(model.parameters(), lr=lr)
-    
-    # Usiamo NLLLoss senza riduzione automatica per poter applicare la padding_mask
+    # cosine decay: vicino al plateau un LR piu' basso recupera ancora qualche punto
+    scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
+        optimizer, T_max=num_epochs, eta_min=lr * 0.05)
     criterion = nn.NLLLoss(reduction='none')
 
-    start_epoch = load_checkpoint('/kaggle/working/checkpoints/latest_checkpoint.pth', model, optimizer)
+    use_amp = device.type == 'cuda'
+    scaler = torch.amp.GradScaler(enabled=use_amp)
+    non_blocking = device.type == 'cuda'
 
-    best_val_loss = float('inf')  # Per tenere traccia della migliore loss di validazione
-    
+    start_epoch = load_checkpoint(resume_from, model, optimizer) \
+        if resume_from else 0
+    best_val_loss = float('inf')
+
     for epoch in range(start_epoch, num_epochs):
-        #TRAINING LOOP
+        # ---- training ----
         model.train()
-        total_training_loss = 0.0
-        
+        t0 = time.time()
+        tot_loss = tot_n = tot_correct = 0.0
         for batch in dataloader_training:
-            # 1. Spostiamo tutti i dizionari e i tensori sul device corretto
-            state = {k: v.to(device) for k, v in batch['state'].items()}
-            move = {k: v.to(device) for k, v in batch['move'].items()}
-            battlefield = {k: v.to(device) for k, v in batch['battlefield'].items()}
-            action = {k: v.to(device) for k, v in batch['action'].items()}
-            
-            reward = batch['reward'].to(device)
-            turn = batch['turn'].to(device)
-            padding_mask = batch['padding_mask'].to(device)
+            batch = _to_device(batch, device, non_blocking)
+            optimizer.zero_grad(set_to_none=True)
+            with torch.amp.autocast('cuda', enabled=use_amp):
+                loss, n, correct = _run_batch(model, batch, criterion,
+                                              use_legal_mask)
+            scaler.scale(loss).backward()
+            scaler.unscale_(optimizer)
+            torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
+            scaler.step(optimizer)
+            scaler.update()
+            tot_loss += loss.item() * n.item()
+            tot_n += n.item()
+            tot_correct += correct.item()
+        train_loss = tot_loss / tot_n
+        train_acc = tot_correct / tot_n
 
-            # 1. target_actions è un dizionario, iteriamo per spostare i tensori sul device
-            target_dict = {k: v.to(device) for k, v in batch['target_actions'].items()}            
-            # target_actions ha shape (batch_size, seq_length, 2) e contiene gli indici reali delle mosse
-            # 2. Convertiamo i 6 componenti nell'indice piatto (da 0 a 479).
-            # Le dimensioni sono (2, 2, 2, 5, 2, 6). Calcoliamo i moltiplicatori (strides):
-            # move: 1
-            # mega: 6
-            # slot_target: 6 * 2 = 12
-            # player_target: 12 * 5 = 60
-            # slot_user: 60 * 2 = 120
-            # player_user: 120 * 2 = 240
-            
-            target_actions_flat = (
-                target_dict['player_user'] * 240 +
-                (target_dict['slot_user'] - 1) * 120 +  # slot_user va da 1 a 2, togliamo 1 per avere 0-1
-                target_dict['player_target'] * 60 +
-                target_dict['slot_target'] * 12 +
-                target_dict['mega'] * 6 +
-                target_dict['move']
-            ) 
-            
-            # 2. Azzeriamo i gradienti
-            optimizer.zero_grad()
-            
-            # 3. Forward pass
-            # Passiamo tutti gli argomenti previsti dal forward del DecisionTransformer
-            log_probs = model(state, move, battlefield, action, reward, turn, padding_mask)
-            
-            # log_probs ora ha shape (batch_size, seq_length, 2, action_dim)
-            # NLLLoss di PyTorch richiede che le classi siano nella seconda dimensione: (N, C, d1, d2, ...)
-            # Riorganizziamo il tensore in (batch_size, action_dim, seq_length, 2)
-            log_probs_transposed = log_probs.permute(0, 3, 1, 2)
-            
-            # 4. Calcolo della Loss
-            loss = criterion(log_probs_transposed, target_actions_flat)
-            
-            # loss ha shape (batch_size, seq_length, 2)
-            # Applichiamo la maschera per ignorare i turni fittizi creati nel batch
-            # La padding_mask ha shape (batch_size, seq_length), la espandiamo per coprire le 2 azioni
-            expanded_mask = padding_mask.unsqueeze(-1).expand(-1, -1, 2)
-            
-            # Moltiplichiamo la loss per la maschera (azzera la loss dei turni di padding) e facciamo la media
-            masked_loss = (loss * expanded_mask).sum() / expanded_mask.sum()
-            
-            # 5. Backward pass e ottimizzazione
-            masked_loss.backward()
-            optimizer.step()
-            
-            total_training_loss += masked_loss.item()
-
-        
-        avg_training_loss = total_training_loss / len(dataloader_training)
-
-        #VALIDATION
-        model.eval() #inizio valutazione
-        total_val_loss = 0
+        # ---- validation ----
+        model.eval()
+        vtot_loss = vtot_n = vtot_correct = 0.0
         with torch.no_grad():
             for batch in dataloader_validation:
-                state = {k: v.to(device) for k, v in batch['state'].items()}
-                move = {k: v.to(device) for k, v in batch['move'].items()}
-                battlefield = {k: v.to(device) for k, v in batch['battlefield'].items()}
-                action = {k: v.to(device) for k, v in batch['action'].items()}
-                reward = batch['reward'].to(device)
-                turn = batch['turn'].to(device)
-                padding_mask = batch['padding_mask'].to(device)
-                target_dict = {k: v.to(device) for k, v in batch['target_actions'].items()}
+                batch = _to_device(batch, device, non_blocking)
+                with torch.amp.autocast('cuda', enabled=use_amp):
+                    loss, n, correct = _run_batch(model, batch, criterion,
+                                                  use_legal_mask)
+                vtot_loss += loss.item() * n.item()
+                vtot_n += n.item()
+                vtot_correct += correct.item()
+        val_loss = vtot_loss / max(vtot_n, 1)
+        val_acc = vtot_correct / max(vtot_n, 1)
 
-                target_actions_flat = (
-                    target_dict['player_user'] * 240 +
-                    (target_dict['slot_user'] - 1) * 120 +  # slot_user va da 1 a 2, togliamo 1 per avere 0-1
-                    target_dict['player_target'] * 60 +
-                    target_dict['slot_target'] * 12 +
-                    target_dict['mega'] * 6 +
-                    target_dict['move']
-                )
+        scheduler.step()
+        dt = time.time() - t0
+        print(f"Epoch {epoch + 1:3d}/{num_epochs} | "
+              f"train loss {train_loss:.4f} acc {train_acc:.3f} | "
+              f"val loss {val_loss:.4f} acc {val_acc:.3f} | "
+              f"lr {optimizer.param_groups[0]['lr']:.1e} | {dt:.1f}s")
 
-                log_probs = model(state, move, battlefield, action, reward, turn, padding_mask)
-                log_probs_transposed = log_probs.permute(0, 3, 1, 2)
-                loss = criterion(log_probs_transposed, target_actions_flat)
-                expanded_mask = padding_mask.unsqueeze(-1).expand(-1, -1, 2)
-                masked_loss = (loss * expanded_mask).sum() / expanded_mask.sum()
-                
-                total_val_loss += masked_loss.item()
-                # Process the batch and compute validation loss
-
-        avg_val_loss = total_val_loss / len(dataloader_validation)
-
-        save_checkpoint(epoch, model, optimizer, avg_training_loss, "latest_checkpoint.pth")
-
-        # Save the best model based on validation loss
-        if avg_val_loss < best_val_loss:
-            best_val_loss = avg_val_loss
-            save_checkpoint(epoch, model, optimizer, avg_val_loss, "best_model.pth")
-            print(f"Nuovo miglior modello salvato all'epoca {epoch+1} con loss di validazione {avg_val_loss:.4f}")
-
-        if epoch % 5 == 0:
-            save_checkpoint(epoch, model, optimizer, avg_training_loss, f"checkpoint_epoch_{epoch}.pth")
-            print(f"Epoch [{epoch+1}/{num_epochs}] | Loss Media: {avg_training_loss:.4f}")
-
+        save_checkpoint(save_dir, epoch, model, optimizer, train_loss)
+        if val_loss < best_val_loss:
+            best_val_loss = val_loss
+            save_checkpoint(save_dir, epoch, model, optimizer, val_loss,
+                            "best_model.pth")
 
     return model

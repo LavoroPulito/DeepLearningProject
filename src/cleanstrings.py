@@ -439,6 +439,8 @@ def convert_log(raw_lines):
         'Floette': str(substitutions.get('Floette-Eternal', '10061')),
         'Zoroark-Hisui': str(substitutions.get('Zoroark-Hisui', '10239')),
         'Zoroark': str(substitutions.get('Zoroark-Hisui', '10239')),
+        'Sinistcha-Masterpiece': str(substitutions.get('Sinistcha-Masterpiece', '1013')),
+        'Sinistcha': str(substitutions.get('Sinistcha-Masterpiece', '1013')),
     }
     substitutions.update(ALIASES)
 
@@ -688,15 +690,15 @@ if __name__ == "__main__":
 
     existent_logs = os.listdir("../logs/")
     oc_poke,oc_move,oc_item,oc_abilities = get_cache_stats()
-    existent_npz = os.listdir("../npz/")
+    existent_npz = os.listdir("../npz/reg_m-B/")
             
-    for logfile in tqdm(existent_logs[5345:]):
+    for logfile in tqdm(existent_logs[:]):
         #logfile = 'gen9championsvgc2026regmb-2641513597.txt'
-
-        if not logfile.startswith('.') and 'regma' in logfile:
-            #if logfile.split('.')[0]+'.npz' in existent_npz:
-            #    print('present')
-            #    continue
+        print(logfile)
+        if not logfile.startswith('.') and 'regmb' in logfile and logfile.startswith('R'):
+            if logfile.split('.')[0]+'.npz' in existent_npz:
+               print('present')
+               continue
 
             with open("../logs/" + logfile) as f:
                 raw = f.read()
@@ -706,7 +708,7 @@ if __name__ == "__main__":
                 raw = raw.split('\n')
 
             toks = convert_log(raw)
-            save_to_npz(toks, "../npz/" + logfile.split('.')[0])
+            save_to_npz(toks, "../npz/reg_m-B/" + logfile.split('.')[0])
 
     c_poke,c_move,c_item,c_abilities = get_cache_stats()
     print(f'turns: {len(toks)}, poke: {c_poke}(+{c_poke-oc_poke}), moves: {c_move}(+{c_move-oc_move}), items: {c_item}(+{c_item-oc_item}), abilities: {c_abilities}(+{c_abilities-oc_abilities})')

@@ -4,8 +4,8 @@ import glob
 from pathlib import Path
 import json
 
-cartella = Path('../npz/')
-
+cartella1 = Path('../npz/reg_m-A')
+cartella2 = Path('../npz/reg_m-B')
 
 def _structured_to_token(record):
 
@@ -95,7 +95,7 @@ def load_from_npz(filename):
     
     return tokens_ricostruiti
 
-def collect_data_info(format):
+def collect_data_info():
     id_pokemon = set()
     id_abilita = set()
     id_strumenti = set()
@@ -104,7 +104,10 @@ def collect_data_info(format):
 
 
     # Trova tutti i file .npz nella cartella
-    file_npz = list(cartella.glob(f'*{format}*.npz'))   
+    file_npz = list(cartella1.glob(f'*.npz'))   
+    print(len(file_npz))
+    file_npz += list(cartella2.glob(f'*.npz'))   
+    print(len(file_npz))
 
     if not file_npz:
         print(f"Attenzione: Nessun file .npz trovato in {'../npz/'}")
@@ -128,8 +131,8 @@ def collect_data_info(format):
                 id_mosse.update(pokes[slot_mossa]['id'].flatten())
                     
         # Stampa un aggiornamento ogni 50 file elaborati
-        # if indice % 50 == 0 or indice == len(file_npz):
-        #     print(f"Elaborati {indice}/{len(file_npz)} file...")
+        if indice % 50 == 0 or indice == len(file_npz):
+            print(f"Elaborati {indice}/{len(file_npz)} file...")
 
 
     return id_abilita, id_mosse, id_pokemon, id_strumenti
@@ -166,9 +169,9 @@ def save_map(map):
     with open('../data/maps.json', "w", encoding="utf-8") as f:
         json.dump(map, f, indent=4) 
 
-def make_map(reg):
-    id_a, id_m, id_p, id_s = collect_data_info('regma') # 'regma' for reg m-A, ow reg m-B
-
+def make_map():
+    id_a, id_m, id_p, id_s = collect_data_info() # 'regma' for reg m-A, ow reg m-B
+    print_collected_data(id_a,id_m,id_p,id_s)
     l_id_a = list(id_a)
     l_id_a.append(0)
     l_id_a.sort()
@@ -177,7 +180,9 @@ def make_map(reg):
     l_id_m = sorted(list(id_m))
     move_map = {int(l_id_m[i]) : i for i in range(len(l_id_m))}
 
-    l_id_p = sorted(list(id_p))
+    l_id_p = list(id_p)
+    l_id_p.append(0)
+    l_id_p.sort()
     poke_map = {int(l_id_p[i]) : i for i in range(len(l_id_p))}
 
     l_id_s = sorted(list(id_s))
@@ -192,22 +197,17 @@ def make_map(reg):
 
 
 if __name__ == "__main__":
-    file_name = '../npz/reg_m-A/gen9championsvgc2026regma-2584198395.npz'
-    with np.load(file_name) as data:
-        turns = data['turns']
-    for el in turns[1][0]:
-        print(el)
-
+    make_map()
 
 
     '''
     ========================================
           RISULTATI STATISTICHE - reg m-A
     ========================================
-    Pokémon unici nel dataset:  241
-    Abilità uniche nel dataset: 148
-    Strumenti unici nel dataset:38
-    Mosse uniche nel dataset:   322
+    Pokémon unici nel dataset:   241
+    Abilità uniche nel dataset:  148
+    Strumenti unici nel dataset: 38
+    Mosse uniche nel dataset:    322
 
     ========================================
     VALORI MASSIMI (Per nn.Embedding senza remap)
@@ -217,7 +217,20 @@ if __name__ == "__main__":
     ID Max Strumenti: 2105  -> Configura num_embeddings = 2106
     ID Max Mosse:     918  -> Configura num_embeddings = 919
 
+    ========================================
+          RISULTATI STATISTICHE - reg m-A + reg m-A
+    ========================================
+    Pokémon unici nel dataset:   296
+    Abilità uniche nel dataset:  164
+    Strumenti unici nel dataset: 50
+    Mosse uniche nel dataset:    389
 
-
+    ========================================
+    VALORI MASSIMI (Per nn.Embedding senza remap)
+    ========================================
+    ID Max Pokémon:   10321  -> Configura num_embeddings = 10322
+    ID Max Abilità:   313  -> Configura num_embeddings = 314
+    ID Max Strumenti: 2177  -> Configura num_embeddings = 2178
+    ID Max Mosse:     918  -> Configura num_embeddings = 919
 
     '''

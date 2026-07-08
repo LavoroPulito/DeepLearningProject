@@ -2,10 +2,10 @@ venv/
 __pycache__/
 *.pyc
 .envrc
-
+modelWeights/
 # 2. Ignora tutti i file con queste estensioni ovunque si trovino
 *.txt
-.npz
+*.npz
 *.json
 *.csv
 *.zip

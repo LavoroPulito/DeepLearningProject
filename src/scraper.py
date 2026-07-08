@@ -76,21 +76,21 @@ def scambia_giocatori_file(percorso_file):
         nuovo_file.write(contenuto)
 
 if __name__ == '__main__':
-    for i in range(100):
-        print('page ',i)
-        ids = scarica_id(battleHistoryUrl+str(i))
-        existent_logs = os.listdir("../logs/")
-        existent_logs = [f[:-4] for f in existent_logs]  # rimuove .txt, più pythonico
-        existent_logs_set = set(existent_logs)  # set per ricerca O(1) invece di O(n)
-        ids_to_download = [Id for Id in ids if Id not in existent_logs_set]
-        esistenti = len(ids) - len(ids_to_download)
+    # for i in tqdm(range(100)):
+    #     ids = scarica_id(battleHistoryUrl+str(i))
+    #     existent_logs = os.listdir("../logs/")
+    #     existent_logs = [f[:-4] for f in existent_logs]  # rimuove .txt, più pythonico
+    #     existent_logs_set = set(existent_logs)  # set per ricerca O(1) invece di O(n)
+    #     ids_to_download = [Id for Id in ids if Id not in existent_logs_set]
+    #     esistenti = len(ids) - len(ids_to_download)
 
-        #print("ne esistevano ",esistenti, "ne scaricherai ", len(ids_to_download) )
-        for ID in ids_to_download:
-            scarica_log(ID)
-    # existent_logs = os.listdir("../logs/")
-    # for logfile in tqdm(existent_logs[:]):
-    #     scambia_giocatori_file("../logs/"+logfile)
+    #     print("ne esistevano ",esistenti, "ne scaricherai ", len(ids_to_download) )
+    #     for ID in tqdm(ids_to_download):
+    #         scarica_log(ID)
+    existent_logs = os.listdir("../logs/")
+    for logfile in tqdm(existent_logs[:]):
+        if 'regmb' in logfile and not logfile.startswith('R'):
+            scambia_giocatori_file("../logs/"+logfile)
 
 
     
