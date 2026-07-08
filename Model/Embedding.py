@@ -1,3 +1,4 @@
+# ── Embedding ────────────────────────────────────────
 """Embedding di stato, azione, ricompensa e turno.
 
 Gli ID (pokemon, mossa, ability, item) arrivano GIA' rimappati agli indici

@@ -1,16 +1,13 @@
-#Decision Transformer
-
 import torch # type: ignore
 import torch.nn as nn # type: ignore
 import torch.nn.functional as F # type: ignore
-
-
 try:
     from .SelfAttention import TransformerBlock
     from .Embedding import Embedding
 except ImportError:
     from SelfAttention import TransformerBlock
     from Embedding import Embedding
+
 
 class DecisionTransformer(nn.Module):
     def __init__(self, action_dim=360, d_model=256, n_heads=8, depth=6, max_turn=49, dropout=0.1):
@@ -60,3 +57,11 @@ class DecisionTransformer(nn.Module):
             action_preds = action_preds.masked_fill(~mask, float('-inf'))
             
         return F.log_softmax(action_preds, dim=-1) #log softmax over the last dimension (num_tokens)
+
+
+class AmpDecisionTransformer(DecisionTransformer):
+    """Autocast DENTRO il forward: con nn.DataParallel ogni replica gira in un
+    thread separato e il contesto autocast esterno non si propaga."""
+    def forward(self, *args, **kwargs):
+        with torch.amp.autocast('cuda', enabled=torch.cuda.is_available()):
+            return super().forward(*args, **kwargs)

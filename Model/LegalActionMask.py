@@ -1,3 +1,4 @@
+# ── Maschera azioni legali ───────────────────────────
 """Maschera delle azioni legali.
 
 Spazio azioni (piatto, 360):

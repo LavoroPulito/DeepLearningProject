@@ -10,10 +10,16 @@ Ottimizzazioni:
 """
 import os
 import time
-
+import math
 import torch  # type: ignore
 import torch.nn as nn  # type: ignore
 from torch.optim import AdamW  # type: ignore
+
+
+
+# ── Training loop ────────────────────────────────────
+def _base(model):
+    return model.module if isinstance(model, nn.DataParallel) else model
 
 
 def save_checkpoint(save_dir, epoch, model, optimizer, loss,
@@ -21,7 +27,7 @@ def save_checkpoint(save_dir, epoch, model, optimizer, loss,
     os.makedirs(save_dir, exist_ok=True)
     path = os.path.join(save_dir, filename)
     torch.save({'epoch': epoch,
-                'model_state_dict': model.state_dict(),
+                'model_state_dict': _base(model).state_dict(),
                 'optimizer_state_dict': optimizer.state_dict(),
                 'loss': loss}, path)
     return path
@@ -30,8 +36,13 @@ def save_checkpoint(save_dir, epoch, model, optimizer, loss,
 def load_checkpoint(filepath, model, optimizer):
     if filepath and os.path.exists(filepath):
         ckpt = torch.load(filepath, map_location='cpu')
-        model.load_state_dict(ckpt['model_state_dict'])
-        optimizer.load_state_dict(ckpt['optimizer_state_dict'])
+        try:
+            _base(model).load_state_dict(ckpt['model_state_dict'])
+            optimizer.load_state_dict(ckpt['optimizer_state_dict'])
+        except RuntimeError as e:
+            print(f'Checkpoint incompatibile con questa configurazione, '
+                  f'riparto da zero. ({str(e)[:120]}...)')
+            return 0
         print(f"Checkpoint caricato: riprendo dall'epoca {ckpt['epoch'] + 1} "
               f"(loss {ckpt['loss']:.4f})")
         return ckpt['epoch'] + 1
@@ -56,8 +67,7 @@ def _run_batch(model, batch, criterion, use_mask=True):
     log_probs = model(batch['state'], batch['move'], batch['battlefield'],
                       batch['action'], batch['reward'], batch['turn'],
                       batch['padding_mask'], legal_action_mask=legal)
-    # log_probs: (B, T, 2, action_dim); target: (B, T, 2)
-    # NB: si appiattisce a 2D invece di permute(0,3,1,2): il kernel CUDA di
+    # NB: appiattito a 2D invece di permute(0,3,1,2): il kernel CUDA di
     # nll_loss2d richiede input contiguo ("grad_input must be contiguous")
     target = batch['target_flat']
     loss_el = criterion(log_probs.reshape(-1, log_probs.size(-1)),
@@ -72,26 +82,79 @@ def _run_batch(model, batch, criterion, use_mask=True):
     return loss, mask.sum(), correct
 
 
+def evaluate(model, dataloader, criterion, device, non_blocking, use_amp,
+             use_legal_mask=True):
+    model.eval()
+    tl = tn = tc = 0.0
+    with torch.no_grad():
+        for batch in dataloader:
+            batch = _to_device(batch, device, non_blocking)
+            with torch.amp.autocast('cuda', enabled=use_amp):
+                loss, n, correct = _run_batch(model, batch, criterion,
+                                              use_legal_mask)
+            tl += loss.item() * n.item()
+            tn += n.item()
+            tc += correct.item()
+    return tl / max(tn, 1), tc / max(tn, 1)
+
+
+def set_backbone_frozen(model, frozen):
+    """Congela embedding + tutti i transformer block TRANNE l'ultimo.
+    Restano sempre allenabili: ultimo blocco e testa predict_action."""
+    base = _base(model)
+    for p in base.token_embedding.parameters():
+        p.requires_grad = not frozen
+    for blk in base.tblocks[:-1]:
+        for p in blk.parameters():
+            p.requires_grad = not frozen
+
+
 def train_decision_transformer(model, dataloader_training,
                                dataloader_validation, num_epochs, device,
                                lr=1e-4, save_dir='checkpoints',
-                               resume_from=None, use_legal_mask=True):
+                               resume_from=None, use_legal_mask=True,
+                               warmup_epochs=0, freeze_epochs=0,
+                               eval_first=False, patience=4):
     model.to(device)
     optimizer = AdamW(model.parameters(), lr=lr)
-    # cosine decay: vicino al plateau un LR piu' basso recupera ancora qualche punto
-    scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
-        optimizer, T_max=num_epochs, eta_min=lr * 0.05)
-    criterion = nn.NLLLoss(reduction='none')
+
+    # warmup lineare (se richiesto) + cosine decay fino al 5% del LR
+    def lr_lambda(epoch):
+        if warmup_epochs and epoch < warmup_epochs:
+            return (epoch + 1) / warmup_epochs
+        t = (epoch - warmup_epochs) / max(1, num_epochs - warmup_epochs)
+        return 0.05 + 0.95 * 0.5 * (1 + math.cos(math.pi * min(t, 1.0)))
+    scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda)
 
     use_amp = device.type == 'cuda'
     scaler = torch.amp.GradScaler(enabled=use_amp)
     non_blocking = device.type == 'cuda'
+    criterion = nn.NLLLoss(reduction='none')
 
     start_epoch = load_checkpoint(resume_from, model, optimizer) \
         if resume_from else 0
+    for _ in range(start_epoch):
+        scheduler.step()          # riallinea lo schedule dopo un resume
     best_val_loss = float('inf')
+    epochs_no_improve = 0
+    if eval_first:
+        vl, va = evaluate(model, dataloader_validation, criterion, device,
+                          non_blocking, use_amp, use_legal_mask)
+        print(f'Baseline zero-shot | val loss {vl:.4f} acc {va:.3f}')
 
+    frozen = False
     for epoch in range(start_epoch, num_epochs):
+        # ---- layer freezing (solo fine-tuning) ----
+        if freeze_epochs and epoch < freeze_epochs and not frozen:
+            set_backbone_frozen(model, True)
+            frozen = True
+            print(f'Backbone congelato per le prime {freeze_epochs} epoche '
+                  f'(si allenano ultimo blocco + testa)')
+        elif frozen and epoch >= freeze_epochs:
+            set_backbone_frozen(model, False)
+            frozen = False
+            print('Backbone scongelato: fine-tuning completo')
+
         # ---- training ----
         model.train()
         t0 = time.time()
@@ -114,19 +177,9 @@ def train_decision_transformer(model, dataloader_training,
         train_acc = tot_correct / tot_n
 
         # ---- validation ----
-        model.eval()
-        vtot_loss = vtot_n = vtot_correct = 0.0
-        with torch.no_grad():
-            for batch in dataloader_validation:
-                batch = _to_device(batch, device, non_blocking)
-                with torch.amp.autocast('cuda', enabled=use_amp):
-                    loss, n, correct = _run_batch(model, batch, criterion,
-                                                  use_legal_mask)
-                vtot_loss += loss.item() * n.item()
-                vtot_n += n.item()
-                vtot_correct += correct.item()
-        val_loss = vtot_loss / max(vtot_n, 1)
-        val_acc = vtot_correct / max(vtot_n, 1)
+        val_loss, val_acc = evaluate(model, dataloader_validation, criterion,
+                                     device, non_blocking, use_amp,
+                                     use_legal_mask)
 
         scheduler.step()
         dt = time.time() - t0
@@ -138,7 +191,14 @@ def train_decision_transformer(model, dataloader_training,
         save_checkpoint(save_dir, epoch, model, optimizer, train_loss)
         if val_loss < best_val_loss:
             best_val_loss = val_loss
+            epochs_no_improve = 0
             save_checkpoint(save_dir, epoch, model, optimizer, val_loss,
                             "best_model.pth")
+        else:
+            epochs_no_improve += 1
+            if epochs_no_improve >= patience:
+                print(f'Early stopping: val loss ferma a {best_val_loss:.4f} '
+                      f'da {patience} epoche (epoca {epoch + 1})')
+                break
 
     return model

@@ -930,10 +930,10 @@ ABILITY_LUT = build_lut(ability_map)
 ITEM_LUT = build_lut(item_map)
 
 # num_embeddings necessari (indice 0 incluso)
-N_POKE = len(pokemon_map) + 1      # 242
-N_MOVE = len(move_map) + 1         # 323
-N_ABILITY = len(ability_map) + 1   # 150
-N_ITEM = len(item_map) + 1         # 40
+N_POKE = len(pokemon_map) + 1      # 297
+N_MOVE = len(move_map) + 1         # 389
+N_ABILITY = len(ability_map) + 1   # 165
+N_ITEM = len(item_map) + 1         # 50
 
 
 def remap(lut, arr):

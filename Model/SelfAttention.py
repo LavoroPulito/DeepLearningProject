@@ -1,3 +1,4 @@
+# ── Self-Attention / Transformer Block ───────────────
 """Self-Attention e Transformer Block.
 
 Usa F.scaled_dot_product_attention (Flash/Memory-efficient attention dove

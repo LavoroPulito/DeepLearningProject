@@ -1,3 +1,4 @@
+# ── Preprocessing numpy vettorizzato + augmentation ──
 """Preprocessing numpy vettorizzato di un file .npz (una partita).
 
 Sostituisce i tripli loop Python di __getitem__: gli array strutturati numpy
