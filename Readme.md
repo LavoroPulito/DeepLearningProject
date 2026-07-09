@@ -7,7 +7,7 @@ Pokémon Showdown. The model is a **Decision Transformer**
 sequences of `(return-to-go, state, action)` tokens and the agent learns to predict
 the actions played by human players, conditioned on the desired game outcome.
 
-Here you can find the [report]{/Report/report.pdf} to the project
+Here you can find the [report](/Report/report.pdf) to the project
 
 ---
 
