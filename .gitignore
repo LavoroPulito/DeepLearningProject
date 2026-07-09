@@ -9,7 +9,6 @@ modelWeights/
 *.json
 *.csv
 *.zip
-
 # 3. ECCEZIONI (il punto esclamativo forza Git a includerli)
 !requirements.txt
 !.gitkeep

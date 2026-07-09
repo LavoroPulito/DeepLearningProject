@@ -1,116 +1,122 @@
-# Title to be decided
-## To do 
-- [x] non tutti gli status sono riconosciuti
-- [x] alcune abilità non vengono lette ([from] del avversario)
-- [x] pulire e sistemare il codice che fa schifo
-- [x] correzione dei token 
-- [ ] organizzazione delle partite per batches
-- [x] controllare e sistemare il codice sull'embedding (mancano tutte le dimensioni)
-- [x] spacchettare le bitmask
-- [x] mappare gli id 
+# Metamon: Behavioral Cloning for the Pokémon VGC Meta-game
 
---- aggiungere nei token?
-- [ ] aggiungere mega pietre
-- [x] far finire i campi 
-- [x] accuracy non la vediamo
-- [x] aggiungere turno 0
-- [x] maschera illegalità
+An offline reinforcement learning agent for competitive Pokémon VGC double battles
+(Gen 9, Regulations M-A / M-B, Mega Evolutions), trained on human replays from
+Pokémon Showdown. The model is a **Decision Transformer**
+([Chen et al., 2021](https://arxiv.org/pdf/2106.01345)): battles are modelled as
+sequences of `(return-to-go, state, action)` tokens and the agent learns to predict
+the actions played by human players, conditioned on the desired game outcome.
 
+Here you can find the [report]{\Report\report.pdf} to the project
 
-## theory stuff
-- [alphago](https://deepmind.google/research/alphago/) 
-- [Attention is all you need](https://arxiv.org/pdf/1706.03762) 
-- [embedding by medium](https://medium.com/deeper-learning/,glossary-of-deep-learning-word-embedding-f90c3cec34ca) 
-- [embedding 2 by medium](https://medium.com/data-science/sequence-embedding-for-clustering-and-classification-f816a66373fb)
-- [Transformer](https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/)
-- [Decision Transformers](https://arxiv.org/pdf/2106.01345) 
+---
 
-Youtube:
-- [ Attention ](https://www.youtube.com/watch?v=RNF0FvRjGZk&t=2s)
-- [ Transformer](https://www.youtube.com/watch?v=wjZofJX0v4M)
+## Project Overview
 
-## Setup
+The pipeline consists of three stages:
 
-python3 -m venv venv
-source venv/bin/activate
+1. **Data collection** — `Scraper/scraper.py` downloads public VGC replays from Pokémon
+   Showdown; `Scraper/cleanstrings.py` and `Scraper/getter.py` parse the battle logs
+   (enriched with PokéAPI metadata, cached in `data/`) into structured NumPy arrays,
+   one `.npz` file per game (stored in `npz/<regulation>/`).
+2. **Preprocessing** — `Model/preprocess.py` converts each game into padded tensors,
+   remaps all IDs to compact embedding indices, computes the per-turn legal action
+   mask and the flat action targets. Fully vectorised (~2 ms per game); results are
+   cached in RAM by the Dataset.
+3. **Training** — `Model/TrainingLoop.py` / `notebook/deeplearning.ipynb` train
+   the Decision Transformer with mixed precision, optional multi-GPU support,
+   data augmentation and a cosine learning-rate schedule.
+
+## Repository Structure
+
+````
+├── Scraper/                 # Scraping and replay parsing
+│   ├── scraper.py           # Showdown replay downloader
+│   ├── cleanstrings.py      # Log parser → structured turns
+│   ├── getter.py            # PokéAPI entities (Pokémon, moves, bitmasks)
+│   └── data_menager.py      # data reader and maps maker
+├── data/                    # PokéAPI caches (pokemon, moves, abilities, items)
+├── npz/                     # One .npz per game, grouped by regulation
+├── Model/
+│   ├── id_maps.py           # Raw ID → embedding index lookup tables
+│   ├── preprocess.py        # Vectorised game preprocessing + data augmentation
+│   ├── LegalActionMask.py   # Per-turn legal action mask (action space 360)
+│   ├── PokemonVGCDataset.py # PyTorch Dataset with in-RAM cache
+│   ├── Embedding.py         # State / action / return / turn token embeddings
+│   ├── SelfAttention.py     # Transformer blocks (Flash Attention, padding-safe)
+│   ├── DecisionTransformer.py
+│   ├── TrainingLoop.py      # AMP, legal-action masking, checkpointing, LR schedule
+│   ├── main.py              # Local CLI entry point
+└── notebook/
+    └── deeplearning.ipynb    # Kaggle notebook (2× GPU)
+````
+
+## Model
+
+Decision Transformer with GPT-style causal attention over interleaved
+`(R̂_t, s_t, a_t)` tokens (sequence length 3 × 49):
+
+- Per-feature embeddings (dim 16) concatenated and projected to `d_model`;
+  discrete IDs are remapped by the Dataset (index 0 = unknown/padding).
+- `depth` pre-norm Transformer blocks with Flash Attention
+  (`scaled_dot_product_attention`) and a padding-safe attention mask.
+- A linear head reads the state token and outputs two independent
+  distributions over the 360 actions (one per action slot).
+
+Default configuration: `d_model = 384`, `depth = 8`, `n_heads = 12`,
+`dropout = 0.20` (~17,46 M parameters).
+
+## Training
+
+- **Objective:** masked negative log-likelihood over the legal actions of both
+  action heads, ignoring padded turns.
+- **Optimisation:** AdamW, cosine LR decay (optional linear warm-up),
+  gradient clipping, automatic mixed precision on CUDA.
+- **Multi-GPU:** `nn.DataParallel` (autocast applied inside `forward`, checkpoints
+  always stored unwrapped for single/multi-GPU compatibility).
+- **Data augmentation:** random permutation of the 12 Pokémon rows (position in
+  the token is arbitrary) and of each moveset order, with consistent remapping of
+  action targets and mask columns.
+- **Fine-tuning mode** (notebook, `FINETUNE = True`): loads pretrained weights,
+  reports the zero-shot baseline, then trains with low LR, warm-up, and the
+  backbone frozen for the first epochs (last block + head only). Intended for
+  regulation transfer (e.g. pretrain on M-A, adapt to M-B).
+
+### Running
+
+Kaggle (recommended, 2× T4): upload the `.npz` dataset, open
+`notebook/deeplearning_v2.ipynb`, set the flags in the configuration cell
+(`FAST`, `FINETUNE`, paths) and run all cells. Checkpoints are written to
+`/kaggle/working/checkpoints_*` and training resumes automatically.
+
+Local:
+
+````bash
+python3 -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
 
-### instruction to first use 
-git clone <repo>
-cd <repo>
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-python3 scraper.py
+python3 Model/main.py --fast           # quick run: small model, 300 games
+python3 Model/main.py                  # full training
+````
 
 
-## Costruzione del modello
+## Known Limitations
 
-cosa trovi nel token
+- Replays expose only public information: opponent movesets, items and abilities
+  are revealed progressively; the state snapshot is taken at the start of the
+  turn and cannot capture intra-turn dynamics. The legal mask is therefore
+  deliberately permissive.
+- The recorded targets of self/spread moves are noisy (~5–7 % of actions).
+- The return signal is binary and constant per game; empirically the model
+  largely ignores the return token and behaves as behavioural cloning. A richer
+  return (e.g. final Pokémon differential) is the natural extension.
+- Evaluation is offline only; assessing actual playing strength would require
+  rollouts against a battle simulator (e.g. Pokémon Showdown).
 
+## References
 
-token
- - stato:
-    - x12 pokemon:
-        - id 
-        - type
-        - ability
-        - item
-        - slot 
-      
-        --continue
-        - stats
-        - stats_change
-        - status
-        - hp_ratio
-        - 4x move
-            - id 
-            - d_class
-            - t_class
-
-            --continue
-            - power
-            - priority
-            - accuracy
-    - campo
-        - meteo
-
-        --continue
-        - speed_modifier [taw 0, taw 1,tkrm] 
-
- - turno:
-    - (timestamp)
-
- - 2x azione: 
-    - player user
-    - slot user
-    - player target
-    - slot target
-    - move $\in  \{0,1,2,3,4,5\}$
-    - mega
-
- - reward
-    {0,1}
-
-
-matrice emb: batch, turns, token = (pokemon, campo, turn, action, reward) 
-
-### legal actions
-
-Spazio azioni piatto = 360: dims (s_user: 3, p_target: 2, s_target: 5, mega: 2, move: 6),
-flat = s_user*120 + p_target*60 + s_target*12 + mega*6 + move.
-p_user non è una dimensione (sempre 0 nei dati). Convenzioni dei replay:
-pass = (s_user=0, trg=(0,0), move=5); switch (move=4) ha trg_slot = slot che
-il mon entrante aveva prima (0 = mai sceso in campo, 3/4 = panchina).
-
-Regole (vedi Model/LegalActionMask.py, validate su tutti i replay con
-Model/validate_mask.py — copertura 99.55%, il resto è forzato legale dal Dataset):
-- pass sempre disponibile
-- switch: verso 3/4 se panchina viva (o possibile benching intra-turno), verso 0 sempre (bring-4)
-- mosse: serve un mon proprio nello slot; id==0 legale solo al primo indice
-  libero (mossa rivelata al primo uso); tutti i 4 target (i target dello
-  scraper per mosse self/spread sono rumorosi)
-- mega: solo se nessuna azione precedente della partita ha già megaevoluto
-
-La maschera è volutamente permissiva: un -inf sull'azione vera renderebbe la
-loss infinita. Il Dataset forza comunque mask[azione_vera] = True.
+- Chen et al., *Decision Transformer: Reinforcement Learning via Sequence
+  Modeling*, NeurIPS 2021 — https://arxiv.org/pdf/2106.01345
+- Vaswani et al., *Attention Is All You Need*, NeurIPS 2017
+- Pokémon Showdown (replays) — https://pokemonshowdown.com
+- PokéAPI (game metadata) — https://pokeapi.co
