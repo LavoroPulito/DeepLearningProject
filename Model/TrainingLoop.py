@@ -39,13 +39,13 @@ def load_checkpoint(filepath, model, optimizer):
             _base(model).load_state_dict(ckpt['model_state_dict'])
             optimizer.load_state_dict(ckpt['optimizer_state_dict'])
         except RuntimeError as e:
-            print(f'Checkpoint incompatibile con questa configurazione, '
-                  f'riparto da zero. ({str(e)[:120]}...)')
+            print(f'Checkpoint incompatible with this configuration, '
+                  f'starting from zero. ({str(e)[:120]}...)')
             return 0
-        print(f"Checkpoint caricato: riprendo dall'epoca {ckpt['epoch'] + 1} "
+        print(f"Checkpoint loaded: I'm picking up from the era {ckpt['epoch'] + 1} "
               f"(loss {ckpt['loss']:.4f})")
         return ckpt['epoch'] + 1
-    print("Nessun checkpoint trovato. Inizio da zero.")
+    print("No checkpoint founded. starting from zero.")
     return 0
 
 

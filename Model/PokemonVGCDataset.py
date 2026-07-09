@@ -22,7 +22,7 @@ class PokemonVGCDataset(Dataset):
                  augment=False, seed=None):
         self.file_paths = list(file_paths)
         self.max_turn = max_turn
-        self.augment = augment   # solo sul training set
+        self.augment = augment   
         self._rng = np.random.default_rng(seed)
         self._cache = [None] * len(self.file_paths)
         if preload:
@@ -64,7 +64,6 @@ if __name__ == '__main__':
     print('state.id', b['state']['id'].shape)          # (2, 49, 12)
     print('target_flat', b['target_flat'].shape)       # (2, 49, 2)
     print('legal', b['legal_action_mask'].shape, b['legal_action_mask'].dtype)
-    # il target deve essere sempre legale
     tf = b['target_flat']
     legal = b['legal_action_mask']
     ok = legal.gather(-1, tf).all()

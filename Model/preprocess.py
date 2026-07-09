@@ -55,7 +55,7 @@ def preprocess_game(file_path, max_turn=49):
         'hp_ratio': pad(poke['hp_ratio'].astype(np.float32)[..., None]),
     }
 
-    # --- mosse (stack dei 4 slot mossa) ------------------------------------
+    # --- moves (stack off 4 slot move) ------------------------------------
     mv = [poke[f'move{m}'] for m in range(4)]          # 4 x (T, 12)
     def mstack(f): return np.stack([m[f] for m in mv], axis=-1)  # (T, 12, 4)
     raw_move_id = mstack('id')

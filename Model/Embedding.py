@@ -21,11 +21,11 @@ class Embedding(nn.Module):
         # POKEMON. features: (player, id, type1, type2, ability, item, slot, stats, stats_change, status, [moves]x4, hp_ratio)
         # --- discrete features  
         self.embed_player = nn.Embedding(2, feat_dim)
-        self.embed_id = nn.Embedding(N_POKE, feat_dim)        # 242
+        self.embed_id = nn.Embedding(N_POKE, feat_dim)        
         self.embed_type1 = nn.Embedding(19, feat_dim)
         self.embed_type2 = nn.Embedding(19, feat_dim)
-        self.embed_ability = nn.Embedding(N_ABILITY, feat_dim)  # 150
-        self.embed_item = nn.Embedding(N_ITEM, feat_dim)        # 40
+        self.embed_ability = nn.Embedding(N_ABILITY, feat_dim)  
+        self.embed_item = nn.Embedding(N_ITEM, feat_dim)        
         self.embed_slot = nn.Embedding(5, feat_dim)
 
         # --- continuous features 
@@ -36,7 +36,7 @@ class Embedding(nn.Module):
 
         # MOVE. features: (id, type, damage class, target_class, power, priority, accuracy)
         # --- discrete features
-        self.embed_id_move = nn.Embedding(N_MOVE, feat_dim)   # 323
+        self.embed_id_move = nn.Embedding(N_MOVE, feat_dim)   
         self.embed_d_class = nn.Embedding(4, feat_dim)        # 0..3
         self.embed_move_type = nn.Embedding(19, feat_dim)
         self.embed_t_class = nn.Embedding(17, feat_dim)       # 0..16

@@ -30,7 +30,7 @@ class DecisionTransformer(nn.Module):
                 ) for _ in range(depth)
         ])
         
-        self.predict_action=nn.Linear(d_model, 2*self.action_dim) #per predire il token dell'azione
+        self.predict_action=nn.Linear(d_model, 2*self.action_dim) 
     
     def forward(self, state, move, battlefield, action, reward, turn, padding_mask=None, legal_action_mask=None):
         
