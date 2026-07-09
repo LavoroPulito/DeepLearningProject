@@ -1,39 +1,40 @@
-# ── Preprocessing numpy vettorizzato + augmentation ──
-"""Preprocessing numpy vettorizzato di un file .npz (una partita).
+# ── Vectorized Numpy preprocessing + augmentation ──
+"""Vectorized Numpy preprocessing of an .npz file (a game).
 
-Sostituisce i tripli loop Python di __getitem__: gli array strutturati numpy
-permettono l'accesso vettoriale a tutti i campi (es. turns['pokemon']['atk']
-ha shape (T, 12)). Include il remap degli ID agli indici di embedding e il
-calcolo della maschera legale, cosi' il Dataset deve solo convertire a torch.
+Replaces Python's triple loops in __getitem__: structured Numpy arrays
+allow vector access to all fields (e.g., turns['pokemon']['atk']
+has shape (T, 12)). Includes remapping of IDs to embedding indices and
+calculation of the legal mask, so the Dataset only needs to convert to torch.
 
-Tutto e' numpy puro: testabile senza torch.
+Everything is pure Numpy: testable without torch.
 """
+
 import numpy as np  # type: ignore
 
 from id_maps import POKE_LUT, MOVE_LUT, ABILITY_LUT, ITEM_LUT, remap
 from LegalActionMask import ActionMasker
 
-PREPROCESS_VERSION = 2  # bump per invalidare le cache
+PREPROCESS_VERSION = 2  # bump to invalidate the cache
 
 
 def preprocess_game(file_path, max_turn=49):
-    """Ritorna un dict di array numpy gia' paddati a max_turn e rimappati."""
+    """Returns a dict of numpy arrays already max_turned and remapped."""
     with np.load(file_path, allow_pickle=True) as loaded:
         turns = loaded['turns']
 
     T = min(len(turns), max_turn)
     turns = turns[:T]
-    poke = turns['pokemon']            # (T, 12) strutturato
+    poke = turns['pokemon']            # (T, 12) structured
     field = turns['field']             # (T,)
 
     def pad(a, fill=0):
-        """Padda la prima dimensione a max_turn."""
+        """Set the first dimension to max_turn."""
         if a.shape[0] == max_turn:
             return np.ascontiguousarray(a)
         width = [(0, max_turn - a.shape[0])] + [(0, 0)] * (a.ndim - 1)
         return np.pad(a, width, constant_values=fill)
 
-    # --- stato -----------------------------------------------------------
+    # --- state -----------------------------------------------------------
     state = {
         'id':      pad(remap(POKE_LUT, poke['poke_id'])),
         'player':  pad(poke['player'].astype(np.int64)),
@@ -68,14 +69,14 @@ def preprocess_game(file_path, max_turn=49):
         'accuracy': pad(mstack('accuracy').astype(np.float32) / 100.0),
     }
 
-    # --- campo -------------------------------------------------------------
+    # --- field -------------------------------------------------------------
     battlefield = {
         'current_weather': pad(field['weather'].astype(np.int64)),
         'speed_modifier': pad(((field['speed_mask'][..., None].astype(np.int64)
                                 >> np.arange(2, -1, -1)) & 1).astype(np.float32)),
     }
 
-    # --- azioni (stack action0/action1) -------------------------------------
+    # --- action (stack action0/action1) -------------------------------------
     acts = [turns['action0'], turns['action1']]
     def astack(f): return np.stack([a[f].astype(np.int64) for a in acts], axis=-1)
     action = {
@@ -87,23 +88,23 @@ def preprocess_game(file_path, max_turn=49):
         'move':          pad(astack('move')),
     }
 
-    # indice piatto (T, 2) nello spazio azioni 360 - stessa formula del masker
+    # flat index (T, 2) in the 360 action space - same formula as the masker
     target_flat = ActionMasker.flat_batch(
         action['slot_user'], action['player_target'],
         action['slot_target'], action['mega'], action['move'])
 
-    # --- reward e padding ----------------------------------------------------
-    # Convenzione Decision Transformer: return-to-go, cioe' l'esito finale
-    # replicato su ogni turno valido (a inferenza si condiziona con 1 = vinci).
-    # Con il reward solo all'ultimo turno il modello non potrebbe condizionare
-    # le azioni sull'esito desiderato.
+    # --- reward and padding ----------------------------------------------------
+    # Decision Transformer convention: return-to-go, i.e., the final outcome
+    # replicated on every valid round (for inference, it is conditioned with 0 = win).
+    # With the reward only on the last round, the model could not condition
+    # the actions on the desired outcome.
     reward = np.zeros(max_turn, dtype=np.int64)
-    reward[:T] = max(0, int(field['winner'][-1]))
+    reward[:T] = max(0, int(field['winner'][-1])) #be careful: winner contains the id of the winner indeed. reward == 0 means player 0 (the emulated) has win
     padding_mask = np.zeros(max_turn, dtype=np.int64)
     padding_mask[:T] = 1
 
-    # --- maschera legale -------------------------------------------------------
-    # mega disponibile al turno t se nessuna azione precedente ha megaevoluto
+    # --- legal mask -------------------------------------------------------
+    # mega available on turn t if no previous action has mega evolved
     mega_any = (action['mega'][:, 0] | action['mega'][:, 1]).astype(bool)
     mega_used_before = np.concatenate([[False], np.cumsum(mega_any)[:-1] > 0])
 
@@ -114,7 +115,7 @@ def preprocess_game(file_path, max_turn=49):
               'hp_ratio': state['hp_ratio'][t]}
         legal[t] = masker.get_valid_action_mask(
             st, {'id': raw_move_id[t]}, not mega_used_before[t])
-        # rete di sicurezza: l'azione realmente giocata e' sempre legale
+        # safety net: the action actually played is always legal
         for a in range(2):
             idx = target_flat[t, a]
             if 0 <= idx < masker.total_actions:
@@ -134,32 +135,33 @@ def preprocess_game(file_path, max_turn=49):
 
 
 def augment_game(g, rng, permute_rows=True, permute_moves=True):
-    """Data augmentation. Ritorna una COPIA (non muta la cache del Dataset).
+    """Data augmentation. Returns a COPY (does not change the Dataset cache).
 
-    1. Permuta l'ordine delle 4 mosse di ogni pokemon (una permutazione per
-       mon, costante nei turni). L'indice `move` dell'azione e' solo la
-       posizione nel moveset: permutarlo insegna l'invarianza. Vengono
-       rimappati coerentemente l'indice mossa dell'azione target/input e le
-       colonne `move` della maschera legale (con la permutazione del mon che
-       agisce in quel turno/slot).
-    2. Permuta le 12 righe dei pokemon nel token di stato: la posizione in
-       lista e' arbitraria (l'informazione sta in `player` e `slot`), quindi
-       target e maschera non cambiano.
+    1. Permutes the order of the 4 moves of each Pokémon (one permutation per
+    mon, constant across turns). The `move` index of the action is just the
+    position in the moveset: permuting it teaches invariance. The
+    move index of the target/input action and the
+    `move` columns of the legal mask are consistently remapped (with the permutation of the
+    mon that acts in that turn/slot).
+    2. Permutes the 12 Pokémon rows in the status token: the position in the
+    list is arbitrary (the information is in `player` and `slot`), so
+    the target and mask do not change.
     """
+
     out = {}
     for k, v in g.items():
         out[k] = ({kk: vv.copy() for kk, vv in v.items()}
                   if isinstance(v, dict) else v.copy())
 
     T = int(out['padding_mask'].sum())
-    player = g['state']['player']   # riferimenti alle righe ORIGINALI
+    player = g['state']['player']   # Original references
     slot = g['state']['slot']
 
     if permute_moves:
         perms = np.stack([rng.permutation(4) for _ in range(12)])  # (12, 4)
-        inv = np.argsort(perms, axis=1)      # inv[i, vecchio] = nuovo indice
+        inv = np.argsort(perms, axis=1)      # inv[i, old] = new index
 
-        # permuta gli array delle mosse: new[..., i, k] = old[..., i, perms[i, k]]
+        # permute move arrays: new[..., i, k] = old[..., i, perms[i, k]]
         for k, v in out['move'].items():
             idx = perms[None, :, :]
             if v.ndim == 4:                  # es. power (T, 12, 4, 1)
@@ -167,7 +169,7 @@ def augment_game(g, rng, permute_rows=True, permute_moves=True):
             out['move'][k] = np.take_along_axis(v, np.broadcast_to(idx, v.shape),
                                                 axis=2)
 
-        # rimappa l'indice mossa dell'azione (input e target)
+        # remaps the action's move index (input and target)
         for t in range(T):
             for a in range(2):
                 mv = int(out['action']['move'][t, a])
@@ -177,7 +179,7 @@ def augment_game(g, rng, permute_rows=True, permute_moves=True):
                     if rows.size:
                         out['action']['move'][t, a] = inv[int(rows[0]), mv]
 
-        # rimappa le colonne `move` della maschera legale
+        # remap the `move` columns of the legal form
         legal = out['legal_action_mask'][:T].reshape(T, 3, 2, 5, 2, 6)
         for t in range(T):
             for s in (1, 2):
@@ -187,7 +189,7 @@ def augment_game(g, rng, permute_rows=True, permute_moves=True):
                     legal[t, s, ..., :4] = np.take(legal[t, s], p, axis=-1)
         out['legal_action_mask'][:T] = legal.reshape(T, -1)
 
-        # ricalcola il target piatto con l'indice mossa aggiornato
+        # recalculate the flat target with the updated move index
         a = out['action']
         out['target_flat'] = ActionMasker.flat_batch(
             a['slot_user'], a['player_target'], a['slot_target'],

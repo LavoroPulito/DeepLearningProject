@@ -9,13 +9,13 @@ except ImportError:
 
 
 class PokemonVGCDataset(Dataset):
-    """Dataset delle partite VGC.
+    """VGC game dataset.
 
-    Ogni partita viene preprocessata UNA volta (numpy vettorizzato,
-    ~2 ms/partita) e tenuta in RAM: le epoche successive costano solo
-    l'indicizzazione + torch.from_numpy (zero-copy). Con la cache in RAM
-    usare num_workers=0 nel DataLoader: e' gia' il percorso piu' veloce
-    e evita di duplicare la cache nei worker.
+            Each game is preprocessed once (vectorized numpy,
+            ~2 ms/game) and held in RAM: subsequent epochs only cost
+            indexing + torch.from_numpy (zero-copy). With the cache in RAM,
+            use num_workers=0 in the DataLoader: this is already the fastest path
+            and avoids duplicating the cache in the workers.
     """
 
     def __init__(self, file_paths, max_turn=49, preload=True, verbose=False,

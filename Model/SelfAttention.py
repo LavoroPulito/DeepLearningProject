@@ -1,14 +1,9 @@
 # ── Self-Attention / Transformer Block ───────────────
-"""Self-Attention e Transformer Block.
+"""Self-Attention and Transformer Block.
 
-Usa F.scaled_dot_product_attention (Flash/Memory-efficient attention dove
-disponibile): molto piu' veloce e con meno memoria della versione manuale.
+Use F.scaled_dot_product_attention (Flash/Memory-efficient attention where
+available): much faster and uses less memory than the manual version.
 
-Fix importante: nella versione precedente le righe di query dei turni di
-padding avevano TUTTI gli score a -inf -> softmax = NaN, e i NaN si
-propagavano a tutta la sequenza dal secondo blocco in poi (0 * NaN = NaN
-nella matmul dei value). Ora la diagonale resta sempre attendibile, cosi'
-nessuna riga e' completamente mascherata.
 """
 import torch  # type: ignore
 import torch.nn as nn  # type: ignore
@@ -40,13 +35,13 @@ class SelfAttention(nn.Module):
 
         q, k, v = split(self.query(x)), split(self.key(x)), split(self.value(x))
 
-        # maschera combinata: True = posizione attendibile
+        # combined mask: True = trusted location
         attn_mask = self.causal_mask[:T, :T]              # (T, T)
         if padding_mask is not None:
             keep = padding_mask.bool()                     # (B, T)
             attn_mask = attn_mask.unsqueeze(0) & keep.unsqueeze(1)  # (B, T, T)
-            # la diagonale resta sempre attendibile: evita righe tutte-False
-            # (query di padding) che producono NaN nel softmax
+            # the diagonal is always reliable: avoid all-False rows
+            # (padding queries) that produce NaNs in the softmax    
             eye = torch.eye(T, dtype=torch.bool, device=x.device)
             attn_mask = attn_mask | eye.unsqueeze(0)
             attn_mask = attn_mask.unsqueeze(1)             # (B, 1, T, T)

@@ -1,13 +1,13 @@
-"""Entry point del training.
+"""Training entry point.
 
-Uso:
-    python3 Model/main.py                     # training completo
-    python3 Model/main.py --fast              # sanity check veloce
-    python3 Model/main.py --data npz/reg_m-B --epochs 30 --batch 64
+    Usage:
+        python3 Model/main.py # full training
+        python3 Model/main.py --fast # fast sanity check
+        python3 Model/main.py --data npz/reg_m-B --epochs 30 --batch 64
 
---fast: modello piccolo + poche partite + poche epoche. Serve a verificare
-in pochi minuti che la pipeline giri e che il modello impari (la train
-accuracy deve salire ben oltre la baseline casuale ~1/50 di azioni legali).
+        --fast: small model + few games + few epochs. This is used to verify
+        in a few minutes that the pipeline is running and that the model is learning (train
+        accuracy must rise well above the random baseline of ~1/50th of legal actions).
 """
 import argparse
 import glob
@@ -60,27 +60,29 @@ def main():
 
     device = pick_device()
     print(f'Device: {device}')
-
+    
+    #get files 
     files = sorted(glob.glob(f'{args.data}/*.npz'))
     if not files:
-        sys.exit(f'Nessun file .npz in {args.data}')
-    random.Random(42).shuffle(files)
+        sys.exit(f'No.npz files in {args.data}')
+    random.Random(42).shuffle(files) 
     if args.max_files:
         files = files[:args.max_files]
 
+    #split train, validation, test
     n = len(files)
     n_val, n_test = max(1, n // 10), max(1, n // 10)
     train_files = files[:n - n_val - n_test]
     val_files = files[n - n_val - n_test:n - n_test]
     test_files = files[n - n_test:]
-    print(f'Partite: {len(train_files)} train / {len(val_files)} val / '
+    print(f'Games: {len(train_files)} train / {len(val_files)} val / '
           f'{len(test_files)} test')
 
     t0 = time.time()
     ds_train = PokemonVGCDataset(train_files, max_turn=49, verbose=True,
                                  augment=not args.no_augment)
     ds_val = PokemonVGCDataset(val_files, max_turn=49)
-    print(f'Preprocessing: {time.time() - t0:.1f}s (una tantum, poi in RAM)')
+    print(f'Preprocessing: {time.time() - t0:.1f}s (one-off, then in RAM)')
 
     pin = device.type == 'cuda'
     dl_train = DataLoader(ds_train, batch_size=args.batch, shuffle=True,
@@ -92,7 +94,7 @@ def main():
                                 n_heads=args.heads, depth=args.depth,
                                 max_turn=49, dropout=args.dropout)
     n_params = sum(p.numel() for p in model.parameters())
-    print(f'Parametri: {n_params / 1e6:.2f}M')
+    print(f'Parameters: {n_params / 1e6:.2f}M')
 
     train_decision_transformer(model, dl_train, dl_val,
                                num_epochs=args.epochs, device=device,
@@ -100,7 +102,7 @@ def main():
                                resume_from=args.resume)
 
     torch.save(model.state_dict(), 'vgc_decision_transformer.pth')
-    print('Modello salvato: vgc_decision_transformer.pth')
+    print('Best model saved: vgc_decision_transformer.pth')
 
 
 if __name__ == '__main__':

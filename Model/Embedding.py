@@ -1,9 +1,7 @@
 # ── Embedding ────────────────────────────────────────
-"""Embedding di stato, azione, ricompensa e turno.
-
-Gli ID (pokemon, mossa, ability, item) arrivano GIA' rimappati agli indici
-di embedding dal Dataset (vedi id_maps.py / preprocess.py): indice 0 =
-sconosciuto/padding. Qui non si fa nessun lookup di dizionari.
+"""The IDs (Pokemon, move, ability, item) arrive ALREADY remapped 
+to the embedding indices from the Dataset (see id_maps.py / preprocess.py): 
+index 0 = unknown/padding. No dictionary lookup is performed here.
 """
 import torch  # type: ignore
 import torch.nn as nn  # type: ignore
@@ -18,8 +16,10 @@ class Embedding(nn.Module):
     def __init__(self, d_model=256, feat_dim=16, max_turn=49):
         super().__init__()
         self.d_model = d_model
+        # --- state: 12 pokemon + field  
 
-        # --- stato: 12 pokemon, feature discrete
+        # POKEMON. features: (player, id, type1, type2, ability, item, slot, stats, stats_change, status, [moves]x4, hp_ratio)
+        # --- discrete features  
         self.embed_player = nn.Embedding(2, feat_dim)
         self.embed_id = nn.Embedding(N_POKE, feat_dim)        # 242
         self.embed_type1 = nn.Embedding(19, feat_dim)
@@ -28,31 +28,34 @@ class Embedding(nn.Module):
         self.embed_item = nn.Embedding(N_ITEM, feat_dim)        # 40
         self.embed_slot = nn.Embedding(5, feat_dim)
 
-        # --- stato: feature continue
+        # --- continuous features 
         self.embed_stats = nn.Linear(6, feat_dim)
         self.embed_stats_change = nn.Linear(5, feat_dim)
         self.embed_status = nn.Linear(6, feat_dim)
         self.embed_hp_ratio = nn.Linear(1, feat_dim)
 
-        # --- mosse (12 pokemon x 4 mosse)
+        # MOVE. features: (id, type, damage class, target_class, power, priority, accuracy)
+        # --- discrete features
         self.embed_id_move = nn.Embedding(N_MOVE, feat_dim)   # 323
         self.embed_d_class = nn.Embedding(4, feat_dim)        # 0..3
         self.embed_move_type = nn.Embedding(19, feat_dim)
         self.embed_t_class = nn.Embedding(17, feat_dim)       # 0..16
+
+        # --- continuous features  
         self.embed_power = nn.Linear(1, feat_dim)
         self.embed_priority = nn.Linear(1, feat_dim)
         self.embed_accuracy = nn.Linear(1, feat_dim)
 
-        # --- campo
+        # FIELD. features: (current weather, speed modifier)
         self.embed_current_weather = nn.Embedding(5, feat_dim)
         self.embed_speed_modifier = nn.Linear(3, feat_dim)
 
-        # dimensione dello stato completo: 12 pokemon x 11 feature
-        # + 12x4 mosse x 7 feature + 2 feature di campo
-        state_in = (12 * 11 + 12 * 4 * 7 + 2) * feat_dim   # 7520 con feat_dim=16
+        # complete state dimension: 
+        # 12 pokemon x 11 feature + 12 x 4 moves x 7 feature + 2 field features
+        state_in = (12 * 11 + 12 * 4 * 7 + 2) * feat_dim   # 7520 using feat_dim=16
         self.state_proj = nn.Linear(state_in, d_model)
 
-        # --- azione (2 azioni per turno x 6 componenti)
+        # --- action (2 action each turn x 6 components)
         self.embed_player_user = nn.Embedding(2, feat_dim)
         self.embed_slot_user = nn.Embedding(3, feat_dim)      # 0=pass, 1, 2
         self.embed_player_target = nn.Embedding(2, feat_dim)
@@ -61,7 +64,7 @@ class Embedding(nn.Module):
         self.embed_move = nn.Embedding(6, feat_dim)
         self.action_proj = nn.Linear(2 * 6 * feat_dim, d_model)
 
-        # --- ricompensa (return-to-go 0/1) e turno
+        # --- reward (return-to-go 0/1) and turn (simil timestamp)
         self.embed_reward = nn.Embedding(2, d_model)
         self.embed_turn = nn.Embedding(max_turn, d_model)
 
@@ -69,7 +72,7 @@ class Embedding(nn.Module):
                 padding_mask=None):
         batch_size, seq_len = state['id'].shape[:2]
 
-        # --- stato
+        # --- state
         pokemon_emb = torch.cat([
             self.embed_player(state['player']),
             self.embed_id(state['id']),
@@ -103,7 +106,7 @@ class Embedding(nn.Module):
                                 weather_emb, speed_emb], dim=-1)
         state_emb = self.state_proj(full_state)      # (B, T, d_model)
 
-        # --- azione (slot_user usato direttamente: 0 = pass)
+        # --- action 
         full_action = torch.cat([
             self.embed_player_user(action['player_user']),
             self.embed_slot_user(action['slot_user']),
@@ -114,7 +117,7 @@ class Embedding(nn.Module):
         ], dim=-1)                                   # (B, T, 2, 6*feat)
         action_emb = self.action_proj(full_action.flatten(2))
 
-        # --- ricompensa e turno
+        # --- reward and turn 
         reward_emb = self.embed_reward(reward)
         turn_emb = self.embed_turn(turn)
 

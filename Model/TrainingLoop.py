@@ -1,12 +1,12 @@
-"""Training loop del Decision Transformer.
+"""Decision Transformer training loop.
 
-Ottimizzazioni:
-  - AMP (mixed precision) automatica su CUDA;
-  - trasferimenti non_blocking + pin_memory (dal DataLoader);
-  - target flat precalcolati nel Dataset (niente aritmetica per batch);
-  - maschera delle azioni legali applicata ai logits (softmax solo sul
-    legale: il Dataset garantisce che l'azione vera sia sempre legale);
-  - metrica di accuracy sulle azioni per verificare le capacita' del modello.
+Optimizations:
+- Automatic AMP (mixed precision) on CUDA;
+- Non-blocking transfers + pin_memory (from the DataLoader);
+- Flat targets pre-calculated in the Dataset (no batch arithmetic);
+- Legal action mask applied to logits (softmax only on the legal
+action: the Dataset guarantees that the true action is always legal);
+- Action accuracy metric to verify the model's capabilities.
 """
 import os
 import time
@@ -17,7 +17,6 @@ from torch.optim import AdamW  # type: ignore
 
 
 
-# ── Training loop ────────────────────────────────────
 def _base(model):
     return model.module if isinstance(model, nn.DataParallel) else model
 
@@ -62,13 +61,13 @@ def _to_device(batch, device, non_blocking):
 
 
 def _run_batch(model, batch, criterion, use_mask=True):
-    """Ritorna (loss, n_azioni_valide, n_azioni_corrette)."""
+    """Returns (loss, n_azioni_valide, n_azioni_corrette)."""
     legal = batch['legal_action_mask'] if use_mask else None
     log_probs = model(batch['state'], batch['move'], batch['battlefield'],
                       batch['action'], batch['reward'], batch['turn'],
                       batch['padding_mask'], legal_action_mask=legal)
-    # NB: appiattito a 2D invece di permute(0,3,1,2): il kernel CUDA di
-    # nll_loss2d richiede input contiguo ("grad_input must be contiguous")
+    # NB: flattened to 2D instead of permute(0,3,1,2): the CUDA kernel of
+    # nll_loss2d requires contiguous input ("grad_input must be contiguous")
     target = batch['target_flat']
     loss_el = criterion(log_probs.reshape(-1, log_probs.size(-1)),
                         target.reshape(-1)).view_as(target)      # (B, T, 2)
@@ -99,8 +98,8 @@ def evaluate(model, dataloader, criterion, device, non_blocking, use_amp,
 
 
 def set_backbone_frozen(model, frozen):
-    """Congela embedding + tutti i transformer block TRANNE l'ultimo.
-    Restano sempre allenabili: ultimo blocco e testa predict_action."""
+    """Freeze embedding + all transformer blocks EXCEPT the last one.
+    They are always trainable: last block and test predict_action."""   
     base = _base(model)
     for p in base.token_embedding.parameters():
         p.requires_grad = not frozen
@@ -118,7 +117,7 @@ def train_decision_transformer(model, dataloader_training,
     model.to(device)
     optimizer = AdamW(model.parameters(), lr=lr)
 
-    # warmup lineare (se richiesto) + cosine decay fino al 5% del LR
+    # linear warmup (if required) + cosine decay up to 5% of LR
     def lr_lambda(epoch):
         if warmup_epochs and epoch < warmup_epochs:
             return (epoch + 1) / warmup_epochs
@@ -134,7 +133,7 @@ def train_decision_transformer(model, dataloader_training,
     start_epoch = load_checkpoint(resume_from, model, optimizer) \
         if resume_from else 0
     for _ in range(start_epoch):
-        scheduler.step()          # riallinea lo schedule dopo un resume
+        scheduler.step()          
     best_val_loss = float('inf')
     epochs_no_improve = 0
     if eval_first:
@@ -144,16 +143,16 @@ def train_decision_transformer(model, dataloader_training,
 
     frozen = False
     for epoch in range(start_epoch, num_epochs):
-        # ---- layer freezing (solo fine-tuning) ----
+        # ---- layer freezing (for fine-tuning only) ----
         if freeze_epochs and epoch < freeze_epochs and not frozen:
             set_backbone_frozen(model, True)
             frozen = True
-            print(f'Backbone congelato per le prime {freeze_epochs} epoche '
-                  f'(si allenano ultimo blocco + testa)')
+            print(f'Backbone freezed for the firsts {freeze_epochs} epochs'
+                  f'(only last block + Head trained)')
         elif frozen and epoch >= freeze_epochs:
             set_backbone_frozen(model, False)
             frozen = False
-            print('Backbone scongelato: fine-tuning completo')
+            print('Backbone unfreezed: complete fine-tuning')
 
         # ---- training ----
         model.train()
@@ -197,8 +196,8 @@ def train_decision_transformer(model, dataloader_training,
         else:
             epochs_no_improve += 1
             if epochs_no_improve >= patience:
-                print(f'Early stopping: val loss ferma a {best_val_loss:.4f} '
-                      f'da {patience} epoche (epoca {epoch + 1})')
+                print(f'Early stopping: val loss stopped at {best_val_loss:.4f} '
+                      f'from {patience} epochs (epoch {epoch + 1})')
                 break
 
     return model

@@ -1,15 +1,13 @@
-"""Mappe ID -> indice embedding (estratte da Embedding.py).
+"""Maps ID -> embedding index (extracted from Embedding.py).
 
-Convenzione: indice 0 = sconosciuto/padding; gli ID noti sono mappati a 1..N.
-Le LUT numpy permettono il remap vettoriale nel Dataset.
+Convention: index 0 = unknown/padding; known IDs are mapped to 1..N.
+Numpy LUTs allow vector remapping in the dataset.
+
 """
 import numpy as np  # type: ignore
 
 ability_map = {
-        "0": 0,
-        "1": 1,
-        "2": 2,
-        "3": 3,
+        "0": 0,"1": 1, "2": 2, "3": 3,
         "4": 4,
         "5": 5,
         "7": 6,
@@ -915,7 +913,7 @@ item_map =  {
 
 
 def build_lut(id_map, max_id=None):
-    """LUT: lut[id_originale] = indice embedding (0 se sconosciuto, noti 1..N)."""
+    """LUT: lut[original_id] = embedding index (0 if unknown,  else i..N)."""
     keys = [int(k) for k in id_map]
     size = (max_id if max_id is not None else max(keys)) + 1
     lut = np.zeros(size, dtype=np.int64)
@@ -929,7 +927,7 @@ MOVE_LUT = build_lut(move_map)
 ABILITY_LUT = build_lut(ability_map)
 ITEM_LUT = build_lut(item_map)
 
-# num_embeddings necessari (indice 0 incluso)
+# needed num_embeddings (index 0 included)
 N_POKE = len(pokemon_map) + 1      # 297
 N_MOVE = len(move_map) + 1         # 389
 N_ABILITY = len(ability_map) + 1   # 165
@@ -937,7 +935,7 @@ N_ITEM = len(item_map) + 1         # 50
 
 
 def remap(lut, arr):
-    """Remap vettoriale con clip: ID fuori tabella -> 0."""
+    """Vecorial remap with clip: ID out of table -> 0."""
     a = np.asarray(arr, dtype=np.int64)
     out = np.where((a >= 0) & (a < len(lut)), lut[np.clip(a, 0, len(lut) - 1)], 0)
     return out
