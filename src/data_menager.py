@@ -4,22 +4,21 @@ import glob
 from pathlib import Path
 import json
 
-cartella1 = Path('../npz/reg_m-A')
-cartella2 = Path('../npz/reg_m-B')
+fold1 = Path('../npz/reg_m-A')
+fold2 = Path('../npz/reg_m-B')
 
 def _structured_to_token(record):
-
     """
-    Prende un record numpy strutturato di tipo _TURN_DT e lo converte
-    nella lista piatta originale di 544 elementi.
+    It takes a structured numpy record of type _TURN_DT and converts it
+    to the original flat list of 544 elements.
     """
     token = []
     
-    # 1. Ricostruisci i 12 Pokémon
+
     for i in range(12):
         pk = record['pokemon'][i]
         
-        # Primi 19 campi base del Pokémon
+
         token.extend([
             pk['player'],
             pk['slot'],
@@ -42,7 +41,7 @@ def _structured_to_token(record):
             pk['status_mask']
         ])
         
-        # Le 4 mosse (7 campi ciascuna)
+
         for mname in ('move0', 'move1', 'move2', 'move3'):
             m = pk[mname]
             token.extend([
@@ -55,10 +54,10 @@ def _structured_to_token(record):
                 m['priority']
             ])
             
-        # Ultimo campo: hp_ratio
+
         token.append(pk['hp_ratio'])
         
-    # 2. Ricostruisci il Field (4 campi)
+
     field = record['field']
     token.extend([
         field['turn'],
@@ -67,7 +66,7 @@ def _structured_to_token(record):
         field['winner']
     ])
     
-    # 3. Ricostruisci le 2 Azioni (6 campi ciascuna)
+
     for aname in ('action0', 'action1'):
         a = record[aname]
         token.extend([
@@ -83,59 +82,53 @@ def _structured_to_token(record):
 
 def load_from_npz(filename):
     """
-    Carica un file .npz salvato con save_to_npz e restituisce
-    la lista di token piatti ordinati (uno per ogni turno).
+    Loads an .npz file saved with save_to_npz and returns
+    the list of sorted flat tokens (one for each round).
     """
     # Carica i dati dal file compresso
     with np.load(filename) as data:
         turns = data['turns']
         
     # Applica l'inversione a ogni record del turno
-    tokens_ricostruiti = [_structured_to_token(record) for record in turns]
+    reformatted_tokens = [_structured_to_token(record) for record in turns]
     
-    return tokens_ricostruiti
+    return reformatted_tokens
 
 def collect_data_info():
     id_pokemon = set()
-    id_abilita = set()
-    id_strumenti = set()
-    id_mosse = set()
+    id_ability = set()
+    id_item = set()
+    id_moves = set()
 
-
-
-    # Trova tutti i file .npz nella cartella
-    file_npz = list(cartella1.glob(f'*.npz'))   
+    file_npz = list(fold1.glob(f'*.npz'))   
     print(len(file_npz))
-    file_npz += list(cartella2.glob(f'*.npz'))   
+    file_npz += list(fold2.glob(f'*.npz'))   
     print(len(file_npz))
 
     if not file_npz:
-        print(f"Attenzione: Nessun file .npz trovato in {'../npz/'}")
+        print(f"Warning: No .npz files found in {'../npz/'}")
         exit()
     
-    for indice, percorso_file in enumerate(file_npz, 1):
+    for index, percorso_file in enumerate(file_npz, 1):
         with np.load(percorso_file) as data:
-            # Carichiamo l'array strutturato dei turni
+            
             turns = data['turns'] 
             
-            # Accediamo alla sezione pokemon: ha forma (Numero_Turni, 12)
             pokes = turns['pokemon']
             
-            # .flatten() trasforma la matrice in un unico vettore piatto per estrarre tutto insieme
             id_pokemon.update(pokes['poke_id'].flatten())
-            id_abilita.update(pokes['ability'].flatten())
-            id_strumenti.update(pokes['item'].flatten())
+            id_ability.update(pokes['ability'].flatten())
+            id_item.update(pokes['item'].flatten())
             
-            # Estraiamo gli ID delle mosse da tutti e 4 gli slot
             for slot_mossa in ['move0', 'move1', 'move2', 'move3']:
-                id_mosse.update(pokes[slot_mossa]['id'].flatten())
+                id_moves.update(pokes[slot_mossa]['id'].flatten())
                     
-        # Stampa un aggiornamento ogni 50 file elaborati
-        if indice % 50 == 0 or indice == len(file_npz):
-            print(f"Elaborati {indice}/{len(file_npz)} file...")
+        
+        if index % 50 == 0 or index == len(file_npz):
+            print(f"Elaborati {index}/{len(file_npz)} file...")
 
 
-    return id_abilita, id_mosse, id_pokemon, id_strumenti
+    return id_ability, id_moves, id_pokemon, id_item
 
 def print_collected_data(id_a, id_m, id_p, id_s):
     print("\n" + "="*40)
@@ -165,7 +158,7 @@ def print_collected_data(id_a, id_m, id_p, id_s):
     print(f"ID Max Mosse:     {max_mos}  -> Configura num_embeddings = {max_mos + 1}")
 
 def save_map(map):
-    """Salva l'intero stato della cache nel file JSON."""
+    """Save the all cache in JSON."""
     with open('../data/maps.json', "w", encoding="utf-8") as f:
         json.dump(map, f, indent=4) 
 

@@ -5,7 +5,7 @@ import torch # type: ignore
 import json
 import os
 # ==========================================
-# COSTANTI E CONFIGURAZIONI
+# CONFIGURATIONS AND CONSTANTS
 # ==========================================
 
 pokeUrl = "https://pokeapi.co/api/v2/"
@@ -20,13 +20,6 @@ types = {
 weather = {
     "none": 0, "SunnyDay": 1, "RainDance": 2, "Sandstorm": 3, "Snowscape": 4
 }
-
-# all_status = {
-#     'par': 0, 'slp': 1, 'frz': 2, 'brn': 3, 'psn': 4, 'confusion': 5,
-#     'infatuation': 6, 'trap': 7, 'nightmare': 8, 'torment': 9, 'disable': 10,
-#     'yawn': 11, 'heal-block': 12, 'no-type-immunity': 13, 'leech-seed': 14,
-#     'embargo': 15, 'perish-song': 16, 'ingrain': 17, 'Encore': 18, 'tox': 19
-# }
 
 all_status = {
     'par': 0, 'slp': 1, 'frz': 2, 'brn': 3, 'psn': 4, 'tox': 5
@@ -58,34 +51,31 @@ replacement = {
     'Gourgeist': '711'
 }
 
-just_begin = {'Vivillon','Florges','Alcremie'}
+just_begin = {'Vivillon','Florges','Alcremie'} # pokemon that has to be saved just by their "first name"
 
-to_set_sex = {'Basculegion', 'Meowstic'}
+to_set_sex = {'Basculegion', 'Meowstic'} # pokemon name that need the sex specified
 
 # ==========================================
-# GESTIONE CACHE GLOBALE E HELPER API
+# GLOBAL CACHE HANDLER AND HELPER API
 # ==========================================
 
 CACHE_FILE = "../data/"
-os.makedirs(CACHE_FILE, exist_ok=True) # Crea la cartella se non esiste
+os.makedirs(CACHE_FILE, exist_ok=True) 
 
 def load_cache(which):
     file_path = CACHE_FILE + which + '_cache.json'
     if os.path.exists(file_path):
         try:
-            with open(file_path, "r", encoding="utf-8") as f: # <-- Usa file_path qui!
+            with open(file_path, "r", encoding="utf-8") as f: 
                 return json.load(f)
         except json.JSONDecodeError:
-            pass # Se il file è corrotto o vuoto, partiamo da zero
+            pass 
     return {}
-
-# Carichiamo la cache all'avvio del programma
 
 _item_cache = load_cache('item')
 _ability_cache = load_cache('ability')
 
 def save_cache(which,cache):
-    """Salva l'intero stato della cache nel file JSON."""
     with open(CACHE_FILE+which+'_cache.json', "w", encoding="utf-8") as f:
         json.dump(cache, f, indent=4) 
 
@@ -98,9 +88,9 @@ def get_poke_data(targetUrl):
         risposta.raise_for_status() 
         return risposta.json()
     except requests.exceptions.RequestException as e:
-        print(f"Errore di connessione: {e}")
+        print(f"Connection error: {e}")
     except ValueError:
-        print("La pagina non ha restituito un JSON valido.")
+        print("No valid JSON.")
     return {}
 
 def get_item_id(name):
@@ -140,7 +130,7 @@ def get_ability(abil):
     return 0
 
 # ==========================================
-# CLASSI DEL GIOCO
+# GAME CLASSES
 # ==========================================
 
 class Bitmask:
@@ -151,7 +141,7 @@ class Bitmask:
 
     def set_bit(self, indice, valore):
         if not (0 <= indice < self.size):
-            raise IndexError(f"L'indice deve essere compreso tra 0 e {self.size - 1}.")
+            raise IndexError(f"The index must be between 0 and {self.size - 1}.")
         if valore:
             self.mask |= (1 << indice)
         else:
@@ -159,12 +149,12 @@ class Bitmask:
 
     def get_bit(self, indice):
         if not (0 <= indice < self.size):
-            raise IndexError(f"L'indice deve essere compreso tra 0 e {self.size - 1}.")
+            raise IndexError(f"The index must be between 0 and {self.size - 1}.")
         return bool((self.mask >> indice) & 1)
 
     def flip_bit(self, indice):
         if not (0 <= indice < self.size):
-            raise IndexError(f"L'indice deve essere compreso tra 0 e {self.size - 1}.")
+            raise IndexError(f"The index must be between 0 and{self.size - 1}.")
         self.mask ^= (1 << indice)
 
     def reset(self):
@@ -202,10 +192,9 @@ class Battlefield:
 
 
 class Pokemon:
-    _api_cache = load_cache("pokemon") # Associa la cache alla variabile globale
+    _api_cache = load_cache("pokemon") 
     @staticmethod
-    def fixname(name):
-                
+    def fixname(name):  
         if name in replacement: 
             return replacement[name]
         elif name.split('-')[0] in to_set_sex: 
@@ -223,7 +212,6 @@ class Pokemon:
         self.name = poke_id
         
         fixed_name = self.fixname(poke_id)
-        # Implementazione della Cache per Pokemon
         if fixed_name in Pokemon._api_cache:
             pokejs = Pokemon._api_cache[fixed_name]
         else:
@@ -258,6 +246,7 @@ class Pokemon:
         return [self.player, self.slot, self.poke_id] + self.types + [self.ability, self.item] + self.stats + self.stats_change + [self.status.mask] + moves_list + [self.hp_ratio]
     
     def add_move(self, new_move):
+        '''add a move in the first empty slot of a pokemon moveset (empty mean == 0)'''
         for i in range(4):
             if self.known_moves[i].id == new_move.id:
                 return 0
@@ -273,12 +262,12 @@ class Pokemon:
         return (
             f"=== Pokémon ===\n"
             f"  ID/Nome      : {self.poke_id} ({self.name})\n"
-            f"  Allenatore   : Giocatore {self.player} (Slot: {self.slot})\n"
-            f"  Tipo         : {self.types} | Abilità: {self.ability}\n"
-            f"  PS Residui   : {self.hp_ratio * 100:.1f}%\n"
-            f"  Strumento    : {self.item}\n"
-            f"  Stato Alter. : {self.status}\n"
-            f"  Mosse Conos. : [{mosse_str}]\n"
+            f"  Trainer      : Player {self.player} (Slot: {self.slot})\n"
+            f"  Type         : {self.types} | Ability: {self.ability}\n"
+            f"  PS           : {self.hp_ratio * 100:.1f}%\n"
+            f"  Item         : {self.item}\n"
+            f"  Status       : {self.status}\n"
+            f"  Known moves  : [{mosse_str}]\n"
             f"  Stat Modifier: {self.stats_change}\n"
             f"==============="
         )
@@ -363,20 +352,20 @@ class Action:
 
 
 if __name__ == '__main__':
-    # Test del Campo di Battaglia
+    # Test Battlefield, Pokemon, caches
     a = Battlefield(0)
     print("Battlefield List:", a.to_list())
     
-    # Esempio per testare la Cache
-    print("Scaricamento Charizard (1° volta)...")
+
+    print("Download Charizard (first time)...")
     p1 = Pokemon(0, 'charizard')
     
-    print("Scaricamento Charizard (2° volta - dalla cache)...")
+    print("Download Charizard (first time - from the cache)...")
     p2 = Pokemon(1, 'charizard')
     
     get_item_id("leftovers")
     get_item_id("choice band")
     get_ability_id("intimidate")
     
-    # Stampa lo stato della cache
+
     get_cache_stats()

@@ -1,4 +1,4 @@
-# ── Maschera azioni legali ───────────────────────────
+# ── Legal Action Mask ───────────────────────────
 """Legal Action Mask.
 
 Action Space (flat, 360):

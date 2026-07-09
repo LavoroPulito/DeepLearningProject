@@ -120,12 +120,33 @@ def main(target_source, weights_path):
     print("="*30 + "\n")
 
 if __name__ == '__main__':
-    target_source1 = '../modelWeights/test_files_regmA+B.txt' 
-    target_source2 = '../npz/reg_m-B/*.npz' 
-    target_source3 = '../modelWeights/test_files_reg_m-B.txt' 
-    weights_path1 = '../modelWeights/vgc_decision_transformer_Big_regmA_tunedOn_B.pth'     
-    weights_path2 = '../modelWeights/best_model_regmB.pth'
-    main(target_source3,weights_path1)
+    target_sourceA = '../Test_files/test_files_reg_m-A.txt' 
+    target_sourceB = '../Test_files/test_files_reg_m-B.txt' 
+    target_sourceAB = '../Test_files/test_files_regmA+B.txt' 
+    ts_zShotA = '../npz/reg_m-B/*.npz'
+    ts_zShotB = '../npz/reg_m-A/*.npz'
+
+    regmA = '../modelWeights/vgc_decision_transformer_regmA.pth' 
+    regmB = '../modelWeights/vgc_decision_transformer_regmB.pth'
+    regmAonB = '../modelWeights/vgc_decision_transformer_regmA_tunedOn_B.pth'
+    regmAB = '../modelWeights/vgc_decision_transformer_regmA+B.pth'
+
+    # print('target_sourceA,regmA')
+    # main(target_sourceA,regmA)
+    print('target_sourceB,regmB')
+    main(target_sourceB,regmB)
+    # print('ts_zShotA,regmA')
+    # main(ts_zShotA,regmA)
+    print('ts_zShotB,regmB')
+    main(ts_zShotB,regmB)
+    # print('target_sourceB,regmAonB')
+    # main(target_sourceB,regmAonB)
+    # print('target_sourceAB,regmAB')
+    # main(target_sourceAB,regmAB)
+
+
+
+
 
 
 

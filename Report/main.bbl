@@ -1,0 +1,35 @@
+\begin{thebibliography}{1}
+
+\bibitem{alammar2018seq2seq}
+Jay Alammar.
+\newblock Visualizing a neural machine translation model (mechanics of seq2seq models with attention), 2018.
+\newblock URL: \url{https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/}.
+
+\bibitem{bloem2019transformers}
+Peter Bloem.
+\newblock Transformers from scratch, 2019.
+\newblock URL: \url{https://peterbloem.nl/blog/transformers}.
+
+\bibitem{chen2021decision}
+Lili Chen, Kevin Lu, Aravind Rajeswaran, Kimin Lee, Aditya Grover, Michael Laskin, Pieter Abbeel, Aravind Srinivas, and Igor Mordatch.
+\newblock Decision transformer: Reinforcement learning via sequence modeling.
+\newblock {\em arXiv preprint arXiv:2106.01345}, 2021.
+\newblock URL: \url{https://arxiv.org/abs/2106.01345}.
+
+\bibitem{collis2017wordembedding}
+Jaron Collis.
+\newblock Glossary of deep learning: Word embedding, 2017.
+\newblock URL: \url{https://medium.com/deeper-learning/glossary-of-deep-learning-word-embedding-f90c3cec34ca}.
+
+\bibitem{ranjan2019sequence}
+Chitta Ranjan.
+\newblock Sequence embedding for clustering and classification, 2019.
+\newblock URL: \url{https://medium.com/data-science/sequence-embedding-for-clustering-and-classification-f816a66373fb}.
+
+\bibitem{vaswani2017attention}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan~N. Gomez, {\L}ukasz Kaiser, and Illia Polosukhin.
+\newblock Attention is all you need.
+\newblock In {\em Advances in Neural Information Processing Systems}, volume~30, 2017.
+\newblock URL: \url{https://arxiv.org/pdf/1706.03762}.
+
+\end{thebibliography}
