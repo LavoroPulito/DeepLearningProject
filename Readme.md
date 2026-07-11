@@ -51,6 +51,14 @@ The pipeline consists of three stages:
     └── deeplearning.ipynb    # Kaggle notebook (2× GPU)
 ````
 
+## Dataset
+The dataset was collected from [Pokémon Showdown](https://replay.pokemonshowdown.com/) public replays using their API, selecting the highest-Elo battles,
+and consists of **4,991 battles** from regulation M-A and **6,659 battles** from regulation M-B, 
+for a total of **11,650 battles**. Each battle produces two samples, one per player's point of view (POV), 
+doubling the dataset to **23,300 samples**. 
+
+The [PokéAPI](https://pokeapi.co/) dataset was additionally used to augment the data with Pokémon and move metadata.
+
 ## Model
 
 Decision Transformer with GPT-style causal attention over interleaved
